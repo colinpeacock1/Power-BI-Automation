@@ -38,7 +38,7 @@ class DataFlow {
     [string]$DestinationWorkspaceName
     [string]$DataflowName
 `
-    DataFlow([string]$SourceWorkspaceName, [string]$DestinationWorkspaceName,[string]$DataflowName) {
+        DataFlow([string]$SourceWorkspaceName, [string]$DestinationWorkspaceName, [string]$DataflowName) {
         $this.SourceWorkspaceName = $SourceWorkspaceName
         $this.DestinationWorkspaceName = $DestinationWorkspaceName
         $this.DataflowName = $DataflowName
@@ -49,22 +49,19 @@ class Replacement {
     [string]$SearchValue
     [string]$ReplaceValue
 `
-    Replacement([string]$SearchValue, [string]$ReplaceValue) {
+        Replacement([string]$SearchValue, [string]$ReplaceValue) {
         $this.SearchValue = $SearchValue
         $this.ReplaceValue = $ReplaceValue
     }
 }
 
-$dataFlowItems =@(
-    [DataFlow]::new("Sales Analytics DEV","Sales Analytics PRD","Sales Analytics Actuals"),
-    [DataFlow]::new("Sales Analytics DEV","Sales Analytics PRD","Sales Analytics Budgets"),
-    [DataFlow]::new("Sales Analytics DEV","Sales Analytics PRD","Sales Analytics Forecasts"),
-    [DataFlow]::new("Sales Analytics DEV","Sales Analytics PRD","Sales Analytics Management Structure"),
-    [DataFlow]::new("Sales Analytics DEV","Sales Analytics PRD","Sales Analytics Opportunity")
+$dataFlowItems = @(
+    [DataFlow]::new("BPD_Dev", "GDP Operations", "InventoryTurnsModel_Flow"),
+    [DataFlow]::new("BPD_Dev", "GDP Operations", "InventoryTurnsModel_2_Flow")
 )
 
-$replaceItems =@(
-    [Replacement]::new("https://yourconnectionindev.blob.core.windows.net","https://yourconnectioninprod.blob.core.windows.net")
+$replaceItems = @(
+    [Replacement]::new("https://yourconnectionindev.blob.core.windows.net", "https://yourconnectioninprod.blob.core.windows.net")
 )
 
 #
@@ -75,9 +72,10 @@ function _getPowerBINameConflict([string] $GroupID, [string]$DataflowName) {
     $flowItems = Invoke-PowerBIRestMethod -Method GET -Url $url | ConvertFrom-Json
     $flow = $flowItems.value | Where-Object { $_.name -eq $DataflowName }
 
-    if($flow) { 
+    if ($flow) { 
         return "Overwrite"
-    } else {
+    }
+    else {
         return "Ignore"
     }   
 }
@@ -94,9 +92,8 @@ function _getPowerBIDataflowDefinition([string] $GroupID, [string]$DataflowName)
         # check for allowNativeQueries
         #    "pbi:mashup": {
         #    "allowNativeQueries": false,
-        if ($flowdefinition.'pbi:mashup'.'allowNativeQueries')
-        {
-            $flowdefinition.'pbi:mashup'.'allowNativeQueries'= $FALSE
+        if ($flowdefinition.'pbi:mashup'.'allowNativeQueries') {
+            $flowdefinition.'pbi:mashup'.'allowNativeQueries' = $FALSE
         }
 
         forEach ($entity in $flowdefinition.entities) {
@@ -183,7 +180,7 @@ foreach ($dataflowitem in $dataFlowItems) {
                 $dataflowJSON = $dataflowobject | ConvertTo-Json -Depth 100 -Compress
 
                 foreach ($replace in $replaceItems) {
-                    $dataflowJSON = $dataflowJSON.Replace($replace.SearchValue,$replace.ReplaceValue)
+                    $dataflowJSON = $dataflowJSON.Replace($replace.SearchValue, $replace.ReplaceValue)
                 }               
 
                 $newDataFlow = _postDataflowDefinition -GroupID $destinationWorkspace.Id -DataflowDefinition $dataflowJSON -NameConflict $conflictName
