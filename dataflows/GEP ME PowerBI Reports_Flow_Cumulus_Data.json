@@ -1,0 +1,960 @@
+{
+    "name": "Flow_Cumulus_Data",
+    "description": "Cumulus data, WIP, WOCompletion, WOFailures and Deviations.",
+    "version": "1.0",
+    "culture": "en-US",
+    "modifiedTime": "2022-05-20T07:18:11.752648+00:00",
+    "pbi:mashup": {
+        "fastCombine": false,
+        "allowNativeQueries": false,
+        "queriesMetadata": {
+            "Transform Sample file": {
+                "queryId": "4876a6ae-54a6-482b-90ea-a8e4d8fbbf14",
+                "queryName": "Transform Sample file",
+                "queryGroupId": "5bb04b79-2431-46eb-9f7c-301f40f708ee"
+            },
+            "Sample file": {
+                "queryId": "3b353aaa-ca7a-49b3-83ad-34d4f9b6c147",
+                "queryName": "Sample file",
+                "queryGroupId": "87f566cb-b2b0-46db-a393-7e5429c38ffa"
+            },
+            "Parameter": {
+                "queryId": "716d4e79-54c2-4ff3-8113-bc90147b81e4",
+                "queryName": "Parameter",
+                "queryGroupId": "87f566cb-b2b0-46db-a393-7e5429c38ffa"
+            },
+            "Transform file": {
+                "queryId": "1f9f37a8-63cb-4fe6-8fcf-03abb5444787",
+                "queryName": "Transform file",
+                "queryGroupId": "87f566cb-b2b0-46db-a393-7e5429c38ffa"
+            },
+            "Transform Sample file (2)": {
+                "queryId": "dcf70e20-f135-4497-bc25-e6dc737ad839",
+                "queryName": "Transform Sample file (2)",
+                "queryGroupId": "077cfad4-59bf-4520-8384-64f1c5796a44"
+            },
+            "Sample file (2)": {
+                "queryId": "31d4ce4a-1c42-448d-8e7d-742995894169",
+                "queryName": "Sample file (2)",
+                "queryGroupId": "b93d5d06-af7a-427c-9386-df6b1c6e89b2"
+            },
+            "Parameter (2)": {
+                "queryId": "cc2553cf-84c1-42d0-881c-e20303844d20",
+                "queryName": "Parameter (2)",
+                "queryGroupId": "b93d5d06-af7a-427c-9386-df6b1c6e89b2"
+            },
+            "Transform file (2)": {
+                "queryId": "376665cd-bd5f-4f0b-813f-e3c5ccab59dc",
+                "queryName": "Transform file (2)",
+                "queryGroupId": "b93d5d06-af7a-427c-9386-df6b1c6e89b2"
+            },
+            "Transform Sample file (3)": {
+                "queryId": "4b77e28d-a820-4d8c-b7ce-144cb1b192d9",
+                "queryName": "Transform Sample file (3)",
+                "queryGroupId": "bf2b262a-e283-4100-8d9b-f35671ce9bc3"
+            },
+            "Sample file (3)": {
+                "queryId": "1f5caa2f-90b9-48cf-b254-2753d705872f",
+                "queryName": "Sample file (3)",
+                "queryGroupId": "1936fb56-2043-4045-b29a-dd6dc5e39c29"
+            },
+            "Parameter (3)": {
+                "queryId": "e27dce22-f2bd-4a1b-ab2a-6607b3041a05",
+                "queryName": "Parameter (3)",
+                "queryGroupId": "1936fb56-2043-4045-b29a-dd6dc5e39c29"
+            },
+            "Transform file (3)": {
+                "queryId": "7a007cdb-ede6-48f3-8bba-098dec2ea5b7",
+                "queryName": "Transform file (3)",
+                "queryGroupId": "1936fb56-2043-4045-b29a-dd6dc5e39c29"
+            },
+            "WIP": {
+                "queryId": "4a400e7f-e352-48df-adf2-25a6c676c777",
+                "queryName": "WIP",
+                "loadEnabled": true
+            },
+            "WOCompletion": {
+                "queryId": "5b27438a-3046-4e7c-a59f-1a9aefd7c2d0",
+                "queryName": "WOCompletion",
+                "loadEnabled": true
+            },
+            "WOFailures": {
+                "queryId": "49fb0503-a911-4e36-94ea-ce59bb7a0b1d",
+                "queryName": "WOFailures",
+                "loadEnabled": true
+            },
+            "WO_SN_Deviations": {
+                "queryId": "ea1199bd-ba7b-4ff4-96f5-a3c23b7400b8",
+                "queryName": "WO_SN_Deviations",
+                "loadEnabled": true
+            },
+            "Deviations": {
+                "queryId": "c7ad0ae2-32c4-47ef-8c0d-8a4149315a9b",
+                "queryName": "Deviations",
+                "loadEnabled": true
+            },
+            "Transform Sample File4": {
+                "queryId": "12da5258-9139-435d-ade4-724d75d6054b",
+                "queryName": "Transform Sample File4",
+                "queryGroupId": "c64be006-ac96-43b3-8521-4dd11190dc4d"
+            },
+            "Parameter1": {
+                "queryId": "8df8fc60-3714-4d23-89a5-773aa508aab1",
+                "queryName": "Parameter1",
+                "queryGroupId": "eaeb04f9-22fb-4fa7-8a3e-110aa70aebf3"
+            },
+            "Sample File4": {
+                "queryId": "fd0f48de-2907-476d-bfa1-2ec4fac2e861",
+                "queryName": "Sample File4",
+                "queryGroupId": "eaeb04f9-22fb-4fa7-8a3e-110aa70aebf3"
+            },
+            "Transform File4": {
+                "queryId": "bd5567cb-5c08-44cf-8e97-7fb788893fa4",
+                "queryName": "Transform File4",
+                "queryGroupId": "eaeb04f9-22fb-4fa7-8a3e-110aa70aebf3"
+            },
+            "Escapes": {
+                "queryId": "110eaf80-ecc4-4a9e-88e6-b3bcf7e0c559",
+                "queryName": "Escapes",
+                "loadEnabled": true
+            },
+            "CUM_WOCompletion_SF": {
+                "queryId": "fb001a5f-a78e-4a98-9466-4a65f0c0fd15",
+                "queryName": "CUM_WOCompletion_SF",
+                "queryGroupId": "7cf31587-bb0c-4102-a455-0659a25fdf1d",
+                "loadEnabled": true
+            },
+            "CUM_WOFailures_SF": {
+                "queryId": "1e61c1df-d8bb-4d41-ae51-ae4da645a683",
+                "queryName": "CUM_WOFailures_SF",
+                "queryGroupId": "7cf31587-bb0c-4102-a455-0659a25fdf1d",
+                "loadEnabled": true
+            },
+            "Escapes (2)": {
+                "queryId": "46fba599-2bb1-4aaa-a286-a9a066ec1a5a",
+                "queryName": "Escapes (2)"
+            },
+            "RangeStart": {
+                "queryId": "534246ee-3821-4b97-99ee-a16e90d79156",
+                "queryName": "RangeStart"
+            },
+            "RangeEnd": {
+                "queryId": "dc2d4187-9d06-4dde-9ff2-899215cd7a03",
+                "queryName": "RangeEnd"
+            },
+            "CUM_WOCompletion_SF_Canary": {
+                "queryId": "caf0bc91-0f76-4a0b-b1f4-d72f31af01e4",
+                "queryName": "CUM_WOCompletion_SF_Canary"
+            },
+            "CUM_WOFailures_SF_Canary": {
+                "queryId": "963aa566-2989-4e60-8cf1-66dfba540f66",
+                "queryName": "CUM_WOFailures_SF_Canary"
+            }
+        },
+        "document": "section Section1;\r\n\r\nshared #\"Transform Sample file\" = let\r\n    Source = Excel.Workbook(Parameter, null, true),\r\n    Navigation = Source{[Item = \"WIPList\", Kind = \"Sheet\"]}[Data],\r\n    #\"Promoted headers\" = Table.PromoteHeaders(Navigation, [PromoteAllScalars = true]),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Promoted headers\", {{\"CHARGE_LABOR\", type any}, {\"CHARGE_PARTS\", type any}, {\"CREATE_DATE\", type text}, {\"CURRENT_PROCESS\", type text}, {\"CURRENT_PROCESS_DESCRIPTION\", type text}, {\"CUSTOMER\", type any}, {\"DESCRIPTION\", type text}, {\"DUE_DATE\", type datetime}, {\"FLOW\", type text}, {\"KANBAN_LOCATOR\", type any}, {\"KANBAN_SUBINVENTORY\", type any}, {\"NOTES\", type text}, {\"ORACLE_WO\", type text}, {\"ORG\", type text}, {\"PART_NUMBER\", type text}, {\"PROJECT_CODE\", type text}, {\"QTY\", Int64.Type}, {\"RMA_NUMBER\", type any}, {\"SALES_ORDER\", type any}, {\"SCHEDULE_DATE\", type datetime}, {\"SERIAL_NUMBER\", type text}, {\"SERVICE_BILLING_TYPE\", type text}, {\"SERVICE_CUSTOMER\", type any}, {\"SERVICE_REFERENCE_NUMBER\", type any}, {\"STATUS\", type text}, {\"TYPE\", type text}, {\"WORK_ORDER\", type text}, {\"WO_TRACKING\", type text}})\r\nin\r\n    #\"Changed column type\";\r\n\r\nshared #\"Sample file\" = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered rows\" = Table.SelectRows(Source, each [Name] = \"BDS-WIP_WIPList.xlsx\" or [Name] = \"LP-WIP_WIPList.xlsx\" or [Name] = \"MP-WIP_WIPList.xlsx\" or [Name] = \"OPTIC-WIP_WIPList.xlsx\" or [Name] = \"VHP-WIP_WIPList.xlsx\"),\r\n    Navigation = #\"Filtered rows\"{0}[Content]\r\nin\r\n    Navigation;\r\n\r\nshared Parameter = let\r\n    Parameter = #\"Sample file\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type binary]\r\nin\r\n    Parameter;\r\n\r\nshared #\"Transform file\" = let\r\n    Source = (Parameter as binary) => let\r\n    Source = Excel.Workbook(Parameter, null, true),\r\n    Navigation = Source{[Item = \"WIPList\", Kind = \"Sheet\"]}[Data],\r\n    #\"Promoted headers\" = Table.PromoteHeaders(Navigation, [PromoteAllScalars = true]),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Promoted headers\", {{\"CHARGE_LABOR\", type any}, {\"CHARGE_PARTS\", type any}, {\"CREATE_DATE\", type text}, {\"CURRENT_PROCESS\", type text}, {\"CURRENT_PROCESS_DESCRIPTION\", type text}, {\"CUSTOMER\", type any}, {\"DESCRIPTION\", type text}, {\"DUE_DATE\", type datetime}, {\"FLOW\", type text}, {\"KANBAN_LOCATOR\", type any}, {\"KANBAN_SUBINVENTORY\", type any}, {\"NOTES\", type text}, {\"ORACLE_WO\", type text}, {\"ORG\", type text}, {\"PART_NUMBER\", type text}, {\"PROJECT_CODE\", type text}, {\"QTY\", Int64.Type}, {\"RMA_NUMBER\", type any}, {\"SALES_ORDER\", type any}, {\"SCHEDULE_DATE\", type datetime}, {\"SERIAL_NUMBER\", type text}, {\"SERVICE_BILLING_TYPE\", type text}, {\"SERVICE_CUSTOMER\", type any}, {\"SERVICE_REFERENCE_NUMBER\", type any}, {\"STATUS\", type text}, {\"TYPE\", type text}, {\"WORK_ORDER\", type text}, {\"WO_TRACKING\", type text}})\r\nin\r\n    #\"Changed column type\"\r\nin\r\n    Source;\r\n\r\nshared #\"Transform Sample file (2)\" = let\r\n    Source = Excel.Workbook(#\"Parameter (2)\", null, true),\r\n    Navigation = Source{[Item = \"WOCompletionList\", Kind = \"Sheet\"]}[Data],\r\n    #\"Promoted headers\" = Table.PromoteHeaders(Navigation, [PromoteAllScalars = true]),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Promoted headers\", {{\"CHARGE_LABOR\", type text}, {\"CHARGE_PARTS\", type text}, {\"COMPLETE_DATE\", type text}, {\"CREATE_DATE\", type text}, {\"CURRENT_PROCESS\", type text}, {\"CUSTOMER\", type text}, {\"CYCLE_TIME_SERIES_MINUTES\", Int64.Type}, {\"CYCLE_TIME_WORKORDER_MINUTES\", Int64.Type}, {\"DESCRIPTION\", type text}, {\"FLOW\", type text}, {\"ORACLE_WO\", type text}, {\"ORG\", type text}, {\"PART_NUMBER\", type text}, {\"QTY\", Int64.Type}, {\"RMA_NUMBER\", type any}, {\"SALES_ORDER\", type text}, {\"SCHEDULE_DATE\", type datetime}, {\"SERIAL_NUMBER\", type text}, {\"SERVICE_BILLING_TYPE\", type any}, {\"SERVICE_CUSTOMER\", type any}, {\"SERVICE_REFERENCE_NUMBER\", type any}, {\"STATUS\", type text}, {\"TYPE\", type text}, {\"WORK_ORDER\", type text}})\r\nin\r\n    #\"Changed column type\";\r\n\r\nshared #\"Sample file (2)\" = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered rows\" = Table.SelectRows(Source, each [Name] = \"BDS-WOCompletion_WOCompletionList.xlsx\" or [Name] = \"LP-WOCompletion-Incr_WOCompletionList.xlsx\" or [Name] = \"MP-WOCompletion-Incr_WOCompletionList.xlsx\" or [Name] = \"OPTIC-WOCompletion_WOCompletionList.xlsx\" or [Name] = \"VHP-WOCompletion-Incr_WOCompletionList.xlsx\"),\r\n    Navigation = #\"Filtered rows\"{0}[Content]\r\nin\r\n    Navigation;\r\n\r\nshared #\"Parameter (2)\" = let\r\n    #\"Parameter (2)\" = #\"Sample file (2)\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type binary]\r\nin\r\n    #\"Parameter (2)\";\r\n\r\nshared #\"Transform file (2)\" = let\r\n    Source = (#\"Parameter (2)\" as binary) => let\r\n    Source = Excel.Workbook(#\"Parameter (2)\", null, true),\r\n    Navigation = Source{[Item = \"WOCompletionList\", Kind = \"Sheet\"]}[Data],\r\n    #\"Promoted headers\" = Table.PromoteHeaders(Navigation, [PromoteAllScalars = true]),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Promoted headers\", {{\"CHARGE_LABOR\", type any}, {\"CHARGE_PARTS\", type any}, {\"COMPLETE_DATE\", type text}, {\"CREATE_DATE\", type text}, {\"CURRENT_PROCESS\", type text}, {\"CUSTOMER\", type any}, {\"CYCLE_TIME_SERIES_MINUTES\", Int64.Type}, {\"CYCLE_TIME_WORKORDER_MINUTES\", Int64.Type}, {\"DESCRIPTION\", type text}, {\"FLOW\", type text}, {\"ORACLE_WO\", type text}, {\"ORG\", type text}, {\"PART_NUMBER\", type text}, {\"QTY\", Int64.Type}, {\"RMA_NUMBER\", type any}, {\"SALES_ORDER\", type text}, {\"SCHEDULE_DATE\", type datetime}, {\"SERIAL_NUMBER\", type text}, {\"SERVICE_BILLING_TYPE\", type any}, {\"SERVICE_CUSTOMER\", type any}, {\"SERVICE_REFERENCE_NUMBER\", type any}, {\"STATUS\", type text}, {\"TYPE\", type text}, {\"WORK_ORDER\", type text}})\r\nin\r\n    #\"Changed column type\"\r\nin\r\n    Source;\r\n\r\nshared #\"Transform Sample file (3)\" = let\r\n    Source = Excel.Workbook(#\"Parameter (3)\", null, true),\r\n    Navigation = Source{[Item = \"WOFailuresList\", Kind = \"Sheet\"]}[Data],\r\n    #\"Promoted headers\" = Table.PromoteHeaders(Navigation, [PromoteAllScalars = true])\r\nin\r\n    #\"Promoted headers\";\r\n\r\nshared #\"Sample file (3)\" = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered rows\" = Table.SelectRows(Source, each [Name] = \"BDS-WOFailures_WOFailuresList.xlsx\" or [Name] = \"LP-WOFailures-Incr_WOFailuresList.xlsx\" or [Name] = \"MP-WOFailures-Incr_WOFailuresList.xlsx\" or [Name] = \"OPTIC-WOFailures_WOFailuresList.xlsx\" or [Name] = \"VHP-WOFailures-Incr_WOFailuresList.xlsx\"),\r\n    Navigation = #\"Filtered rows\"{0}[Content]\r\nin\r\n    Navigation;\r\n\r\nshared #\"Parameter (3)\" = let\r\n    #\"Parameter (3)\" = #\"Sample file (3)\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type binary]\r\nin\r\n    #\"Parameter (3)\";\r\n\r\nshared #\"Transform file (3)\" = let\r\n    Source = (#\"Parameter (3)\" as binary) => let\r\n    Source = Excel.Workbook(#\"Parameter (3)\", null, true),\r\n    Navigation = Source{[Item = \"WOFailuresList\", Kind = \"Sheet\"]}[Data],\r\n    #\"Promoted headers\" = Table.PromoteHeaders(Navigation, [PromoteAllScalars = true]),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Promoted headers\", {{\"CURRENT_PROCESS\", type text}, {\"CUSTOMER\", type any}, {\"DESCRIPTION\", type text}, {\"FAILURE\", type text}, {\"FAILURE_DATE\", type date}, {\"FAILURE_GROUP\", type text}, {\"FAILURE_NOTES\", type text}, {\"FLOW\", type text}, {\"ORACLE_WO\", type text}, {\"ORG\", type text}, {\"PART_NUMBER\", type text}, {\"PROCESS\", type text}, {\"PROCESS_DESCRIPTION\", type text}, {\"QTY\", Int64.Type}, {\"QTY_REJECTED\", Int64.Type}, {\"REJECTED_BY\", type text}, {\"REJECT_TYPE\", type text}, {\"SALES_ORDER\", type any}, {\"SCHEDULE_DATE\", type datetime}, {\"SERIAL_NUMBER\", type text}, {\"STATUS\", type text}, {\"TYPE\", type text}, {\"WORK_ORDER\", type text}})\r\nin\r\n    #\"Changed column type\"\r\nin\r\n    Source;\r\n\r\nshared WIP = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered rows\" = Table.SelectRows(Source, each [Name] = \"BDS-WIP_WIPList.xlsx\" or [Name] = \"LP-WIP_WIPList.xlsx\" or [Name] = \"MP-WIP_WIPList.xlsx\" or [Name] = \"OPTIC-WIP_WIPList.xlsx\" or [Name] = \"VHP-WIP_WIPList.xlsx\" or [Name] = \"General-WIP_WIPList.xlsx\"),\r\n    #\"Invoke custom function\" = Table.AddColumn(#\"Filtered rows\", \"Transform file\", each #\"Transform file\"([Content])),\r\n    #\"Renamed columns\" = Table.RenameColumns(#\"Invoke custom function\", {{\"Name\", \"Source.Name\"}}),\r\n    #\"Removed other columns\" = Table.SelectColumns(#\"Renamed columns\", {\"Source.Name\", \"Transform file\"}),\r\n    #\"Expanded table column\" = Table.ExpandTableColumn(#\"Removed other columns\", \"Transform file\", Table.ColumnNames(#\"Transform file\"(#\"Sample file\"))),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Expanded table column\", {{\"Source.Name\", type text}, {\"CHARGE_LABOR\", type any}, {\"CHARGE_PARTS\", type any}, {\"CREATE_DATE\", type text}, {\"CURRENT_PROCESS\", type text}, {\"CURRENT_PROCESS_DESCRIPTION\", type text}, {\"CUSTOMER\", type text}, {\"DESCRIPTION\", type text}, {\"DUE_DATE\", type datetime}, {\"FLOW\", type text}, {\"KANBAN_LOCATOR\", type any}, {\"KANBAN_SUBINVENTORY\", type any}, {\"NOTES\", type text}, {\"ORACLE_WO\", type text}, {\"ORG\", type text}, {\"PART_NUMBER\", type text}, {\"PROJECT_CODE\", type text}, {\"QTY\", type number}, {\"RMA_NUMBER\", type any}, {\"SALES_ORDER\", type text}, {\"SCHEDULE_DATE\", type datetime}, {\"SERIAL_NUMBER\", type text}, {\"SERVICE_BILLING_TYPE\", type text}, {\"SERVICE_CUSTOMER\", type any}, {\"SERVICE_REFERENCE_NUMBER\", type any}, {\"STATUS\", type text}, {\"TYPE\", type text}, {\"WORK_ORDER\", type text}, {\"WO_TRACKING\", type text}}),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Changed column type\", {\"Source.Name\", \"CREATE_DATE\", \"CURRENT_PROCESS\", \"CURRENT_PROCESS_DESCRIPTION\", \"CUSTOMER\", \"DESCRIPTION\", \"DUE_DATE\", \"FLOW\", \"NOTES\", \"ORACLE_WO\", \"ORG\", \"PART_NUMBER\", \"PROJECT_CODE\", \"QTY\", \"SALES_ORDER\", \"SCHEDULE_DATE\", \"SERIAL_NUMBER\", \"STATUS\", \"TYPE\", \"WORK_ORDER\"}),\r\n    #\"Changed column type with locale\" = Table.TransformColumnTypes(#\"Choose columns\", {{\"CREATE_DATE\", type datetime}}, \"de-DE\"),\r\n    #\"Extracted text before delimiter\" = Table.TransformColumns(#\"Changed column type with locale\", {{\"Source.Name\", each Text.BeforeDelimiter(_, \"-\", 0), type text}}),\r\n    #\"Renamed columns 1\" = Table.RenameColumns(#\"Extracted text before delimiter\", {{\"Source.Name\", \"Sandbox\"}}),\r\n    #\"Changed column type 1\" = Table.TransformColumnTypes(#\"Renamed columns 1\", {{\"CREATE_DATE\", type date}, {\"DUE_DATE\", type date}, {\"SCHEDULE_DATE\", type date}})\r\nin\r\n    #\"Changed column type 1\";\r\n\r\nshared WOCompletion = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered rows\" = Table.SelectRows(Source, each [Name] = \"BDS-WOCompletion_WOCompletionList.xlsx\" or [Name] = \"LP-WOCompletion-Incr_WOCompletionList.xlsx\" or [Name] = \"MP-WOCompletion-Incr_WOCompletionList.xlsx\" or [Name] = \"OPTIC-WOCompletion_WOCompletionList.xlsx\" or [Name] = \"VHP-WOCompletion-Incr_WOCompletionList.xlsx\" or [Name] = \"General-WOCompletion_WOCompletionList.xlsx\"),\r\n    #\"Invoke custom function\" = Table.AddColumn(#\"Filtered rows\", \"Transform file (2)\", each #\"Transform file (2)\"([Content])),\r\n    #\"Renamed columns\" = Table.RenameColumns(#\"Invoke custom function\", {{\"Name\", \"Source.Name\"}}),\r\n    #\"Removed other columns\" = Table.SelectColumns(#\"Renamed columns\", {\"Source.Name\", \"Transform file (2)\"}),\r\n    #\"Expanded table column\" = Table.ExpandTableColumn(#\"Removed other columns\", \"Transform file (2)\", Table.ColumnNames(#\"Transform file (2)\"(#\"Sample file (2)\"))),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Expanded table column\", {\"Source.Name\", \"COMPLETE_DATE\", \"CREATE_DATE\", \"CURRENT_PROCESS\", \"CUSTOMER\", \"CYCLE_TIME_SERIES_MINUTES\", \"CYCLE_TIME_WORKORDER_MINUTES\", \"DESCRIPTION\", \"DEVIATIONS\", \"FLOW\", \"ORACLE_WO\", \"ORG\", \"PART_NUMBER\", \"QTY\", \"SALES_ORDER\", \"SCHEDULE_DATE\", \"SERIAL_NUMBER\", \"SERIES\", \"STATUS\", \"TYPE\", \"WORK_ORDER\"}),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Choose columns\", {{\"CURRENT_PROCESS\", type text}, {\"CUSTOMER\", type text}, {\"DESCRIPTION\", type text}, {\"FLOW\", type text}, {\"ORACLE_WO\", type text}, {\"ORG\", type text}, {\"PART_NUMBER\", type text}, {\"SALES_ORDER\", type text}, {\"SERIAL_NUMBER\", type text}, {\"STATUS\", type text}, {\"TYPE\", type text}, {\"WORK_ORDER\", type text}, {\"CYCLE_TIME_SERIES_MINUTES\", Int64.Type}, {\"CYCLE_TIME_WORKORDER_MINUTES\", Int64.Type}, {\"QTY\", Int64.Type}, {\"SCHEDULE_DATE\", type date}, {\"DEVIATIONS\", type text}, {\"SERIES\", Int64.Type}}),\r\n    #\"Changed column type with locale\" = Table.TransformColumnTypes(#\"Changed column type\", {{\"COMPLETE_DATE\", type datetime}, {\"CREATE_DATE\", type datetime}}, \"de-DE\"),\r\n    #\"Renamed columns 1\" = Table.RenameColumns(#\"Changed column type with locale\", {{\"COMPLETE_DATE\", \"COMPLETE_DateTime\"}, {\"CREATE_DATE\", \"CREATE_DateTime\"}}),\r\n    #\"Duplicated column\" = Table.DuplicateColumn(#\"Renamed columns 1\", \"COMPLETE_DateTime\", \"COMPLETE_Date\"),\r\n    #\"Changed column type 1\" = Table.TransformColumnTypes(#\"Duplicated column\", {{\"COMPLETE_Date\", type date}}),\r\n    #\"Extracted text before delimiter\" = Table.TransformColumns(#\"Changed column type 1\", {{\"Source.Name\", each Text.BeforeDelimiter(_, \"-\", 0), type text}}),\r\n    #\"Renamed columns 2\" = Table.RenameColumns(#\"Extracted text before delimiter\", {{\"Source.Name\", \"Sandbox\"}})\r\nin\r\n    #\"Renamed columns 2\";\r\n\r\nshared WOFailures = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered rows\" = Table.SelectRows(Source, each [Name] = \"BDS-WOFailures_WOFailuresList.xlsx\" or [Name] = \"LP-WOFailures-Incr_WOFailuresList.xlsx\" or [Name] = \"MP-WOFailures-Incr_WOFailuresList.xlsx\" or [Name] = \"OPTIC-WOFailures_WOFailuresList.xlsx\" or [Name] = \"VHP-WOFailures-Incr_WOFailuresList.xlsx\"),\r\n    #\"Invoke custom function\" = Table.AddColumn(#\"Filtered rows\", \"Transform file (3)\", each #\"Transform file (3)\"([Content])),\r\n    #\"Renamed columns\" = Table.RenameColumns(#\"Invoke custom function\", {{\"Name\", \"Source.Name\"}}),\r\n    #\"Removed other columns\" = Table.SelectColumns(#\"Renamed columns\", {\"Source.Name\", \"Transform file (3)\"}),\r\n    #\"Expanded table column\" = Table.ExpandTableColumn(#\"Removed other columns\", \"Transform file (3)\", Table.ColumnNames(#\"Transform file (3)\"(#\"Sample file (3)\"))),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Expanded table column\", {{\"Source.Name\", type text}, {\"CURRENT_PROCESS\", type text}, {\"CUSTOMER\", type any}, {\"DESCRIPTION\", type text}, {\"FAILURE\", type text}, {\"FAILURE_DATE\", type date}, {\"FAILURE_GROUP\", type text}, {\"FAILURE_NOTES\", type text}, {\"FLOW\", type text}, {\"ORACLE_WO\", type text}, {\"ORG\", type text}, {\"PART_NUMBER\", type text}, {\"PROCESS\", type text}, {\"PROCESS_DESCRIPTION\", type text}, {\"QTY\", type number}, {\"QTY_REJECTED\", type number}, {\"REJECTED_BY\", type text}, {\"REJECT_TYPE\", type text}, {\"SALES_ORDER\", type any}, {\"SCHEDULE_DATE\", type datetime}, {\"SERIAL_NUMBER\", type text}, {\"STATUS\", type text}, {\"TYPE\", type text}, {\"WORK_ORDER\", type text}}),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Changed column type\", {\"Source.Name\", \"CURRENT_PROCESS\", \"DESCRIPTION\", \"FAILURE\", \"FAILURE_DATE\", \"FAILURE_GROUP\", \"FAILURE_NOTES\", \"FLOW\", \"ORACLE_WO\", \"ORG\", \"PART_NUMBER\", \"PROCESS\", \"PROCESS_DESCRIPTION\", \"QTY\", \"QTY_REJECTED\", \"REJECTED_BY\", \"REJECT_TYPE\", \"SERIAL_NUMBER\", \"STATUS\", \"TYPE\", \"WORK_ORDER\"}),\r\n    #\"Extracted text before delimiter\" = Table.TransformColumns(#\"Choose columns\", {{\"Source.Name\", each Text.BeforeDelimiter(_, \"-\", 0), type text}}),\r\n    #\"Renamed columns 1\" = Table.RenameColumns(#\"Extracted text before delimiter\", {{\"Source.Name\", \"Sandbox\"}})\r\nin\r\n    #\"Renamed columns 1\";\r\n\r\nshared WO_SN_Deviations = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered rows\" = Table.SelectRows(Source, each [Name] = \"BDS-WOCompletion_WOCompletionList.xlsx\" or [Name] = \"LP-WOCompletion-Incr_WOCompletionList.xlsx\" or [Name] = \"MP-WOCompletion-Incr_WOCompletionList.xlsx\" or [Name] = \"OPTIC-WOCompletion_WOCompletionList.xlsx\" or [Name] = \"VHP-WOCompletion-Incr_WOCompletionList.xlsx\"),\r\n    #\"Invoke custom function\" = Table.AddColumn(#\"Filtered rows\", \"Transform file (2)\", each #\"Transform file (2)\"([Content])),\r\n    #\"Renamed columns\" = Table.RenameColumns(#\"Invoke custom function\", {{\"Name\", \"Source.Name\"}}),\r\n    #\"Removed other columns\" = Table.SelectColumns(#\"Renamed columns\", {\"Source.Name\", \"Transform file (2)\"}),\r\n    #\"Expanded table column\" = Table.ExpandTableColumn(#\"Removed other columns\", \"Transform file (2)\", Table.ColumnNames(#\"Transform file (2)\"(#\"Sample file (2)\"))),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Expanded table column\", {\"Source.Name\", \"DEVIATIONS\", \"SERIAL_NUMBER\", \"WORK_ORDER\"}),\r\n    #\"Extracted text before delimiter\" = Table.TransformColumns(#\"Choose columns\", {{\"Source.Name\", each Text.BeforeDelimiter(_, \"-\", 0), type text}}),\r\n    #\"Renamed columns 2\" = Table.RenameColumns(#\"Extracted text before delimiter\", {{\"Source.Name\", \"Sandbox\"}}),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Renamed columns 2\", {{\"WORK_ORDER\", type text}, {\"DEVIATIONS\", type text}, {\"SERIAL_NUMBER\", type text}}),\r\n    #\"Filtered rows 1\" = Table.SelectRows(#\"Changed column type\", each [DEVIATIONS] <> null),\r\n    #\"Reordered columns\" = Table.ReorderColumns(#\"Filtered rows 1\", {\"WORK_ORDER\", \"DEVIATIONS\"}),\r\n    #\"Split column by delimiter\" = Table.SplitColumn(#\"Reordered columns\", \"DEVIATIONS\", Splitter.SplitTextByDelimiter(\"|\"), {\"DEVIATIONS.1\", \"DEVIATIONS.2\", \"DEVIATIONS.3\", \"DEVIATIONS.4\", \"DEVIATIONS.5\", \"DEVIATIONS.6\", \"DEVIATIONS.7\"}),\r\n    #\"Changed column type 1\" = Table.TransformColumnTypes(#\"Split column by delimiter\", {{\"DEVIATIONS.1\", type text}, {\"DEVIATIONS.2\", type text}, {\"DEVIATIONS.3\", type text}, {\"DEVIATIONS.4\", type text}, {\"DEVIATIONS.5\", type text}, {\"DEVIATIONS.6\", type text}, {\"DEVIATIONS.7\", type text}}),\r\n    #\"Unpivoted other columns 1\" = Table.UnpivotOtherColumns(#\"Changed column type 1\", {\"WORK_ORDER\", \"SERIAL_NUMBER\", \"Sandbox\"}, \"Attribute\", \"Value\"),\r\n    #\"Removed columns\" = Table.RemoveColumns(#\"Unpivoted other columns 1\", {\"Attribute\"}),\r\n    #\"Filtered rows 2\" = Table.SelectRows(#\"Removed columns\", each Text.StartsWith([Value], \"S\") or Text.StartsWith([Value], \"D\")),\r\n    #\"Extracted first characters\" = Table.TransformColumns(#\"Filtered rows 2\", {{\"Value\", each Text.Start(_, 6), type text}}),\r\n    #\"Renamed columns 1\" = Table.RenameColumns(#\"Extracted first characters\", {{\"Value\", \"Deviation\"}})\r\nin\r\n    #\"Renamed columns 1\";\r\n\r\nshared Deviations = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered rows\" = Table.SelectRows(Source, each [Name] = \"BDS-WOCompletion_WOCompletionList.xlsx\" or [Name] = \"LP-WOCompletion-Incr_WOCompletionList.xlsx\" or [Name] = \"MP-WOCompletion-Incr_WOCompletionList.xlsx\" or [Name] = \"OPTIC-WOCompletion_WOCompletionList.xlsx\" or [Name] = \"VHP-WOCompletion-Incr_WOCompletionList.xlsx\"),\r\n    #\"Filtered hidden files\" = Table.SelectRows(#\"Filtered rows\", each [Attributes]?[Hidden]? <> true),\r\n    #\"Invoke custom function\" = Table.AddColumn(#\"Filtered hidden files\", \"Transform file (2)\", each #\"Transform file (2)\"([Content])),\r\n    #\"Renamed columns\" = Table.RenameColumns(#\"Invoke custom function\", {{\"Name\", \"Source.Name\"}}),\r\n    #\"Removed other columns\" = Table.SelectColumns(#\"Renamed columns\", {\"Source.Name\", \"Transform file (2)\"}),\r\n    #\"Expanded table column\" = Table.ExpandTableColumn(#\"Removed other columns\", \"Transform file (2)\", Table.ColumnNames(#\"Transform file (2)\"(#\"Sample file (2)\"))),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Expanded table column\", {\"Source.Name\", \"DEVIATIONS\"}),\r\n    #\"Extracted text before delimiter\" = Table.TransformColumns(#\"Choose columns\", {{\"Source.Name\", each Text.BeforeDelimiter(_, \"-\", 0), type text}}),\r\n    #\"Renamed columns 2\" = Table.RenameColumns(#\"Extracted text before delimiter\", {{\"Source.Name\", \"Sandbox\"}}),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Renamed columns 2\", {{\"DEVIATIONS\", type text}}),\r\n    #\"Filtered rows 1\" = Table.SelectRows(#\"Changed column type\", each [DEVIATIONS] <> null),\r\n    #\"Removed duplicates\" = Table.Distinct(#\"Filtered rows 1\", {\"DEVIATIONS\"}),\r\n    #\"Split column by delimiter\" = Table.SplitColumn(#\"Removed duplicates\", \"DEVIATIONS\", Splitter.SplitTextByDelimiter(\"|\", QuoteStyle.None), {\"DEVIATIONS.1\", \"DEVIATIONS.2\", \"DEVIATIONS.3\", \"DEVIATIONS.4\", \"DEVIATIONS.5\", \"DEVIATIONS.6\", \"DEVIATIONS.7\"}),\r\n    #\"Unpivoted other columns\" = Table.UnpivotOtherColumns(#\"Split column by delimiter\", {\"Sandbox\"}, \"Attribute\", \"Value\"),\r\n    #\"Removed columns\" = Table.RemoveColumns(#\"Unpivoted other columns\", {\"Attribute\"}),\r\n    #\"Filtered rows 2\" = Table.SelectRows(#\"Removed columns\", each Text.StartsWith([Value], \"S\") or Text.StartsWith([Value], \"D\")),\r\n    #\"Duplicated column\" = Table.DuplicateColumn(#\"Filtered rows 2\", \"Value\", \"Value - Copy\"),\r\n    #\"Extracted first characters\" = Table.TransformColumns(#\"Duplicated column\", {{\"Value\", each Text.Start(_, 6), type text}}),\r\n    #\"Extracted text after delimiter\" = Table.TransformColumns(#\"Extracted first characters\", {{\"Value - Copy\", each Text.AfterDelimiter(_, \" \", 0), type text}}),\r\n    #\"Renamed columns 1\" = Table.RenameColumns(#\"Extracted text after delimiter\", {{\"Value\", \"Deviation\"}, {\"Value - Copy\", \"Deviation Description\"}}),\r\n    #\"Removed duplicates 1\" = Table.Distinct(#\"Renamed columns 1\", {\"Deviation\"})\r\nin\r\n    #\"Removed duplicates 1\";\r\n\r\nshared #\"Transform Sample File4\" = let\r\n    Source = Excel.Workbook(Parameter1, null, true),\r\n    tbl_Escapes_Table = Source{[Item = \"tbl_Escapes\", Kind = \"Table\"]}[Data]\r\nin\r\n    tbl_Escapes_Table;\r\n\r\nshared Parameter1 = let\r\n    Parameter1 = #\"Sample File4\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type binary, BinaryIdentifier = #\"Sample File4\"]\r\nin\r\n    Parameter1;\r\n\r\nshared #\"Sample File4\" = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered Rows\" = Table.SelectRows(Source, each [Name] = \"Escapes - RR Montage Werk3.xlsx\"),\r\n    Navigation1 = #\"Filtered Rows\"{0}[Content]\r\nin\r\n    Navigation1;\r\n\r\nshared #\"Transform File4\" = let\r\n    Source = (Parameter1 as binary) => let\r\n    Source = Excel.Workbook(Parameter1, null, true),\r\n    tbl_Escapes_Table = Source{[Item=\"tbl_Escapes\",Kind=\"Table\"]}[Data]\r\nin\r\n    tbl_Escapes_Table\r\nin\r\n    Source;\r\n\r\nshared Escapes = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered Rows\" = Table.SelectRows(Source, each [Name] = \"Escapes - RR Montage Werk3.xlsx\"),\r\n    Navigation = #\"Filtered Rows\"{[Name = \"Escapes - RR Montage Werk3.xlsx\", #\"Folder Path\" = \"https://cohrinc.sharepoint.com/teams/Operations/Excimer-Göttingen/Manuf. Engineering/Shared Documents/Production Data/VHP/Datapoints CR/\"]}[Content],\r\n    #\"Imported Excel workbook\" = Excel.Workbook(Navigation, null, true),\r\n    #\"Navigation 1\" = #\"Imported Excel workbook\"{[Item = \"tbl_Escapes\", Kind = \"Table\"]}[Data],\r\n    #\"Changed column type\" = Table.TransformColumnTypes(#\"Navigation 1\", {{\"Produkt Familie\", type text}, {\"Aufgetreten am\", type date}, {\"Fällig am\", type date}, {\"Gelöst am\", type date}, {\"Fehler oder Defekt\", type text}, {\"Korrektive / Präventive Maßnahme\", type text}, {\"Zuständig\", type text}, {\"Lösung / Implementierung\", type text}})\r\nin\r\n    #\"Changed column type\";\r\n\r\nshared #\"Escapes (2)\" = let\r\n    Source = SharePoint.Files(\"https://cohrinc.sharepoint.com/teams/Operations/Excimer-G%C3%B6ttingen/Manuf.%20Engineering\", [ApiVersion = 15]),\r\n    #\"Filtered Rows\" = Table.SelectRows(Source, each [Name] = \"Escapes - RR Montage Werk3.xlsx\"),\r\n    #\"Invoke Custom Function1\" = Table.AddColumn(#\"Filtered Rows\", \"Transform File\", each #\"Transform File4\"([Content])),\r\n    #\"Renamed Columns1\" = Table.RenameColumns(#\"Invoke Custom Function1\", {\"Name\", \"Source.Name\"}),\r\n    #\"Removed Other Columns1\" = Table.SelectColumns(#\"Renamed Columns1\", {\"Source.Name\", \"Transform File\"}),\r\n    #\"Expanded Table Column1\" = Table.ExpandTableColumn(#\"Removed Other Columns1\", \"Transform File\", Table.ColumnNames(#\"Transform File4\"(#\"Sample File4\"))),\r\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Expanded Table Column1\", {{\"Source.Name\", type text}, {\"Produkt Familie\", type text}, {\"Aufgetreten am\", type date}, {\"Fällig am\", type date}, {\"Gelöst am\", type date}, {\"Fehler oder Defekt\", type text}, {\"Korrektive / Präventive Maßnahme\", type text}, {\"Zuständig\", type text}, {\"Lösung / Implementierung\", type text}}),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Changed Type\", {\"Produkt Familie\", \"Aufgetreten am\", \"Fällig am\", \"Gelöst am\", \"Fehler oder Defekt\", \"Korrektive / Präventive Maßnahme\", \"Zuständig\", \"Lösung / Implementierung\"}),\r\n    #\"Filtered Rows1\" = Table.SelectRows(#\"Choose columns\", each [Aufgetreten am] <> null)\r\nin\r\n    #\"Filtered Rows1\";\r\n\r\nshared CUM_WOCompletion_SF = let\r\n    CUM_WOCompletion_SF = Value.NativeQuery(Snowflake.Databases(\"mma12090.snowflakecomputing.com\",\"COMPUTE_REPORTING\", [Role=\"GLBMFGOPERATIONSROLE\"]){[Name=\"PROD_DB\"]}[Data], \"SELECT *FROM PROD_DB.CUMULUS.CUM_WORKORDERS WHERE (ORG='GEP' or ORG='KEP')\", null, [EnableFolding=true]),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(CUM_WOCompletion_SF, {{\"WORKORDERKEY\", Int64.Type}, {\"SANDBOXKEY\", Int64.Type}, {\"WOQUEUEKEY\", Int64.Type}, {\"PARTNUMBERKEY\", Int64.Type}, {\"SERIALNUMBERKEY\", Int64.Type}, {\"QUEUEKEY\", Int64.Type}}),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Changed column type\", {\"WORKORDERKEY\", \"SANDBOXKEY\", \"WOQUEUEKEY\", \"WORKORDER_NUMBER\", \"ORACLE_WORKORDER\", \"ORACLE_PROJECT\", \"ORG\", \"TYPE\", \"CREATED\", \"COMPLETED\", \"MODIFIED\", \"WORKORDER_STATUS\", \"QUANTITY\", \"CURRENT_QUANTITY\", \"FLOW_NAME\", \"SN_LOT_NUMBER\", \"PARTNUMBERKEY\", \"REV\", \"SERIES_DATE\", \"CURRENT_PROCESS\", \"CURRENT_PROCESS_DESC\", \"SNOWFLAKE_UPDATE_DATE\", \"WO_EST_COMP_DATE\", \"PROCESS_EST_COMP_DATE\", \"START_DATE\", \"DUE_DATE\", \"SHIP_DATE\", \"EXPEDITED\", \"PROCESS_SOFT_START_DATE\", \"SERIALNUMBERKEY\", \"QUEUEKEY\"}),\r\n    #\"CUM_WOCompletion_SF-4D4F444946494544-autogenerated_for_incremental_refresh\" = Table.SelectRows(#\"Choose columns\", each DateTime.From([MODIFIED]) >= RangeStart and DateTime.From([MODIFIED]) < RangeEnd)\r\nin\r\n    #\"CUM_WOCompletion_SF-4D4F444946494544-autogenerated_for_incremental_refresh\";\r\n\r\nshared CUM_WOCompletion_SF_Canary = let\r\n    CUM_WOCompletion_SF = Value.NativeQuery(Snowflake.Databases(\"mma12090.snowflakecomputing.com\",\"COMPUTE_REPORTING\", [Role=\"GLBMFGOPERATIONSROLE\"]){[Name=\"PROD_DB\"]}[Data], \"SELECT *FROM PROD_DB.CUMULUS.CUM_WORKORDERS WHERE (ORG='GEP' or ORG='KEP')\", null, [EnableFolding=true]),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(CUM_WOCompletion_SF, {{\"WORKORDERKEY\", Int64.Type}, {\"SANDBOXKEY\", Int64.Type}, {\"WOQUEUEKEY\", Int64.Type}, {\"PARTNUMBERKEY\", Int64.Type}, {\"SERIALNUMBERKEY\", Int64.Type}, {\"QUEUEKEY\", Int64.Type}}),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Changed column type\", {\"WORKORDERKEY\", \"SANDBOXKEY\", \"WOQUEUEKEY\", \"WORKORDER_NUMBER\", \"ORACLE_WORKORDER\", \"ORACLE_PROJECT\", \"ORG\", \"TYPE\", \"CREATED\", \"COMPLETED\", \"MODIFIED\", \"WORKORDER_STATUS\", \"QUANTITY\", \"CURRENT_QUANTITY\", \"FLOW_NAME\", \"SN_LOT_NUMBER\", \"PARTNUMBERKEY\", \"REV\", \"SERIES_DATE\", \"CURRENT_PROCESS\", \"CURRENT_PROCESS_DESC\", \"SNOWFLAKE_UPDATE_DATE\", \"WO_EST_COMP_DATE\", \"PROCESS_EST_COMP_DATE\", \"START_DATE\", \"DUE_DATE\", \"SHIP_DATE\", \"EXPEDITED\", \"PROCESS_SOFT_START_DATE\", \"SERIALNUMBERKEY\", \"QUEUEKEY\"}),\r\n    #\"CUM_WOCompletion_SF-4D4F444946494544-autogenerated_for_incremental_refresh\" = Table.SelectRows(#\"Choose columns\", each DateTime.From([MODIFIED]) >= RangeStart and DateTime.From([MODIFIED]) < RangeEnd), #\"CUM_WOCompletion_SF_Canary-4D4F444946494544-autogenerated_for_incremental_refresh\" = DateTime.ToText(Table.Max(#\"CUM_WOCompletion_SF-4D4F444946494544-autogenerated_for_incremental_refresh\",each [MODIFIED], [MODIFIED=#datetime(0001,01,01,00,00,00)])[MODIFIED]) in #\"CUM_WOCompletion_SF_Canary-4D4F444946494544-autogenerated_for_incremental_refresh\";\r\n\r\nshared CUM_WOFailures_SF = let\r\n    CUM_WOFailures_SF = Value.NativeQuery(Snowflake.Databases(\"mma12090.snowflakecomputing.com\",\"COMPUTE_REPORTING\", [Role=\"GLBMFGOPERATIONSROLE\"]){[Name=\"PROD_DB\"]}[Data], \"SELECT *FROM PROD_DB.CUMULUS.CUM_FAILURES_DEFECTS WHERE (ORG='GEP' or ORG='KEP')\", null, [EnableFolding=true]),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(CUM_WOFailures_SF, {{\"FAILUREKEY\", Int64.Type}, {\"SANDBOXKEY\", Int64.Type}, {\"WORKORDERKEY\", Int64.Type}, {\"PARTNUMBERKEY\", Int64.Type}}),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Changed column type\", {\"FAILUREKEY\", \"SANDBOXKEY\", \"WORKORDERKEY\", \"FAILURE_DATE\", \"MODIFIED_DATE\", \"ORG\", \"TYPE\", \"PARTNUMBERKEY\", \"PROCESS\", \"PROCESS_DESCRIPTION\", \"QTY_REJECTED\", \"FAILURE_GROUP\", \"FAILURE\", \"REJECTED_BY\", \"EST_EFFORT_HRS\", \"FAILURE_NOTES\"}),\r\n    #\"CUM_WOFailures_SF-4D4F4449464945445F44415445-autogenerated_for_incremental_refresh\" = Table.SelectRows(#\"Choose columns\", each DateTime.From([MODIFIED_DATE]) >= RangeStart and DateTime.From([MODIFIED_DATE]) < RangeEnd)\r\nin\r\n    #\"CUM_WOFailures_SF-4D4F4449464945445F44415445-autogenerated_for_incremental_refresh\";\r\n\r\nshared CUM_WOFailures_SF_Canary = let\r\n    CUM_WOFailures_SF = Value.NativeQuery(Snowflake.Databases(\"mma12090.snowflakecomputing.com\",\"COMPUTE_REPORTING\", [Role=\"GLBMFGOPERATIONSROLE\"]){[Name=\"PROD_DB\"]}[Data], \"SELECT *FROM PROD_DB.CUMULUS.CUM_FAILURES_DEFECTS WHERE (ORG='GEP' or ORG='KEP')\", null, [EnableFolding=true]),\r\n    #\"Changed column type\" = Table.TransformColumnTypes(CUM_WOFailures_SF, {{\"FAILUREKEY\", Int64.Type}, {\"SANDBOXKEY\", Int64.Type}, {\"WORKORDERKEY\", Int64.Type}, {\"PARTNUMBERKEY\", Int64.Type}}),\r\n    #\"Choose columns\" = Table.SelectColumns(#\"Changed column type\", {\"FAILUREKEY\", \"SANDBOXKEY\", \"WORKORDERKEY\", \"FAILURE_DATE\", \"MODIFIED_DATE\", \"ORG\", \"TYPE\", \"PARTNUMBERKEY\", \"PROCESS\", \"PROCESS_DESCRIPTION\", \"QTY_REJECTED\", \"FAILURE_GROUP\", \"FAILURE\", \"REJECTED_BY\", \"EST_EFFORT_HRS\", \"FAILURE_NOTES\"}),\r\n    #\"CUM_WOFailures_SF-4D4F4449464945445F44415445-autogenerated_for_incremental_refresh\" = Table.SelectRows(#\"Choose columns\", each DateTime.From([MODIFIED_DATE]) >= RangeStart and DateTime.From([MODIFIED_DATE]) < RangeEnd), #\"CUM_WOFailures_SF_Canary-4D4F4449464945445F44415445-autogenerated_for_incremental_refresh\" = DateTime.ToText(Table.Max(#\"CUM_WOFailures_SF-4D4F4449464945445F44415445-autogenerated_for_incremental_refresh\",each [MODIFIED_DATE], [MODIFIED_DATE=#datetime(0001,01,01,00,00,00)])[MODIFIED_DATE]) in #\"CUM_WOFailures_SF_Canary-4D4F4449464945445F44415445-autogenerated_for_incremental_refresh\";\r\n\r\nshared RangeStart = let RangeStart = #datetime(0001,01,01,00,00,00) meta [IsParameterQuery=true, List={}, Type=\"DateTime\", IsParameterQueryRequired=true, Description=\"autogenerated_for_incremental_refresh\"] in RangeStart;\r\n\r\nshared RangeEnd = let RangeEnd = #datetime(9999,12,31,23,59,59) meta [IsParameterQuery=true, List={}, Type=\"DateTime\", IsParameterQueryRequired=true, Description=\"autogenerated_for_incremental_refresh\"] in RangeEnd;\r\n\r\n"
+    },
+    "annotations": [
+        {
+            "name": "pbi:QueryGroups",
+            "value": "[{\"id\":\"5bb04b79-2431-46eb-9f7c-301f40f708ee\",\"name\":\"Transform file from WIP\",\"description\":\"\",\"parentId\":null,\"order\":1},{\"id\":\"87f566cb-b2b0-46db-a393-7e5429c38ffa\",\"name\":\"Helper queries\",\"description\":\"\",\"parentId\":\"5bb04b79-2431-46eb-9f7c-301f40f708ee\",\"order\":2},{\"id\":\"077cfad4-59bf-4520-8384-64f1c5796a44\",\"name\":\"Transform file from WOCompletion\",\"description\":\"\",\"parentId\":null,\"order\":1},{\"id\":\"b93d5d06-af7a-427c-9386-df6b1c6e89b2\",\"name\":\"Helper queries (2)\",\"description\":\"\",\"parentId\":\"077cfad4-59bf-4520-8384-64f1c5796a44\",\"order\":2},{\"id\":\"bf2b262a-e283-4100-8d9b-f35671ce9bc3\",\"name\":\"Transform file from WOFailures\",\"description\":\"\",\"parentId\":null,\"order\":1},{\"id\":\"1936fb56-2043-4045-b29a-dd6dc5e39c29\",\"name\":\"Helper queries (3)\",\"description\":\"\",\"parentId\":\"bf2b262a-e283-4100-8d9b-f35671ce9bc3\",\"order\":2},{\"id\":\"c64be006-ac96-43b3-8521-4dd11190dc4d\",\"name\":\"Transform File from Escapes\",\"description\":\"\",\"parentId\":null,\"order\":1},{\"id\":\"eaeb04f9-22fb-4fa7-8a3e-110aa70aebf3\",\"name\":\"Helper Queries\",\"description\":\"\",\"parentId\":\"c64be006-ac96-43b3-8521-4dd11190dc4d\",\"order\":2},{\"id\":\"7cf31587-bb0c-4102-a455-0659a25fdf1d\",\"name\":\"Snowflake\",\"description\":\"\",\"parentId\":null,\"order\":0}]"
+        }
+    ],
+    "entities": [
+        {
+            "$type": "LocalEntity",
+            "name": "WIP",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "FullRefreshPolicy",
+                "location": "WIP.csv"
+            },
+            "attributes": [
+                {
+                    "name": "Sandbox",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CREATE_DATE",
+                    "dataType": "date"
+                },
+                {
+                    "name": "CURRENT_PROCESS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CURRENT_PROCESS_DESCRIPTION",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CUSTOMER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "DESCRIPTION",
+                    "dataType": "string"
+                },
+                {
+                    "name": "DUE_DATE",
+                    "dataType": "date"
+                },
+                {
+                    "name": "FLOW",
+                    "dataType": "string"
+                },
+                {
+                    "name": "NOTES",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORACLE_WO",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORG",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PART_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PROJECT_CODE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "QTY",
+                    "dataType": "double"
+                },
+                {
+                    "name": "SALES_ORDER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SCHEDULE_DATE",
+                    "dataType": "date"
+                },
+                {
+                    "name": "SERIAL_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "STATUS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "WORK_ORDER",
+                    "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-20T10:02:29.9998098+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/WIP.csv?snapshot=2022-05-20T10%3A02%3A29.9762791Z"
+                }
+            ]
+        },
+        {
+            "$type": "LocalEntity",
+            "name": "WOCompletion",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "FullRefreshPolicy",
+                "location": "WOCompletion.csv"
+            },
+            "attributes": [
+                {
+                    "name": "Sandbox",
+                    "dataType": "string"
+                },
+                {
+                    "name": "COMPLETE_DateTime",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "CREATE_DateTime",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "CURRENT_PROCESS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CUSTOMER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CYCLE_TIME_SERIES_MINUTES",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "CYCLE_TIME_WORKORDER_MINUTES",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "DESCRIPTION",
+                    "dataType": "string"
+                },
+                {
+                    "name": "DEVIATIONS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FLOW",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORACLE_WO",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORG",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PART_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "QTY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "SALES_ORDER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SCHEDULE_DATE",
+                    "dataType": "date"
+                },
+                {
+                    "name": "SERIAL_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SERIES",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "STATUS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "WORK_ORDER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "COMPLETE_Date",
+                    "dataType": "date"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-20T10:02:45.7452196+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/WOCompletion.csv?snapshot=2022-05-20T10%3A02%3A45.7053083Z"
+                }
+            ]
+        },
+        {
+            "$type": "LocalEntity",
+            "name": "WOFailures",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "FullRefreshPolicy",
+                "location": "WOFailures.csv"
+            },
+            "attributes": [
+                {
+                    "name": "Sandbox",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CURRENT_PROCESS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "DESCRIPTION",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FAILURE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FAILURE_DATE",
+                    "dataType": "date"
+                },
+                {
+                    "name": "FAILURE_GROUP",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FAILURE_NOTES",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FLOW",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORACLE_WO",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORG",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PART_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PROCESS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PROCESS_DESCRIPTION",
+                    "dataType": "string"
+                },
+                {
+                    "name": "QTY",
+                    "dataType": "double"
+                },
+                {
+                    "name": "QTY_REJECTED",
+                    "dataType": "double"
+                },
+                {
+                    "name": "REJECTED_BY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "REJECT_TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SERIAL_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "STATUS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "WORK_ORDER",
+                    "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-20T10:02:26.7116497+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/WOFailures.csv?snapshot=2022-05-20T10%3A02%3A26.6591707Z"
+                }
+            ]
+        },
+        {
+            "$type": "LocalEntity",
+            "name": "WO_SN_Deviations",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "FullRefreshPolicy",
+                "location": "WO_SN_Deviations.csv"
+            },
+            "attributes": [
+                {
+                    "name": "Sandbox",
+                    "dataType": "string"
+                },
+                {
+                    "name": "WORK_ORDER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SERIAL_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "Deviation",
+                    "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-20T10:02:25.1519778+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/WO_SN_Deviations.csv?snapshot=2022-05-20T10%3A02%3A25.1030582Z"
+                }
+            ]
+        },
+        {
+            "$type": "LocalEntity",
+            "name": "Deviations",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "FullRefreshPolicy",
+                "location": "Deviations.csv"
+            },
+            "attributes": [
+                {
+                    "name": "Sandbox",
+                    "dataType": "string"
+                },
+                {
+                    "name": "Deviation",
+                    "dataType": "string"
+                },
+                {
+                    "name": "Deviation Description",
+                    "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-20T10:02:39.4834625+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/Deviations.csv?snapshot=2022-05-20T10%3A02%3A39.4478772Z"
+                }
+            ]
+        },
+        {
+            "$type": "LocalEntity",
+            "name": "Escapes",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "FullRefreshPolicy",
+                "location": "Escapes.csv"
+            },
+            "attributes": [
+                {
+                    "name": "Produkt Familie",
+                    "dataType": "string"
+                },
+                {
+                    "name": "Aufgetreten am",
+                    "dataType": "date"
+                },
+                {
+                    "name": "Fällig am",
+                    "dataType": "date"
+                },
+                {
+                    "name": "Gelöst am",
+                    "dataType": "date"
+                },
+                {
+                    "name": "Fehler oder Defekt",
+                    "dataType": "string"
+                },
+                {
+                    "name": "Korrektive / Präventive Maßnahme",
+                    "dataType": "string"
+                },
+                {
+                    "name": "Zuständig",
+                    "dataType": "string"
+                },
+                {
+                    "name": "Lösung / Implementierung",
+                    "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-20T10:02:25.9801078+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/Escapes.csv?snapshot=2022-05-20T10%3A02%3A25.8996038Z"
+                }
+            ]
+        },
+        {
+            "$type": "LocalEntity",
+            "name": "CUM_WOCompletion_SF",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "IncrementalRefreshPolicy",
+                "locationPattern": "CUM_WOCompletion_SF/part.csv",
+                "rollingWindowGranularity": "year",
+                "rollingWindowPeriods": 5,
+                "incrementalGranularity": "year",
+                "incrementalPeriods": 1,
+                "pollingQuery": "CUM_WOCompletion_SF_Canary"
+            },
+            "annotations": [
+                {
+                    "name": "pbi:IncrementalRefreshDetectChangeAttribute",
+                    "value": "MODIFIED"
+                },
+                {
+                    "name": "pbi:IncrementalRefreshFilterByAttribute",
+                    "value": "MODIFIED"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "WORKORDERKEY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "SANDBOXKEY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "WOQUEUEKEY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "WORKORDER_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORACLE_WORKORDER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORACLE_PROJECT",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORG",
+                    "dataType": "string"
+                },
+                {
+                    "name": "TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CREATED",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "COMPLETED",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "MODIFIED",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "WORKORDER_STATUS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "QUANTITY",
+                    "dataType": "double"
+                },
+                {
+                    "name": "CURRENT_QUANTITY",
+                    "dataType": "double"
+                },
+                {
+                    "name": "FLOW_NAME",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SN_LOT_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PARTNUMBERKEY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "REV",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SERIES_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "CURRENT_PROCESS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CURRENT_PROCESS_DESC",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SNOWFLAKE_UPDATE_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "WO_EST_COMP_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "PROCESS_EST_COMP_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "START_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "DUE_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "SHIP_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "EXPEDITED",
+                    "dataType": "boolean"
+                },
+                {
+                    "name": "PROCESS_SOFT_START_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "SERIALNUMBERKEY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "QUEUEKEY",
+                    "dataType": "int64"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2017",
+                    "refreshTime": "2022-05-20T07:18:34.1935981+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOCompletion_SF/part-2017.csv?snapshot=2022-05-20T07%3A18%3A34.1640776Z",
+                    "pbi:refreshBookmark": "12/29/2017 12:43:14 PM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2017-01-01T00:00:00",
+                        "end": "2018-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2018",
+                    "refreshTime": "2022-05-20T07:18:36.0223464+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOCompletion_SF/part-2018.csv?snapshot=2022-05-20T07%3A18%3A35.9990324Z",
+                    "pbi:refreshBookmark": "12/24/2018 5:57:37 AM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2018-01-01T00:00:00",
+                        "end": "2019-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2019",
+                    "refreshTime": "2022-05-20T07:18:33.4592225+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOCompletion_SF/part-2019.csv?snapshot=2022-05-20T07%3A18%3A33.4294964Z",
+                    "pbi:refreshBookmark": "12/30/2019 12:01:43 PM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2019-01-01T00:00:00",
+                        "end": "2020-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2020",
+                    "refreshTime": "2022-05-20T07:18:33.3342722+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOCompletion_SF/part-2020.csv?snapshot=2022-05-20T07%3A18%3A33.3135623Z",
+                    "pbi:refreshBookmark": "12/31/2020 4:22:27 AM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2020-01-01T00:00:00",
+                        "end": "2021-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2021",
+                    "refreshTime": "2022-05-20T07:18:34.3185833+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOCompletion_SF/part-2021.csv?snapshot=2022-05-20T07%3A18%3A34.2960026Z",
+                    "pbi:refreshBookmark": "12/31/2021 2:42:44 AM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2021-01-01T00:00:00",
+                        "end": "2022-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2022",
+                    "refreshTime": "2022-05-20T09:01:18.1688452+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOCompletion_SF/part-2022.csv?snapshot=2022-05-20T09%3A01%3A18.1357423Z",
+                    "pbi:refreshBookmark": "5/20/2022 8:25:04 AM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2022-01-01T00:00:00",
+                        "end": "2023-01-01T00:00:00"
+                    }
+                }
+            ]
+        },
+        {
+            "$type": "LocalEntity",
+            "name": "CUM_WOFailures_SF",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "IncrementalRefreshPolicy",
+                "locationPattern": "CUM_WOFailures_SF/part.csv",
+                "rollingWindowGranularity": "year",
+                "rollingWindowPeriods": 5,
+                "incrementalGranularity": "year",
+                "incrementalPeriods": 1,
+                "pollingQuery": "CUM_WOFailures_SF_Canary"
+            },
+            "annotations": [
+                {
+                    "name": "pbi:IncrementalRefreshDetectChangeAttribute",
+                    "value": "MODIFIED_DATE"
+                },
+                {
+                    "name": "pbi:IncrementalRefreshFilterByAttribute",
+                    "value": "MODIFIED_DATE"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "FAILUREKEY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "SANDBOXKEY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "WORKORDERKEY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "FAILURE_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "MODIFIED_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "ORG",
+                    "dataType": "string"
+                },
+                {
+                    "name": "TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PARTNUMBERKEY",
+                    "dataType": "int64"
+                },
+                {
+                    "name": "PROCESS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PROCESS_DESCRIPTION",
+                    "dataType": "string"
+                },
+                {
+                    "name": "QTY_REJECTED",
+                    "dataType": "double"
+                },
+                {
+                    "name": "FAILURE_GROUP",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FAILURE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "REJECTED_BY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "EST_EFFORT_HRS",
+                    "dataType": "double"
+                },
+                {
+                    "name": "FAILURE_NOTES",
+                    "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2017",
+                    "refreshTime": "2022-05-20T07:18:28.2777039+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOFailures_SF/part-2017.csv?snapshot=2022-05-20T07%3A18%3A28.2534457Z",
+                    "pbi:refreshBookmark": "12/29/2017 12:43:14 PM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2017-01-01T00:00:00",
+                        "end": "2018-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2018",
+                    "refreshTime": "2022-05-20T07:18:28.1683419+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOFailures_SF/part-2018.csv?snapshot=2022-05-20T07%3A18%3A28.1405105Z",
+                    "pbi:refreshBookmark": "12/24/2018 2:23:01 AM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2018-01-01T00:00:00",
+                        "end": "2019-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2019",
+                    "refreshTime": "2022-05-20T07:18:28.0120782+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOFailures_SF/part-2019.csv?snapshot=2022-05-20T07%3A18%3A27.9716063Z",
+                    "pbi:refreshBookmark": "12/30/2019 12:01:43 PM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2019-01-01T00:00:00",
+                        "end": "2020-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2020",
+                    "refreshTime": "2022-05-20T07:18:28.6527143+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOFailures_SF/part-2020.csv?snapshot=2022-05-20T07%3A18%3A28.6312313Z",
+                    "pbi:refreshBookmark": "12/31/2020 3:26:25 AM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2020-01-01T00:00:00",
+                        "end": "2021-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2021",
+                    "refreshTime": "2022-05-20T07:18:28.5745914+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOFailures_SF/part-2021.csv?snapshot=2022-05-20T07%3A18%3A28.5482777Z",
+                    "pbi:refreshBookmark": "12/31/2021 1:36:56 AM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2021-01-01T00:00:00",
+                        "end": "2022-01-01T00:00:00"
+                    }
+                },
+                {
+                    "name": "IncrementalRefreshPolicyPartition-2022",
+                    "refreshTime": "2022-05-20T09:01:11.230533+00:00",
+                    "location": "https://wabiwuscpcdsa.blob.core.windows.net:443/83a2da2f-4c07-4cd9-9973-daa43cd8f607/CUM_WOFailures_SF/part-2022.csv?snapshot=2022-05-20T09%3A01%3A11.1956994Z",
+                    "pbi:refreshBookmark": "5/20/2022 8:48:45 AM",
+                    "pbi:source": {
+                        "$type": "RangePolicyPartitionSource",
+                        "start": "2022-01-01T00:00:00",
+                        "end": "2023-01-01T00:00:00"
+                    }
+                }
+            ]
+        }
+    ]
+}

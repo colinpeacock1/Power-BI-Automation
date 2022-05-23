@@ -3,10 +3,10 @@
     "description": "This dataflow contains Dimension and Fact Tables that are used in the Corporate Inventory Report which is located in the \n\nWorkspace - Corporate Inventory Reports\nWorkspace - Corporate Inventory DataModels",
     "version": "1.0",
     "culture": "en-US",
-    "modifiedTime": "2022-05-18T08:48:09.751285+00:00",
+    "modifiedTime": "2022-05-23T09:42:48.9895609+00:00",
     "pbi:mashup": {
         "fastCombine": true,
-        "allowNativeQueries": false,
+        "allowNativeQueries": true,
         "queriesMetadata": {
             "FACT_M20Detail": {
                 "queryId": "04f577b8-f4e2-4d49-8291-856c32c50733",
@@ -34,6 +34,18 @@
             "FACT_M20Detail_Flow": {
                 "queryId": "1cf65057-ebc4-4125-9949-72a5a80766f4",
                 "queryName": "FACT_M20Detail_Flow",
+                "queryGroupId": "bbd6ee21-6a56-4a8c-b80f-2aad18bde5a6",
+                "loadEnabled": true
+            },
+            "FACT_M20Detail_Snowflake": {
+                "queryId": "97a51e3a-ce7d-47be-b572-a6353037fce3",
+                "queryName": "FACT_M20Detail_Snowflake",
+                "queryGroupId": "bbd6ee21-6a56-4a8c-b80f-2aad18bde5a6",
+                "loadEnabled": true
+            },
+            "FACT_InventoryValue_Snowflake": {
+                "queryId": "8bd7cb56-3915-4673-995c-3cc0ac44dd24",
+                "queryName": "FACT_InventoryValue_Snowflake",
                 "queryGroupId": "bbd6ee21-6a56-4a8c-b80f-2aad18bde5a6",
                 "loadEnabled": true
             },
@@ -143,6 +155,31 @@
                 "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
                 "loadEnabled": true
             },
+            "KeepColumn": {
+                "queryId": "2f4ff8fa-1b12-40a2-a2b7-6ab7e8f858ac",
+                "queryName": "KeepColumn",
+                "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+            },
+            "RemoveColumn": {
+                "queryId": "c332635d-b620-4c74-b1e7-f5f74389d9f5",
+                "queryName": "RemoveColumn",
+                "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+            },
+            "SnowflakeQuery": {
+                "queryId": "f53ce5ac-0014-441f-a0f5-c540fdf4557c",
+                "queryName": "SnowflakeQuery",
+                "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+            },
+            "FilterRowsbyColumn": {
+                "queryId": "cc08daf4-2d5e-4da7-b970-d2acd9831a4c",
+                "queryName": "FilterRowsbyColumn",
+                "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+            },
+            "FilterNRows": {
+                "queryId": "afd5b02b-0d56-4ee2-9c35-a0220a0bb1cb",
+                "queryName": "FilterNRows",
+                "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+            },
             "GetEntity": {
                 "queryId": "00aa1ccc-3354-4a12-92fa-d65ddc953bf4",
                 "queryName": "GetEntity",
@@ -181,6 +218,41 @@
             "pTBU": {
                 "queryId": "712aa63e-6676-42aa-9cfe-49f9254bd004",
                 "queryName": "pTBU",
+                "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+            },
+            "pServerName": {
+                "queryId": "9678b5e1-618d-4bed-8f47-a1e87cc65529",
+                "queryName": "pServerName",
+                "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+            },
+            "pWarehouse": {
+                "queryId": "f50e04c7-e91c-43ea-ac0e-154e3647e240",
+                "queryName": "pWarehouse",
+                "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+            },
+            "pRole": {
+                "queryId": "e7a0453e-71ac-4d6d-b576-c087fb422555",
+                "queryName": "pRole",
+                "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+            },
+            "pDatabase": {
+                "queryId": "6f2370f4-665d-4fdd-b09e-74757bd1d9d4",
+                "queryName": "pDatabase",
+                "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+            },
+            "pTextColumns": {
+                "queryId": "84ae23d9-f434-4633-ac64-d5a0658a06c2",
+                "queryName": "pTextColumns",
+                "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+            },
+            "pNumberColumns": {
+                "queryId": "0be1e274-784f-4b8a-95b0-6228b8506cf3",
+                "queryName": "pNumberColumns",
+                "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+            },
+            "pDateColumns": {
+                "queryId": "c34b9dae-2e82-4b86-a6a0-40e51b54f94f",
+                "queryName": "pDateColumns",
                 "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
             },
             "ListOfOrgs": {
@@ -230,14 +302,24 @@
                 "queryName": "INFO_DataUpdateInfoInventoryVelocity",
                 "queryGroupId": "d535d7f0-f50c-47a1-a1c5-b52444b9ad0e",
                 "loadEnabled": true
+            },
+            "GetColumnNames": {
+                "queryId": "f124556a-ff71-4757-89d1-938d689b772a",
+                "queryName": "GetColumnNames",
+                "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+            },
+            "SetColumnType": {
+                "queryId": "ef8083ec-f84e-4d39-8c4b-38e7454a9282",
+                "queryName": "SetColumnType",
+                "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
             }
         },
-        "document": "section Section1;\r\n[Description = \"many only and data has been grouped in snowflake.\"]\r\nshared FACT_M20Detail = let\n    Source = Csv.Document(File.Contents(pM20Detail),[Delimiter=\",\", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ENTITY\", type text}, {\"DEPT\", type text}, {\"ACCT\", type text}, {\"PROJ\", type text}, {\"M20_TBU\", type text}, {\"M20_PFC\", type text}, {\"INTERCO\", type text}, {\"ACCOUNT_DESC\", type text}, {\"GL_PERIOD\", type date}, {\"TRANS_DATE\", type datetime}, {\"TRAN_QTY\", type text}, {\"ACCOUNTED_DR\", type number}, {\"ACCOUNTED_CR\", type number}, {\"NET_ACCOUNTED_AMT\", type number}, {\"ACCOUNTED_NET_USD\", type number}}),\n    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Changed Type\", \"TRANS_DATE\", \"TRANS_DATE - Copy\"),\n    #\"Reordered Columns\" = Table.ReorderColumns(#\"Duplicated Column\",{\"ENTITY\", \"DEPT\", \"ACCT\", \"PROJ\", \"M20_TBU\", \"M20_PFC\", \"INTERCO\", \"ACCOUNT_DESC\", \"GL_PERIOD\", \"TRANS_DATE\", \"TRANS_DATE - Copy\", \"TRAN_QTY\", \"ACCOUNTED_DR\", \"ACCOUNTED_CR\", \"NET_ACCOUNTED_AMT\", \"ACCOUNTED_NET_USD\"}),\n    #\"Extracted Date\" = Table.TransformColumns(#\"Reordered Columns\",{{\"TRANS_DATE\", DateTime.Date, type date}}),\n    #\"Extracted Time\" = Table.TransformColumns(#\"Extracted Date\",{{\"TRANS_DATE - Copy\", DateTime.Time, type time}}),\n    TransTimeColumn = Table.RenameColumns(#\"Extracted Time\",{{\"TRANS_DATE - Copy\", \"TRANS_TIME\"}})\nin\n    TransTimeColumn;\r\nshared pM20Detail = \"C:\\Users\\PeacocCo\\Coherent, Inc\\Power BI Community - Projects\\Inventory\\2. Measure\\DataModels\\test\\data\\XXREP_M20_DETAIL_V.csv\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\n[Description = \"TABLENAME: XXREP_INVVALUE_V\"]\r\nshared FACT_InventoryValue = let\n    Source = Csv.Document(File.Contents(pInventoryValue),[Delimiter=\",\", Columns=86, Encoding=65001, QuoteStyle=QuoteStyle.None]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"INV_ORG_ID\", Int64.Type}, {\"INVENTORY_ITEM_ID\", Int64.Type}, {\"ITEM_ORG_ID_KEY\", type text}, {\"ITEM_ORG_CODE_KEY\", type text}, {\"OPERATING_UNIT_ID\", Int64.Type}, {\"ITEM_NUMBER\", type text}, {\"ITEM_TBU\", type text}, {\"ITEM_PRODUCT_FAMILY\", type text}, {\"SOURCE_TYPE\", type text}, {\"SUBINVENTORY_CODE\", type text}, {\"SUBINVENTORY_TYPE\", type text}, {\"ORGANIZATION_CODE\", type text}, {\"ENTITY\", Int64.Type}, {\"ACCOUNT\", Int64.Type}, {\"FIN_ENTITY\", Int64.Type}, {\"INV_QUANTITY\", Int64.Type}, {\"INV_BALANCE\", Int64.Type}, {\"INV_VALUE\", type number}, {\"INV_VALUE_USD\", type number}, {\"CURRENCY_CODE\", type text}, {\"CURRENCY_RATE\", type number}, {\"ITEM_COST\", type number}, {\"MATERIAL_COST\", type number}, {\"MATERIAL_OVERHEAD_COST\", type number}, {\"OUTSIDE_PROCESSING_COST\", type number}, {\"OVERHEAD_COST\", type number}, {\"RESOURCE_COST\", type number}, {\"TOTAL_COST\", type number}, {\"FISCAL_YEAR_ID\", Int64.Type}, {\"VALID_FLAG\", type text}, {\"COMMENTS\", type text}, {\"CREATION_DATE\", type datetimezone}, {\"CREATED_BY\", Int64.Type}, {\"FISCAL_WEEK_ID\", Int64.Type}, {\"FISCAL_WEEK\", type text}, {\"JE_SOURCE_CATEGORY\", type text}, {\"OPERATIONS_REPORTING\", type text}, {\"CS_DEMAND_SOURCE\", type text}, {\"CS_SUPPLY_SOURCE\", type text}, {\"ITEM_TYPE_CODE\", type text}, {\"EXCLUDE_FLAG\", type text}, {\"EXCLUDE_COMMENT\", type text}, {\"WIP_CLASS\", type text}, {\"WIP_CLASS_CODE\", Int64.Type}, {\"ITEM_TYPE\", type text}, {\"PLANNER_CODE\", type text}, {\"MAKE_BUY\", type text}, {\"ITEM_STATUS\", type text}, {\"ABC_CLASS\", type text}, {\"INV_STATUS\", type text}, {\"WIP_JOB_ID\", Int64.Type}, {\"ITEM_PRODUCT_LINE\", type text}, {\"ITEM_FORECAST_FIELD\", type text}, {\"ITEM_DESC\", type text}, {\"WIP_JOB_NO\", type text}, {\"ITEM_COST_USD\", Int64.Type}, {\"ORA_PRODUCT_LINE\", type text}, {\"CONC_REQ_ID\", Int64.Type}, {\"FIN_PRODUCT_LINE\", type text}, {\"ORA_FORECAST_FIELD\", type text}, {\"ORG_TBU\", type text}, {\"ORG_PRODUCT_FAMILY\", type text}, {\"ORG_PRODUCT_LINE\", type text}, {\"ORG_FORECAST_FIELD\", type text}, {\"ORG_CATEGORY_ID\", Int64.Type}, {\"PRODUCT_MAP_KEY\", type text}, {\"FIN_TBU\", type text}, {\"FIN_PFC\", type text}, {\"WEEK_START_DATE\", type datetime}, {\"WEEK_END_DATE\", type datetime}, {\"PERIOD_START_DATE\", type datetime}, {\"PERIOD_END_DATE\", type datetime}, {\"QUARTER_START_DATE\", type datetime}, {\"QUARTER_END_DATE\", type datetime}, {\"FISCAL_QUARTER\", type text}, {\"FISCAL_YEAR\", type text}, {\"MGT_PRODUCT_GROUP\", type text}, {\"MGT_SUB_PRODUCT_GROUP\", type text}, {\"BUSINESS_SEGMENT\", type text}, {\"ACCOUNT_NAME\", type text}, {\"ACCOUNT_DESC\", type text}, {\"ACCOUNT_TYPE\", type text}, {\"ACCOUNT_SUB_GROUP\", type text}, {\"ACCOUNT_GROUP\", type text}, {\"SUMMARY_ACCOUNT\", type text}, {\"INVVALUE_KEY\", type text}}),\n    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Changed Type\", \"CREATION_DATE\", \"CREATION_DATE - Copy\"),\n    #\"Extracted Time\" = Table.TransformColumns(#\"Duplicated Column\",{{\"CREATION_DATE - Copy\", DateTime.Time, type time}}),\n    #\"Renamed Columns\" = Table.RenameColumns(#\"Extracted Time\",{{\"CREATION_DATE - Copy\", \"CREATION_TIME\"}}),\n    #\"Extracted Date\" = Table.TransformColumns(#\"Renamed Columns\",{{\"CREATION_DATE\", DateTime.Date, type date}})\nin\n    #\"Extracted Date\";\r\n[Description = \"TABLENAME: XXREP_M20_DETAIL_V_ALL_ACCOUNTS\"]\r\nshared FACT_M20DetailAll = let\n    Source = Csv.Document(File.Contents(pM20DetailAll),[Delimiter=\",\", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ENTITY\", type text}, {\"DEPT\", type text}, {\"ACCT\", type text}, {\"PROJ\", type text}, {\"M20_TBU\", type text}, {\"M20_PFC\", type text}, {\"INTERCO\", type text}, {\"ACCOUNT_DESC\", type text}, {\"GL_PERIOD\", type date}, {\"TRANS_DATE\", type datetime}, {\"TRAN_QTY\", type text}, {\"ACCOUNTED_DR\", type number}, {\"ACCOUNTED_CR\", type number}, {\"NET_ACCOUNTED_AMT\", type number}, {\"ACCOUNTED_NET_USD\", type number}}),\n    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Changed Type\", \"TRANS_DATE\", \"TRANS_DATE - Copy\"),\n    #\"Extracted Time\" = Table.TransformColumns(#\"Duplicated Column\",{{\"TRANS_DATE - Copy\", DateTime.Time, type time}}),\n    #\"Renamed Columns\" = Table.RenameColumns(#\"Extracted Time\",{{\"TRANS_DATE - Copy\", \"TRANS_TIME\"}}),\n    #\"Extracted Date\" = Table.TransformColumns(#\"Renamed Columns\",{{\"TRANS_DATE\", DateTime.Date, type date}})\nin\n    #\"Extracted Date\";\r\nshared FACT_M20Detail_Flow = let\n    Entity = GetEntityFromWorkspace(pWorkSpace, \"M2.0 Detail Related\", \"M20_Detail\"),\n    FilterMaxNoOfRows = if pSetMaxRows > 0 then Table.FirstN(Entity, pSetMaxRows) else Entity,\n    FilterTBU = if List.IsEmpty(Text.Split(pTBU, \",\")) then Entity else Table.SelectRows(FilterMaxNoOfRows, each List.Contains(List.Buffer(Text.Split(pTBU, \",\")), [M20_TBU]))\nin\n    FilterTBU;\r\nshared pM20DetailAll = \"C:\\Users\\PeacocCo\\Coherent, Inc\\Power BI Community - Projects\\Inventory\\2. Measure\\DataModels\\test\\data\\XXREP_M20_DETAIL_V_ALL_ACCOUNTS.csv\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pInventoryValue = \"C:\\Users\\PeacocCo\\Coherent, Inc\\Power BI Community - Projects\\Inventory\\2. Measure\\DataModels\\test\\data\\XXREP_INVVALUE_V.csv\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared #\"DIM_Time Balance Week\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Time Balance Week\")\nin\n  Entity;\r\nshared #\"DIM_Financial Product Mapping\" = let\n    Source = GetEntity(\"Financial Product Mapping\")\nin  \n    Source;\r\nshared #\"DIM_GL Account Segment\" = let\n    Source = GetEntity(\"GL Account Segment\")\nin\n    Source;\r\nshared #\"DIM_GL Code Combinations\" = let\n    Source = GetEntity(\"GL Code Combinations\")\nin\n    Source;\r\nshared #\"DIM_GL Code Combinations Desc\" = let\n    Source = GetEntity(\"GL Code Combinations Desc\")\nin\n    Source;\r\nshared #\"DIM_GL Project Segment\" = let\n    Source = GetEntity(\"GL Project Segment\")\nin\n    Source;\r\n[Description = \"TABLENAME: Fiscal Calendar Days\"]\r\nshared DIM_Calendar = let\n    Source = GetEntity(\"Fiscal Calendar Days\")\nin\n    Source;\r\nshared #\"DIM_Fiscal Context\" = let\n    Source = GetEntity(\"Fiscal Context\")\nin\n    Source;\r\n[Description = \"TABLENAME: GL Department Segment\"]\r\nshared DIM_GLDepartment = let\n    Source = GetEntity(\"GL Department Segment\")\nin\n    Source;\r\nshared #\"DIM_Inventory Organizations\" = let\n    Source = GetEntity(\"Inventory Organizations\")\nin\n    Source;\r\nshared #\"DIM_Operating Units\" = let\n    Source = GetEntity(\"Operating Units\")\nin\n    Source;\r\nshared #\"DIM_Operating Unit Data Security\" = let\n    Source = GetEntity(\"Operating Unit Data Security\")\nin\n    Source;\r\nshared #\"Version History Model\" = let\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"FcyxCoMwFEbhV/nJXOUa7NJVKThEBUeRcmtuaDAa0ICvXx3PGb5xVEVOOamH0qR1Rs+MShTli+5VxeA39MJznJerm80nzwFJjoQ1WgmYd+EkFqdPPxhNcHFH3Q8DeLNgODlR+xWJv0EOuD2ueDftp+qM6VpYTuxCPC/c3J6apj8=\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Version Number\" = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes\" = _t, #\"Revision Type\" = _t]),\n    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Version Number\", type text}, {\"Revision Date/Time\", type datetime}, {\"Developer Name\", type text}, {\"Revision Notes\", type text}, {\"Revision Type\", type text}})\nin\n    #\"Changed Type\";\r\nshared #\"Version History Report\" = let\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"FcqxCoAgEIDhVzmcMy6xpbWpLVrDQeKoI1HJs16/Gv+Pf11V12KLqlEGjdHYa7TQ2QF/GlPgCDP5LW3n11MUFvYBst8JComuGR6WA4SKwM2l+lC+caGcLlHOvQ==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Version Number\" = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes\" = _t, #\"Revision Type\" = _t]),\n    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Version Number\", type text}, {\"Revision Date/Time\", type datetime}, {\"Developer Name\", type text}, {\"Revision Notes\", type text}, {\"Revision Type\", type text}})\nin\n    #\"Changed Type\";\r\nshared #\"Version History\" = let\n    Source = Table.Combine({#\"Version History Model\", #\"Version History Report\"})\nin\n    Source;\r\n[Description = \"TABLENAME: GL Entity Segment\"]\r\nshared DIM_GLEntity = let\n    Source = GetEntity(\"GL Entity Segment\")\nin\n    Source;\r\nshared GetEntity = let\n    // This function retrieves a table (Entity) from the given\n    // workspaceName and dataflowName which are pre-defined\n    // parameters \n    // Set the pWorkSpace and pDataFlow parameters before\n    // invoking this function\n    ReturnEntity = (pEntity as text) => let\n        Source = PowerBI.Dataflows(null),\n        UpperCaseWorkspace = Table.TransformColumns(Source, {{\"workspaceName\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Workspace = UpperCaseWorkspace{[workspaceName=Text.Upper(pWorkSpace)]}[Data],        \n        UpperCaseDataflow = Table.TransformColumns(Workspace, {{\"dataflowName\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Dataflow = UpperCaseDataflow{[dataflowName=Text.Upper(pDataFlow)]}[Data],        \n        UpperCaseEntity = Table.TransformColumns(Dataflow, {{\"entity\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Entity = UpperCaseEntity{[entity=Text.Upper(pEntity)]}[Data]\n    in\n        Entity\nin\n    ReturnEntity;\r\nshared GetEntityFromWorkspace = let\n    // This function retrieves a table (Entity) for the give\n    // workspaceName and dataflowName which are variables\n    // invoked in this function\n    ReturnEntity = (pWorkSpace as text, pDataFlow as text, pEntity as text) => let\n        Source = PowerBI.Dataflows(null),\n        UpperCaseWorkspace = Table.TransformColumns(Source, {{\"workspaceName\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Workspace = UpperCaseWorkspace{[workspaceName=Text.Upper(pWorkSpace)]}[Data],        \n        UpperCaseDataflow = Table.TransformColumns(Workspace, {{\"dataflowName\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Dataflow = UpperCaseDataflow{[dataflowName=Text.Upper(pDataFlow)]}[Data],        \n        UpperCaseEntity = Table.TransformColumns(Dataflow, {{\"entity\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Entity = UpperCaseEntity{[entity=Text.Upper(pEntity)]}[Data]\n    in\n        Entity\nin\n    ReturnEntity;\r\nshared pWorkSpace = \"COHR_DATAFLOWS\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pDataFlow = \"FIN_COMMON\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pFiscalCalendarDateFilter = 3 meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type number];\r\n[Description = \"Use this parameter to set values to Return Max No. of Rows#(lf)Set this value to 0 to disable\"]\r\nshared pSetMaxRows = 0 meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type number];\r\nshared pOrganizationOrgs = \"BCO\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pTBU = \"DPSS_Germany\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared ListOfOrgs = let\r\n  Source = pOrganizationOrgs,\r\n  GetListOfValues = Text.Split(Source, \",\"),\r\n  #\"Convert to table\" = Table.FromValue(GetListOfValues),\r\n  #\"Transform columns\" = Table.TransformColumnTypes(#\"Convert to table\", {{\"Value\", type text}}),\r\n  #\"Replace errors\" = Table.ReplaceErrorValues(#\"Transform columns\", {{\"Value\", null}})\r\nin\r\n  #\"Replace errors\";\r\n[Description = \"Coherent Fiscal Calendar.#(lf)Currently filtered to > 29th Sept. 2019\"]\r\nshared #\"DIM_Fiscal Calendar\" = let\n/*\nDIM_Fiscal Calendar is a modified view of the Fiscal Calendar where\n\nA date filter has been applied so that only dates after pFiscalCalendarDateFilter are included\nAdditional columns have been added Cal_Year_ofCW, Cal_Year_ofCW_Short\n*/\n    FiscalCalendarData = GetEntity(\"Fiscal Calendar Days\"),\n    TransformColumnTypes = Table.TransformColumnTypes(FiscalCalendarData,{{\"Calendar Day\", type date}, {\"Week Start Date\", type date}, {\"Week End Date\", type date}, {\"Period Start Date\", type date}, {\"Period End Date\", type date}, {\"Quarter Start Date\", type date}, {\"Quarter End Date\", type date}, {\"Year Start Date\", type date}, {\"Year End Date\", type date}, {\"Fiscal Week No\", Int64.Type}, {\"Fiscal Month Week No\", Int64.Type}, {\"Fiscal Qtr Week No\", Int64.Type}, {\"Period Year\", Int64.Type}, {\"Quarter No\", Int64.Type}, {\"Period No\", Int64.Type}, {\"Fiscal Day\", Int64.Type}, {\"FC_PERIOD_ID\", Int64.Type}, {\"FC_QUARTER_ID\", Int64.Type}, {\"FC_WEEK_ID\", Int64.Type}, {\"FC_YEAR_OFFSET\", Int64.Type}, {\"FC_QUARTER_OFFSET\", Int64.Type}, {\"FC_PERIOD_OFFSET\", Int64.Type}, {\"FC_WEEK_OFFSET\", Int64.Type}, {\"FC_DAYS_OFFSET\", Int64.Type}, {\"CALENDAR_YEAR\", Int64.Type}, {\"CALENDAR_MONTH\", Int64.Type}, {\"CALENDAR_ISO_WEEK\", Int64.Type}, {\"CALENDAR_US_WEEK\", Int64.Type}, {\"DAY_OF_WEEK\", Int64.Type}, {\"WORKING_DAY_FLAG\", Int64.Type}, {\"FISCAL_WEEK_INDICATOR_SORT\", Int64.Type}, {\"FISCAL_MONTH_INDICATOR_SORT\", Int64.Type}, {\"FISCAL_QUARTER_INDICATOR_SORT\", Int64.Type}, {\"FISCAL_YEAR_INDICATOR_SORT\", Int64.Type}}),\n    //Gets all dates from the year offset given by pFiscalCalendarDateFilter (default is set as 3 years)\n    SelectAllRowsAfterThisDate = \n    let\n        GetLastNYearsOfData = Table.AddColumn(TransformColumnTypes, \"PreviousNYears\", each Date.IsInPreviousNYears([Calendar Day], pFiscalCalendarDateFilter)),\n        GetCurrentYearsData = Table.AddColumn(GetLastNYearsOfData, \"CurrentFutureYears\", each [Calendar Day] >= Date.From(Date.StartOfYear(DateTime.FixedLocalNow()))),\n        SelectTheFilteredRows = Table.SelectRows(GetCurrentYearsData, each List.AnyTrue({[PreviousNYears], [CurrentFutureYears]})),\n        ReturnFinalValue = Table.RemoveColumns(SelectTheFilteredRows,{\"PreviousNYears\", \"CurrentFutureYears\"})\n    in\n        ReturnFinalValue,\n    RenameFiscalWeekColumns = Table.RenameColumns(SelectAllRowsAfterThisDate,{{\"Fiscal Week\", \"Fiscal Year Week\"}, {\"Fiscal Year Week\", \"Fiscal Week\"}}),\n    AddStartOfWeekCOlumn = Table.AddColumn(RenameFiscalWeekColumns, \"Start of Week\", each Date.StartOfWeek([Calendar Day]), type date),\n    #\"Inserted Year\" = Table.AddColumn(AddStartOfWeekCOlumn, \"Cal_Year_ofCW\", each Date.Year([Start of Week]), Int64.Type),\n    GetThe2DigitValueOfYear = Table.AddColumn(#\"Inserted Year\", \"Cal_Year_ofCW_Short\", each Text.End(Text.From([Cal_Year_ofCW]), 2), type number),\n    /*\n    Returns a column with the Year and CW combined and prefixes included\n    eg. Year = 2022 and CW = 26 then value returned is \"Y22_CW26\"\n    */\n    SetYearAndCWColumn = let \n        TextCalendarYear = Table.AddColumn(GetThe2DigitValueOfYear, \"TextCalendarYear\", each \"Y\" & Text.End(Text.From([Cal_Year_ofCW]), 2), type number),\n        TextCalendarISOWeek = Table.AddColumn(TextCalendarYear, \"TextCalendarISOWeek\", each \"_CW\" & Text.End(Text.From([CALENDAR_ISO_WEEK]), 2), type number),\n        CombineYearAndISOWeek = Table.AddColumn(TextCalendarISOWeek, \"CALENDAR_Year_CWiso\", each Text.Combine({[TextCalendarYear], Text.From([TextCalendarISOWeek])}), type text),\n        ReturnCalendarYearCWIso = Table.RemoveColumns(CombineYearAndISOWeek,{\"TextCalendarYear\", \"TextCalendarISOWeek\"})\n        in ReturnCalendarYearCWIso,\n    /*\n    Returns a column with the Year x 100 and CW added together\n    eg. Year = 2024 and CW = 26 then value returned is 202426\n    */\n    SetCalYearAndCWIDColumn = let\n    MultiplyCalYearCWBy100 = Table.AddColumn(SetYearAndCWColumn, \"Cal_Year_ofCWx100\", each [Cal_Year_ofCW] * 100, type number),\n    AddtheWeekToTheMultipliedValue = Table.AddColumn(MultiplyCalYearCWBy100, \"Cal_Year_CWiso_ID\", each [Cal_Year_ofCWx100] + [CALENDAR_ISO_WEEK], type number),\n    TransformTheColumnTypes = Table.TransformColumnTypes(AddtheWeekToTheMultipliedValue,{{\"Cal_Year_CWiso_ID\", Int64.Type}, {\"Cal_Year_ofCWx100\", Int64.Type}, {\"Cal_Year_ofCW_Short\", Int64.Type}}),\n    ReturnCalYearId = Table.RemoveColumns(TransformTheColumnTypes,{\"Cal_Year_ofCWx100\"})\n    in \n        ReturnCalYearId,\n    AddPrefixToCalendarISOWeek = Table.AddColumn(SetCalYearAndCWIDColumn, \"Cal_CW\", each \"CW\" & Text.From([CALENDAR_ISO_WEEK]), type text),\n    KeepColumns = Table.SelectColumns(AddPrefixToCalendarISOWeek,{\"Period Set Name\", \"Calendar Day\", \"Fiscal Year Week\", \"Fiscal Week\", \"FISCAL_WEEK_DISP\", \"FISCAL_MONTH_SORT_VALUE\", \"FISCAL_QUARTER_DISP\", \"Fiscal Week No\", \"Fiscal Month Week No\", \"FISCAL_QTR_WEEK\", \"Fiscal Qtr Week No\", \"GL Period\", \"PQ_LAST_GL_PERIOD\", \"Period Year\", \"Fiscal Year\", \"Quarter No\", \"Fiscal Quarter\", \"Fiscal Year Quarter\", \"PRIOR_FYFQ\", \"PERIOD_NAME\", \"Period No\", \"Fiscal Day\", \"Week Start Date\", \"Week End Date\", \"Period Start Date\", \"Period End Date\", \"Quarter Start Date\", \"Quarter End Date\", \"Year Start Date\", \"Year End Date\", \"Fiscal Period Month\", \"FC_PERIOD_ID\", \"FC_QUARTER_ID\", \"FC_WEEK_ID\", \"FC_YEAR_OFFSET\", \"FC_QUARTER_OFFSET\", \"FC_PERIOD_OFFSET\", \"FC_WEEK_OFFSET\", \"FC_DAYS_OFFSET\", \"FC_HALF\", \"Next Quarter First Fiscal Week\", \"Prior Qtr Last Fiscal Week\", \"CALENDAR_YEAR\", \"CALENDAR_MONTH\", \"CALENDAR_YEARMONTHID\", \"CALENDAR_MONTHNAME\", \"CALENDAR_MONTHNAMESHORT\", \"CALENDAR_ISO_WEEK\", \"CALENDAR_US_WEEK\", \"CALENDAR_YEAR_SHORT\", \"CALENDAR_MTH_YEAR\", \"DAY_NAME\", \"DAY_OF_WEEK\", \"WORKING_DAY_FLAG\", \"CQ_LAST_FISCAL_WEEK\", \"Row Creation Date\", \"Week End Flag\", \"Month End Flag\", \"Quarter End Flag\", \"Year End Flag\", \"FISCAL_WEEK_INDICATOR\", \"FISCAL_WEEK_INDICATOR_SORT\", \"FISCAL_MONTH_INDICATOR\", \"FISCAL_MONTH_INDICATOR_SORT\", \"FISCAL_QUARTER_INDICATOR\", \"FISCAL_QUARTER_INDICATOR_SORT\", \"FISCAL_YEAR_INDICATOR\", \"FISCAL_YEAR_INDICATOR_SORT\", \"Refresh Date\", \"Start of Week\", \"Cal_Year_ofCW\", \"Cal_Year_ofCW_Short\", \"CALENDAR_Year_CWiso\", \"Cal_Year_CWiso_ID\", \"Cal_CW\"})\nin\n    KeepColumns;\r\nshared #\"FACT_LT Grouping Summary\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"LT Grouping Summary\"),\n  FilterMaxNoOfRows = if pSetMaxRows > 0 then Table.FirstN(Entity, pSetMaxRows) else Entity,\n  FilterOrganization = if List.IsEmpty(Table.ToList(ListOfOrgs)) then Entity else Table.SelectRows(FilterMaxNoOfRows, each (List.Contains(List.Buffer(Table.ToList(ListOfOrgs)), [ORGANIZATION_CODE])))\nin\n  FilterOrganization;\r\nshared #\"FACT_Inventory Velocity Summary\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Inventory Velocity Summary\"),\n  FilterMaxNoOfRows = if pSetMaxRows > 0 then Table.FirstN(Entity, pSetMaxRows) else Entity,\n  FilterOrganization = if List.IsEmpty(Table.ToList(ListOfOrgs)) then Entity else Table.SelectRows(FilterMaxNoOfRows, each (List.Contains(List.Buffer(Table.ToList(ListOfOrgs)), [ORGANIZATION_CODE]))),\n  KeepListOfColumns = Table.SelectColumns(FilterOrganization,{\"ACTIVE_OR_INACTIVE\", \"CURRENT_MRP_ABC_CLASS\", \"DEMAND_SOURCE\", \"ENTITY\", \"FISCAL_WEEK_ID\", \"FISCAL_WEEK_KEY\", \"ITEM_PRODUCT_FAMILY\", \"ITEM_STATUS\", \"ITEM_TBU\", \"ITEM_TYPE\", \"ON_ORDER_DAYS_OF_SUPPLY\", \"ON_ORDER_DAYS_OF_SUPPLY_COUNT\", \"ON_ORDER_VALUE\", \"ON_ORDER_VALUE_USD\", \"ONHAND_DAYS_OF_SUPPLY\", \"ONHAND_VALUE\", \"ONHAND_VALUE_USD\", \"OPERATIONS_REPORTING\", \"ORGANIZATION_CODE\", \"PERIOD_END_DATE\", \"PERIOD_NAME\", \"PERIOD_YEAR\", \"PRODUCT_LINE\", \"PRODUCT_MAP_KEY\", \"RECORD_COUNT\", \"SAFETY_STOCK_VALUE\", \"SAFETY_STOCK_VALUE_USD\", \"SEC_REPORTING\", \"SUPPLY_SOURCE\", \"WEEK_END_DATE\", \"WEEK_START_DATE\", \"WIP_DAYS_OF_SUPPLY\", \"WIP_DAYS_OF_SUPPLY_COUNT\", \"WIP_VALUE\", \"WIP_VALUE_USD\"})\nin\n  KeepListOfColumns;\r\nshared #\"FACT_Inventory Velocity Details\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Inventory Velocity\"),\n  FilterMaxNoOfRows = if pSetMaxRows > 0 then Table.FirstN(Entity, pSetMaxRows) else Entity,\n  FilterOrganization = if List.IsEmpty(Table.ToList(ListOfOrgs)) then Entity else Table.SelectRows(FilterMaxNoOfRows, each (List.Contains(List.Buffer(Table.ToList(ListOfOrgs)), [ORGANIZATION_CODE]))),\n  KeepTheListOfColumns = Table.SelectColumns(FilterMaxNoOfRows,{\"ACTIVE_OR_INACTIVE\", \"ACTIVE_SUPPLIER_LT\", \"AVG_DAILY_DEMAND_ELSE_USAGE\", \"BLANKET_DAYS_SUPPLY_REMAINING\", \"CURRENT_ABC_CLASS\", \"DATE_RUN\", \"FISCAL_WEEK_KEY\", \"INTRANSIT_VALUE\", \"INVENTORY_VALUE\", \"INVENTORY_VALUE_USD\", \"ITEM_COST\", \"ITEM_COST_USD\", \"ITEM_DESCRIPTION\", \"ITEM_NUMBER\", \"ITEM_TYPE\", \"KANBAN_ITEM\", \"MIN_MAX_ITEM\", \"ON_HAND_DAYS_OF_SUPPLY\", \"ON_ORDER_DAYS_OF_SUPPLY\", \"ON_ORDER_VALUE_USD\", \"ONORDER_PO_QTY\", \"ONORDER_PO_VALUE\", \"ONORDER_PO_VALUE_USD\", \"OPEN_BLANKETS\", \"ORGANIZATION_CODE\", \"PLANNING_METHOD\", \"PROJ_SPEND_NEXT_26_WEEKS_USD\", \"SAFETY_STOCK_QTY\", \"SAFETY_STOCK_VALUE\", \"SAFETY_STOCK_VALUE_USD\", \"SEC_REPORTING\", \"SR_VNDR_SRC_ORG\", \"SUM_USD_REMAINING_AMOUNT\", \"TARGET_DAYS_OF_SUPPLY\", \"TARGET_DAYS_OF_SUPPLY_SAVINGS\", \"TARGET_DAYS_OF_SUPPLY_VALUE\", \"TOTAL_GR_26_WEEKS\", \"TOTAL_ONHAND_QTY\", \"WIP_DAYS_OF_SUPPLY\", \"WIP_IN_PROCESS_QTY\", \"WIP_IN_PROCESS_VALUE\", \"WIP_IN_PROCESS_VALUE_USD\"}),\n  SortTheColumns = Table.ReorderColumns(KeepTheListOfColumns,{\"ACTIVE_OR_INACTIVE\", \"ACTIVE_SUPPLIER_LT\", \"AVG_DAILY_DEMAND_ELSE_USAGE\", \"BLANKET_DAYS_SUPPLY_REMAINING\", \"CURRENT_ABC_CLASS\", \"DATE_RUN\", \"FISCAL_WEEK_KEY\", \"INTRANSIT_VALUE\", \"ITEM_COST\", \"ITEM_COST_USD\", \"ITEM_DESCRIPTION\", \"ITEM_NUMBER\", \"ITEM_TYPE\", \"KANBAN_ITEM\", \"MIN_MAX_ITEM\", \"OPEN_BLANKETS\", \"ON_HAND_DAYS_OF_SUPPLY\", \"ON_ORDER_DAYS_OF_SUPPLY\", \"ON_ORDER_VALUE_USD\", \"ONORDER_PO_QTY\", \"ONORDER_PO_VALUE\", \"ONORDER_PO_VALUE_USD\", \"ORGANIZATION_CODE\", \"PLANNING_METHOD\", \"SAFETY_STOCK_QTY\", \"SAFETY_STOCK_VALUE\", \"SAFETY_STOCK_VALUE_USD\", \"SEC_REPORTING\", \"SR_VNDR_SRC_ORG\", \"TARGET_DAYS_OF_SUPPLY\", \"TARGET_DAYS_OF_SUPPLY_SAVINGS\", \"TOTAL_GR_26_WEEKS\", \"TOTAL_ONHAND_QTY\", \"WIP_DAYS_OF_SUPPLY\", \"WIP_IN_PROCESS_QTY\", \"WIP_IN_PROCESS_VALUE\", \"WIP_IN_PROCESS_VALUE_USD\"}),\n  FillEmptyCellValuesWithZero = Table.ReplaceValue(SortTheColumns,\"\",\"0\",Replacer.ReplaceValue,{\"OPEN_BLANKETS\"}),\n  ConvertColumnsToInt = Table.TransformColumnTypes(FillEmptyCellValuesWithZero,{{\"KANBAN_ITEM\", Int64.Type}, {\"MIN_MAX_ITEM\", Int64.Type}, {\"OPEN_BLANKETS\", Int64.Type}})\nin\n  ConvertColumnsToInt;\r\nshared #\"DIM_Sort Values\" = let\r\n  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"jZPbToQwEIZfZcKVJuvFuuvh1oAHorAI62pC9mKErhLJlJR2lbcXt6HRWA6XdL5/Ot80pKlzj/SK5MycqESigt4gYPKd5+3J3NnOUico6CTALytxqok4gq5mxRYHLORSYyy3UkvTDCkHb6zpmcGvMlnsWXvk056R5KKBRKJUtXFYv4SDlPbwww34hAOcFlkRrETOBHjY1MB3kKiqKpu2HjCslWDwqJBkIRtj1RMBlyuS9qD2e/ajSdec99BDN1x0o90dFj7hlss/iQ2WisHRU+Id/8JdJQSjrDHLN+6jvH6GBHdM/iydZx/jmYURH0WXtukfeIalofpE7CbTsv1W0/L/DKfFtO3Nrd9+JNcuxKziQuq/ad61tNT0uDF+WmrtKNtv\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Value = _t, Type = _t, #\"Sort Order\" = _t]),\r\n  #\"Changed column type\" = Table.TransformColumnTypes(Source, {{\"Value\", type text}, {\"Type\", type text}, {\"Sort Order\", Int64.Type}})\r\nin\r\n  #\"Changed column type\";\r\nshared #\"Version History Dataflow\" = let\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"NY0xD4IwFAb/ypfOQApRB1eNiZs7YXiWh75Y2qZ9hL8vGh3vhru+N21jG2sq09muq+2+bg9od0f7UafoJeDG5KJ7bXwNokIeykVxJqXJxxUuMymPWEWfuJBTKN09lwqjzByKxPAzoDAiUaaZlXNBYa2XhCnmb1LCA2nJKRYu2+0/MMPwBg==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Version Number\" = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes\" = _t, #\"Revision Type\" = _t]),\n    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Version Number\", type text}, {\"Revision Date/Time\", type datetime}, {\"Developer Name\", type text}, {\"Revision Notes\", type text}, {\"Revision Type\", type text}})\nin\n    #\"Changed Type\";\r\nshared INFO_DataUpdateInfoInventoryVelocity = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Data Update Info\")\nin\n  Entity;\r\n"
+        "document": "section Section1;\r\n[Description = \"many only and data has been grouped in snowflake.\"]\r\nshared FACT_M20Detail = let\n    Source = Csv.Document(File.Contents(pM20Detail),[Delimiter=\",\", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ENTITY\", type text}, {\"DEPT\", type text}, {\"ACCT\", type text}, {\"PROJ\", type text}, {\"M20_TBU\", type text}, {\"M20_PFC\", type text}, {\"INTERCO\", type text}, {\"ACCOUNT_DESC\", type text}, {\"GL_PERIOD\", type date}, {\"TRANS_DATE\", type datetime}, {\"TRAN_QTY\", type text}, {\"ACCOUNTED_DR\", type number}, {\"ACCOUNTED_CR\", type number}, {\"NET_ACCOUNTED_AMT\", type number}, {\"ACCOUNTED_NET_USD\", type number}}),\n    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Changed Type\", \"TRANS_DATE\", \"TRANS_DATE - Copy\"),\n    #\"Reordered Columns\" = Table.ReorderColumns(#\"Duplicated Column\",{\"ENTITY\", \"DEPT\", \"ACCT\", \"PROJ\", \"M20_TBU\", \"M20_PFC\", \"INTERCO\", \"ACCOUNT_DESC\", \"GL_PERIOD\", \"TRANS_DATE\", \"TRANS_DATE - Copy\", \"TRAN_QTY\", \"ACCOUNTED_DR\", \"ACCOUNTED_CR\", \"NET_ACCOUNTED_AMT\", \"ACCOUNTED_NET_USD\"}),\n    #\"Extracted Date\" = Table.TransformColumns(#\"Reordered Columns\",{{\"TRANS_DATE\", DateTime.Date, type date}}),\n    #\"Extracted Time\" = Table.TransformColumns(#\"Extracted Date\",{{\"TRANS_DATE - Copy\", DateTime.Time, type time}}),\n    TransTimeColumn = Table.RenameColumns(#\"Extracted Time\",{{\"TRANS_DATE - Copy\", \"TRANS_TIME\"}})\nin\n    TransTimeColumn;\r\nshared pM20Detail = \"C:\\Users\\PeacocCo\\Coherent, Inc\\Power BI Community - Projects\\Inventory\\2. Measure\\DataModels\\test\\data\\XXREP_M20_DETAIL_V.csv\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\n[Description = \"TABLENAME: XXREP_INVVALUE_V\"]\r\nshared FACT_InventoryValue = let\n    Source = Csv.Document(File.Contents(pInventoryValue),[Delimiter=\",\", Columns=86, Encoding=65001, QuoteStyle=QuoteStyle.None]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"INV_ORG_ID\", Int64.Type}, {\"INVENTORY_ITEM_ID\", Int64.Type}, {\"ITEM_ORG_ID_KEY\", type text}, {\"ITEM_ORG_CODE_KEY\", type text}, {\"OPERATING_UNIT_ID\", Int64.Type}, {\"ITEM_NUMBER\", type text}, {\"ITEM_TBU\", type text}, {\"ITEM_PRODUCT_FAMILY\", type text}, {\"SOURCE_TYPE\", type text}, {\"SUBINVENTORY_CODE\", type text}, {\"SUBINVENTORY_TYPE\", type text}, {\"ORGANIZATION_CODE\", type text}, {\"ENTITY\", Int64.Type}, {\"ACCOUNT\", Int64.Type}, {\"FIN_ENTITY\", Int64.Type}, {\"INV_QUANTITY\", Int64.Type}, {\"INV_BALANCE\", Int64.Type}, {\"INV_VALUE\", type number}, {\"INV_VALUE_USD\", type number}, {\"CURRENCY_CODE\", type text}, {\"CURRENCY_RATE\", type number}, {\"ITEM_COST\", type number}, {\"MATERIAL_COST\", type number}, {\"MATERIAL_OVERHEAD_COST\", type number}, {\"OUTSIDE_PROCESSING_COST\", type number}, {\"OVERHEAD_COST\", type number}, {\"RESOURCE_COST\", type number}, {\"TOTAL_COST\", type number}, {\"FISCAL_YEAR_ID\", Int64.Type}, {\"VALID_FLAG\", type text}, {\"COMMENTS\", type text}, {\"CREATION_DATE\", type datetimezone}, {\"CREATED_BY\", Int64.Type}, {\"FISCAL_WEEK_ID\", Int64.Type}, {\"FISCAL_WEEK\", type text}, {\"JE_SOURCE_CATEGORY\", type text}, {\"OPERATIONS_REPORTING\", type text}, {\"CS_DEMAND_SOURCE\", type text}, {\"CS_SUPPLY_SOURCE\", type text}, {\"ITEM_TYPE_CODE\", type text}, {\"EXCLUDE_FLAG\", type text}, {\"EXCLUDE_COMMENT\", type text}, {\"WIP_CLASS\", type text}, {\"WIP_CLASS_CODE\", Int64.Type}, {\"ITEM_TYPE\", type text}, {\"PLANNER_CODE\", type text}, {\"MAKE_BUY\", type text}, {\"ITEM_STATUS\", type text}, {\"ABC_CLASS\", type text}, {\"INV_STATUS\", type text}, {\"WIP_JOB_ID\", Int64.Type}, {\"ITEM_PRODUCT_LINE\", type text}, {\"ITEM_FORECAST_FIELD\", type text}, {\"ITEM_DESC\", type text}, {\"WIP_JOB_NO\", type text}, {\"ITEM_COST_USD\", Int64.Type}, {\"ORA_PRODUCT_LINE\", type text}, {\"CONC_REQ_ID\", Int64.Type}, {\"FIN_PRODUCT_LINE\", type text}, {\"ORA_FORECAST_FIELD\", type text}, {\"ORG_TBU\", type text}, {\"ORG_PRODUCT_FAMILY\", type text}, {\"ORG_PRODUCT_LINE\", type text}, {\"ORG_FORECAST_FIELD\", type text}, {\"ORG_CATEGORY_ID\", Int64.Type}, {\"PRODUCT_MAP_KEY\", type text}, {\"FIN_TBU\", type text}, {\"FIN_PFC\", type text}, {\"WEEK_START_DATE\", type datetime}, {\"WEEK_END_DATE\", type datetime}, {\"PERIOD_START_DATE\", type datetime}, {\"PERIOD_END_DATE\", type datetime}, {\"QUARTER_START_DATE\", type datetime}, {\"QUARTER_END_DATE\", type datetime}, {\"FISCAL_QUARTER\", type text}, {\"FISCAL_YEAR\", type text}, {\"MGT_PRODUCT_GROUP\", type text}, {\"MGT_SUB_PRODUCT_GROUP\", type text}, {\"BUSINESS_SEGMENT\", type text}, {\"ACCOUNT_NAME\", type text}, {\"ACCOUNT_DESC\", type text}, {\"ACCOUNT_TYPE\", type text}, {\"ACCOUNT_SUB_GROUP\", type text}, {\"ACCOUNT_GROUP\", type text}, {\"SUMMARY_ACCOUNT\", type text}, {\"INVVALUE_KEY\", type text}}),\n    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Changed Type\", \"CREATION_DATE\", \"CREATION_DATE - Copy\"),\n    #\"Extracted Time\" = Table.TransformColumns(#\"Duplicated Column\",{{\"CREATION_DATE - Copy\", DateTime.Time, type time}}),\n    #\"Renamed Columns\" = Table.RenameColumns(#\"Extracted Time\",{{\"CREATION_DATE - Copy\", \"CREATION_TIME\"}}),\n    #\"Extracted Date\" = Table.TransformColumns(#\"Renamed Columns\",{{\"CREATION_DATE\", DateTime.Date, type date}})\nin\n    #\"Extracted Date\";\r\n[Description = \"TABLENAME: XXREP_M20_DETAIL_V_ALL_ACCOUNTS\"]\r\nshared FACT_M20DetailAll = let\n    Source = Csv.Document(File.Contents(pM20DetailAll),[Delimiter=\",\", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ENTITY\", type text}, {\"DEPT\", type text}, {\"ACCT\", type text}, {\"PROJ\", type text}, {\"M20_TBU\", type text}, {\"M20_PFC\", type text}, {\"INTERCO\", type text}, {\"ACCOUNT_DESC\", type text}, {\"GL_PERIOD\", type date}, {\"TRANS_DATE\", type datetime}, {\"TRAN_QTY\", type text}, {\"ACCOUNTED_DR\", type number}, {\"ACCOUNTED_CR\", type number}, {\"NET_ACCOUNTED_AMT\", type number}, {\"ACCOUNTED_NET_USD\", type number}}),\n    #\"Duplicated Column\" = Table.DuplicateColumn(#\"Changed Type\", \"TRANS_DATE\", \"TRANS_DATE - Copy\"),\n    #\"Extracted Time\" = Table.TransformColumns(#\"Duplicated Column\",{{\"TRANS_DATE - Copy\", DateTime.Time, type time}}),\n    #\"Renamed Columns\" = Table.RenameColumns(#\"Extracted Time\",{{\"TRANS_DATE - Copy\", \"TRANS_TIME\"}}),\n    #\"Extracted Date\" = Table.TransformColumns(#\"Renamed Columns\",{{\"TRANS_DATE\", DateTime.Date, type date}})\nin\n    #\"Extracted Date\";\r\nshared FACT_M20Detail_Flow = let\n    Entity = GetEntityFromWorkspace(pWorkSpace, \"M2.0 Detail Related\", \"M20_Detail\"),\n    FilterRows = FilterNRows(Entity, pSetMaxRows),\n    FilterTBUs = FilterRowsbyColumn(FilterRows, pTBU, \"M20_TBU\"),\n    RemoveCols = RemoveColumn(FilterTBUs, \"COST_ELEMENT,ACCOUNT_DESC\")\nin\n    RemoveCols;\r\nshared FACT_M20Detail_Snowflake = let\n  Source = SnowflakeQuery(\"SELECT \n    m2.ENTITY,\n    m2.DEPT,\n    m2.ACCT,\n    m2.PROJ,\n    m2.HFM_PRODUCT,\n    m2.ALT_HFM_PRODUCT,\n    m2.M20_TBU,\n    m2.M20_PFC,\n    m2.INTERCO,\n    m2.ACCOUNT_DESC,\n    m2.GL_PERIOD,\n    m2.TRANS_DATE,\n    SUM(TRAN_QTY) AS TRAN_QTY,\n    SUM(ACCOUNTED_DR) as ACCOUNTED_DR,\n    SUM(ACCOUNTED_CR) AS ACCOUNTED_CR,\n    SUM(NET_ACCOUNTED_AMT) as NET_ACCOUNTED_AMT,\n    SUM(ACCOUNTED_NET_USD) AS ACCOUNTED_NET_USD  \nFROM PROD_DB.APPS.XXREP_M20_DETAIL_V as m2\nWHERE \n    ((ACCT >= '40000' AND ACCT <= '49999') OR       -- COGS\n    (ACCT >= '50000' AND ACCT <= '89999'))          -- Department Expenses\n    AND UPPER(M20_TBU) = 'DPSS_GERMANY'\n    AND regexp_instr(GL_PERIOD, '21') > 0 \nGROUP BY\n    m2.ENTITY,\n    m2.DEPT,\n    m2.ACCT,\n    m2.PROJ,\n    m2.HFM_PRODUCT,\n    m2.ALT_HFM_PRODUCT,\n    m2.M20_TBU,\n    m2.M20_PFC,\n    m2.INTERCO,\n    m2.ACCOUNT_DESC,\n    m2.TRANS_DATE,\n    m2.GL_PERIOD\"),\n  FilterRows = FilterNRows(Source, pSetMaxRows),\n  FilterTBUs = FilterRowsbyColumn(FilterRows, pTBU, \"M20_TBU\"),\n  ColumnText = SetColumnType(FilterTBUs, pTextColumns, \"text\"),\n  ColumnInt = SetColumnType(ColumnText, pNumberColumns, \"number\"),\n  ColumnDate = SetColumnType(ColumnInt, pDateColumns, \"date\")\nin\n  ColumnDate;\r\nshared FACT_InventoryValue_Snowflake = let\n  Source = SnowflakeQuery(\"SELECT \n    INV_ORG_ID,\n\tINVENTORY_ITEM_ID,\n\tITEM_ORG_ID_KEY,\n\tITEM_ORG_CODE_KEY,\n\tOPERATING_UNIT_ID,\n\tITEM_NUMBER,\n\tITEM_TBU,\n\tITEM_PRODUCT_FAMILY,\n\tSOURCE_TYPE,\n\tSUBINVENTORY_CODE,\n\tSUBINVENTORY_TYPE,\n\tORGANIZATION_CODE,\n\tENTITY,\n\tACCOUNT,\n\tFIN_ENTITY,\n\tINV_QUANTITY,\n\tINV_BALANCE,\n\tINV_VALUE,\n\tINV_VALUE_USD,\n\tCURRENCY_CODE,\n\tCURRENCY_RATE,\n\tITEM_COST,\n\tMATERIAL_COST,\n\tMATERIAL_OVERHEAD_COST,\n\tOUTSIDE_PROCESSING_COST,\n\tOVERHEAD_COST,\n\tRESOURCE_COST,\n\tTOTAL_COST,\n\tFISCAL_YEAR_ID,\n\tVALID_FLAG,\n\tCOMMENTS,\n\tCREATION_DATE,\n\tCREATED_BY,\n\tFISCAL_WEEK_ID,\n\tFISCAL_WEEK,\n\tJE_SOURCE_CATEGORY,\n\tOPERATIONS_REPORTING,\n\tCS_DEMAND_SOURCE,\n\tCS_SUPPLY_SOURCE,\n\tITEM_TYPE_CODE,\n\tEXCLUDE_FLAG,\n\tEXCLUDE_COMMENT,\n\tWIP_CLASS,\n\tWIP_CLASS_CODE,\n\tITEM_TYPE,\n\tPLANNER_CODE,\n\tMAKE_BUY,\n\tITEM_STATUS,\n\tABC_CLASS,\n\tINV_STATUS,\n\tWIP_JOB_ID,\n\tITEM_PRODUCT_LINE,\n\tITEM_FORECAST_FIELD,\n\tITEM_DESC,\n\tWIP_JOB_NO,\n\tITEM_COST_USD,\n\tORA_PRODUCT_LINE,\n\tCONC_REQ_ID,\n\tFIN_PRODUCT_LINE,\n\tORA_FORECAST_FIELD,\n\tORG_TBU,\n\tORG_PRODUCT_FAMILY,\n\tORG_PRODUCT_LINE,\n\tORG_FORECAST_FIELD,\n\tORG_CATEGORY_ID,\n\tPRODUCT_MAP_KEY,\n\tFIN_TBU,\n\tFIN_PFC,\n\tWEEK_START_DATE,\n\tWEEK_END_DATE,\n\tPERIOD_START_DATE,\n\tPERIOD_END_DATE,\n\tQUARTER_START_DATE,\n\tQUARTER_END_DATE,\n\tFISCAL_QUARTER,\n\tFISCAL_YEAR,\n\tMGT_PRODUCT_GROUP,\n\tMGT_SUB_PRODUCT_GROUP,\n\tBUSINESS_SEGMENT,\n\tACCOUNT_NAME,\n\tACCOUNT_DESC,\n\tACCOUNT_TYPE,\n\tACCOUNT_SUB_GROUP,\n\tACCOUNT_GROUP,\n\tSUMMARY_ACCOUNT,\n\tINVVALUE_KEY\nFROM PROD_DB.APPS.XXREP_INVVALUE_V as inv\nWHERE\n    ACCOUNT LIKE '05%' AND ACCOUNT NOT IN ('05499', '05599')\n    -- AND fdv.GL_PERIOD LIKE '%21%'\n    -- AND inv.FISCAL_WEEK LIKE '2021 - WK_52'\n    AND UPPER(inv.SOURCE_TYPE) NOT IN ('GL BALANCE SOURCE')\"),\n  FilterRows = FilterNRows(Source, pSetMaxRows),\n  FilterTBU = FilterRowsbyColumn(FilterRows, pTBU, \"FIN_TBU\")\nin\n  FilterTBU;\r\nshared pM20DetailAll = \"C:\\Users\\PeacocCo\\Coherent, Inc\\Power BI Community - Projects\\Inventory\\2. Measure\\DataModels\\test\\data\\XXREP_M20_DETAIL_V_ALL_ACCOUNTS.csv\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pInventoryValue = \"C:\\Users\\PeacocCo\\Coherent, Inc\\Power BI Community - Projects\\Inventory\\2. Measure\\DataModels\\test\\data\\XXREP_INVVALUE_V.csv\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared #\"DIM_Time Balance Week\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Time Balance Week\")\nin\n  Entity;\r\nshared #\"DIM_Financial Product Mapping\" = let\n    Source = GetEntity(\"Financial Product Mapping\")\nin  \n    Source;\r\nshared #\"DIM_GL Account Segment\" = let\n    Source = GetEntity(\"GL Account Segment\")\nin\n    Source;\r\nshared #\"DIM_GL Code Combinations\" = let\n    Source = GetEntity(\"GL Code Combinations\")\nin\n    Source;\r\nshared #\"DIM_GL Code Combinations Desc\" = let\n    Source = GetEntity(\"GL Code Combinations Desc\")\nin\n    Source;\r\nshared #\"DIM_GL Project Segment\" = let\n    Source = GetEntity(\"GL Project Segment\")\nin\n    Source;\r\n[Description = \"TABLENAME: Fiscal Calendar Days\"]\r\nshared DIM_Calendar = let\n    Source = GetEntity(\"Fiscal Calendar Days\")\nin\n    Source;\r\nshared #\"DIM_Fiscal Context\" = let\n    Source = GetEntity(\"Fiscal Context\")\nin\n    Source;\r\n[Description = \"TABLENAME: GL Department Segment\"]\r\nshared DIM_GLDepartment = let\n    Source = GetEntity(\"GL Department Segment\")\nin\n    Source;\r\nshared #\"DIM_Inventory Organizations\" = let\n    Source = GetEntity(\"Inventory Organizations\")\nin\n    Source;\r\nshared #\"DIM_Operating Units\" = let\n    Source = GetEntity(\"Operating Units\")\nin\n    Source;\r\nshared #\"DIM_Operating Unit Data Security\" = let\n    Source = GetEntity(\"Operating Unit Data Security\")\nin\n    Source;\r\nshared #\"Version History Model\" = let\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"FcyxCoMwFEbhV/nJXOUa7NJVKThEBUeRcmtuaDAa0ICvXx3PGb5xVEVOOamH0qR1Rs+MShTli+5VxeA39MJznJerm80nzwFJjoQ1WgmYd+EkFqdPPxhNcHFH3Q8DeLNgODlR+xWJv0EOuD2ueDftp+qM6VpYTuxCPC/c3J6apj8=\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Version Number\" = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes\" = _t, #\"Revision Type\" = _t]),\n    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Version Number\", type text}, {\"Revision Date/Time\", type datetime}, {\"Developer Name\", type text}, {\"Revision Notes\", type text}, {\"Revision Type\", type text}})\nin\n    #\"Changed Type\";\r\nshared #\"Version History Report\" = let\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"FcqxCoAgEIDhVzmcMy6xpbWpLVrDQeKoI1HJs16/Gv+Pf11V12KLqlEGjdHYa7TQ2QF/GlPgCDP5LW3n11MUFvYBst8JComuGR6WA4SKwM2l+lC+caGcLlHOvQ==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Version Number\" = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes\" = _t, #\"Revision Type\" = _t]),\n    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Version Number\", type text}, {\"Revision Date/Time\", type datetime}, {\"Developer Name\", type text}, {\"Revision Notes\", type text}, {\"Revision Type\", type text}})\nin\n    #\"Changed Type\";\r\nshared #\"Version History\" = let\n    Source = Table.Combine({#\"Version History Model\", #\"Version History Report\"})\nin\n    Source;\r\n[Description = \"TABLENAME: GL Entity Segment\"]\r\nshared DIM_GLEntity = let\n    Source = GetEntity(\"GL Entity Segment\")\nin\n    Source;\r\nshared KeepColumn = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    RemoveColumns = (Entity as table, ColumnNames as text) => let\n        CleanList = List.Transform(List.Transform(Text.Split(ColumnNames, \",\"), Text.Trim), Text.Upper),\n        RemovedColumnList = List.Select(Table.ColumnNames(Entity), each not(List.Contains(CleanList, Text.Upper(_)))),\n        ModifiedEntity = if ColumnNames = \"\" then Entity else Table.RemoveColumns(Entity, RemovedColumnList)\n    in\n        ModifiedEntity\nin\n    RemoveColumns;\r\nshared RemoveColumn = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    RemoveColumns = (Entity as table, ColumnNames as text) => let\n        CleanList = List.Transform(List.Transform(Text.Split(ColumnNames, \",\"), Text.Trim), Text.Upper),\n        RemovedColumnList = List.Select(Table.ColumnNames(Entity), each List.Contains(CleanList, Text.Upper(_))),\n        ModifiedEntity = Table.RemoveColumns(Entity, RemovedColumnList)\n    in\n        ModifiedEntity\nin\n    RemoveColumns;\r\nshared SnowflakeQuery = let\n    // This function runs a query on the Snowflake database\n    // pass a sql query as a string to get the results of the query  \n    // returned\n    // :returns: Table\n    SnowflakeQuery = (SQLQuery as text) => let\n        ReturnedValue = \n        Value.NativeQuery(\n          Snowflake.Databases(\n              pServerName,\n              pWarehouse, \n              [Role=pRole]\n            )\n          {[Name=pDatabase]}[Data],\n          SQLQuery, \n          null, \n          [EnableFolding=true]\n        )\n    in\n        ReturnedValue\nin\n    SnowflakeQuery;\r\nshared FilterRowsbyColumn = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    FilterColumn = (Entity as table, FilterValue as text, ColumnName as text) => let\n        CleanFilterValue = List.Transform(List.Transform(Text.Split(FilterValue, \",\"), Text.Trim), Text.Upper),\n        Filter = if List.IsEmpty(CleanFilterValue) then Entity else Table.SelectRows(Entity, each List.Contains(List.Buffer(CleanFilterValue), Text.Upper(Record.Field(_, ColumnName))))\n    in\n        Filter\nin\n    FilterColumn;\r\nshared FilterNRows = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    FilterMaxRows = (Entity as table, FilterValue as number) => let\n        FilterMaxNoOfRows = if FilterValue > 0 then Table.FirstN(Entity, FilterValue) else Entity\n    in\n        FilterMaxNoOfRows\nin\n    FilterMaxRows;\r\nshared GetEntity = let\n    // This function retrieves a table (Entity) from the given\n    // workspaceName and dataflowName which are pre-defined\n    // parameters \n    // Set the pWorkSpace and pDataFlow parameters before\n    // invoking this function\n    // :returns: Table\n    ReturnEntity = (pEntity as text) => let\n        Source = PowerBI.Dataflows(null),\n        UpperCaseWorkspace = Table.TransformColumns(Source, {{\"workspaceName\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Workspace = UpperCaseWorkspace{[workspaceName=Text.Upper(pWorkSpace)]}[Data],        \n        UpperCaseDataflow = Table.TransformColumns(Workspace, {{\"dataflowName\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Dataflow = UpperCaseDataflow{[dataflowName=Text.Upper(pDataFlow)]}[Data],        \n        UpperCaseEntity = Table.TransformColumns(Dataflow, {{\"entity\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Entity = UpperCaseEntity{[entity=Text.Upper(pEntity)]}[Data]\n    in\n        Entity\nin\n    ReturnEntity;\r\nshared GetEntityFromWorkspace = let\n    // This function retrieves a table (Entity) for the give\n    // workspaceName and dataflowName which are variables\n    // invoked in this function\n    // :returns: Table\n    ReturnEntity = (pWorkSpace as text, pDataFlow as text, pEntity as text) => let\n        Source = PowerBI.Dataflows(null),\n        UpperCaseWorkspace = Table.TransformColumns(Source, {{\"workspaceName\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Workspace = UpperCaseWorkspace{[workspaceName=Text.Upper(pWorkSpace)]}[Data],        \n        UpperCaseDataflow = Table.TransformColumns(Workspace, {{\"dataflowName\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Dataflow = UpperCaseDataflow{[dataflowName=Text.Upper(pDataFlow)]}[Data],        \n        UpperCaseEntity = Table.TransformColumns(Dataflow, {{\"entity\", each Text.Upper(Text.From(_)), type nullable text}}),\n        Entity = UpperCaseEntity{[entity=Text.Upper(pEntity)]}[Data]\n    in\n        Entity\nin\n    ReturnEntity;\r\nshared pWorkSpace = \"COHR_DATAFLOWS\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pDataFlow = \"FIN_COMMON\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pFiscalCalendarDateFilter = 3 meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type number];\r\n[Description = \"Use this parameter to set values to Return Max No. of Rows#(lf)Set this value to 0 to disable\"]\r\nshared pSetMaxRows = 0 meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type number];\r\nshared pOrganizationOrgs = \"BCO\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pTBU = \"DPSS_Germany\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pServerName = \"mma12090.snowflakecomputing.com\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pWarehouse = \"COMPUTE_REPORTING\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pRole = \"GLBMFGOPERATIONSROLE\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pDatabase = \"PROD_DB\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pTextColumns = \"ENTITY,DEPT,ACCT,PROJ,HFM_PRODUCT,ALT_HFM_PRODUCT,M20_TBU,M20_PFC,INTERCO,ACCOUNT_DESC,GL_PERIOD\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pNumberColumns = \"TRAN_QTY,ACCOUNTED_DR,ACCOUNTED_CR,NET_ACCOUNTED_AMT,ACCOUNTED_NET_USD\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pDateColumns = \"TRANS_DATE\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared ListOfOrgs = let\r\n  Source = pOrganizationOrgs,\r\n  GetListOfValues = Text.Split(Source, \",\"),\r\n  #\"Convert to table\" = Table.FromValue(GetListOfValues),\r\n  #\"Transform columns\" = Table.TransformColumnTypes(#\"Convert to table\", {{\"Value\", type text}}),\r\n  #\"Replace errors\" = Table.ReplaceErrorValues(#\"Transform columns\", {{\"Value\", null}})\r\nin\r\n  #\"Replace errors\";\r\n[Description = \"Coherent Fiscal Calendar.#(lf)Currently filtered to > 29th Sept. 2019\"]\r\nshared #\"DIM_Fiscal Calendar\" = let\n/*\nDIM_Fiscal Calendar is a modified view of the Fiscal Calendar where\n\nA date filter has been applied so that only dates after pFiscalCalendarDateFilter are included\nAdditional columns have been added Cal_Year_ofCW, Cal_Year_ofCW_Short\n*/\n    FiscalCalendarData = GetEntity(\"Fiscal Calendar Days\"),\n    TransformColumnTypes = Table.TransformColumnTypes(FiscalCalendarData,{{\"Calendar Day\", type date}, {\"Week Start Date\", type date}, {\"Week End Date\", type date}, {\"Period Start Date\", type date}, {\"Period End Date\", type date}, {\"Quarter Start Date\", type date}, {\"Quarter End Date\", type date}, {\"Year Start Date\", type date}, {\"Year End Date\", type date}, {\"Fiscal Week No\", Int64.Type}, {\"Fiscal Month Week No\", Int64.Type}, {\"Fiscal Qtr Week No\", Int64.Type}, {\"Period Year\", Int64.Type}, {\"Quarter No\", Int64.Type}, {\"Period No\", Int64.Type}, {\"Fiscal Day\", Int64.Type}, {\"FC_PERIOD_ID\", Int64.Type}, {\"FC_QUARTER_ID\", Int64.Type}, {\"FC_WEEK_ID\", Int64.Type}, {\"FC_YEAR_OFFSET\", Int64.Type}, {\"FC_QUARTER_OFFSET\", Int64.Type}, {\"FC_PERIOD_OFFSET\", Int64.Type}, {\"FC_WEEK_OFFSET\", Int64.Type}, {\"FC_DAYS_OFFSET\", Int64.Type}, {\"CALENDAR_YEAR\", Int64.Type}, {\"CALENDAR_MONTH\", Int64.Type}, {\"CALENDAR_ISO_WEEK\", Int64.Type}, {\"CALENDAR_US_WEEK\", Int64.Type}, {\"DAY_OF_WEEK\", Int64.Type}, {\"WORKING_DAY_FLAG\", Int64.Type}, {\"FISCAL_WEEK_INDICATOR_SORT\", Int64.Type}, {\"FISCAL_MONTH_INDICATOR_SORT\", Int64.Type}, {\"FISCAL_QUARTER_INDICATOR_SORT\", Int64.Type}, {\"FISCAL_YEAR_INDICATOR_SORT\", Int64.Type}}),\n    //Gets all dates from the year offset given by pFiscalCalendarDateFilter (default is set as 3 years)\n    SelectAllRowsAfterThisDate = \n    let\n        GetLastNYearsOfData = Table.AddColumn(TransformColumnTypes, \"PreviousNYears\", each Date.IsInPreviousNYears([Calendar Day], pFiscalCalendarDateFilter)),\n        GetCurrentYearsData = Table.AddColumn(GetLastNYearsOfData, \"CurrentFutureYears\", each [Calendar Day] >= Date.From(Date.StartOfYear(DateTime.FixedLocalNow()))),\n        SelectTheFilteredRows = Table.SelectRows(GetCurrentYearsData, each List.AnyTrue({[PreviousNYears], [CurrentFutureYears]})),\n        ReturnFinalValue = Table.RemoveColumns(SelectTheFilteredRows,{\"PreviousNYears\", \"CurrentFutureYears\"})\n    in\n        ReturnFinalValue,\n    RenameFiscalWeekColumns = Table.RenameColumns(SelectAllRowsAfterThisDate,{{\"Fiscal Week\", \"Fiscal Year Week\"}, {\"Fiscal Year Week\", \"Fiscal Week\"}}),\n    AddStartOfWeekCOlumn = Table.AddColumn(RenameFiscalWeekColumns, \"Start of Week\", each Date.StartOfWeek([Calendar Day]), type date),\n    #\"Inserted Year\" = Table.AddColumn(AddStartOfWeekCOlumn, \"Cal_Year_ofCW\", each Date.Year([Start of Week]), Int64.Type),\n    GetThe2DigitValueOfYear = Table.AddColumn(#\"Inserted Year\", \"Cal_Year_ofCW_Short\", each Text.End(Text.From([Cal_Year_ofCW]), 2), type number),\n    /*\n    Returns a column with the Year and CW combined and prefixes included\n    eg. Year = 2022 and CW = 26 then value returned is \"Y22_CW26\"\n    */\n    SetYearAndCWColumn = let \n        TextCalendarYear = Table.AddColumn(GetThe2DigitValueOfYear, \"TextCalendarYear\", each \"Y\" & Text.End(Text.From([Cal_Year_ofCW]), 2), type number),\n        TextCalendarISOWeek = Table.AddColumn(TextCalendarYear, \"TextCalendarISOWeek\", each \"_CW\" & Text.End(Text.From([CALENDAR_ISO_WEEK]), 2), type number),\n        CombineYearAndISOWeek = Table.AddColumn(TextCalendarISOWeek, \"CALENDAR_Year_CWiso\", each Text.Combine({[TextCalendarYear], Text.From([TextCalendarISOWeek])}), type text),\n        ReturnCalendarYearCWIso = Table.RemoveColumns(CombineYearAndISOWeek,{\"TextCalendarYear\", \"TextCalendarISOWeek\"})\n        in ReturnCalendarYearCWIso,\n    /*\n    Returns a column with the Year x 100 and CW added together\n    eg. Year = 2024 and CW = 26 then value returned is 202426\n    */\n    SetCalYearAndCWIDColumn = let\n    MultiplyCalYearCWBy100 = Table.AddColumn(SetYearAndCWColumn, \"Cal_Year_ofCWx100\", each [Cal_Year_ofCW] * 100, type number),\n    AddtheWeekToTheMultipliedValue = Table.AddColumn(MultiplyCalYearCWBy100, \"Cal_Year_CWiso_ID\", each [Cal_Year_ofCWx100] + [CALENDAR_ISO_WEEK], type number),\n    TransformTheColumnTypes = Table.TransformColumnTypes(AddtheWeekToTheMultipliedValue,{{\"Cal_Year_CWiso_ID\", Int64.Type}, {\"Cal_Year_ofCWx100\", Int64.Type}, {\"Cal_Year_ofCW_Short\", Int64.Type}}),\n    ReturnCalYearId = Table.RemoveColumns(TransformTheColumnTypes,{\"Cal_Year_ofCWx100\"})\n    in \n        ReturnCalYearId,\n    AddPrefixToCalendarISOWeek = Table.AddColumn(SetCalYearAndCWIDColumn, \"Cal_CW\", each \"CW\" & Text.From([CALENDAR_ISO_WEEK]), type text),\n    KeepColumns = Table.SelectColumns(AddPrefixToCalendarISOWeek,{\"Period Set Name\", \"Calendar Day\", \"Fiscal Year Week\", \"Fiscal Week\", \"FISCAL_WEEK_DISP\", \"FISCAL_MONTH_SORT_VALUE\", \"FISCAL_QUARTER_DISP\", \"Fiscal Week No\", \"Fiscal Month Week No\", \"FISCAL_QTR_WEEK\", \"Fiscal Qtr Week No\", \"GL Period\", \"PQ_LAST_GL_PERIOD\", \"Period Year\", \"Fiscal Year\", \"Quarter No\", \"Fiscal Quarter\", \"Fiscal Year Quarter\", \"PRIOR_FYFQ\", \"PERIOD_NAME\", \"Period No\", \"Fiscal Day\", \"Week Start Date\", \"Week End Date\", \"Period Start Date\", \"Period End Date\", \"Quarter Start Date\", \"Quarter End Date\", \"Year Start Date\", \"Year End Date\", \"Fiscal Period Month\", \"FC_PERIOD_ID\", \"FC_QUARTER_ID\", \"FC_WEEK_ID\", \"FC_YEAR_OFFSET\", \"FC_QUARTER_OFFSET\", \"FC_PERIOD_OFFSET\", \"FC_WEEK_OFFSET\", \"FC_DAYS_OFFSET\", \"FC_HALF\", \"Next Quarter First Fiscal Week\", \"Prior Qtr Last Fiscal Week\", \"CALENDAR_YEAR\", \"CALENDAR_MONTH\", \"CALENDAR_YEARMONTHID\", \"CALENDAR_MONTHNAME\", \"CALENDAR_MONTHNAMESHORT\", \"CALENDAR_ISO_WEEK\", \"CALENDAR_US_WEEK\", \"CALENDAR_YEAR_SHORT\", \"CALENDAR_MTH_YEAR\", \"DAY_NAME\", \"DAY_OF_WEEK\", \"WORKING_DAY_FLAG\", \"CQ_LAST_FISCAL_WEEK\", \"Row Creation Date\", \"Week End Flag\", \"Month End Flag\", \"Quarter End Flag\", \"Year End Flag\", \"FISCAL_WEEK_INDICATOR\", \"FISCAL_WEEK_INDICATOR_SORT\", \"FISCAL_MONTH_INDICATOR\", \"FISCAL_MONTH_INDICATOR_SORT\", \"FISCAL_QUARTER_INDICATOR\", \"FISCAL_QUARTER_INDICATOR_SORT\", \"FISCAL_YEAR_INDICATOR\", \"FISCAL_YEAR_INDICATOR_SORT\", \"Refresh Date\", \"Start of Week\", \"Cal_Year_ofCW\", \"Cal_Year_ofCW_Short\", \"CALENDAR_Year_CWiso\", \"Cal_Year_CWiso_ID\", \"Cal_CW\"})\nin\n    KeepColumns;\r\nshared #\"FACT_LT Grouping Summary\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"LT Grouping Summary\"),\n  FilterRows = FilterNRows(Entity, pSetMaxRows),\n  FilterOrgs = FilterRowsbyColumn(FilterRows, pOrganizationOrgs, \"ORGANIZATION_CODE\")\nin\n  FilterOrgs;\r\nshared #\"FACT_Inventory Velocity Summary\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Inventory Velocity Summary\"),\n  FilterRows = FilterNRows(Entity, pSetMaxRows),\n  FilterOrgs = FilterRowsbyColumn(FilterRows, pOrganizationOrgs, \"ORGANIZATION_CODE\"),\n  KeepListOfColumns = KeepColumn(FilterOrgs, \"ACTIVE_OR_INACTIVE,CURRENT_MRP_ABC_CLASS,DEMAND_SOURCE,ENTITY,FISCAL_WEEK_ID,FISCAL_WEEK_KEY,ITEM_PRODUCT_FAMILY,ITEM_STATUS,ITEM_TBU,ITEM_TYPE,ON_ORDER_DAYS_OF_SUPPLY,ON_ORDER_DAYS_OF_SUPPLY_COUNT,ON_ORDER_VALUE,ON_ORDER_VALUE_USD,ONHAND_DAYS_OF_SUPPLY,ONHAND_VALUE,ONHAND_VALUE_USD,OPERATIONS_REPORTING,ORGANIZATION_CODE,PERIOD_END_DATE,PERIOD_NAME,PERIOD_YEAR,PRODUCT_LINE,PRODUCT_MAP_KEY,RECORD_COUNT,SAFETY_STOCK_VALUE,SAFETY_STOCK_VALUE_USD,SEC_REPORTING,SUPPLY_SOURCE,WEEK_END_DATE,WEEK_START_DATE,WIP_DAYS_OF_SUPPLY,WIP_DAYS_OF_SUPPLY_COUNT,WIP_VALUE,WIP_VALUE_USD\")\nin\n  KeepListOfColumns;\r\nshared #\"FACT_Inventory Velocity Details\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Inventory Velocity\"),\n  FilterRows = FilterNRows(Entity, pSetMaxRows),\n  FilterOrgs = FilterRowsbyColumn(FilterRows, pOrganizationOrgs, \"ORGANIZATION_CODE\"),\n  KeepColumns = KeepColumn(FilterOrgs, \"ACTIVE_OR_INACTIVE,ACTIVE_SUPPLIER_LT,AVG_DAILY_DEMAND_ELSE_USAGE,BLANKET_DAYS_SUPPLY_REMAINING,CURRENT_ABC_CLASS,DATE_RUN,FISCAL_WEEK_KEY,INTRANSIT_VALUE,INVENTORY_VALUE,INVENTORY_VALUE_USD,ITEM_COST,ITEM_COST_USD,ITEM_DESCRIPTION,ITEM_NUMBER,ITEM_TYPE,KANBAN_ITEM,MIN_MAX_ITEM,ON_HAND_DAYS_OF_SUPPLY,ON_ORDER_DAYS_OF_SUPPLY,ON_ORDER_VALUE_USD,ONORDER_PO_QTY,ONORDER_PO_VALUE,ONORDER_PO_VALUE_USD,OPEN_BLANKETS,ORGANIZATION_CODE,PLANNING_METHOD,PROJ_SPEND_NEXT_26_WEEKS_USD,SAFETY_STOCK_QTY,SAFETY_STOCK_VALUE,SAFETY_STOCK_VALUE_USD,SEC_REPORTING,SR_VNDR_SRC_ORG,SUM_USD_REMAINING_AMOUNT,TARGET_DAYS_OF_SUPPLY,TARGET_DAYS_OF_SUPPLY_SAVINGS,TARGET_DAYS_OF_SUPPLY_VALUE,TOTAL_GR_26_WEEKS,TOTAL_ONHAND_QTY,WIP_DAYS_OF_SUPPLY,WIP_IN_PROCESS_QTY,WIP_IN_PROCESS_VALUE,WIP_IN_PROCESS_VALUE_USD\"),\n  FillEmptyCellValuesWithZero = Table.ReplaceValue(KeepColumns,\"\",\"0\",Replacer.ReplaceValue,{\"OPEN_BLANKETS\"}),\n  //ConvertColumnsToInt = Table.TransformColumnTypes(FillEmptyCellValuesWithZero,{{\"KANBAN_ITEM\", Int64.Type}, {\"MIN_MAX_ITEM\", Int64.Type}, {\"OPEN_BLANKETS\", Int64.Type}})\n  ColumnInt = SetColumnType(FillEmptyCellValuesWithZero, \"KANBAN_ITEM,MIN_MAX_ITEM,OPEN_BLANKETS\", \"number\")\nin\n  ColumnInt;\r\nshared #\"DIM_Sort Values\" = let\r\n  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"jZPbToQwEIZfZcKVJuvFuuvh1oAHorAI62pC9mKErhLJlJR2lbcXt6HRWA6XdL5/Ot80pKlzj/SK5MycqESigt4gYPKd5+3J3NnOUico6CTALytxqok4gq5mxRYHLORSYyy3UkvTDCkHb6zpmcGvMlnsWXvk056R5KKBRKJUtXFYv4SDlPbwww34hAOcFlkRrETOBHjY1MB3kKiqKpu2HjCslWDwqJBkIRtj1RMBlyuS9qD2e/ajSdec99BDN1x0o90dFj7hlss/iQ2WisHRU+Id/8JdJQSjrDHLN+6jvH6GBHdM/iydZx/jmYURH0WXtukfeIalofpE7CbTsv1W0/L/DKfFtO3Nrd9+JNcuxKziQuq/ad61tNT0uDF+WmrtKNtv\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Value = _t, Type = _t, #\"Sort Order\" = _t]),\r\n  #\"Changed column type\" = Table.TransformColumnTypes(Source, {{\"Value\", type text}, {\"Type\", type text}, {\"Sort Order\", Int64.Type}})\r\nin\r\n  #\"Changed column type\";\r\nshared #\"Version History Dataflow\" = let\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"NY0xD4IwFAb/ypfOQApRB1eNiZs7YXiWh75Y2qZ9hL8vGh3vhru+N21jG2sq09muq+2+bg9od0f7UafoJeDG5KJ7bXwNokIeykVxJqXJxxUuMymPWEWfuJBTKN09lwqjzByKxPAzoDAiUaaZlXNBYa2XhCnmb1LCA2nJKRYu2+0/MMPwBg==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Version Number\" = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes\" = _t, #\"Revision Type\" = _t]),\n    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Version Number\", type text}, {\"Revision Date/Time\", type datetime}, {\"Developer Name\", type text}, {\"Revision Notes\", type text}, {\"Revision Type\", type text}})\nin\n    #\"Changed Type\";\r\nshared INFO_DataUpdateInfoInventoryVelocity = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Data Update Info\")\nin\n  Entity;\r\nshared GetColumnNames = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    ColumnNames = (Entity as table) => let\n        GetColumnNames = Table.ColumnNames(Entity),\n        ConvertToTable = Table.FromList(GetColumnNames, Splitter.SplitByNothing(), null, null, ExtraValues.Error),\n        SetColumnName = Table.RenameColumns(ConvertToTable,{{\"Column1\", \"ColumnNames\"}}),\n        String = List.Accumulate(Table.ToList(SetColumnName),\"\",(state, current) => if state = \"\" then current else state & \",\" & current)\n    in\n        String\nin\n    ColumnNames;\r\nshared SetColumnType = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    TransformDTypes = (Entity as table, ColumnNames as text, dtype as text) => let\n        CleanList = List.Transform(List.Transform(Text.Split(ColumnNames, \",\"), Text.Trim), Text.Upper),\n        ColumnList = List.Select(Table.ColumnNames(Entity), each List.Contains(CleanList, Text.Upper(_))),\n        // TransformDType = FilterMaxNoOfRows, each {{\"KANBAN_ITEM\", Int64.Type}, {\"MIN_MAX_ITEM\", Int64.Type}, {\"OPEN_BLANKETS\", Int64.Type}}),\n        TransformTypes = if List.IsEmpty(CleanList) then Entity else Table.TransformColumnTypes(Entity, List.Transform(\n                                                                                                    List.Intersect({Table.ColumnNames(Entity), ColumnList}),\n                                                                                                    if \n                                                                                                    dtype = \"text\" then each {_, type text} else if\n\t                                                                                                dtype = \"number\" then each {_, type number} else if\n                                                                                                    dtype = \"date\" then each {_, type date} else if\n                                                                                                    dtype = \"datetime\" then each {_, type datetime} else\n                                                                                                    each {_, type text} // default\n                                                                                                    )\n                                                                                                    )\n\n        //TransformTypes = Entity\n    in\n        TransformTypes\nin\n    TransformDTypes;\r\n"
     },
     "annotations": [
         {
             "name": "pbi:QueryGroups",
-            "value": "[{\"id\":\"7363d107-1f3d-48de-be9c-f033354d282e\",\"name\":\"GetEntity\",\"description\":null,\"parentId\":null,\"order\":0},{\"id\":\"5bac1fbe-fe1d-4da2-94f5-070ea55ef66f\",\"name\":\"Parameters\",\"description\":\"\",\"parentId\":null,\"order\":1},{\"id\":\"bbd6ee21-6a56-4a8c-b80f-2aad18bde5a6\",\"name\":\"Facts - Inventory Turns\",\"description\":\"\",\"parentId\":null,\"order\":2},{\"id\":\"a0966e5b-d860-4160-b742-7c26403daafe\",\"name\":\"Dimensions\",\"description\":\"\",\"parentId\":null,\"order\":4},{\"id\":\"a91191ed-8efb-400b-bad7-2b8a42e2d413\",\"name\":\"Versioning\",\"description\":\"\",\"parentId\":null,\"order\":5},{\"id\":\"350542b3-0fe5-4a8f-9abf-594bb26638d7\",\"name\":\"Facts - Inventory Velocity\",\"description\":\"\",\"parentId\":null,\"order\":3},{\"id\":\"d535d7f0-f50c-47a1-a1c5-b52444b9ad0e\",\"name\":\"Information\",\"description\":\"Data Update Information for the Inventory Velocity Tables\",\"parentId\":null,\"order\":0}]"
+            "value": "[{\"id\":\"7363d107-1f3d-48de-be9c-f033354d282e\",\"name\":\"Functions\",\"description\":null,\"parentId\":null,\"order\":0},{\"id\":\"5bac1fbe-fe1d-4da2-94f5-070ea55ef66f\",\"name\":\"Parameters\",\"description\":\"\",\"parentId\":null,\"order\":1},{\"id\":\"bbd6ee21-6a56-4a8c-b80f-2aad18bde5a6\",\"name\":\"Facts - Inventory Turns\",\"description\":\"\",\"parentId\":null,\"order\":2},{\"id\":\"a0966e5b-d860-4160-b742-7c26403daafe\",\"name\":\"Dimensions\",\"description\":\"\",\"parentId\":null,\"order\":4},{\"id\":\"a91191ed-8efb-400b-bad7-2b8a42e2d413\",\"name\":\"Versioning\",\"description\":\"\",\"parentId\":null,\"order\":5},{\"id\":\"350542b3-0fe5-4a8f-9abf-594bb26638d7\",\"name\":\"Facts - Inventory Velocity\",\"description\":\"\",\"parentId\":null,\"order\":3},{\"id\":\"d535d7f0-f50c-47a1-a1c5-b52444b9ad0e\",\"name\":\"Information\",\"description\":\"Data Update Information for the Inventory Velocity Tables\",\"parentId\":null,\"order\":0}]"
         }
     ],
     "entities": [
@@ -313,6 +395,13 @@
                 {
                     "name": "ACCOUNTED_NET_USD",
                     "dataType": "double"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:44.1295614+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/FACT_M20Detail.csv?snapshot=2022-05-23T09%3A43%3A44.1187234Z"
                 }
             ]
         },
@@ -673,6 +762,13 @@
                     "name": "CREATION_TIME",
                     "dataType": "time"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:44:37.3379535+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/FACT_InventoryValue.csv?snapshot=2022-05-23T09%3A44%3A37.3122096Z"
+                }
             ]
         },
         {
@@ -748,6 +844,13 @@
                     "name": "TRANS_TIME",
                     "dataType": "time"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:44:43.5806838+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/FACT_M20DetailAll.csv?snapshot=2022-05-23T09%3A44%3A43.5636235Z"
+                }
             ]
         },
         {
@@ -777,10 +880,6 @@
                 },
                 {
                     "name": "INTERCO",
-                    "dataType": "string"
-                },
-                {
-                    "name": "ACCOUNT_DESC",
                     "dataType": "string"
                 },
                 {
@@ -992,10 +1091,6 @@
                     "dataType": "string"
                 },
                 {
-                    "name": "COST_ELEMENT",
-                    "dataType": "string"
-                },
-                {
                     "name": "TRANS_DIFF_START",
                     "dataType": "double"
                 },
@@ -1010,6 +1105,461 @@
                 {
                     "name": "M2_DETAIL_KEY",
                     "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:53:52.7761103+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/FACT_M20Detail_Flow.csv?snapshot=2022-05-23T09%3A53%3A52.7595302Z"
+                }
+            ]
+        },
+        {
+            "$type": "LocalEntity",
+            "name": "FACT_M20Detail_Snowflake",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "FullRefreshPolicy",
+                "location": "FACT_M20Detail_Snowflake.csv"
+            },
+            "attributes": [
+                {
+                    "name": "ENTITY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "DEPT",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ACCT",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PROJ",
+                    "dataType": "string"
+                },
+                {
+                    "name": "HFM_PRODUCT",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ALT_HFM_PRODUCT",
+                    "dataType": "string"
+                },
+                {
+                    "name": "M20_TBU",
+                    "dataType": "string"
+                },
+                {
+                    "name": "M20_PFC",
+                    "dataType": "string"
+                },
+                {
+                    "name": "INTERCO",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ACCOUNT_DESC",
+                    "dataType": "string"
+                },
+                {
+                    "name": "GL_PERIOD",
+                    "dataType": "string"
+                },
+                {
+                    "name": "TRANS_DATE",
+                    "dataType": "date"
+                },
+                {
+                    "name": "TRAN_QTY",
+                    "dataType": "double"
+                },
+                {
+                    "name": "ACCOUNTED_DR",
+                    "dataType": "double"
+                },
+                {
+                    "name": "ACCOUNTED_CR",
+                    "dataType": "double"
+                },
+                {
+                    "name": "NET_ACCOUNTED_AMT",
+                    "dataType": "double"
+                },
+                {
+                    "name": "ACCOUNTED_NET_USD",
+                    "dataType": "double"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:44:56.0398618+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/FACT_M20Detail_Snowflake.csv?snapshot=2022-05-23T09%3A44%3A56.0134821Z"
+                }
+            ]
+        },
+        {
+            "$type": "LocalEntity",
+            "name": "FACT_InventoryValue_Snowflake",
+            "description": "",
+            "pbi:refreshPolicy": {
+                "$type": "FullRefreshPolicy",
+                "location": "FACT_InventoryValue_Snowflake.csv"
+            },
+            "attributes": [
+                {
+                    "name": "INV_ORG_ID",
+                    "dataType": "double"
+                },
+                {
+                    "name": "INVENTORY_ITEM_ID",
+                    "dataType": "double"
+                },
+                {
+                    "name": "ITEM_ORG_ID_KEY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_ORG_CODE_KEY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "OPERATING_UNIT_ID",
+                    "dataType": "double"
+                },
+                {
+                    "name": "ITEM_NUMBER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_TBU",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_PRODUCT_FAMILY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SOURCE_TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SUBINVENTORY_CODE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SUBINVENTORY_TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORGANIZATION_CODE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ENTITY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ACCOUNT",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FIN_ENTITY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "INV_QUANTITY",
+                    "dataType": "double"
+                },
+                {
+                    "name": "INV_BALANCE",
+                    "dataType": "double"
+                },
+                {
+                    "name": "INV_VALUE",
+                    "dataType": "double"
+                },
+                {
+                    "name": "INV_VALUE_USD",
+                    "dataType": "double"
+                },
+                {
+                    "name": "CURRENCY_CODE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CURRENCY_RATE",
+                    "dataType": "double"
+                },
+                {
+                    "name": "ITEM_COST",
+                    "dataType": "double"
+                },
+                {
+                    "name": "MATERIAL_COST",
+                    "dataType": "double"
+                },
+                {
+                    "name": "MATERIAL_OVERHEAD_COST",
+                    "dataType": "double"
+                },
+                {
+                    "name": "OUTSIDE_PROCESSING_COST",
+                    "dataType": "double"
+                },
+                {
+                    "name": "OVERHEAD_COST",
+                    "dataType": "double"
+                },
+                {
+                    "name": "RESOURCE_COST",
+                    "dataType": "double"
+                },
+                {
+                    "name": "TOTAL_COST",
+                    "dataType": "double"
+                },
+                {
+                    "name": "FISCAL_YEAR_ID",
+                    "dataType": "double"
+                },
+                {
+                    "name": "VALID_FLAG",
+                    "dataType": "string"
+                },
+                {
+                    "name": "COMMENTS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CREATION_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "CREATED_BY",
+                    "dataType": "double"
+                },
+                {
+                    "name": "FISCAL_WEEK_ID",
+                    "dataType": "double"
+                },
+                {
+                    "name": "FISCAL_WEEK",
+                    "dataType": "string"
+                },
+                {
+                    "name": "JE_SOURCE_CATEGORY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "OPERATIONS_REPORTING",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CS_DEMAND_SOURCE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CS_SUPPLY_SOURCE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_TYPE_CODE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "EXCLUDE_FLAG",
+                    "dataType": "string"
+                },
+                {
+                    "name": "EXCLUDE_COMMENT",
+                    "dataType": "string"
+                },
+                {
+                    "name": "WIP_CLASS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "WIP_CLASS_CODE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PLANNER_CODE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "MAKE_BUY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_STATUS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ABC_CLASS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "INV_STATUS",
+                    "dataType": "string"
+                },
+                {
+                    "name": "WIP_JOB_ID",
+                    "dataType": "double"
+                },
+                {
+                    "name": "ITEM_PRODUCT_LINE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_FORECAST_FIELD",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_DESC",
+                    "dataType": "string"
+                },
+                {
+                    "name": "WIP_JOB_NO",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_COST_USD",
+                    "dataType": "double"
+                },
+                {
+                    "name": "ORA_PRODUCT_LINE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CONC_REQ_ID",
+                    "dataType": "double"
+                },
+                {
+                    "name": "FIN_PRODUCT_LINE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORA_FORECAST_FIELD",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORG_TBU",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORG_PRODUCT_FAMILY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORG_PRODUCT_LINE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORG_FORECAST_FIELD",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORG_CATEGORY_ID",
+                    "dataType": "double"
+                },
+                {
+                    "name": "PRODUCT_MAP_KEY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FIN_TBU",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FIN_PFC",
+                    "dataType": "string"
+                },
+                {
+                    "name": "WEEK_START_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "WEEK_END_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "PERIOD_START_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "PERIOD_END_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "QUARTER_START_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "QUARTER_END_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "FISCAL_QUARTER",
+                    "dataType": "string"
+                },
+                {
+                    "name": "FISCAL_YEAR",
+                    "dataType": "string"
+                },
+                {
+                    "name": "MGT_PRODUCT_GROUP",
+                    "dataType": "string"
+                },
+                {
+                    "name": "MGT_SUB_PRODUCT_GROUP",
+                    "dataType": "string"
+                },
+                {
+                    "name": "BUSINESS_SEGMENT",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ACCOUNT_NAME",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ACCOUNT_DESC",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ACCOUNT_TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ACCOUNT_SUB_GROUP",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ACCOUNT_GROUP",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SUMMARY_ACCOUNT",
+                    "dataType": "string"
+                },
+                {
+                    "name": "INVVALUE_KEY",
+                    "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:46:49.9587404+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/FACT_InventoryValue_Snowflake.csv?snapshot=2022-05-23T09%3A46%3A49.9441361Z"
                 }
             ]
         },
@@ -1069,6 +1619,13 @@
                 {
                     "name": "FISCAL_WEEK_ID",
                     "dataType": "double"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:19.3377979+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_Time%20Balance%20Week.csv?snapshot=2022-05-23T09%3A43%3A19.2929661Z"
                 }
             ]
         },
@@ -1136,6 +1693,13 @@
                 {
                     "name": "PRODUCT_MAP_KEY",
                     "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:20.4940562+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_Financial%20Product%20Mapping.csv?snapshot=2022-05-23T09%3A43%3A20.1424793Z"
                 }
             ]
         },
@@ -1207,6 +1771,13 @@
                 {
                     "name": "Summary Multiplier",
                     "dataType": "double"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:20.0721857+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_GL%20Account%20Segment.csv?snapshot=2022-05-23T09%3A43%3A19.9675787Z"
                 }
             ]
         },
@@ -1667,6 +2238,13 @@
                     "name": "ALTERNATE_CODE_COMBINATION_ID",
                     "dataType": "double"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:50.4055327+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_GL%20Code%20Combinations.csv?snapshot=2022-05-23T09%3A43%3A50.3581445Z"
+                }
             ]
         },
         {
@@ -1774,6 +2352,13 @@
                     "name": "PROJECT_DESC",
                     "dataType": "string"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:22.6034319+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_GL%20Code%20Combinations%20Desc.csv?snapshot=2022-05-23T09%3A43%3A22.5810795Z"
+                }
             ]
         },
         {
@@ -1836,6 +2421,13 @@
                 {
                     "name": "Summary Project",
                     "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:04.2567902+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_GL%20Project%20Segment.csv?snapshot=2022-05-23T09%3A43%3A04.2426006Z"
                 }
             ]
         },
@@ -2123,6 +2715,13 @@
                 {
                     "name": "Refresh Date",
                     "dataType": "dateTime"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:06.506784+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_Calendar.csv?snapshot=2022-05-23T09%3A43%3A06.4533328Z"
                 }
             ]
         },
@@ -2427,6 +3026,13 @@
                     "name": "CONTEXT_PERIOD",
                     "dataType": "string"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:20.6190541+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_Fiscal%20Context.csv?snapshot=2022-05-23T09%3A43%3A20.1204917Z"
+                }
             ]
         },
         {
@@ -2489,6 +3095,13 @@
                 {
                     "name": "Summary Department",
                     "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:18.5421609+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_GLDepartment.csv?snapshot=2022-05-23T09%3A43%3A18.5014200Z"
                 }
             ]
         },
@@ -2585,6 +3198,13 @@
                     "name": "INVORG_TYPE",
                     "dataType": "string"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:20.2441209+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_Inventory%20Organizations.csv?snapshot=2022-05-23T09%3A43%3A20.1075007Z"
+                }
             ]
         },
         {
@@ -2639,6 +3259,13 @@
                 {
                     "name": "LEDGER_ID",
                     "dataType": "double"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:02.1198999+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_Operating%20Units.csv?snapshot=2022-05-23T09%3A43%3A02.0828400Z"
                 }
             ]
         },
@@ -2699,6 +3326,13 @@
                     "name": "LAST_UPDATE_LOGIN",
                     "dataType": "string"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:20.8378132+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_Operating%20Unit%20Data%20Security.csv?snapshot=2022-05-23T09%3A43%3A20.1814569Z"
+                }
             ]
         },
         {
@@ -2730,6 +3364,13 @@
                     "name": "Revision Type",
                     "dataType": "string"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:03.041775+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/Version%20History%20Model.csv?snapshot=2022-05-23T09%3A43%3A02.6385211Z"
+                }
             ]
         },
         {
@@ -2760,6 +3401,13 @@
                 {
                     "name": "Revision Type",
                     "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:42:56.8542445+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/Version%20History%20Report.csv?snapshot=2022-05-23T09%3A42%3A56.1402496Z"
                 }
             ]
         },
@@ -2797,6 +3445,13 @@
                 {
                     "name": "Revision Type",
                     "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:19.9315542+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/Version%20History.csv?snapshot=2022-05-23T09%3A43%3A19.9096124Z"
                 }
             ]
         },
@@ -2873,6 +3528,13 @@
                     "name": "Currency Code",
                     "dataType": "string"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:20.6815599+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_GLEntity.csv?snapshot=2022-05-23T09%3A43%3A20.1164936Z"
+                }
             ]
         },
         {
@@ -2887,6 +3549,13 @@
                 {
                     "name": "Value",
                     "dataType": "string"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:42:56.4167665+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/ListOfOrgs.csv?snapshot=2022-05-23T09%3A42%3A56.3901061Z"
                 }
             ]
         },
@@ -3199,6 +3868,13 @@
                     "name": "Cal_CW",
                     "dataType": "string"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:20.1971801+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_Fiscal%20Calendar.csv?snapshot=2022-05-23T09%3A43%3A19.9995605Z"
+                }
             ]
         },
         {
@@ -3209,12 +3885,6 @@
                 "$type": "FullRefreshPolicy",
                 "location": "FACT_LT%20Grouping%20Summary.csv"
             },
-            "annotations": [
-                {
-                    "name": "pbi:EntityTypeDisplayHint",
-                    "value": "CalculatedEntity"
-                }
-            ],
             "attributes": [
                 {
                     "name": "FISCAL_DIM_VALUE",
@@ -3276,6 +3946,13 @@
                     "name": "ITEM_COUNT",
                     "dataType": "double"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:17.0265304+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/FACT_LT%20Grouping%20Summary.csv?snapshot=2022-05-23T09%3A43%3A16.9932854Z"
+                }
             ]
         },
         {
@@ -3286,13 +3963,51 @@
                 "$type": "FullRefreshPolicy",
                 "location": "FACT_Inventory%20Velocity%20Summary.csv"
             },
-            "annotations": [
-                {
-                    "name": "pbi:EntityTypeDisplayHint",
-                    "value": "CalculatedEntity"
-                }
-            ],
             "attributes": [
+                {
+                    "name": "ENTITY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ORGANIZATION_CODE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SUPPLY_SOURCE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "DEMAND_SOURCE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "SEC_REPORTING",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_TBU",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_PRODUCT_FAMILY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "PRODUCT_MAP_KEY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "OPERATIONS_REPORTING",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_TYPE",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ITEM_STATUS",
+                    "dataType": "string"
+                },
                 {
                     "name": "ACTIVE_OR_INACTIVE",
                     "dataType": "string"
@@ -3302,39 +4017,47 @@
                     "dataType": "string"
                 },
                 {
-                    "name": "DEMAND_SOURCE",
+                    "name": "PRODUCT_LINE",
                     "dataType": "string"
-                },
-                {
-                    "name": "ENTITY",
-                    "dataType": "string"
-                },
-                {
-                    "name": "FISCAL_WEEK_ID",
-                    "dataType": "double"
                 },
                 {
                     "name": "FISCAL_WEEK_KEY",
                     "dataType": "string"
                 },
                 {
-                    "name": "ITEM_PRODUCT_FAMILY",
+                    "name": "PERIOD_YEAR",
+                    "dataType": "double"
+                },
+                {
+                    "name": "PERIOD_NAME",
                     "dataType": "string"
                 },
                 {
-                    "name": "ITEM_STATUS",
-                    "dataType": "string"
+                    "name": "PERIOD_END_DATE",
+                    "dataType": "dateTime"
                 },
                 {
-                    "name": "ITEM_TBU",
-                    "dataType": "string"
+                    "name": "FISCAL_WEEK_ID",
+                    "dataType": "double"
                 },
                 {
-                    "name": "ITEM_TYPE",
-                    "dataType": "string"
+                    "name": "WEEK_START_DATE",
+                    "dataType": "dateTime"
                 },
                 {
-                    "name": "ON_ORDER_DAYS_OF_SUPPLY",
+                    "name": "WEEK_END_DATE",
+                    "dataType": "dateTime"
+                },
+                {
+                    "name": "ONHAND_VALUE",
+                    "dataType": "double"
+                },
+                {
+                    "name": "ONHAND_VALUE_USD",
+                    "dataType": "double"
+                },
+                {
+                    "name": "WIP_DAYS_OF_SUPPLY_COUNT",
                     "dataType": "double"
                 },
                 {
@@ -3350,47 +4073,15 @@
                     "dataType": "double"
                 },
                 {
+                    "name": "WIP_VALUE",
+                    "dataType": "double"
+                },
+                {
+                    "name": "WIP_VALUE_USD",
+                    "dataType": "double"
+                },
+                {
                     "name": "ONHAND_DAYS_OF_SUPPLY",
-                    "dataType": "double"
-                },
-                {
-                    "name": "ONHAND_VALUE",
-                    "dataType": "double"
-                },
-                {
-                    "name": "ONHAND_VALUE_USD",
-                    "dataType": "double"
-                },
-                {
-                    "name": "OPERATIONS_REPORTING",
-                    "dataType": "string"
-                },
-                {
-                    "name": "ORGANIZATION_CODE",
-                    "dataType": "string"
-                },
-                {
-                    "name": "PERIOD_END_DATE",
-                    "dataType": "dateTime"
-                },
-                {
-                    "name": "PERIOD_NAME",
-                    "dataType": "string"
-                },
-                {
-                    "name": "PERIOD_YEAR",
-                    "dataType": "double"
-                },
-                {
-                    "name": "PRODUCT_LINE",
-                    "dataType": "string"
-                },
-                {
-                    "name": "PRODUCT_MAP_KEY",
-                    "dataType": "string"
-                },
-                {
-                    "name": "RECORD_COUNT",
                     "dataType": "double"
                 },
                 {
@@ -3402,36 +4093,23 @@
                     "dataType": "double"
                 },
                 {
-                    "name": "SEC_REPORTING",
-                    "dataType": "string"
-                },
-                {
-                    "name": "SUPPLY_SOURCE",
-                    "dataType": "string"
-                },
-                {
-                    "name": "WEEK_END_DATE",
-                    "dataType": "dateTime"
-                },
-                {
-                    "name": "WEEK_START_DATE",
-                    "dataType": "dateTime"
+                    "name": "ON_ORDER_DAYS_OF_SUPPLY",
+                    "dataType": "double"
                 },
                 {
                     "name": "WIP_DAYS_OF_SUPPLY",
                     "dataType": "double"
                 },
                 {
-                    "name": "WIP_DAYS_OF_SUPPLY_COUNT",
+                    "name": "RECORD_COUNT",
                     "dataType": "double"
-                },
+                }
+            ],
+            "partitions": [
                 {
-                    "name": "WIP_VALUE",
-                    "dataType": "double"
-                },
-                {
-                    "name": "WIP_VALUE_USD",
-                    "dataType": "double"
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:44:15.2064041+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/FACT_Inventory%20Velocity%20Summary.csv?snapshot=2022-05-23T09%3A44%3A15.1749091Z"
                 }
             ]
         },
@@ -3443,12 +4121,6 @@
                 "$type": "FullRefreshPolicy",
                 "location": "FACT_Inventory%20Velocity%20Details.csv"
             },
-            "annotations": [
-                {
-                    "name": "pbi:EntityTypeDisplayHint",
-                    "value": "CalculatedEntity"
-                }
-            ],
             "attributes": [
                 {
                     "name": "ACTIVE_OR_INACTIVE",
@@ -3473,10 +4145,6 @@
                 {
                     "name": "DATE_RUN",
                     "dataType": "dateTime"
-                },
-                {
-                    "name": "FISCAL_WEEK_KEY",
-                    "dataType": "string"
                 },
                 {
                     "name": "INTRANSIT_VALUE",
@@ -3512,15 +4180,11 @@
                 },
                 {
                     "name": "KANBAN_ITEM",
-                    "dataType": "int64"
+                    "dataType": "double"
                 },
                 {
                     "name": "MIN_MAX_ITEM",
-                    "dataType": "int64"
-                },
-                {
-                    "name": "OPEN_BLANKETS",
-                    "dataType": "int64"
+                    "dataType": "double"
                 },
                 {
                     "name": "ON_HAND_DAYS_OF_SUPPLY",
@@ -3528,10 +4192,6 @@
                 },
                 {
                     "name": "ON_ORDER_DAYS_OF_SUPPLY",
-                    "dataType": "double"
-                },
-                {
-                    "name": "ON_ORDER_VALUE_USD",
                     "dataType": "double"
                 },
                 {
@@ -3544,6 +4204,10 @@
                 },
                 {
                     "name": "ONORDER_PO_VALUE_USD",
+                    "dataType": "double"
+                },
+                {
+                    "name": "OPEN_BLANKETS",
                     "dataType": "double"
                 },
                 {
@@ -3617,6 +4281,21 @@
                 {
                     "name": "WIP_IN_PROCESS_VALUE_USD",
                     "dataType": "double"
+                },
+                {
+                    "name": "FISCAL_WEEK_KEY",
+                    "dataType": "string"
+                },
+                {
+                    "name": "ON_ORDER_VALUE_USD",
+                    "dataType": "double"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:47:57.9695223+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/FACT_Inventory%20Velocity%20Details.csv?snapshot=2022-05-23T09%3A47%3A57.9531326Z"
                 }
             ]
         },
@@ -3640,6 +4319,13 @@
                 {
                     "name": "Sort Order",
                     "dataType": "int64"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:42:56.5104981+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/DIM_Sort%20Values.csv?snapshot=2022-05-23T09%3A42%3A56.4960455Z"
                 }
             ]
         },
@@ -3672,6 +4358,13 @@
                     "name": "Revision Type",
                     "dataType": "string"
                 }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:42:56.0730157+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/Version%20History%20Dataflow.csv?snapshot=2022-05-23T09%3A42%3A56.0423059Z"
+                }
             ]
         },
         {
@@ -3698,6 +4391,13 @@
                 {
                     "name": "DATA_FLOW_REFRESH_DATE",
                     "dataType": "dateTime"
+                }
+            ],
+            "partitions": [
+                {
+                    "name": "FullRefreshPolicyPartition",
+                    "refreshTime": "2022-05-23T09:43:20.3690609+00:00",
+                    "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/0b3116ac-1c71-4a87-b3bc-e4c9dee52e70/INFO_DataUpdateInfoInventoryVelocity.csv?snapshot=2022-05-23T09%3A43%3A20.0715193Z"
                 }
             ]
         }
