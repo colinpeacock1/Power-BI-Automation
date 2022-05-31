@@ -1,1 +1,1055 @@
-{"name":"FIN_COMMON","description":"","version":"1.0","culture":"en-US","modifiedTime":"2022-05-19T23:57:12.9207547+00:00","pbi:mashup":{"fastCombine":false,"allowNativeQueries":false,"queriesMetadata":{"GL Account Segment":{"queryId":"d60ff80c-2229-40fb-97c9-ce8663b7fc6c","queryName":"GL Account Segment","loadEnabled":true},"GL Department Segment":{"queryId":"deaf49fb-bde6-47d0-898d-ad9c98e884a3","queryName":"GL Department Segment","loadEnabled":true},"GL Entity Segment":{"queryId":"b94a2b46-5eeb-4f4d-97b3-eb35197b2de1","queryName":"GL Entity Segment","loadEnabled":true},"GL Project Segment":{"queryId":"eead0670-99fd-45ce-b29b-6919bdb4fec7","queryName":"GL Project Segment","loadEnabled":true},"XX_BI_APPS_RPT_PARAMETERS":{"queryId":"a5604d34-e7a9-4dea-a381-0ee6b25b694f","queryName":"XX_BI_APPS_RPT_PARAMETERS","loadEnabled":true},"Entity Department Details":{"queryId":"7b15d2dc-ade8-42fe-ad75-5a80f3ebc333","queryName":"Entity Department Details","loadEnabled":true},"GL Code Combinations":{"queryId":"4a87745a-40ad-4c6f-aafe-99708841da3d","queryName":"GL Code Combinations","loadEnabled":true},"Bussiness Segment Mapping":{"queryId":"ece65fdf-91a5-4a31-8dfe-76025b583ed1","queryName":"Bussiness Segment Mapping","loadEnabled":true},"Financial Product Mapping":{"queryId":"31d25eff-2849-4c46-9d7b-ae4c6dd1b5ba","queryName":"Financial Product Mapping","loadEnabled":true},"Fiscal Calendar Days":{"queryId":"5b9b8b19-e7fa-490e-bf6d-e97d9e4f2798","queryName":"Fiscal Calendar Days","loadEnabled":true},"Countries":{"queryId":"213aceb4-0c54-4a8e-bd4f-2fac1b1639e9","queryName":"Countries","loadEnabled":true},"Inventory Organizations":{"queryId":"bef2e63a-8f3b-4f32-a5f7-426e05f1a495","queryName":"Inventory Organizations","loadEnabled":true},"Subinventories":{"queryId":"bb2b9126-b4e8-447e-a854-c4201774a6e8","queryName":"Subinventories","loadEnabled":true},"FIN Product Dimension":{"queryId":"8f11e888-4acd-4087-b71c-5ab196c3f8e4","queryName":"FIN Product Dimension","loadEnabled":true},"FIN Product UnPivot":{"queryId":"23d3960a-ac97-4aa1-8a81-a676348d4eb2","queryName":"FIN Product UnPivot","loadEnabled":true},"Fiscal Context":{"queryId":"9c051b92-26ac-4285-ac8a-ec3b322db444","queryName":"Fiscal Context","loadEnabled":true},"Operating Unit Data Security":{"queryId":"207999dd-86ac-458e-b6b1-b12e3fcf7803","queryName":"Operating Unit Data Security","loadEnabled":true},"GL Code Combinations Desc":{"queryId":"d7ee6b98-6a8e-4749-a3f7-2c73da97fbb0","queryName":"GL Code Combinations Desc","loadEnabled":true},"Operating Units":{"queryId":"c75969fd-32ba-4b44-b56d-c5d1ce64aaf1","queryName":"Operating Units","loadEnabled":true},"Item Commodity Categories":{"queryId":"3b59515d-07ba-4a88-8bbe-8dbc4bc173c2","queryName":"Item Commodity Categories","loadEnabled":true},"OTD Order Line Type Mapping":{"queryId":"f593d82c-1d06-4ffd-892c-4843a15f2474","queryName":"OTD Order Line Type Mapping","loadEnabled":true}},"document":"section Section1;\r\nshared #\"GL Account Segment\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_GL_ACCOUNT_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"ACCOUNT_CODE\", \"Account Code\"}, {\"ACCOUNT_NAME\", \"Account Name\"}, {\"ACCOUNT_DESC\", \"Account Description\"}, {\"ACCOUNT_TYPE\", \"Account Type\"}, {\"ACCOUNT_SUB_GROUP\", \"Account Sub Group\"}, {\"ACCOUNT_GROUP\", \"Account Group\"}, {\"SUMMARY_ACCOUNT\", \"Summary Account\"}, {\"ENABLED_FLAG\", \"Enabled Flag\"}, {\"START_DATE_ACTIVE\", \"Active Start Date\"}, {\"END_DATE_ACTIVE\", \"Active End Date\"}, {\"CREATION_DATE\", \"Creation Date\"}, {\"LAST_UPDATE_DATE\", \"Last Update Date\"}, {\"CREATED_BY_LOGIN\", \"Created By Login\"}, {\"LAST_UPDATE_LOGIN\", \"Last Update By Login\"}, {\"SUMMARY_MULT_FACTOR\", \"Summary Multiplier\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"GL Department Segment\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_GL_DEPARTMENT_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"DEPARTMENT_CODE\", \"Department Code\"}, {\"DEPARTMENT_NAME\", \"Department Name\"}, {\"DEPARTMENT_DESC\", \"Department Description\"}, {\"ENABLED_FLAG\", \"Enabled Flag\"}, {\"START_DATE_ACTIVE\", \"Active Start Date\"}, {\"END_DATE_ACTIVE\", \"Active End Date\"}, {\"CREATION_DATE\", \"Creation Date\"}, {\"LAST_UPDATE_DATE\", \"Last Update Date\"}, {\"CREATED_BY_LOGIN\", \"Created By Login\"}, {\"LAST_UPDATE_LOGIN\", \"Last Update By Login\"}, {\"DEPARTMENT_SUB_GROUP\", \"Department Sub Group\"}, {\"DEPARTMENT_GROUP\", \"Department Group\"}, {\"SUMMARY_DEPARTMENT\", \"Summary Department\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"GL Entity Segment\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_GL_ENTITY_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"ENTITY_CODE\", \"Entrity Code\"}, {\"ENTITY_NAME\", \"Entity Name\"}, {\"ENTITY_DESC\", \"Entity Description\"}, {\"ENTITY_SUB_GROUP\", \"Entity Sub Group\"}, {\"ENTITY_GROUP\", \"Entity Group\"}, {\"SUMMARY_ENTITY\", \"Summary Entity\"}, {\"LOCAL_GAAP_ENTITY\", \"Local GAAP Entity\"}, {\"ENABLED_FLAG\", \"Enabled Flag\"}, {\"START_DATE_ACTIVE\", \"Active Start Date\"}, {\"END_DATE_ACTIVE\", \"Active End Date\"}, {\"CREATION_DATE\", \"Creation Date\"}, {\"LAST_UPDATE_DATE\", \"Last Update Date\"}, {\"CREATED_BY_LOGIN\", \"Created By Login\"}, {\"LAST_UPDATE_LOGIN\", \"Last Update By Login\"}, {\"CURRENCY_CODE\", \"Currency Code\"}, {\"USGAAP_ENTITY_FLAG\", \"US-GAAP Entity Flag\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"GL Project Segment\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_GL_PROJECT_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"PROJECT_CODE\", \"Project Code\"}, {\"PROJECT_NAME\", \"Project Name\"}, {\"PROJECT_DESC\", \"Project Description\"}, {\"ENABLED_FLAG\", \"Enabled Flag\"}, {\"START_DATE_ACTIVE\", \"Active Start Date\"}, {\"END_DATE_ACTIVE\", \"Active End Date\"}, {\"CREATION_DATE\", \"Creation Date\"}, {\"LAST_UPDATE_DATE\", \"Last Update Date\"}, {\"CREATED_BY_LOGIN\", \"Created By Login\"}, {\"LAST_UPDATE_LOGIN\", \"Last Update By Login\"}, {\"PROJECT_SUB_GROUP\", \"Project Sub Group\"}, {\"PROJECT_GROUP\", \"Project Group\"}, {\"SUMMARY_PROJECT\", \"Summary Project\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared XX_BI_APPS_RPT_PARAMETERS = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"XXFACTS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_BI_APPS_RPT_PARAMETERS\", Kind = \"Table\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"Entity Department Details\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_ENTITY_DEPT_DETAIL\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 2\", {{\"DEPT_SUB_FUNCTION\", \"Department Sub Function\"}, {\"DEPT_FUNCTION\", \"Department Function\"}, {\"ENTITY_CODE\", \"Entity Code\"}, {\"ENTITY_DEPT_CODE\", \"Entity Department\"}, {\"COUNTRY\", \"Country\"}, {\"REGION\", \"Region\"}, {\"COMMENTS\", \"Comments\"}, {\"RECORD_ID\", \"Record Id\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"GL Code Combinations\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"GL\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"GL_CODE_COMBINATIONS\", Kind = \"Table\"]}[Data],\r\n  #\"Changed column type\" = Table.TransformColumnTypes(#\"Navigation 2\", {{\"CODE_COMBINATION_ID\", type text}, {\"LAST_UPDATED_BY\", type text}})\r\nin\r\n  #\"Changed column type\";\r\nshared #\"Bussiness Segment Mapping\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXCOH\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XXCOH_BUSINESS_SEGMENT_MAP\", Kind = \"Table\"]}[Data]\r\nin\r\n  #\"Navigation 3\";\r\nshared #\"Financial Product Mapping\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_FINPRODUCT_MAP\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"RECORD_ID\", \"Record Id\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"Fiscal Calendar Days\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_FISCAL_DAYS_TAB\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 2\", {{\"CAL_DAY\", \"Calendar Day\"}, {\"FISCAL_WEEK_NO\", \"Fiscal Week No\"}, {\"FISCAL_MONTH_WEEK_NO\", \"Fiscal Month Week No\"}, {\"FISCAL_QTR_WEEK_NO\", \"Fiscal Qtr Week No\"}, {\"GL_PERIOD\", \"GL Period\"}, {\"PERIOD_YEAR\", \"Period Year\"}, {\"FISCAL_YEAR\", \"Fiscal Year\"}, {\"QUARTER_NUM\", \"Quarter No\"}, {\"FISCAL_QUARTER\", \"Fiscal Quarter\"}, {\"FYFQ\", \"Fiscal Year Quarter\"}, {\"PERIOD_NUM\", \"Period No\"}, {\"FISCAL_DAY\", \"Fiscal Day\"}, {\"WEEK_START_DATE\", \"Week Start Date\"}, {\"WEEK_END_DATE\", \"Week End Date\"}, {\"PERIOD_START_DATE\", \"Period Start Date\"}, {\"PERIOD_END_DATE\", \"Period End Date\"}, {\"QUARTER_START_DATE\", \"Quarter Start Date\"}, {\"QUARTER_END_DATE\", \"Quarter End Date\"}, {\"YEAR_START_DATE\", \"Year Start Date\"}, {\"YEAR_END_DATE\", \"Year End Date\"}, {\"ROW_CREATION_DATE\", \"Row Creation Date\"}, {\"FISCAL_WEEK\", \"Fiscal Week\"}, {\"FISCAL_YEAR_WEEK\", \"Fiscal Year Week\"}, {\"WEEK_END_FLAG\", \"Week End Flag\"}, {\"MONTH_END_FLAG\", \"Month End Flag\"}, {\"QUARTER_END_FLAG\", \"Quarter End Flag\"}, {\"YEAR_END_FLAG\", \"Year End Flag\"}, {\"PERIOD_SET_NAME\", \"Period Set Name\"}, {\"PERIOD_MONTH\", \"Fiscal Period Month\"}, {\"EXTRACT_DATE\", \"Refresh Date\"}, {\"PQ_LAST_FISCAL_WEEK\", \"Prior Qtr Last Fiscal Week\"}, {\"NQ_FIRST_FISCAL_WEEK\", \"Next Quarter First Fiscal Week\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared Countries = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXSF\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_COUNTRIES\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"COUNTRY_NAME\", \"Country Name\"}, {\"REGION\", \"Country Region\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"Inventory Organizations\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_INVORG_DIM\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"OPERATING_UNIT\", \"Operating Unit\"}, {\"INVORG_CODE\", \"INVORG_CODE\"}, {\"INVORG_ID\", \"INVORG_ID\"}, {\"INVORG_CATEGORY\", \"Inventory Org Category\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared Subinventories = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_SUBINVENTORY_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 2\", {{\"SUBINV_CLASSIFICATION\", \"Subinventory Classification\"}, {\"SUBINVENTORY\", \"Subinventory\"}, {\"SUBINV_COUNTRY\", \"Subinventory Country\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"FIN Product Dimension\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_FINPRODUCT_DIM_VIEW\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 3\";\r\nshared #\"FIN Product UnPivot\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_FINPRODUCT_UNPIVOT_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"PRODUCT_DIM\", \"Product Dimension\"}, {\"PRODUCT_DIM_VALUE\", \"Product Dimension Value\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"Fiscal Context\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_FISCAL_CONTEXT_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"Operating Unit Data Security\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"XXADMIN\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_OU_DATA_SECURITY_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"GL Code Combinations Desc\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXREP_GL_CODE_COMBINATIONS_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"Operating Units\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_OPERATING_UNIT_DIM\", Kind = \"Table\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"Item Commodity Categories\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXREP_COMMODITY_CATEGORY_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"OTD Order Line Type Mapping\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXREP_OTD_LINE_TYPE_MAP_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\n"},"annotations":[{"name":"pbi:QueryGroups","value":"[]"}],"entities":[{"$type":"LocalEntity","name":"GL Account Segment","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"GL%20Account%20Segment.csv"},"attributes":[{"name":"Account Code","dataType":"string"},{"name":"Account Name","dataType":"string"},{"name":"Account Description","dataType":"string"},{"name":"Enabled Flag","dataType":"string"},{"name":"Account Type","dataType":"string"},{"name":"Active Start Date","dataType":"dateTime"},{"name":"Active End Date","dataType":"dateTime"},{"name":"Creation Date","dataType":"dateTime"},{"name":"Last Update Date","dataType":"dateTime"},{"name":"Created By Login","dataType":"string"},{"name":"Last Update By Login","dataType":"string"},{"name":"Account Sub Group","dataType":"string"},{"name":"Account Group","dataType":"string"},{"name":"Summary Account","dataType":"string"},{"name":"Summary Multiplier","dataType":"double"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:22.8036297+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Account%20Segment.csv?snapshot=2022-05-20T07%3A30%3A22.0732637Z"}]},{"$type":"LocalEntity","name":"GL Department Segment","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"GL%20Department%20Segment.csv"},"attributes":[{"name":"Department Code","dataType":"string"},{"name":"Department Name","dataType":"string"},{"name":"Department Description","dataType":"string"},{"name":"Enabled Flag","dataType":"string"},{"name":"Active Start Date","dataType":"dateTime"},{"name":"Active End Date","dataType":"dateTime"},{"name":"Creation Date","dataType":"dateTime"},{"name":"Last Update Date","dataType":"dateTime"},{"name":"Created By Login","dataType":"string"},{"name":"Last Update By Login","dataType":"string"},{"name":"Department Sub Group","dataType":"string"},{"name":"Department Group","dataType":"string"},{"name":"Summary Department","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:22.2880171+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Department%20Segment.csv?snapshot=2022-05-20T07%3A30%3A21.4406240Z"}]},{"$type":"LocalEntity","name":"GL Entity Segment","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"GL%20Entity%20Segment.csv"},"attributes":[{"name":"Entrity Code","dataType":"string"},{"name":"Entity Name","dataType":"string"},{"name":"Entity Description","dataType":"string"},{"name":"Enabled Flag","dataType":"string"},{"name":"Active Start Date","dataType":"dateTime"},{"name":"Active End Date","dataType":"dateTime"},{"name":"Creation Date","dataType":"dateTime"},{"name":"Last Update Date","dataType":"dateTime"},{"name":"Created By Login","dataType":"string"},{"name":"Last Update By Login","dataType":"string"},{"name":"Entity Sub Group","dataType":"string"},{"name":"Entity Group","dataType":"string"},{"name":"Summary Entity","dataType":"string"},{"name":"Local GAAP Entity","dataType":"string"},{"name":"US-GAAP Entity Flag","dataType":"string"},{"name":"Currency Code","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:22.4286355+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Entity%20Segment.csv?snapshot=2022-05-20T07%3A30%3A21.5385684Z"}]},{"$type":"LocalEntity","name":"GL Project Segment","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"GL%20Project%20Segment.csv"},"attributes":[{"name":"Project Code","dataType":"string"},{"name":"Project Name","dataType":"string"},{"name":"Project Description","dataType":"string"},{"name":"Enabled Flag","dataType":"string"},{"name":"Active Start Date","dataType":"dateTime"},{"name":"Active End Date","dataType":"dateTime"},{"name":"Creation Date","dataType":"dateTime"},{"name":"Last Update Date","dataType":"dateTime"},{"name":"Created By Login","dataType":"string"},{"name":"Last Update By Login","dataType":"string"},{"name":"Project Sub Group","dataType":"string"},{"name":"Project Group","dataType":"string"},{"name":"Summary Project","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:23.0223812+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Project%20Segment.csv?snapshot=2022-05-20T07%3A30%3A22.4770335Z"}]},{"$type":"LocalEntity","name":"XX_BI_APPS_RPT_PARAMETERS","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"XX_BI_APPS_RPT_PARAMETERS.csv"},"attributes":[{"name":"RPT_CURRENT_WEEK","dataType":"string"},{"name":"RPT_CURRENT_PERIOD","dataType":"string"},{"name":"RPT_CURRENT_QUARTER","dataType":"string"},{"name":"RPT_CURRENT_YEAR","dataType":"string"},{"name":"RPT_PRIOR_WEEK","dataType":"string"},{"name":"RPT_PRIOR_PERIOD","dataType":"string"},{"name":"RPT_PRIOR_QUARTER","dataType":"string"},{"name":"RPT_PRIOR_YEAR","dataType":"string"},{"name":"RPT_NEXT_WEEK","dataType":"string"},{"name":"RPT_NEXT_PERIOD","dataType":"string"},{"name":"RPT_NEXT_QUARTER","dataType":"string"},{"name":"RPT_NEXT_YEAR","dataType":"string"},{"name":"RPT_SCENARIO","dataType":"string"},{"name":"P_YEAR","dataType":"double"},{"name":"P_QUARTER","dataType":"double"},{"name":"P_PERIOD","dataType":"double"},{"name":"P_WEEK","dataType":"double"},{"name":"AS_OF_DATE","dataType":"dateTime"},{"name":"ACTIVE","dataType":"string"},{"name":"RPT_MODE","dataType":"string"},{"name":"RPT_APPLICATION","dataType":"string"},{"name":"RPT_VERSION","dataType":"string"},{"name":"RPT_PARM_ID","dataType":"double"},{"name":"RPT_COMMENTS","dataType":"string"},{"name":"RPT_MAX_YEAR","dataType":"string"},{"name":"RPT_PRIOR_WEEK_YEAR","dataType":"string"},{"name":"RPT_PRIOR_QTR_YEAR","dataType":"string"},{"name":"RPT_PRIOR_MONTH_YEAR","dataType":"string"},{"name":"REVIEWED_BY","dataType":"string"},{"name":"REVIEWED_DATE","dataType":"dateTime"},{"name":"RPT_VERSION_1","dataType":"string"},{"name":"RPT_VERSION_2","dataType":"string"},{"name":"LAST_UPDATE_DATE","dataType":"dateTime"},{"name":"LAST_UPDATED_BY_NAME","dataType":"string"},{"name":"REVIEW_COMMENTS","dataType":"string"},{"name":"DATA_DIVISION_FACTOR","dataType":"double"},{"name":"DATA_DISP_TEXT","dataType":"string"},{"name":"HDR_DISP_TEXT","dataType":"string"},{"name":"RPT_FCST_VERSION_1","dataType":"string"},{"name":"RPT_FCST_VERSION_2","dataType":"string"},{"name":"RPT_FCST_SCENARIO_1","dataType":"string"},{"name":"RPT_FCST_SCENARIO_2","dataType":"string"},{"name":"PCT_QTR_COMPLETED","dataType":"double"},{"name":"PCT_HIGH_RANGE","dataType":"double"},{"name":"PCT_LOW_RANGE","dataType":"double"},{"name":"PCT_VARIANCE","dataType":"double"},{"name":"VERSION_DT_LOW_RANGE","dataType":"date"},{"name":"RPT_PRIOR_2YEAR","dataType":"string"},{"name":"RPT_PRIOR_3YEAR","dataType":"string"},{"name":"RPT_FCST_EXTRACT","dataType":"string"},{"name":"COMPARE_VERSION1","dataType":"string"},{"name":"COMPARE_VERSION2","dataType":"string"},{"name":"TARGET_DAYS_OF_SUPPLY","dataType":"double"},{"name":"RPT_YEAR1","dataType":"string"},{"name":"RPT_YEAR2","dataType":"string"},{"name":"RPT_YEAR3","dataType":"string"},{"name":"EARLY_GRACE_DAYS","dataType":"double"},{"name":"LATE_GRACE_DAYS","dataType":"double"},{"name":"ROW_CREATION_DATE","dataType":"dateTime"},{"name":"GROUPNAME","dataType":"string"},{"name":"USERNAME","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:14.5592174+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/XX_BI_APPS_RPT_PARAMETERS.csv?snapshot=2022-05-20T07%3A30%3A13.9838693Z"}]},{"$type":"LocalEntity","name":"Entity Department Details","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Entity%20Department%20Details.csv"},"attributes":[{"name":"Record Id","dataType":"double"},{"name":"Entity Department","dataType":"string"},{"name":"Entity Code","dataType":"string"},{"name":"Department Sub Function","dataType":"string"},{"name":"Department Function","dataType":"string"},{"name":"TBU","dataType":"string"},{"name":"Country","dataType":"string"},{"name":"Region","dataType":"string"},{"name":"Comments","dataType":"string"},{"name":"CREATION_DATE","dataType":"dateTime"},{"name":"CREATED_BY_LOGIN","dataType":"string"},{"name":"LAST_UPDATE_DATE","dataType":"dateTime"},{"name":"LAST_UPDATE_LOGIN","dataType":"string"},{"name":"EVP_OWNER","dataType":"string"},{"name":"STATUS","dataType":"string"},{"name":"DESCRIPTION","dataType":"string"},{"name":"LOCATION","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:17.0250456+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Entity%20Department%20Details.csv?snapshot=2022-05-20T07%3A30%3A16.4264790Z"}]},{"$type":"LocalEntity","name":"GL Code Combinations","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"GL%20Code%20Combinations.csv"},"attributes":[{"name":"CODE_COMBINATION_ID","dataType":"string"},{"name":"LAST_UPDATE_DATE","dataType":"dateTime"},{"name":"LAST_UPDATED_BY","dataType":"string"},{"name":"CHART_OF_ACCOUNTS_ID","dataType":"double"},{"name":"DETAIL_POSTING_ALLOWED_FLAG","dataType":"string"},{"name":"DETAIL_BUDGETING_ALLOWED_FLAG","dataType":"string"},{"name":"ACCOUNT_TYPE","dataType":"string"},{"name":"ENABLED_FLAG","dataType":"string"},{"name":"SUMMARY_FLAG","dataType":"string"},{"name":"SEGMENT1","dataType":"string"},{"name":"SEGMENT2","dataType":"string"},{"name":"SEGMENT3","dataType":"string"},{"name":"SEGMENT4","dataType":"string"},{"name":"SEGMENT5","dataType":"string"},{"name":"SEGMENT6","dataType":"string"},{"name":"SEGMENT7","dataType":"string"},{"name":"SEGMENT8","dataType":"string"},{"name":"SEGMENT9","dataType":"string"},{"name":"SEGMENT10","dataType":"string"},{"name":"SEGMENT11","dataType":"string"},{"name":"SEGMENT12","dataType":"string"},{"name":"SEGMENT13","dataType":"string"},{"name":"SEGMENT14","dataType":"string"},{"name":"SEGMENT15","dataType":"string"},{"name":"SEGMENT16","dataType":"string"},{"name":"SEGMENT17","dataType":"string"},{"name":"SEGMENT18","dataType":"string"},{"name":"SEGMENT19","dataType":"string"},{"name":"SEGMENT20","dataType":"string"},{"name":"SEGMENT21","dataType":"string"},{"name":"SEGMENT22","dataType":"string"},{"name":"SEGMENT23","dataType":"string"},{"name":"SEGMENT24","dataType":"string"},{"name":"SEGMENT25","dataType":"string"},{"name":"SEGMENT26","dataType":"string"},{"name":"SEGMENT27","dataType":"string"},{"name":"SEGMENT28","dataType":"string"},{"name":"SEGMENT29","dataType":"string"},{"name":"SEGMENT30","dataType":"string"},{"name":"DESCRIPTION","dataType":"string"},{"name":"TEMPLATE_ID","dataType":"double"},{"name":"ALLOCATION_CREATE_FLAG","dataType":"string"},{"name":"START_DATE_ACTIVE","dataType":"dateTime"},{"name":"END_DATE_ACTIVE","dataType":"dateTime"},{"name":"ATTRIBUTE1","dataType":"string"},{"name":"ATTRIBUTE2","dataType":"string"},{"name":"ATTRIBUTE3","dataType":"string"},{"name":"ATTRIBUTE4","dataType":"string"},{"name":"ATTRIBUTE5","dataType":"string"},{"name":"ATTRIBUTE6","dataType":"string"},{"name":"ATTRIBUTE7","dataType":"string"},{"name":"ATTRIBUTE8","dataType":"string"},{"name":"ATTRIBUTE9","dataType":"string"},{"name":"ATTRIBUTE10","dataType":"string"},{"name":"CONTEXT","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE1","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE2","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE3","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE4","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE5","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE6","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE7","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE8","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE9","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE10","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE11","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE12","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE13","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE14","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE15","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE16","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE17","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE18","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE19","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE20","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE21","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE22","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE23","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE24","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE25","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE26","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE27","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE28","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE29","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE30","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE31","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE32","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE33","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE34","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE35","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE36","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE37","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE38","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE39","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE40","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE41","dataType":"string"},{"name":"SEGMENT_ATTRIBUTE42","dataType":"string"},{"name":"REFERENCE1","dataType":"string"},{"name":"REFERENCE2","dataType":"string"},{"name":"REFERENCE3","dataType":"string"},{"name":"REFERENCE4","dataType":"string"},{"name":"REFERENCE5","dataType":"string"},{"name":"JGZZ_RECON_FLAG","dataType":"string"},{"name":"JGZZ_RECON_CONTEXT","dataType":"string"},{"name":"PRESERVE_FLAG","dataType":"string"},{"name":"REFRESH_FLAG","dataType":"string"},{"name":"IGI_BALANCED_BUDGET_FLAG","dataType":"string"},{"name":"COMPANY_COST_CENTER_ORG_ID","dataType":"double"},{"name":"REVALUATION_ID","dataType":"double"},{"name":"LEDGER_SEGMENT","dataType":"string"},{"name":"LEDGER_TYPE_CODE","dataType":"string"},{"name":"ALTERNATE_CODE_COMBINATION_ID","dataType":"double"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:31:00.0994685+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Code%20Combinations.csv?snapshot=2022-05-20T07%3A30%3A53.4963738Z"}]},{"$type":"LocalEntity","name":"Bussiness Segment Mapping","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Bussiness%20Segment%20Mapping.csv"},"attributes":[{"name":"BUSINESS_SEGMENT_ID","dataType":"double"},{"name":"BUSINESS_SEGMENT","dataType":"string"},{"name":"TBU","dataType":"string"},{"name":"CREATED_BY","dataType":"double"},{"name":"CREATION_DATE","dataType":"dateTime"},{"name":"LAST_UPDATED_BY","dataType":"double"},{"name":"LAST_UPDATE_DATE","dataType":"dateTime"},{"name":"COMMENTS","dataType":"string"},{"name":"VALID_FLAG","dataType":"string"},{"name":"MGT_PRODUCT_GROUP","dataType":"string"},{"name":"MGT_SUB_PRODUCT_GROUP","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:13.096268+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Bussiness%20Segment%20Mapping.csv?snapshot=2022-05-20T07%3A30%3A12.4117643Z"}]},{"$type":"LocalEntity","name":"Financial Product Mapping","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Financial%20Product%20Mapping.csv"},"attributes":[{"name":"Record Id","dataType":"double"},{"name":"ENTITY","dataType":"string"},{"name":"TBU","dataType":"string"},{"name":"PFC","dataType":"string"},{"name":"FIN_TBU","dataType":"string"},{"name":"FIN_PFC","dataType":"string"},{"name":"PRODUCT_SEGMENT","dataType":"string"},{"name":"HFM_PRODUCT_SEQ","dataType":"double"},{"name":"PRODUCT_MAP_ID","dataType":"double"},{"name":"COMMENTS","dataType":"string"},{"name":"CREATION_DATE","dataType":"dateTime"},{"name":"ROW_CREATION_DATE","dataType":"dateTime"},{"name":"FIN_DEFAULT_FORECAST_FIELD","dataType":"string"},{"name":"PRODUCT_MAP_KEY","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:22.866126+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Financial%20Product%20Mapping.csv?snapshot=2022-05-20T07%3A30%3A20.3692345Z"}]},{"$type":"LocalEntity","name":"Fiscal Calendar Days","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Fiscal%20Calendar%20Days.csv"},"attributes":[{"name":"Period Set Name","dataType":"string"},{"name":"Calendar Day","dataType":"dateTime"},{"name":"Fiscal Week","dataType":"string"},{"name":"Fiscal Year Week","dataType":"string"},{"name":"FISCAL_WEEK_DISP","dataType":"string"},{"name":"FISCAL_MONTH_SORT_VALUE","dataType":"string"},{"name":"FISCAL_QUARTER_DISP","dataType":"string"},{"name":"Fiscal Week No","dataType":"double"},{"name":"Fiscal Month Week No","dataType":"double"},{"name":"FISCAL_QTR_WEEK","dataType":"string"},{"name":"Fiscal Qtr Week No","dataType":"double"},{"name":"GL Period","dataType":"string"},{"name":"PQ_LAST_GL_PERIOD","dataType":"string"},{"name":"Period Year","dataType":"double"},{"name":"Fiscal Year","dataType":"string"},{"name":"Quarter No","dataType":"double"},{"name":"Fiscal Quarter","dataType":"string"},{"name":"Fiscal Year Quarter","dataType":"string"},{"name":"PRIOR_FYFQ","dataType":"string"},{"name":"PERIOD_NAME","dataType":"string"},{"name":"Period No","dataType":"double"},{"name":"Fiscal Day","dataType":"double"},{"name":"Week Start Date","dataType":"dateTime"},{"name":"Week End Date","dataType":"dateTime"},{"name":"Period Start Date","dataType":"dateTime"},{"name":"Period End Date","dataType":"dateTime"},{"name":"Quarter Start Date","dataType":"dateTime"},{"name":"Quarter End Date","dataType":"dateTime"},{"name":"Year Start Date","dataType":"dateTime"},{"name":"Year End Date","dataType":"dateTime"},{"name":"Fiscal Period Month","dataType":"string"},{"name":"FC_PERIOD_ID","dataType":"double"},{"name":"FC_QUARTER_ID","dataType":"double"},{"name":"FC_WEEK_ID","dataType":"double"},{"name":"FC_YEAR_OFFSET","dataType":"double"},{"name":"FC_QUARTER_OFFSET","dataType":"double"},{"name":"FC_PERIOD_OFFSET","dataType":"double"},{"name":"FC_WEEK_OFFSET","dataType":"double"},{"name":"FC_DAYS_OFFSET","dataType":"double"},{"name":"FC_HALF","dataType":"string"},{"name":"Next Quarter First Fiscal Week","dataType":"string"},{"name":"Prior Qtr Last Fiscal Week","dataType":"string"},{"name":"CALENDAR_YEAR","dataType":"double"},{"name":"CALENDAR_MONTH","dataType":"double"},{"name":"CALENDAR_YEARMONTHID","dataType":"string"},{"name":"CALENDAR_MONTHNAME","dataType":"string"},{"name":"CALENDAR_MONTHNAMESHORT","dataType":"string"},{"name":"CALENDAR_ISO_WEEK","dataType":"double"},{"name":"CALENDAR_US_WEEK","dataType":"double"},{"name":"CALENDAR_YEAR_SHORT","dataType":"string"},{"name":"CALENDAR_MTH_YEAR","dataType":"string"},{"name":"DAY_NAME","dataType":"string"},{"name":"DAY_OF_WEEK","dataType":"double"},{"name":"WORKING_DAY_FLAG","dataType":"double"},{"name":"CQ_LAST_FISCAL_WEEK","dataType":"string"},{"name":"Row Creation Date","dataType":"date"},{"name":"Week End Flag","dataType":"string"},{"name":"Month End Flag","dataType":"string"},{"name":"Quarter End Flag","dataType":"string"},{"name":"Year End Flag","dataType":"string"},{"name":"FISCAL_WEEK_INDICATOR","dataType":"string"},{"name":"FISCAL_WEEK_INDICATOR_SORT","dataType":"double"},{"name":"FISCAL_MONTH_INDICATOR","dataType":"string"},{"name":"FISCAL_MONTH_INDICATOR_SORT","dataType":"double"},{"name":"FISCAL_QUARTER_INDICATOR","dataType":"string"},{"name":"FISCAL_QUARTER_INDICATOR_SORT","dataType":"double"},{"name":"FISCAL_YEAR_INDICATOR","dataType":"string"},{"name":"FISCAL_YEAR_INDICATOR_SORT","dataType":"double"},{"name":"Refresh Date","dataType":"dateTime"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:20.4947743+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Fiscal%20Calendar%20Days.csv?snapshot=2022-05-20T07%3A30%3A19.0989568Z"}]},{"$type":"LocalEntity","name":"Countries","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Countries.csv"},"attributes":[{"name":"RECORD_ID","dataType":"double"},{"name":"COUNTRY_CODE","dataType":"string"},{"name":"COUNTRY_3DIGIT_CODE","dataType":"string"},{"name":"Country Name","dataType":"string"},{"name":"Country Region","dataType":"string"},{"name":"COUNTRY_CODE_NO","dataType":"string"},{"name":"DISP_SEQ","dataType":"string"},{"name":"ROW_CREATION_DATE","dataType":"dateTime"},{"name":"REGION_GROUP","dataType":"string"},{"name":"CONTINENT","dataType":"string"},{"name":"SUB_REGION","dataType":"string"},{"name":"INTERMEDIATE_REGION","dataType":"string"},{"name":"SERVICE_REGION","dataType":"string"},{"name":"FINANCE_REGION","dataType":"string"},{"name":"MARKETING_REGION","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:13.2368732+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Countries.csv?snapshot=2022-05-20T07%3A30%3A12.7985437Z"}]},{"$type":"LocalEntity","name":"Inventory Organizations","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Inventory%20Organizations.csv"},"attributes":[{"name":"INVORG_ID","dataType":"double"},{"name":"OPERATING_UNIT_ID","dataType":"double"},{"name":"LEDGER_ID","dataType":"double"},{"name":"GL_ENTITY","dataType":"string"},{"name":"Operating Unit","dataType":"string"},{"name":"LEDGER","dataType":"string"},{"name":"INVORG_CODE","dataType":"string"},{"name":"CURRENCY_CODE","dataType":"string"},{"name":"Inventory Org Category","dataType":"string"},{"name":"INV_ORG_CODE_CUSTOWNED","dataType":"string"},{"name":"TIMEZONE","dataType":"string"},{"name":"DISABLE_DATE","dataType":"date"},{"name":"CREATION_DATE","dataType":"dateTime"},{"name":"CREATED_BY_LOGIN","dataType":"string"},{"name":"LAST_UPDATE_DATE","dataType":"dateTime"},{"name":"LAST_UPDATE_LOGIN","dataType":"string"},{"name":"INVORG_GROUP","dataType":"string"},{"name":"LABOR_TARGET_PCT","dataType":"double"},{"name":"BASELINE_FYFQ","dataType":"string"},{"name":"COUNTRY_CODE","dataType":"string"},{"name":"INVORG_TYPE","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:23.3973763+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Inventory%20Organizations.csv?snapshot=2022-05-20T07%3A30%3A22.9977367Z"}]},{"$type":"LocalEntity","name":"Subinventories","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Subinventories.csv"},"attributes":[{"name":"EXTRACT_DATE","dataType":"dateTime"},{"name":"TIMEZONE_EXTRACT_TIME","dataType":"dateTime"},{"name":"ORGANIZATION_CODE","dataType":"string"},{"name":"SUBINVENTORY_ID","dataType":"string"},{"name":"Subinventory","dataType":"string"},{"name":"INV_ORG_ID","dataType":"double"},{"name":"ASSET_INVENTORY","dataType":"double"},{"name":"Subinventory Classification","dataType":"string"},{"name":"Subinventory Country","dataType":"string"},{"name":"DESCRIPTION","dataType":"string"},{"name":"DISABLE_DATE","dataType":"dateTime"},{"name":"PICKING_ORDER","dataType":"double"},{"name":"ENABLED_SUBINVENTORY","dataType":"string"},{"name":"QUANTITY_TRACKED","dataType":"string"},{"name":"ASSET_SUBINVENTORY","dataType":"string"},{"name":"DEPRECIABLE_SUBINVENTORY","dataType":"string"},{"name":"ATP_SUBINVENTORY","dataType":"string"},{"name":"RESERVABLE_SUBINVENTORY","dataType":"string"},{"name":"NETTABLE_SUBINVENTORY","dataType":"string"},{"name":"LOCATOR_CONTROL_TYPE","dataType":"string"},{"name":"MATERIAL_ACCOUNT","dataType":"string"},{"name":"EXPENSE_ACCOUNT","dataType":"string"},{"name":"OSP_ACCOUNT","dataType":"string"},{"name":"OVERHEAD_ACCOUNT","dataType":"string"},{"name":"RESOURCE_ACCOUNT","dataType":"string"},{"name":"MATERIAL_OVERHEAD_ACCOUNT","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:24.194314+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Subinventories.csv?snapshot=2022-05-20T07%3A30%3A23.6153854Z"}]},{"$type":"LocalEntity","name":"FIN Product Dimension","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"FIN%20Product%20Dimension.csv"},"attributes":[{"name":"FIN_PFC_KEY","dataType":"string"},{"name":"Product Family","dataType":"string"},{"name":"TBU","dataType":"string"},{"name":"Product Segment","dataType":"string"},{"name":"Product Sub Group","dataType":"string"},{"name":"Product Group","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:15.3092247+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/FIN%20Product%20Dimension.csv?snapshot=2022-05-20T07%3A30%3A14.8323861Z"}]},{"$type":"LocalEntity","name":"FIN Product UnPivot","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"FIN%20Product%20UnPivot.csv"},"attributes":[{"name":"FIN_PFC_KEY","dataType":"string"},{"name":"Product Dimension","dataType":"string"},{"name":"Product Dimension Value","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:13.387338+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/FIN%20Product%20UnPivot.csv?snapshot=2022-05-20T07%3A30%3A13.0104231Z"}]},{"$type":"LocalEntity","name":"Fiscal Context","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Fiscal%20Context.csv"},"attributes":[{"name":"PERIOD_SET_NAME","dataType":"string"},{"name":"CAL_DAY","dataType":"dateTime"},{"name":"FISCAL_WEEK","dataType":"string"},{"name":"FISCAL_YEAR_WEEK","dataType":"string"},{"name":"FISCAL_WEEK_DISP","dataType":"string"},{"name":"FISCAL_MONTH_SORT_VALUE","dataType":"string"},{"name":"FISCAL_QUARTER_DISP","dataType":"string"},{"name":"FISCAL_WEEK_NO","dataType":"double"},{"name":"FISCAL_MONTH_WEEK_NO","dataType":"double"},{"name":"FISCAL_QTR_WEEK","dataType":"string"},{"name":"FISCAL_QTR_WEEK_NO","dataType":"double"},{"name":"GL_PERIOD","dataType":"string"},{"name":"PQ_LAST_GL_PERIOD","dataType":"string"},{"name":"PERIOD_YEAR","dataType":"double"},{"name":"FISCAL_YEAR","dataType":"string"},{"name":"QUARTER_NUM","dataType":"double"},{"name":"FISCAL_QUARTER","dataType":"string"},{"name":"FYFQ","dataType":"string"},{"name":"PRIOR_FYFQ","dataType":"string"},{"name":"PERIOD_NAME","dataType":"string"},{"name":"PERIOD_NUM","dataType":"double"},{"name":"FISCAL_DAY","dataType":"double"},{"name":"WEEK_START_DATE","dataType":"dateTime"},{"name":"WEEK_END_DATE","dataType":"dateTime"},{"name":"PERIOD_START_DATE","dataType":"dateTime"},{"name":"PERIOD_END_DATE","dataType":"dateTime"},{"name":"QUARTER_START_DATE","dataType":"dateTime"},{"name":"QUARTER_END_DATE","dataType":"dateTime"},{"name":"YEAR_START_DATE","dataType":"dateTime"},{"name":"YEAR_END_DATE","dataType":"dateTime"},{"name":"PERIOD_MONTH","dataType":"string"},{"name":"FC_PERIOD_ID","dataType":"double"},{"name":"FC_QUARTER_ID","dataType":"double"},{"name":"FC_WEEK_ID","dataType":"double"},{"name":"FC_YEAR_OFFSET","dataType":"double"},{"name":"FC_QUARTER_OFFSET","dataType":"double"},{"name":"FC_PERIOD_OFFSET","dataType":"double"},{"name":"FC_WEEK_OFFSET","dataType":"double"},{"name":"FC_DAYS_OFFSET","dataType":"double"},{"name":"FC_HALF","dataType":"string"},{"name":"NQ_FIRST_FISCAL_WEEK","dataType":"string"},{"name":"PQ_LAST_FISCAL_WEEK","dataType":"string"},{"name":"CALENDAR_YEAR","dataType":"double"},{"name":"CALENDAR_MONTH","dataType":"double"},{"name":"CALENDAR_YEARMONTHID","dataType":"string"},{"name":"CALENDAR_MONTHNAME","dataType":"string"},{"name":"CALENDAR_MONTHNAMESHORT","dataType":"string"},{"name":"CALENDAR_ISO_WEEK","dataType":"double"},{"name":"CALENDAR_US_WEEK","dataType":"double"},{"name":"CALENDAR_YEAR_SHORT","dataType":"string"},{"name":"CALENDAR_MTH_YEAR","dataType":"string"},{"name":"DAY_NAME","dataType":"string"},{"name":"DAY_OF_WEEK","dataType":"double"},{"name":"WORKING_DAY_FLAG","dataType":"double"},{"name":"CQ_LAST_FISCAL_WEEK","dataType":"string"},{"name":"ROW_CREATION_DATE","dataType":"date"},{"name":"WEEK_END_FLAG","dataType":"string"},{"name":"MONTH_END_FLAG","dataType":"string"},{"name":"QUARTER_END_FLAG","dataType":"string"},{"name":"YEAR_END_FLAG","dataType":"string"},{"name":"FISCAL_WEEK_INDICATOR","dataType":"string"},{"name":"FISCAL_WEEK_INDICATOR_SORT","dataType":"double"},{"name":"FISCAL_MONTH_INDICATOR","dataType":"string"},{"name":"FISCAL_MONTH_INDICATOR_SORT","dataType":"double"},{"name":"FISCAL_QUARTER_INDICATOR","dataType":"string"},{"name":"FISCAL_QUARTER_INDICATOR_SORT","dataType":"double"},{"name":"FISCAL_YEAR_INDICATOR","dataType":"string"},{"name":"FISCAL_YEAR_INDICATOR_SORT","dataType":"double"},{"name":"EXTRACT_DATE","dataType":"dateTime"},{"name":"CONTEXT","dataType":"string"},{"name":"DATA_UPDATE_DESC","dataType":"string"},{"name":"CONTEXT_FYWK","dataType":"string"},{"name":"CONTEXT_PERIOD","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:23.8817611+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Fiscal%20Context.csv?snapshot=2022-05-20T07%3A30%3A23.3985095Z"}]},{"$type":"LocalEntity","name":"Operating Unit Data Security","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Operating%20Unit%20Data%20Security.csv"},"attributes":[{"name":"OPERATING_UNIT_ID","dataType":"double"},{"name":"OPERATING_UNIT_NAME","dataType":"string"},{"name":"USER_EMAIL","dataType":"string"},{"name":"RECORD_ID","dataType":"double"},{"name":"GROUP_NAME","dataType":"string"},{"name":"USER_ROLE","dataType":"string"},{"name":"OPERATING_UNIT_IDS","dataType":"string"},{"name":"COMMENTS","dataType":"string"},{"name":"CREATION_DATE","dataType":"dateTime"},{"name":"LAST_UPDATE_DATE","dataType":"dateTime"},{"name":"CREATED_BY_LOGIN","dataType":"string"},{"name":"LAST_UPDATE_LOGIN","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:22.1005163+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Operating%20Unit%20Data%20Security.csv?snapshot=2022-05-20T07%3A30%3A21.3876536Z"}]},{"$type":"LocalEntity","name":"GL Code Combinations Desc","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"GL%20Code%20Combinations%20Desc.csv"},"attributes":[{"name":"CODE_COMBINATION_ID","dataType":"double"},{"name":"LAST_UPDATE_DATE","dataType":"dateTime"},{"name":"DETAIL_POSTING_ALLOWED_FLAG","dataType":"string"},{"name":"DETAIL_BUDGETING_ALLOWED_FLAG","dataType":"string"},{"name":"ACCOUNT_TYPE","dataType":"string"},{"name":"ENABLED_FLAG","dataType":"string"},{"name":"SUMMARY_FLAG","dataType":"string"},{"name":"START_DATE_ACTIVE","dataType":"dateTime"},{"name":"END_DATE_ACTIVE","dataType":"dateTime"},{"name":"SEGMENT1","dataType":"string"},{"name":"SEGMENT2","dataType":"string"},{"name":"SEGMENT3","dataType":"string"},{"name":"SEGMENT4","dataType":"string"},{"name":"SEGMENT5","dataType":"string"},{"name":"SEGMENT6","dataType":"string"},{"name":"CONCATENATED_SEGMENTS","dataType":"string"},{"name":"ENTITY_NAME","dataType":"string"},{"name":"ENTITY_DESC","dataType":"string"},{"name":"DEPARTMENT_NAME","dataType":"string"},{"name":"DEPARTMENT_DESC","dataType":"string"},{"name":"ACCOUNT_NAME","dataType":"string"},{"name":"ACCOUNT_DESC","dataType":"string"},{"name":"PROJECT_NAME","dataType":"string"},{"name":"PROJECT_DESC","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:42.4101281+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Code%20Combinations%20Desc.csv?snapshot=2022-05-20T07%3A30%3A36.5450238Z"}]},{"$type":"LocalEntity","name":"Operating Units","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Operating%20Units.csv"},"attributes":[{"name":"OPERATING_UNIT_ID","dataType":"double"},{"name":"OPERATING_UNIT","dataType":"string"},{"name":"DISABLE_DATE","dataType":"date"},{"name":"OU_REGION","dataType":"string"},{"name":"TIMEZONE","dataType":"string"},{"name":"CREATION_DATE","dataType":"dateTime"},{"name":"CREATED_BY_LOGIN","dataType":"string"},{"name":"LAST_UPDATE_DATE","dataType":"dateTime"},{"name":"LAST_UPDATE_LOGIN","dataType":"string"},{"name":"INV_ORG_CODE_CUSTOWNED","dataType":"string"},{"name":"LEDGER_ID","dataType":"double"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:16.8688155+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Operating%20Units.csv?snapshot=2022-05-20T07%3A30%3A16.2705671Z"}]},{"$type":"LocalEntity","name":"Item Commodity Categories","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"Item%20Commodity%20Categories.csv"},"attributes":[{"name":"CATEGORY_STRUCTURE","dataType":"string"},{"name":"DESCRIPTION","dataType":"string"},{"name":"CATEGORY_SET_NAME","dataType":"string"},{"name":"ENABLED_FLG","dataType":"string"},{"name":"DISABLE_DATE","dataType":"dateTime"},{"name":"SEGMENT1","dataType":"string"},{"name":"STRUCTURE_ID","dataType":"double"},{"name":"CATEGORY_ID","dataType":"double"},{"name":"LAST_UPDATE_DATE","dataType":"dateTime"},{"name":"CREATION_DATE","dataType":"dateTime"},{"name":"CREATED_BY","dataType":"string"},{"name":"LAST_UPDATED_BY","dataType":"string"},{"name":"CATEGORY_SET_ID","dataType":"double"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:21.8661201+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Item%20Commodity%20Categories.csv?snapshot=2022-05-20T07%3A30%3A21.4046440Z"}]},{"$type":"LocalEntity","name":"OTD Order Line Type Mapping","description":"","pbi:refreshPolicy":{"$type":"FullRefreshPolicy","location":"OTD%20Order%20Line%20Type%20Mapping.csv"},"attributes":[{"name":"ORDER_TYPE","dataType":"string"},{"name":"LINE_TYPE","dataType":"string"},{"name":"ORDER_CATEGORY","dataType":"string"},{"name":"ORDER_CLASSIFICATION","dataType":"string"},{"name":"ORDER_TYPE_ID","dataType":"double"},{"name":"LINE_TYPE_ID","dataType":"double"},{"name":"CUST_TRX_TYPE_ID","dataType":"double"},{"name":"ORG_ID","dataType":"double"},{"name":"ATTRIBUTE1","dataType":"string"},{"name":"ORDER_LINE_TYPE_ID_KEY","dataType":"string"}],"partitions":[{"name":"FullRefreshPolicyPartition","refreshTime":"2022-05-20T07:30:23.1319717+00:00","location":"https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/OTD%20Order%20Line%20Type%20Mapping.csv?snapshot=2022-05-20T07%3A30%3A22.4730357Z"}]}]}
+{
+  "name": "FIN_COMMON",
+  "description": "",
+  "version": "1.0",
+  "culture": "en-US",
+  "modifiedTime": "2022-05-19T23:57:12.9207547+00:00",
+  "pbi:mashup": {
+    "fastCombine": false,
+    "allowNativeQueries": false,
+    "queriesMetadata": {
+      "GL Account Segment": {
+        "queryId": "d60ff80c-2229-40fb-97c9-ce8663b7fc6c",
+        "queryName": "GL Account Segment",
+        "loadEnabled": true
+      },
+      "GL Department Segment": {
+        "queryId": "deaf49fb-bde6-47d0-898d-ad9c98e884a3",
+        "queryName": "GL Department Segment",
+        "loadEnabled": true
+      },
+      "GL Entity Segment": {
+        "queryId": "b94a2b46-5eeb-4f4d-97b3-eb35197b2de1",
+        "queryName": "GL Entity Segment",
+        "loadEnabled": true
+      },
+      "GL Project Segment": {
+        "queryId": "eead0670-99fd-45ce-b29b-6919bdb4fec7",
+        "queryName": "GL Project Segment",
+        "loadEnabled": true
+      },
+      "XX_BI_APPS_RPT_PARAMETERS": {
+        "queryId": "a5604d34-e7a9-4dea-a381-0ee6b25b694f",
+        "queryName": "XX_BI_APPS_RPT_PARAMETERS",
+        "loadEnabled": true
+      },
+      "Entity Department Details": {
+        "queryId": "7b15d2dc-ade8-42fe-ad75-5a80f3ebc333",
+        "queryName": "Entity Department Details",
+        "loadEnabled": true
+      },
+      "GL Code Combinations": {
+        "queryId": "4a87745a-40ad-4c6f-aafe-99708841da3d",
+        "queryName": "GL Code Combinations",
+        "loadEnabled": true
+      },
+      "Bussiness Segment Mapping": {
+        "queryId": "ece65fdf-91a5-4a31-8dfe-76025b583ed1",
+        "queryName": "Bussiness Segment Mapping",
+        "loadEnabled": true
+      },
+      "Financial Product Mapping": {
+        "queryId": "31d25eff-2849-4c46-9d7b-ae4c6dd1b5ba",
+        "queryName": "Financial Product Mapping",
+        "loadEnabled": true
+      },
+      "Fiscal Calendar Days": {
+        "queryId": "5b9b8b19-e7fa-490e-bf6d-e97d9e4f2798",
+        "queryName": "Fiscal Calendar Days",
+        "loadEnabled": true
+      },
+      "Countries": {
+        "queryId": "213aceb4-0c54-4a8e-bd4f-2fac1b1639e9",
+        "queryName": "Countries",
+        "loadEnabled": true
+      },
+      "Inventory Organizations": {
+        "queryId": "bef2e63a-8f3b-4f32-a5f7-426e05f1a495",
+        "queryName": "Inventory Organizations",
+        "loadEnabled": true
+      },
+      "Subinventories": {
+        "queryId": "bb2b9126-b4e8-447e-a854-c4201774a6e8",
+        "queryName": "Subinventories",
+        "loadEnabled": true
+      },
+      "FIN Product Dimension": {
+        "queryId": "8f11e888-4acd-4087-b71c-5ab196c3f8e4",
+        "queryName": "FIN Product Dimension",
+        "loadEnabled": true
+      },
+      "FIN Product UnPivot": {
+        "queryId": "23d3960a-ac97-4aa1-8a81-a676348d4eb2",
+        "queryName": "FIN Product UnPivot",
+        "loadEnabled": true
+      },
+      "Fiscal Context": {
+        "queryId": "9c051b92-26ac-4285-ac8a-ec3b322db444",
+        "queryName": "Fiscal Context",
+        "loadEnabled": true
+      },
+      "Operating Unit Data Security": {
+        "queryId": "207999dd-86ac-458e-b6b1-b12e3fcf7803",
+        "queryName": "Operating Unit Data Security",
+        "loadEnabled": true
+      },
+      "GL Code Combinations Desc": {
+        "queryId": "d7ee6b98-6a8e-4749-a3f7-2c73da97fbb0",
+        "queryName": "GL Code Combinations Desc",
+        "loadEnabled": true
+      },
+      "Operating Units": {
+        "queryId": "c75969fd-32ba-4b44-b56d-c5d1ce64aaf1",
+        "queryName": "Operating Units",
+        "loadEnabled": true
+      },
+      "Item Commodity Categories": {
+        "queryId": "3b59515d-07ba-4a88-8bbe-8dbc4bc173c2",
+        "queryName": "Item Commodity Categories",
+        "loadEnabled": true
+      },
+      "OTD Order Line Type Mapping": {
+        "queryId": "f593d82c-1d06-4ffd-892c-4843a15f2474",
+        "queryName": "OTD Order Line Type Mapping",
+        "loadEnabled": true
+      }
+    },
+    "document": "section Section1;\r\nshared #\"GL Account Segment\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_GL_ACCOUNT_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"ACCOUNT_CODE\", \"Account Code\"}, {\"ACCOUNT_NAME\", \"Account Name\"}, {\"ACCOUNT_DESC\", \"Account Description\"}, {\"ACCOUNT_TYPE\", \"Account Type\"}, {\"ACCOUNT_SUB_GROUP\", \"Account Sub Group\"}, {\"ACCOUNT_GROUP\", \"Account Group\"}, {\"SUMMARY_ACCOUNT\", \"Summary Account\"}, {\"ENABLED_FLAG\", \"Enabled Flag\"}, {\"START_DATE_ACTIVE\", \"Active Start Date\"}, {\"END_DATE_ACTIVE\", \"Active End Date\"}, {\"CREATION_DATE\", \"Creation Date\"}, {\"LAST_UPDATE_DATE\", \"Last Update Date\"}, {\"CREATED_BY_LOGIN\", \"Created By Login\"}, {\"LAST_UPDATE_LOGIN\", \"Last Update By Login\"}, {\"SUMMARY_MULT_FACTOR\", \"Summary Multiplier\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"GL Department Segment\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_GL_DEPARTMENT_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"DEPARTMENT_CODE\", \"Department Code\"}, {\"DEPARTMENT_NAME\", \"Department Name\"}, {\"DEPARTMENT_DESC\", \"Department Description\"}, {\"ENABLED_FLAG\", \"Enabled Flag\"}, {\"START_DATE_ACTIVE\", \"Active Start Date\"}, {\"END_DATE_ACTIVE\", \"Active End Date\"}, {\"CREATION_DATE\", \"Creation Date\"}, {\"LAST_UPDATE_DATE\", \"Last Update Date\"}, {\"CREATED_BY_LOGIN\", \"Created By Login\"}, {\"LAST_UPDATE_LOGIN\", \"Last Update By Login\"}, {\"DEPARTMENT_SUB_GROUP\", \"Department Sub Group\"}, {\"DEPARTMENT_GROUP\", \"Department Group\"}, {\"SUMMARY_DEPARTMENT\", \"Summary Department\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"GL Entity Segment\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_GL_ENTITY_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"ENTITY_CODE\", \"Entrity Code\"}, {\"ENTITY_NAME\", \"Entity Name\"}, {\"ENTITY_DESC\", \"Entity Description\"}, {\"ENTITY_SUB_GROUP\", \"Entity Sub Group\"}, {\"ENTITY_GROUP\", \"Entity Group\"}, {\"SUMMARY_ENTITY\", \"Summary Entity\"}, {\"LOCAL_GAAP_ENTITY\", \"Local GAAP Entity\"}, {\"ENABLED_FLAG\", \"Enabled Flag\"}, {\"START_DATE_ACTIVE\", \"Active Start Date\"}, {\"END_DATE_ACTIVE\", \"Active End Date\"}, {\"CREATION_DATE\", \"Creation Date\"}, {\"LAST_UPDATE_DATE\", \"Last Update Date\"}, {\"CREATED_BY_LOGIN\", \"Created By Login\"}, {\"LAST_UPDATE_LOGIN\", \"Last Update By Login\"}, {\"CURRENCY_CODE\", \"Currency Code\"}, {\"USGAAP_ENTITY_FLAG\", \"US-GAAP Entity Flag\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"GL Project Segment\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_GL_PROJECT_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"PROJECT_CODE\", \"Project Code\"}, {\"PROJECT_NAME\", \"Project Name\"}, {\"PROJECT_DESC\", \"Project Description\"}, {\"ENABLED_FLAG\", \"Enabled Flag\"}, {\"START_DATE_ACTIVE\", \"Active Start Date\"}, {\"END_DATE_ACTIVE\", \"Active End Date\"}, {\"CREATION_DATE\", \"Creation Date\"}, {\"LAST_UPDATE_DATE\", \"Last Update Date\"}, {\"CREATED_BY_LOGIN\", \"Created By Login\"}, {\"LAST_UPDATE_LOGIN\", \"Last Update By Login\"}, {\"PROJECT_SUB_GROUP\", \"Project Sub Group\"}, {\"PROJECT_GROUP\", \"Project Group\"}, {\"SUMMARY_PROJECT\", \"Summary Project\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared XX_BI_APPS_RPT_PARAMETERS = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"XXFACTS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_BI_APPS_RPT_PARAMETERS\", Kind = \"Table\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"Entity Department Details\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_ENTITY_DEPT_DETAIL\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 2\", {{\"DEPT_SUB_FUNCTION\", \"Department Sub Function\"}, {\"DEPT_FUNCTION\", \"Department Function\"}, {\"ENTITY_CODE\", \"Entity Code\"}, {\"ENTITY_DEPT_CODE\", \"Entity Department\"}, {\"COUNTRY\", \"Country\"}, {\"REGION\", \"Region\"}, {\"COMMENTS\", \"Comments\"}, {\"RECORD_ID\", \"Record Id\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"GL Code Combinations\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"GL\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"GL_CODE_COMBINATIONS\", Kind = \"Table\"]}[Data],\r\n  #\"Changed column type\" = Table.TransformColumnTypes(#\"Navigation 2\", {{\"CODE_COMBINATION_ID\", type text}, {\"LAST_UPDATED_BY\", type text}})\r\nin\r\n  #\"Changed column type\";\r\nshared #\"Bussiness Segment Mapping\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXCOH\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XXCOH_BUSINESS_SEGMENT_MAP\", Kind = \"Table\"]}[Data]\r\nin\r\n  #\"Navigation 3\";\r\nshared #\"Financial Product Mapping\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_FINPRODUCT_MAP\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"RECORD_ID\", \"Record Id\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"Fiscal Calendar Days\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_FISCAL_DAYS_TAB\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 2\", {{\"CAL_DAY\", \"Calendar Day\"}, {\"FISCAL_WEEK_NO\", \"Fiscal Week No\"}, {\"FISCAL_MONTH_WEEK_NO\", \"Fiscal Month Week No\"}, {\"FISCAL_QTR_WEEK_NO\", \"Fiscal Qtr Week No\"}, {\"GL_PERIOD\", \"GL Period\"}, {\"PERIOD_YEAR\", \"Period Year\"}, {\"FISCAL_YEAR\", \"Fiscal Year\"}, {\"QUARTER_NUM\", \"Quarter No\"}, {\"FISCAL_QUARTER\", \"Fiscal Quarter\"}, {\"FYFQ\", \"Fiscal Year Quarter\"}, {\"PERIOD_NUM\", \"Period No\"}, {\"FISCAL_DAY\", \"Fiscal Day\"}, {\"WEEK_START_DATE\", \"Week Start Date\"}, {\"WEEK_END_DATE\", \"Week End Date\"}, {\"PERIOD_START_DATE\", \"Period Start Date\"}, {\"PERIOD_END_DATE\", \"Period End Date\"}, {\"QUARTER_START_DATE\", \"Quarter Start Date\"}, {\"QUARTER_END_DATE\", \"Quarter End Date\"}, {\"YEAR_START_DATE\", \"Year Start Date\"}, {\"YEAR_END_DATE\", \"Year End Date\"}, {\"ROW_CREATION_DATE\", \"Row Creation Date\"}, {\"FISCAL_WEEK\", \"Fiscal Week\"}, {\"FISCAL_YEAR_WEEK\", \"Fiscal Year Week\"}, {\"WEEK_END_FLAG\", \"Week End Flag\"}, {\"MONTH_END_FLAG\", \"Month End Flag\"}, {\"QUARTER_END_FLAG\", \"Quarter End Flag\"}, {\"YEAR_END_FLAG\", \"Year End Flag\"}, {\"PERIOD_SET_NAME\", \"Period Set Name\"}, {\"PERIOD_MONTH\", \"Fiscal Period Month\"}, {\"EXTRACT_DATE\", \"Refresh Date\"}, {\"PQ_LAST_FISCAL_WEEK\", \"Prior Qtr Last Fiscal Week\"}, {\"NQ_FIRST_FISCAL_WEEK\", \"Next Quarter First Fiscal Week\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared Countries = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXSF\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_COUNTRIES\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"COUNTRY_NAME\", \"Country Name\"}, {\"REGION\", \"Country Region\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"Inventory Organizations\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_INVORG_DIM\", Kind = \"Table\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"OPERATING_UNIT\", \"Operating Unit\"}, {\"INVORG_CODE\", \"INVORG_CODE\"}, {\"INVORG_ID\", \"INVORG_ID\"}, {\"INVORG_CATEGORY\", \"Inventory Org Category\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared Subinventories = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_PROD_WHSE\", null),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_SUBINVENTORY_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 2\", {{\"SUBINV_CLASSIFICATION\", \"Subinventory Classification\"}, {\"SUBINVENTORY\", \"Subinventory\"}, {\"SUBINV_COUNTRY\", \"Subinventory Country\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"FIN Product Dimension\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_FINPRODUCT_DIM_VIEW\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 3\";\r\nshared #\"FIN Product UnPivot\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", null),\r\n  #\"Navigation 1\" = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 3\" = #\"Navigation 2\"{[Name = \"XX_FINPRODUCT_UNPIVOT_VIEW\", Kind = \"View\"]}[Data],\r\n  #\"Renamed columns\" = Table.RenameColumns(#\"Navigation 3\", {{\"PRODUCT_DIM\", \"Product Dimension\"}, {\"PRODUCT_DIM_VALUE\", \"Product Dimension Value\"}})\r\nin\r\n  #\"Renamed columns\";\r\nshared #\"Fiscal Context\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_FISCAL_CONTEXT_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"Operating Unit Data Security\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"XXADMIN\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_OU_DATA_SECURITY_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"GL Code Combinations Desc\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXREP_GL_CODE_COMBINATIONS_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"Operating Units\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"XXDIMS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XX_OPERATING_UNIT_DIM\", Kind = \"Table\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"Item Commodity Categories\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXREP_COMMODITY_CATEGORY_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\nshared #\"OTD Order Line Type Mapping\" = let\r\n  Source = Snowflake.Databases(\"mma12090.snowflakecomputing.com\", \"COMPUTE_REPORTING\", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),\r\n  Navigation = Source{[Name = \"PROD_DB\", Kind = \"Database\"]}[Data],\r\n  #\"Navigation 1\" = Navigation{[Name = \"APPS\", Kind = \"Schema\"]}[Data],\r\n  #\"Navigation 2\" = #\"Navigation 1\"{[Name = \"XXREP_OTD_LINE_TYPE_MAP_V\", Kind = \"View\"]}[Data]\r\nin\r\n  #\"Navigation 2\";\r\n"
+  },
+  "annotations": [{ "name": "pbi:QueryGroups", "value": "[]" }],
+  "entities": [
+    {
+      "$type": "LocalEntity",
+      "name": "GL Account Segment",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "GL%20Account%20Segment.csv"
+      },
+      "attributes": [
+        { "name": "Account Code", "dataType": "string" },
+        { "name": "Account Name", "dataType": "string" },
+        { "name": "Account Description", "dataType": "string" },
+        { "name": "Enabled Flag", "dataType": "string" },
+        { "name": "Account Type", "dataType": "string" },
+        { "name": "Active Start Date", "dataType": "dateTime" },
+        { "name": "Active End Date", "dataType": "dateTime" },
+        { "name": "Creation Date", "dataType": "dateTime" },
+        { "name": "Last Update Date", "dataType": "dateTime" },
+        { "name": "Created By Login", "dataType": "string" },
+        { "name": "Last Update By Login", "dataType": "string" },
+        { "name": "Account Sub Group", "dataType": "string" },
+        { "name": "Account Group", "dataType": "string" },
+        { "name": "Summary Account", "dataType": "string" },
+        { "name": "Summary Multiplier", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:22.8036297+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Account%20Segment.csv?snapshot=2022-05-20T07%3A30%3A22.0732637Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "GL Department Segment",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "GL%20Department%20Segment.csv"
+      },
+      "attributes": [
+        { "name": "Department Code", "dataType": "string" },
+        { "name": "Department Name", "dataType": "string" },
+        { "name": "Department Description", "dataType": "string" },
+        { "name": "Enabled Flag", "dataType": "string" },
+        { "name": "Active Start Date", "dataType": "dateTime" },
+        { "name": "Active End Date", "dataType": "dateTime" },
+        { "name": "Creation Date", "dataType": "dateTime" },
+        { "name": "Last Update Date", "dataType": "dateTime" },
+        { "name": "Created By Login", "dataType": "string" },
+        { "name": "Last Update By Login", "dataType": "string" },
+        { "name": "Department Sub Group", "dataType": "string" },
+        { "name": "Department Group", "dataType": "string" },
+        { "name": "Summary Department", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:22.2880171+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Department%20Segment.csv?snapshot=2022-05-20T07%3A30%3A21.4406240Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "GL Entity Segment",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "GL%20Entity%20Segment.csv"
+      },
+      "attributes": [
+        { "name": "Entrity Code", "dataType": "string" },
+        { "name": "Entity Name", "dataType": "string" },
+        { "name": "Entity Description", "dataType": "string" },
+        { "name": "Enabled Flag", "dataType": "string" },
+        { "name": "Active Start Date", "dataType": "dateTime" },
+        { "name": "Active End Date", "dataType": "dateTime" },
+        { "name": "Creation Date", "dataType": "dateTime" },
+        { "name": "Last Update Date", "dataType": "dateTime" },
+        { "name": "Created By Login", "dataType": "string" },
+        { "name": "Last Update By Login", "dataType": "string" },
+        { "name": "Entity Sub Group", "dataType": "string" },
+        { "name": "Entity Group", "dataType": "string" },
+        { "name": "Summary Entity", "dataType": "string" },
+        { "name": "Local GAAP Entity", "dataType": "string" },
+        { "name": "US-GAAP Entity Flag", "dataType": "string" },
+        { "name": "Currency Code", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:22.4286355+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Entity%20Segment.csv?snapshot=2022-05-20T07%3A30%3A21.5385684Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "GL Project Segment",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "GL%20Project%20Segment.csv"
+      },
+      "attributes": [
+        { "name": "Project Code", "dataType": "string" },
+        { "name": "Project Name", "dataType": "string" },
+        { "name": "Project Description", "dataType": "string" },
+        { "name": "Enabled Flag", "dataType": "string" },
+        { "name": "Active Start Date", "dataType": "dateTime" },
+        { "name": "Active End Date", "dataType": "dateTime" },
+        { "name": "Creation Date", "dataType": "dateTime" },
+        { "name": "Last Update Date", "dataType": "dateTime" },
+        { "name": "Created By Login", "dataType": "string" },
+        { "name": "Last Update By Login", "dataType": "string" },
+        { "name": "Project Sub Group", "dataType": "string" },
+        { "name": "Project Group", "dataType": "string" },
+        { "name": "Summary Project", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:23.0223812+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Project%20Segment.csv?snapshot=2022-05-20T07%3A30%3A22.4770335Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "XX_BI_APPS_RPT_PARAMETERS",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "XX_BI_APPS_RPT_PARAMETERS.csv"
+      },
+      "attributes": [
+        { "name": "RPT_CURRENT_WEEK", "dataType": "string" },
+        { "name": "RPT_CURRENT_PERIOD", "dataType": "string" },
+        { "name": "RPT_CURRENT_QUARTER", "dataType": "string" },
+        { "name": "RPT_CURRENT_YEAR", "dataType": "string" },
+        { "name": "RPT_PRIOR_WEEK", "dataType": "string" },
+        { "name": "RPT_PRIOR_PERIOD", "dataType": "string" },
+        { "name": "RPT_PRIOR_QUARTER", "dataType": "string" },
+        { "name": "RPT_PRIOR_YEAR", "dataType": "string" },
+        { "name": "RPT_NEXT_WEEK", "dataType": "string" },
+        { "name": "RPT_NEXT_PERIOD", "dataType": "string" },
+        { "name": "RPT_NEXT_QUARTER", "dataType": "string" },
+        { "name": "RPT_NEXT_YEAR", "dataType": "string" },
+        { "name": "RPT_SCENARIO", "dataType": "string" },
+        { "name": "P_YEAR", "dataType": "double" },
+        { "name": "P_QUARTER", "dataType": "double" },
+        { "name": "P_PERIOD", "dataType": "double" },
+        { "name": "P_WEEK", "dataType": "double" },
+        { "name": "AS_OF_DATE", "dataType": "dateTime" },
+        { "name": "ACTIVE", "dataType": "string" },
+        { "name": "RPT_MODE", "dataType": "string" },
+        { "name": "RPT_APPLICATION", "dataType": "string" },
+        { "name": "RPT_VERSION", "dataType": "string" },
+        { "name": "RPT_PARM_ID", "dataType": "double" },
+        { "name": "RPT_COMMENTS", "dataType": "string" },
+        { "name": "RPT_MAX_YEAR", "dataType": "string" },
+        { "name": "RPT_PRIOR_WEEK_YEAR", "dataType": "string" },
+        { "name": "RPT_PRIOR_QTR_YEAR", "dataType": "string" },
+        { "name": "RPT_PRIOR_MONTH_YEAR", "dataType": "string" },
+        { "name": "REVIEWED_BY", "dataType": "string" },
+        { "name": "REVIEWED_DATE", "dataType": "dateTime" },
+        { "name": "RPT_VERSION_1", "dataType": "string" },
+        { "name": "RPT_VERSION_2", "dataType": "string" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATED_BY_NAME", "dataType": "string" },
+        { "name": "REVIEW_COMMENTS", "dataType": "string" },
+        { "name": "DATA_DIVISION_FACTOR", "dataType": "double" },
+        { "name": "DATA_DISP_TEXT", "dataType": "string" },
+        { "name": "HDR_DISP_TEXT", "dataType": "string" },
+        { "name": "RPT_FCST_VERSION_1", "dataType": "string" },
+        { "name": "RPT_FCST_VERSION_2", "dataType": "string" },
+        { "name": "RPT_FCST_SCENARIO_1", "dataType": "string" },
+        { "name": "RPT_FCST_SCENARIO_2", "dataType": "string" },
+        { "name": "PCT_QTR_COMPLETED", "dataType": "double" },
+        { "name": "PCT_HIGH_RANGE", "dataType": "double" },
+        { "name": "PCT_LOW_RANGE", "dataType": "double" },
+        { "name": "PCT_VARIANCE", "dataType": "double" },
+        { "name": "VERSION_DT_LOW_RANGE", "dataType": "date" },
+        { "name": "RPT_PRIOR_2YEAR", "dataType": "string" },
+        { "name": "RPT_PRIOR_3YEAR", "dataType": "string" },
+        { "name": "RPT_FCST_EXTRACT", "dataType": "string" },
+        { "name": "COMPARE_VERSION1", "dataType": "string" },
+        { "name": "COMPARE_VERSION2", "dataType": "string" },
+        { "name": "TARGET_DAYS_OF_SUPPLY", "dataType": "double" },
+        { "name": "RPT_YEAR1", "dataType": "string" },
+        { "name": "RPT_YEAR2", "dataType": "string" },
+        { "name": "RPT_YEAR3", "dataType": "string" },
+        { "name": "EARLY_GRACE_DAYS", "dataType": "double" },
+        { "name": "LATE_GRACE_DAYS", "dataType": "double" },
+        { "name": "ROW_CREATION_DATE", "dataType": "dateTime" },
+        { "name": "GROUPNAME", "dataType": "string" },
+        { "name": "USERNAME", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:14.5592174+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/XX_BI_APPS_RPT_PARAMETERS.csv?snapshot=2022-05-20T07%3A30%3A13.9838693Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Entity Department Details",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Entity%20Department%20Details.csv"
+      },
+      "attributes": [
+        { "name": "Record Id", "dataType": "double" },
+        { "name": "Entity Department", "dataType": "string" },
+        { "name": "Entity Code", "dataType": "string" },
+        { "name": "Department Sub Function", "dataType": "string" },
+        { "name": "Department Function", "dataType": "string" },
+        { "name": "TBU", "dataType": "string" },
+        { "name": "Country", "dataType": "string" },
+        { "name": "Region", "dataType": "string" },
+        { "name": "Comments", "dataType": "string" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY_LOGIN", "dataType": "string" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATE_LOGIN", "dataType": "string" },
+        { "name": "EVP_OWNER", "dataType": "string" },
+        { "name": "STATUS", "dataType": "string" },
+        { "name": "DESCRIPTION", "dataType": "string" },
+        { "name": "LOCATION", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:17.0250456+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Entity%20Department%20Details.csv?snapshot=2022-05-20T07%3A30%3A16.4264790Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "GL Code Combinations",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "GL%20Code%20Combinations.csv"
+      },
+      "attributes": [
+        { "name": "CODE_COMBINATION_ID", "dataType": "string" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATED_BY", "dataType": "string" },
+        { "name": "CHART_OF_ACCOUNTS_ID", "dataType": "double" },
+        { "name": "DETAIL_POSTING_ALLOWED_FLAG", "dataType": "string" },
+        { "name": "DETAIL_BUDGETING_ALLOWED_FLAG", "dataType": "string" },
+        { "name": "ACCOUNT_TYPE", "dataType": "string" },
+        { "name": "ENABLED_FLAG", "dataType": "string" },
+        { "name": "SUMMARY_FLAG", "dataType": "string" },
+        { "name": "SEGMENT1", "dataType": "string" },
+        { "name": "SEGMENT2", "dataType": "string" },
+        { "name": "SEGMENT3", "dataType": "string" },
+        { "name": "SEGMENT4", "dataType": "string" },
+        { "name": "SEGMENT5", "dataType": "string" },
+        { "name": "SEGMENT6", "dataType": "string" },
+        { "name": "SEGMENT7", "dataType": "string" },
+        { "name": "SEGMENT8", "dataType": "string" },
+        { "name": "SEGMENT9", "dataType": "string" },
+        { "name": "SEGMENT10", "dataType": "string" },
+        { "name": "SEGMENT11", "dataType": "string" },
+        { "name": "SEGMENT12", "dataType": "string" },
+        { "name": "SEGMENT13", "dataType": "string" },
+        { "name": "SEGMENT14", "dataType": "string" },
+        { "name": "SEGMENT15", "dataType": "string" },
+        { "name": "SEGMENT16", "dataType": "string" },
+        { "name": "SEGMENT17", "dataType": "string" },
+        { "name": "SEGMENT18", "dataType": "string" },
+        { "name": "SEGMENT19", "dataType": "string" },
+        { "name": "SEGMENT20", "dataType": "string" },
+        { "name": "SEGMENT21", "dataType": "string" },
+        { "name": "SEGMENT22", "dataType": "string" },
+        { "name": "SEGMENT23", "dataType": "string" },
+        { "name": "SEGMENT24", "dataType": "string" },
+        { "name": "SEGMENT25", "dataType": "string" },
+        { "name": "SEGMENT26", "dataType": "string" },
+        { "name": "SEGMENT27", "dataType": "string" },
+        { "name": "SEGMENT28", "dataType": "string" },
+        { "name": "SEGMENT29", "dataType": "string" },
+        { "name": "SEGMENT30", "dataType": "string" },
+        { "name": "DESCRIPTION", "dataType": "string" },
+        { "name": "TEMPLATE_ID", "dataType": "double" },
+        { "name": "ALLOCATION_CREATE_FLAG", "dataType": "string" },
+        { "name": "START_DATE_ACTIVE", "dataType": "dateTime" },
+        { "name": "END_DATE_ACTIVE", "dataType": "dateTime" },
+        { "name": "ATTRIBUTE1", "dataType": "string" },
+        { "name": "ATTRIBUTE2", "dataType": "string" },
+        { "name": "ATTRIBUTE3", "dataType": "string" },
+        { "name": "ATTRIBUTE4", "dataType": "string" },
+        { "name": "ATTRIBUTE5", "dataType": "string" },
+        { "name": "ATTRIBUTE6", "dataType": "string" },
+        { "name": "ATTRIBUTE7", "dataType": "string" },
+        { "name": "ATTRIBUTE8", "dataType": "string" },
+        { "name": "ATTRIBUTE9", "dataType": "string" },
+        { "name": "ATTRIBUTE10", "dataType": "string" },
+        { "name": "CONTEXT", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE1", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE2", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE3", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE4", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE5", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE6", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE7", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE8", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE9", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE10", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE11", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE12", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE13", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE14", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE15", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE16", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE17", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE18", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE19", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE20", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE21", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE22", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE23", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE24", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE25", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE26", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE27", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE28", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE29", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE30", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE31", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE32", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE33", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE34", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE35", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE36", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE37", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE38", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE39", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE40", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE41", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE42", "dataType": "string" },
+        { "name": "REFERENCE1", "dataType": "string" },
+        { "name": "REFERENCE2", "dataType": "string" },
+        { "name": "REFERENCE3", "dataType": "string" },
+        { "name": "REFERENCE4", "dataType": "string" },
+        { "name": "REFERENCE5", "dataType": "string" },
+        { "name": "JGZZ_RECON_FLAG", "dataType": "string" },
+        { "name": "JGZZ_RECON_CONTEXT", "dataType": "string" },
+        { "name": "PRESERVE_FLAG", "dataType": "string" },
+        { "name": "REFRESH_FLAG", "dataType": "string" },
+        { "name": "IGI_BALANCED_BUDGET_FLAG", "dataType": "string" },
+        { "name": "COMPANY_COST_CENTER_ORG_ID", "dataType": "double" },
+        { "name": "REVALUATION_ID", "dataType": "double" },
+        { "name": "LEDGER_SEGMENT", "dataType": "string" },
+        { "name": "LEDGER_TYPE_CODE", "dataType": "string" },
+        { "name": "ALTERNATE_CODE_COMBINATION_ID", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:31:00.0994685+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Code%20Combinations.csv?snapshot=2022-05-20T07%3A30%3A53.4963738Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Bussiness Segment Mapping",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Bussiness%20Segment%20Mapping.csv"
+      },
+      "attributes": [
+        { "name": "BUSINESS_SEGMENT_ID", "dataType": "double" },
+        { "name": "BUSINESS_SEGMENT", "dataType": "string" },
+        { "name": "TBU", "dataType": "string" },
+        { "name": "CREATED_BY", "dataType": "double" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATED_BY", "dataType": "double" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "COMMENTS", "dataType": "string" },
+        { "name": "VALID_FLAG", "dataType": "string" },
+        { "name": "MGT_PRODUCT_GROUP", "dataType": "string" },
+        { "name": "MGT_SUB_PRODUCT_GROUP", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:13.096268+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Bussiness%20Segment%20Mapping.csv?snapshot=2022-05-20T07%3A30%3A12.4117643Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Financial Product Mapping",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Financial%20Product%20Mapping.csv"
+      },
+      "attributes": [
+        { "name": "Record Id", "dataType": "double" },
+        { "name": "ENTITY", "dataType": "string" },
+        { "name": "TBU", "dataType": "string" },
+        { "name": "PFC", "dataType": "string" },
+        { "name": "FIN_TBU", "dataType": "string" },
+        { "name": "FIN_PFC", "dataType": "string" },
+        { "name": "PRODUCT_SEGMENT", "dataType": "string" },
+        { "name": "HFM_PRODUCT_SEQ", "dataType": "double" },
+        { "name": "PRODUCT_MAP_ID", "dataType": "double" },
+        { "name": "COMMENTS", "dataType": "string" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "ROW_CREATION_DATE", "dataType": "dateTime" },
+        { "name": "FIN_DEFAULT_FORECAST_FIELD", "dataType": "string" },
+        { "name": "PRODUCT_MAP_KEY", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:22.866126+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Financial%20Product%20Mapping.csv?snapshot=2022-05-20T07%3A30%3A20.3692345Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Fiscal Calendar Days",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Fiscal%20Calendar%20Days.csv"
+      },
+      "attributes": [
+        { "name": "Period Set Name", "dataType": "string" },
+        { "name": "Calendar Day", "dataType": "dateTime" },
+        { "name": "Fiscal Week", "dataType": "string" },
+        { "name": "Fiscal Year Week", "dataType": "string" },
+        { "name": "FISCAL_WEEK_DISP", "dataType": "string" },
+        { "name": "FISCAL_MONTH_SORT_VALUE", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_DISP", "dataType": "string" },
+        { "name": "Fiscal Week No", "dataType": "double" },
+        { "name": "Fiscal Month Week No", "dataType": "double" },
+        { "name": "FISCAL_QTR_WEEK", "dataType": "string" },
+        { "name": "Fiscal Qtr Week No", "dataType": "double" },
+        { "name": "GL Period", "dataType": "string" },
+        { "name": "PQ_LAST_GL_PERIOD", "dataType": "string" },
+        { "name": "Period Year", "dataType": "double" },
+        { "name": "Fiscal Year", "dataType": "string" },
+        { "name": "Quarter No", "dataType": "double" },
+        { "name": "Fiscal Quarter", "dataType": "string" },
+        { "name": "Fiscal Year Quarter", "dataType": "string" },
+        { "name": "PRIOR_FYFQ", "dataType": "string" },
+        { "name": "PERIOD_NAME", "dataType": "string" },
+        { "name": "Period No", "dataType": "double" },
+        { "name": "Fiscal Day", "dataType": "double" },
+        { "name": "Week Start Date", "dataType": "dateTime" },
+        { "name": "Week End Date", "dataType": "dateTime" },
+        { "name": "Period Start Date", "dataType": "dateTime" },
+        { "name": "Period End Date", "dataType": "dateTime" },
+        { "name": "Quarter Start Date", "dataType": "dateTime" },
+        { "name": "Quarter End Date", "dataType": "dateTime" },
+        { "name": "Year Start Date", "dataType": "dateTime" },
+        { "name": "Year End Date", "dataType": "dateTime" },
+        { "name": "Fiscal Period Month", "dataType": "string" },
+        { "name": "FC_PERIOD_ID", "dataType": "double" },
+        { "name": "FC_QUARTER_ID", "dataType": "double" },
+        { "name": "FC_WEEK_ID", "dataType": "double" },
+        { "name": "FC_YEAR_OFFSET", "dataType": "double" },
+        { "name": "FC_QUARTER_OFFSET", "dataType": "double" },
+        { "name": "FC_PERIOD_OFFSET", "dataType": "double" },
+        { "name": "FC_WEEK_OFFSET", "dataType": "double" },
+        { "name": "FC_DAYS_OFFSET", "dataType": "double" },
+        { "name": "FC_HALF", "dataType": "string" },
+        { "name": "Next Quarter First Fiscal Week", "dataType": "string" },
+        { "name": "Prior Qtr Last Fiscal Week", "dataType": "string" },
+        { "name": "CALENDAR_YEAR", "dataType": "double" },
+        { "name": "CALENDAR_MONTH", "dataType": "double" },
+        { "name": "CALENDAR_YEARMONTHID", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAME", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAMESHORT", "dataType": "string" },
+        { "name": "CALENDAR_ISO_WEEK", "dataType": "double" },
+        { "name": "CALENDAR_US_WEEK", "dataType": "double" },
+        { "name": "CALENDAR_YEAR_SHORT", "dataType": "string" },
+        { "name": "CALENDAR_MTH_YEAR", "dataType": "string" },
+        { "name": "DAY_NAME", "dataType": "string" },
+        { "name": "DAY_OF_WEEK", "dataType": "double" },
+        { "name": "WORKING_DAY_FLAG", "dataType": "double" },
+        { "name": "CQ_LAST_FISCAL_WEEK", "dataType": "string" },
+        { "name": "Row Creation Date", "dataType": "date" },
+        { "name": "Week End Flag", "dataType": "string" },
+        { "name": "Month End Flag", "dataType": "string" },
+        { "name": "Quarter End Flag", "dataType": "string" },
+        { "name": "Year End Flag", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_MONTH_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_MONTH_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_QUARTER_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_YEAR_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_YEAR_INDICATOR_SORT", "dataType": "double" },
+        { "name": "Refresh Date", "dataType": "dateTime" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:20.4947743+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Fiscal%20Calendar%20Days.csv?snapshot=2022-05-20T07%3A30%3A19.0989568Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Countries",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Countries.csv"
+      },
+      "attributes": [
+        { "name": "RECORD_ID", "dataType": "double" },
+        { "name": "COUNTRY_CODE", "dataType": "string" },
+        { "name": "COUNTRY_3DIGIT_CODE", "dataType": "string" },
+        { "name": "Country Name", "dataType": "string" },
+        { "name": "Country Region", "dataType": "string" },
+        { "name": "COUNTRY_CODE_NO", "dataType": "string" },
+        { "name": "DISP_SEQ", "dataType": "string" },
+        { "name": "ROW_CREATION_DATE", "dataType": "dateTime" },
+        { "name": "REGION_GROUP", "dataType": "string" },
+        { "name": "CONTINENT", "dataType": "string" },
+        { "name": "SUB_REGION", "dataType": "string" },
+        { "name": "INTERMEDIATE_REGION", "dataType": "string" },
+        { "name": "SERVICE_REGION", "dataType": "string" },
+        { "name": "FINANCE_REGION", "dataType": "string" },
+        { "name": "MARKETING_REGION", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:13.2368732+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Countries.csv?snapshot=2022-05-20T07%3A30%3A12.7985437Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Inventory Organizations",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Inventory%20Organizations.csv"
+      },
+      "attributes": [
+        { "name": "INVORG_ID", "dataType": "double" },
+        { "name": "OPERATING_UNIT_ID", "dataType": "double" },
+        { "name": "LEDGER_ID", "dataType": "double" },
+        { "name": "GL_ENTITY", "dataType": "string" },
+        { "name": "Operating Unit", "dataType": "string" },
+        { "name": "LEDGER", "dataType": "string" },
+        { "name": "INVORG_CODE", "dataType": "string" },
+        { "name": "CURRENCY_CODE", "dataType": "string" },
+        { "name": "Inventory Org Category", "dataType": "string" },
+        { "name": "INV_ORG_CODE_CUSTOWNED", "dataType": "string" },
+        { "name": "TIMEZONE", "dataType": "string" },
+        { "name": "DISABLE_DATE", "dataType": "date" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY_LOGIN", "dataType": "string" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATE_LOGIN", "dataType": "string" },
+        { "name": "INVORG_GROUP", "dataType": "string" },
+        { "name": "LABOR_TARGET_PCT", "dataType": "double" },
+        { "name": "BASELINE_FYFQ", "dataType": "string" },
+        { "name": "COUNTRY_CODE", "dataType": "string" },
+        { "name": "INVORG_TYPE", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:23.3973763+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Inventory%20Organizations.csv?snapshot=2022-05-20T07%3A30%3A22.9977367Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Subinventories",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Subinventories.csv"
+      },
+      "attributes": [
+        { "name": "EXTRACT_DATE", "dataType": "dateTime" },
+        { "name": "TIMEZONE_EXTRACT_TIME", "dataType": "dateTime" },
+        { "name": "ORGANIZATION_CODE", "dataType": "string" },
+        { "name": "SUBINVENTORY_ID", "dataType": "string" },
+        { "name": "Subinventory", "dataType": "string" },
+        { "name": "INV_ORG_ID", "dataType": "double" },
+        { "name": "ASSET_INVENTORY", "dataType": "double" },
+        { "name": "Subinventory Classification", "dataType": "string" },
+        { "name": "Subinventory Country", "dataType": "string" },
+        { "name": "DESCRIPTION", "dataType": "string" },
+        { "name": "DISABLE_DATE", "dataType": "dateTime" },
+        { "name": "PICKING_ORDER", "dataType": "double" },
+        { "name": "ENABLED_SUBINVENTORY", "dataType": "string" },
+        { "name": "QUANTITY_TRACKED", "dataType": "string" },
+        { "name": "ASSET_SUBINVENTORY", "dataType": "string" },
+        { "name": "DEPRECIABLE_SUBINVENTORY", "dataType": "string" },
+        { "name": "ATP_SUBINVENTORY", "dataType": "string" },
+        { "name": "RESERVABLE_SUBINVENTORY", "dataType": "string" },
+        { "name": "NETTABLE_SUBINVENTORY", "dataType": "string" },
+        { "name": "LOCATOR_CONTROL_TYPE", "dataType": "string" },
+        { "name": "MATERIAL_ACCOUNT", "dataType": "string" },
+        { "name": "EXPENSE_ACCOUNT", "dataType": "string" },
+        { "name": "OSP_ACCOUNT", "dataType": "string" },
+        { "name": "OVERHEAD_ACCOUNT", "dataType": "string" },
+        { "name": "RESOURCE_ACCOUNT", "dataType": "string" },
+        { "name": "MATERIAL_OVERHEAD_ACCOUNT", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:24.194314+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Subinventories.csv?snapshot=2022-05-20T07%3A30%3A23.6153854Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "FIN Product Dimension",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "FIN%20Product%20Dimension.csv"
+      },
+      "attributes": [
+        { "name": "FIN_PFC_KEY", "dataType": "string" },
+        { "name": "Product Family", "dataType": "string" },
+        { "name": "TBU", "dataType": "string" },
+        { "name": "Product Segment", "dataType": "string" },
+        { "name": "Product Sub Group", "dataType": "string" },
+        { "name": "Product Group", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:15.3092247+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/FIN%20Product%20Dimension.csv?snapshot=2022-05-20T07%3A30%3A14.8323861Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "FIN Product UnPivot",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "FIN%20Product%20UnPivot.csv"
+      },
+      "attributes": [
+        { "name": "FIN_PFC_KEY", "dataType": "string" },
+        { "name": "Product Dimension", "dataType": "string" },
+        { "name": "Product Dimension Value", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:13.387338+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/FIN%20Product%20UnPivot.csv?snapshot=2022-05-20T07%3A30%3A13.0104231Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Fiscal Context",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Fiscal%20Context.csv"
+      },
+      "attributes": [
+        { "name": "PERIOD_SET_NAME", "dataType": "string" },
+        { "name": "CAL_DAY", "dataType": "dateTime" },
+        { "name": "FISCAL_WEEK", "dataType": "string" },
+        { "name": "FISCAL_YEAR_WEEK", "dataType": "string" },
+        { "name": "FISCAL_WEEK_DISP", "dataType": "string" },
+        { "name": "FISCAL_MONTH_SORT_VALUE", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_DISP", "dataType": "string" },
+        { "name": "FISCAL_WEEK_NO", "dataType": "double" },
+        { "name": "FISCAL_MONTH_WEEK_NO", "dataType": "double" },
+        { "name": "FISCAL_QTR_WEEK", "dataType": "string" },
+        { "name": "FISCAL_QTR_WEEK_NO", "dataType": "double" },
+        { "name": "GL_PERIOD", "dataType": "string" },
+        { "name": "PQ_LAST_GL_PERIOD", "dataType": "string" },
+        { "name": "PERIOD_YEAR", "dataType": "double" },
+        { "name": "FISCAL_YEAR", "dataType": "string" },
+        { "name": "QUARTER_NUM", "dataType": "double" },
+        { "name": "FISCAL_QUARTER", "dataType": "string" },
+        { "name": "FYFQ", "dataType": "string" },
+        { "name": "PRIOR_FYFQ", "dataType": "string" },
+        { "name": "PERIOD_NAME", "dataType": "string" },
+        { "name": "PERIOD_NUM", "dataType": "double" },
+        { "name": "FISCAL_DAY", "dataType": "double" },
+        { "name": "WEEK_START_DATE", "dataType": "dateTime" },
+        { "name": "WEEK_END_DATE", "dataType": "dateTime" },
+        { "name": "PERIOD_START_DATE", "dataType": "dateTime" },
+        { "name": "PERIOD_END_DATE", "dataType": "dateTime" },
+        { "name": "QUARTER_START_DATE", "dataType": "dateTime" },
+        { "name": "QUARTER_END_DATE", "dataType": "dateTime" },
+        { "name": "YEAR_START_DATE", "dataType": "dateTime" },
+        { "name": "YEAR_END_DATE", "dataType": "dateTime" },
+        { "name": "PERIOD_MONTH", "dataType": "string" },
+        { "name": "FC_PERIOD_ID", "dataType": "double" },
+        { "name": "FC_QUARTER_ID", "dataType": "double" },
+        { "name": "FC_WEEK_ID", "dataType": "double" },
+        { "name": "FC_YEAR_OFFSET", "dataType": "double" },
+        { "name": "FC_QUARTER_OFFSET", "dataType": "double" },
+        { "name": "FC_PERIOD_OFFSET", "dataType": "double" },
+        { "name": "FC_WEEK_OFFSET", "dataType": "double" },
+        { "name": "FC_DAYS_OFFSET", "dataType": "double" },
+        { "name": "FC_HALF", "dataType": "string" },
+        { "name": "NQ_FIRST_FISCAL_WEEK", "dataType": "string" },
+        { "name": "PQ_LAST_FISCAL_WEEK", "dataType": "string" },
+        { "name": "CALENDAR_YEAR", "dataType": "double" },
+        { "name": "CALENDAR_MONTH", "dataType": "double" },
+        { "name": "CALENDAR_YEARMONTHID", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAME", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAMESHORT", "dataType": "string" },
+        { "name": "CALENDAR_ISO_WEEK", "dataType": "double" },
+        { "name": "CALENDAR_US_WEEK", "dataType": "double" },
+        { "name": "CALENDAR_YEAR_SHORT", "dataType": "string" },
+        { "name": "CALENDAR_MTH_YEAR", "dataType": "string" },
+        { "name": "DAY_NAME", "dataType": "string" },
+        { "name": "DAY_OF_WEEK", "dataType": "double" },
+        { "name": "WORKING_DAY_FLAG", "dataType": "double" },
+        { "name": "CQ_LAST_FISCAL_WEEK", "dataType": "string" },
+        { "name": "ROW_CREATION_DATE", "dataType": "date" },
+        { "name": "WEEK_END_FLAG", "dataType": "string" },
+        { "name": "MONTH_END_FLAG", "dataType": "string" },
+        { "name": "QUARTER_END_FLAG", "dataType": "string" },
+        { "name": "YEAR_END_FLAG", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_MONTH_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_MONTH_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_QUARTER_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_YEAR_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_YEAR_INDICATOR_SORT", "dataType": "double" },
+        { "name": "EXTRACT_DATE", "dataType": "dateTime" },
+        { "name": "CONTEXT", "dataType": "string" },
+        { "name": "DATA_UPDATE_DESC", "dataType": "string" },
+        { "name": "CONTEXT_FYWK", "dataType": "string" },
+        { "name": "CONTEXT_PERIOD", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:23.8817611+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Fiscal%20Context.csv?snapshot=2022-05-20T07%3A30%3A23.3985095Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Operating Unit Data Security",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Operating%20Unit%20Data%20Security.csv"
+      },
+      "attributes": [
+        { "name": "OPERATING_UNIT_ID", "dataType": "double" },
+        { "name": "OPERATING_UNIT_NAME", "dataType": "string" },
+        { "name": "USER_EMAIL", "dataType": "string" },
+        { "name": "RECORD_ID", "dataType": "double" },
+        { "name": "GROUP_NAME", "dataType": "string" },
+        { "name": "USER_ROLE", "dataType": "string" },
+        { "name": "OPERATING_UNIT_IDS", "dataType": "string" },
+        { "name": "COMMENTS", "dataType": "string" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY_LOGIN", "dataType": "string" },
+        { "name": "LAST_UPDATE_LOGIN", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:22.1005163+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Operating%20Unit%20Data%20Security.csv?snapshot=2022-05-20T07%3A30%3A21.3876536Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "GL Code Combinations Desc",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "GL%20Code%20Combinations%20Desc.csv"
+      },
+      "attributes": [
+        { "name": "CODE_COMBINATION_ID", "dataType": "double" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "DETAIL_POSTING_ALLOWED_FLAG", "dataType": "string" },
+        { "name": "DETAIL_BUDGETING_ALLOWED_FLAG", "dataType": "string" },
+        { "name": "ACCOUNT_TYPE", "dataType": "string" },
+        { "name": "ENABLED_FLAG", "dataType": "string" },
+        { "name": "SUMMARY_FLAG", "dataType": "string" },
+        { "name": "START_DATE_ACTIVE", "dataType": "dateTime" },
+        { "name": "END_DATE_ACTIVE", "dataType": "dateTime" },
+        { "name": "SEGMENT1", "dataType": "string" },
+        { "name": "SEGMENT2", "dataType": "string" },
+        { "name": "SEGMENT3", "dataType": "string" },
+        { "name": "SEGMENT4", "dataType": "string" },
+        { "name": "SEGMENT5", "dataType": "string" },
+        { "name": "SEGMENT6", "dataType": "string" },
+        { "name": "CONCATENATED_SEGMENTS", "dataType": "string" },
+        { "name": "ENTITY_NAME", "dataType": "string" },
+        { "name": "ENTITY_DESC", "dataType": "string" },
+        { "name": "DEPARTMENT_NAME", "dataType": "string" },
+        { "name": "DEPARTMENT_DESC", "dataType": "string" },
+        { "name": "ACCOUNT_NAME", "dataType": "string" },
+        { "name": "ACCOUNT_DESC", "dataType": "string" },
+        { "name": "PROJECT_NAME", "dataType": "string" },
+        { "name": "PROJECT_DESC", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:42.4101281+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/GL%20Code%20Combinations%20Desc.csv?snapshot=2022-05-20T07%3A30%3A36.5450238Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Operating Units",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Operating%20Units.csv"
+      },
+      "attributes": [
+        { "name": "OPERATING_UNIT_ID", "dataType": "double" },
+        { "name": "OPERATING_UNIT", "dataType": "string" },
+        { "name": "DISABLE_DATE", "dataType": "date" },
+        { "name": "OU_REGION", "dataType": "string" },
+        { "name": "TIMEZONE", "dataType": "string" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY_LOGIN", "dataType": "string" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATE_LOGIN", "dataType": "string" },
+        { "name": "INV_ORG_CODE_CUSTOWNED", "dataType": "string" },
+        { "name": "LEDGER_ID", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:16.8688155+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Operating%20Units.csv?snapshot=2022-05-20T07%3A30%3A16.2705671Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Item Commodity Categories",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Item%20Commodity%20Categories.csv"
+      },
+      "attributes": [
+        { "name": "CATEGORY_STRUCTURE", "dataType": "string" },
+        { "name": "DESCRIPTION", "dataType": "string" },
+        { "name": "CATEGORY_SET_NAME", "dataType": "string" },
+        { "name": "ENABLED_FLG", "dataType": "string" },
+        { "name": "DISABLE_DATE", "dataType": "dateTime" },
+        { "name": "SEGMENT1", "dataType": "string" },
+        { "name": "STRUCTURE_ID", "dataType": "double" },
+        { "name": "CATEGORY_ID", "dataType": "double" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY", "dataType": "string" },
+        { "name": "LAST_UPDATED_BY", "dataType": "string" },
+        { "name": "CATEGORY_SET_ID", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:21.8661201+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/Item%20Commodity%20Categories.csv?snapshot=2022-05-20T07%3A30%3A21.4046440Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "OTD Order Line Type Mapping",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "OTD%20Order%20Line%20Type%20Mapping.csv"
+      },
+      "attributes": [
+        { "name": "ORDER_TYPE", "dataType": "string" },
+        { "name": "LINE_TYPE", "dataType": "string" },
+        { "name": "ORDER_CATEGORY", "dataType": "string" },
+        { "name": "ORDER_CLASSIFICATION", "dataType": "string" },
+        { "name": "ORDER_TYPE_ID", "dataType": "double" },
+        { "name": "LINE_TYPE_ID", "dataType": "double" },
+        { "name": "CUST_TRX_TYPE_ID", "dataType": "double" },
+        { "name": "ORG_ID", "dataType": "double" },
+        { "name": "ATTRIBUTE1", "dataType": "string" },
+        { "name": "ORDER_LINE_TYPE_ID_KEY", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-05-20T07:30:23.1319717+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/9eb1bce4-7877-44a7-a1f6-c27ac33e64c2/OTD%20Order%20Line%20Type%20Mapping.csv?snapshot=2022-05-20T07%3A30%3A22.4730357Z"
+        }
+      ]
+    }
+  ]
+}

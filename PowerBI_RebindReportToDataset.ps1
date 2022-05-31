@@ -1,25 +1,11 @@
-﻿# =================================================================================================================================================
-# Documentation
-# =================================================================================================================================================
-<#
-This script helps you to rebind an existing already published report to another dataset in the Power BI Service. 
-Please specify the parameters below and make sure that the account has access to the workspaces where the dataset and report are located. 
-
-In case of a service principal or app registration, make sure that the required scope and persmissons is matched: 
-Scope: Report.ReadWrite.All
-Permission: Report - Write permissions. Target dataset - Build permissions
-
-For full documenation on this API, please look at: https://docs.microsoft.com/en-us/rest/api/power-bi/reports/rebindreportingroup?WT.mc_id=DP-MVP-5003435
-For use cases to leverage below script, have a look at: https://data-marc.com/2021/12/13/unable-to-open-or-download-power-bi-report-because-link-to-azure-analysis-services-is-gone-what-now/
-#> 
-
+﻿
 # =================================================================================================================================================
 # General parameters
 # =================================================================================================================================================
 # Run parameters, please specify below parameters
-$WorkspaceId = "{Your workspace id}"
-$ReportId = "{Report id to rebind}"
-$TargetDatasetId = "{Dataset Id where you want the report to bind to}"
+$WorkspaceId = "5bc65217-59aa-4e90-a82b-12c706a52c21"
+$ReportId = "f2327a82-8997-4014-b8ae-fe101954a980"
+$TargetDatasetId = "2675d05d-5299-431a-adc5-94a3b1c8ddfb"
 
 # Base variables
 $BasePowerBIRestApi = "https://api.powerbi.com/v1.0/myorg/"
@@ -44,11 +30,8 @@ Write-Host -ForegroundColor White "Connect to PowerBI service"
 Connect-PowerBIServiceAccount
 
 # Body to push in the Power BI API call
-$body = 
-@"
-    {
-	    datasetId: "$TargetDatasetId"
-    }
+$body = @"
+{datasetId: "$TargetDatasetId"}
 "@ 
 
 # Rebind report task
@@ -59,7 +42,7 @@ Try {
     # Write message if succeeded
     Write-Host "Report" $ReportId "successfully binded to dataset" $TargetDatasetId -ForegroundColor Green
 }
-Catch{
+Catch {
     # Write message if error
     Write-Host "Unable to rebind report. An error occured" -ForegroundColor Red
 }

@@ -9,7 +9,7 @@ $Workspaces = Get-PowerBIWorkspace
     2. Remove any existing refresh history file
 #>
 
-$ExportFile =  'C:\Users\PeacocCo\OneDrive - Coherent, Inc\Documents\PowerBiRefreshHistory.csv'
+$ExportFile = 'C:\Users\PeacocCo\OneDrive - Coherent, Inc\Documents\PowerBiRefreshHistoryDatasets.csv'
 Remove-Item $ExportFile -Force -ErrorAction SilentlyContinue
 
 
@@ -23,14 +23,12 @@ Remove-Item $ExportFile -Force -ErrorAction SilentlyContinue
     7. Write the results object to a csv file with name $ExportFile
 #>
 
-foreach($workspace in $Workspaces)
-
+foreach ($workspace in $Workspaces)
 {
     try {
 
-        $DataSets = Get-PowerBIDataset -WorkspaceId $workspace.Id | where {$_.isRefreshable -eq $true}
-        foreach($dataset in $DataSets)
-
+        $DataSets = Get-PowerBIDataset -WorkspaceId $workspace.Id | where { $_.isRefreshable -eq $true }
+        foreach ($dataset in $DataSets)
         {
             $URI = "groups/" + $workspace.id + "/datasets/" + $dataset.id + "/refreshes"
             $Results = Invoke-PowerBIRestMethod -Url $URI -Method Get | ConvertFrom-Json
@@ -40,8 +38,7 @@ foreach($workspace in $Workspaces)
             remove this comment to show the results information
             write-host $Results.value
              #>
-            foreach($result in $Results.value)
-
+            foreach ($result in $Results.value)
             {
                 $errorDetails = $result.serviceExceptionJson | ConvertFrom-Json -ErrorAction SilentlyContinue
                 
@@ -64,7 +61,8 @@ foreach($workspace in $Workspaces)
 
         }
 
-    } catch {
+    }
+    catch {
 
         write-host "error..."
 

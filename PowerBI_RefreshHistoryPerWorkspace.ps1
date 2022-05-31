@@ -20,16 +20,16 @@ https://data-marc.com/2021/01/07/extract-refresh-metrics-for-your-entire-power-b
 # General parameters
 # =================================================================================================================================================
 # Define workspace to cature the results from
-$WorkspaceId = "{Enter your Workspace ID here}"
+$WorkspaceId = "b459d9cd-174c-4f68-a807-7d9e129df8aa"
 
 # Base API for Power BI REST API
 $PbiRestApi = "https://api.powerbi.com/v1.0/myorg/"
 
 # Export data parameters
 $FolderName = "RefreshHistoryDump"
-$OutputLocation = "c:\"
+$OutputLocation = "C:\Users\PeacocCo\OneDrive - Coherent, Inc\Documents\"
 $DatePrefix = Get-Date -Format "yyyyMMdd_HHmm" 
-$DefaultFilePath = $Fullpath + "\" + $DatePrefix + "_" + $WorkspaceId + "_"
+
 # All exported files will be prefixed with above mentioned date and Workspace Id. 
 # This allows you to run the script multiple times without overwriting history. 
 
@@ -42,20 +42,23 @@ Connect-PowerBIServiceAccount
 
 # Create folder to dump results
 $Fullpath = $OutputLocation + $FolderName
- if (-not (Test-Path $Fullpath)) {
-        # Destination path does not exist, let's create it
-        try {
-            New-Item -Path $Fullpath -ItemType Directory -ErrorAction Stop
-        } catch {
-            throw "Could not create path '$Fullpath'!"
-        }
+if (-not (Test-Path $Fullpath)) {
+    # Destination path does not exist, let's create it
+    try {
+        New-Item -Path $Fullpath -ItemType Directory -ErrorAction Stop
     }
+    catch {
+        throw "Could not create path '$Fullpath'!"
+    }
+}
 
 # =================================================================================================================================================
 # Dataflow tasks
 # =================================================================================================================================================
 # List all dataflows in specified workspace
 Write-Host "Collecting dataflow metadata..."
+Write-Host $Fullpath
+$DefaultFilePath = $Fullpath + "\" + $DatePrefix + "_" + $WorkspaceId + "_"
 $GetDataflowsApiCall = $PbiRestApi + "groups/" + $WorkspaceId + "/dataflows"
 $AllDataflows = Invoke-PowerBIRestMethod -Method GET -Url $GetDataflowsApiCall | ConvertFrom-Json
 $ListAllDataflows = $AllDataflows.value
@@ -81,16 +84,16 @@ Function GetDataflowRefreshResults {
 $DataflowResults = @()
 
 # Get refresh history for each dataflow in defined workspace
-foreach($dataflow in $ListAllDataflows) {
+foreach ($dataflow in $ListAllDataflows) {
     $DataflowHistories = GetDataflowRefreshResults -DataflowId $dataflow.objectId
-    foreach($DataflowHistory in $DataflowHistories) {
+    foreach ($DataflowHistory in $DataflowHistories) {
         Add-Member -InputObject $DataflowHistory -NotePropertyName 'DataflowId' -NotePropertyValue $dataflow.objectId
         $DataflowResults += $DataflowHistory
     }  
 }
 
 # Write dataflow refresh history json to output location
-$DataflowRefreshOutputLocation =  $DefaultFilePath + 'DataflowRefreshHistory.json'
+$DataflowRefreshOutputLocation = $DefaultFilePath + 'DataflowRefreshHistory.json'
 $DataflowResults  | ConvertTo-Json  | Out-File $DataflowRefreshOutputLocation -ErrorAction Stop
 Write-Host "Dataflow refresh history saved on defined location" -ForegroundColor Green
 
@@ -124,16 +127,16 @@ Function GetDatasetRefreshResults {
 $DatasetResults = @()
 
 # Get refresh history for each dataset in defined workspace
-foreach($Dataset in $ListAllDatasets) {
+foreach ($Dataset in $ListAllDatasets) {
     $DatasetHistories = GetDatasetRefreshResults -DatasetId $Dataset.id
-    foreach($DatasetHistory in $DatasetHistories) {
+    foreach ($DatasetHistory in $DatasetHistories) {
         Add-Member -InputObject $DatasetHistory -NotePropertyName 'DatasetId' -NotePropertyValue $Dataset.id
         $DatasetResults += $DatasetHistory
     }
 }
 
 # Write dataset refresh history json to output location
-$DatasetRefreshOutputLocation =  $DefaultFilePath + 'DatasetRefreshHistory.json'
+$DatasetRefreshOutputLocation = $DefaultFilePath + 'DatasetRefreshHistory.json'
 $DatasetResults  | ConvertTo-Json  | Out-File $DatasetRefreshOutputLocation -ErrorAction Stop
 Write-Host "Dataset refresh history saved on defined location" -ForegroundColor Green
 
