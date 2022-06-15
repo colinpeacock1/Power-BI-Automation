@@ -10,7 +10,7 @@ with open(f"{path}\\{name}", "r") as dataflow:
 
 tables = [
     s.split("=")[1].replace("Name", "")
-    for s in re.findall(r"Name\s+.\s+.\W+.\w+.", data)
+    for s in re.findall(r"Name\s+.\s+.\W+.\w+", data)
     if all(["XX" in s, "_" in s])
 ]
 shared = [
@@ -20,4 +20,8 @@ shared = [
 tables = [t.replace(p, "") for p in punctuation for t in tables]
 shared = [s.replace(p, "") for p in punctuation for s in shared]
 
-print(tables, len(tables), shared, len(shared))
+for idx, table in enumerate(tables):
+    print(idx, table)
+
+for idx, table in enumerate(shared):
+    print(idx, table)

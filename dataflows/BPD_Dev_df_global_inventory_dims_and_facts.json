@@ -1,0 +1,1806 @@
+{
+  "name": "df_global_inventory_dims_and_facts",
+  "description": "This dataflow contains Dimension and Fact Tables that are used in the Corporate Inventory Report which is located in the \n\nWorkspace - Corporate Inventory Reports\nWorkspace - Corporate Inventory DataModels\n\nStaging Flows\n\nstaging_global_inventory_m20detail_flow\nstaging_global_inventory_value_flow",
+  "version": "1.0",
+  "culture": "en-US",
+  "modifiedTime": "2022-06-13T10:08:04.7639056+00:00",
+  "pbi:mashup": {
+    "fastCombine": true,
+    "allowNativeQueries": true,
+    "queriesMetadata": {
+      "FACT_Shipments": {
+        "queryId": "bcd7eaf7-be86-42e8-af69-55e88a8497e9",
+        "queryName": "FACT_Shipments",
+        "queryGroupId": "bbd6ee21-6a56-4a8c-b80f-2aad18bde5a6",
+        "loadEnabled": true
+      },
+      "pM20Detail": {
+        "queryId": "ec4c021a-4825-48ac-966b-58fa31eb935d",
+        "queryName": "pM20Detail",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "FACT_M20Detail": {
+        "queryId": "97a51e3a-ce7d-47be-b572-a6353037fce3",
+        "queryName": "FACT_M20Detail",
+        "queryGroupId": "bbd6ee21-6a56-4a8c-b80f-2aad18bde5a6",
+        "loadEnabled": true
+      },
+      "FACT_InventoryValue": {
+        "queryId": "8bd7cb56-3915-4673-995c-3cc0ac44dd24",
+        "queryName": "FACT_InventoryValue",
+        "queryGroupId": "bbd6ee21-6a56-4a8c-b80f-2aad18bde5a6",
+        "loadEnabled": true
+      },
+      "pM20DetailAll": {
+        "queryId": "2965b6ac-91d9-4192-9af1-155129dc719a",
+        "queryName": "pM20DetailAll",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pInventoryValue": {
+        "queryId": "5a176480-b080-44b9-ae62-a957632271ca",
+        "queryName": "pInventoryValue",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "DIM_Time Balance Week": {
+        "queryId": "171c1f08-7c59-4a4b-8ae9-35c394332862",
+        "queryName": "DIM_Time Balance Week",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_Financial Product Mapping": {
+        "queryId": "0f5e1753-772e-46d7-b257-43eeaebd7006",
+        "queryName": "DIM_Financial Product Mapping",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_GL Account Segment": {
+        "queryId": "82ae9670-9391-4c82-b6e8-e2bef67790ef",
+        "queryName": "DIM_GL Account Segment",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_GL Code Combinations": {
+        "queryId": "82beb932-ace5-4fd2-b137-459755a29c5f",
+        "queryName": "DIM_GL Code Combinations",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_GL Code Combinations Desc": {
+        "queryId": "e09b8541-4d99-47d1-bf61-90508c3798e6",
+        "queryName": "DIM_GL Code Combinations Desc",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_GL Project Segment": {
+        "queryId": "1ea2e978-d5d4-4922-8056-14d97c932008",
+        "queryName": "DIM_GL Project Segment",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_Calendar": {
+        "queryId": "b1df9ae8-9042-4ea7-877f-b3ce191ebb5c",
+        "queryName": "DIM_Calendar",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_Fiscal Context": {
+        "queryId": "a1afd083-312b-4a1b-9db4-9a351b582fda",
+        "queryName": "DIM_Fiscal Context",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_GLDepartment": {
+        "queryId": "1d543e18-798c-4f02-a061-5fe7c4e50152",
+        "queryName": "DIM_GLDepartment",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_Inventory Organizations": {
+        "queryId": "6e0d17cf-808d-44de-a238-5a43c0025b54",
+        "queryName": "DIM_Inventory Organizations",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_Operating Units": {
+        "queryId": "b4779505-1965-4444-9c89-a461e0c68084",
+        "queryName": "DIM_Operating Units",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_Operating Unit Data Security": {
+        "queryId": "b988a535-61a2-41f8-9b81-e2f3074790db",
+        "queryName": "DIM_Operating Unit Data Security",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "Version History Model": {
+        "queryId": "d1d88b72-5b98-47c9-ac31-b235deae27d7",
+        "queryName": "Version History Model",
+        "queryGroupId": "a91191ed-8efb-400b-bad7-2b8a42e2d413",
+        "loadEnabled": true
+      },
+      "Version History Report": {
+        "queryId": "fdbcb66e-3942-4ea9-9c35-cae2a6b02ee7",
+        "queryName": "Version History Report",
+        "queryGroupId": "a91191ed-8efb-400b-bad7-2b8a42e2d413",
+        "loadEnabled": true
+      },
+      "Version History": {
+        "queryId": "2bf1e5d2-e81c-4c86-9342-1257c81a465f",
+        "queryName": "Version History",
+        "queryGroupId": "a91191ed-8efb-400b-bad7-2b8a42e2d413",
+        "loadEnabled": true
+      },
+      "DIM_GLEntity": {
+        "queryId": "2bc75e61-f80f-43b5-8966-59b74f141814",
+        "queryName": "DIM_GLEntity",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "KeepColumn": {
+        "queryId": "2f4ff8fa-1b12-40a2-a2b7-6ab7e8f858ac",
+        "queryName": "KeepColumn",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "RemoveColumn": {
+        "queryId": "c332635d-b620-4c74-b1e7-f5f74389d9f5",
+        "queryName": "RemoveColumn",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "SnowflakeQuery": {
+        "queryId": "f53ce5ac-0014-441f-a0f5-c540fdf4557c",
+        "queryName": "SnowflakeQuery",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "SnowflakeViewFromApps": {
+        "queryId": "e91a9a45-7191-4eb3-992c-81d46574f352",
+        "queryName": "SnowflakeViewFromApps",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "FilterRowsbyColumn": {
+        "queryId": "cc08daf4-2d5e-4da7-b970-d2acd9831a4c",
+        "queryName": "FilterRowsbyColumn",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "FilterNRows": {
+        "queryId": "afd5b02b-0d56-4ee2-9c35-a0220a0bb1cb",
+        "queryName": "FilterNRows",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "GetEntity": {
+        "queryId": "00aa1ccc-3354-4a12-92fa-d65ddc953bf4",
+        "queryName": "GetEntity",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "GetEntityFromWorkspace": {
+        "queryId": "d7288925-e451-4640-bf3f-fc75518a1b8f",
+        "queryName": "GetEntityFromWorkspace",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "pWorkSpace": {
+        "queryId": "136ef995-7550-4d55-b665-c306895cdb40",
+        "queryName": "pWorkSpace",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pDataFlow": {
+        "queryId": "7f5f0e03-206a-413b-beab-85729ab5f679",
+        "queryName": "pDataFlow",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pFiscalCalendarDateFilter": {
+        "queryId": "d4299f69-5646-40fe-a0f6-d88c1cedebff",
+        "queryName": "pFiscalCalendarDateFilter",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pSetMaxRows": {
+        "queryId": "bea6a77d-6c5d-4e46-bc5f-0f951fe6f99b",
+        "queryName": "pSetMaxRows",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pOrganizationOrgs": {
+        "queryId": "c53f6f06-7342-4e22-ab87-beab297e444e",
+        "queryName": "pOrganizationOrgs",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pTBU": {
+        "queryId": "712aa63e-6676-42aa-9cfe-49f9254bd004",
+        "queryName": "pTBU",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pServerName": {
+        "queryId": "9678b5e1-618d-4bed-8f47-a1e87cc65529",
+        "queryName": "pServerName",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pWarehouse": {
+        "queryId": "f50e04c7-e91c-43ea-ac0e-154e3647e240",
+        "queryName": "pWarehouse",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pRole": {
+        "queryId": "e7a0453e-71ac-4d6d-b576-c087fb422555",
+        "queryName": "pRole",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pDatabase": {
+        "queryId": "6f2370f4-665d-4fdd-b09e-74757bd1d9d4",
+        "queryName": "pDatabase",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pTextColumns": {
+        "queryId": "84ae23d9-f434-4633-ac64-d5a0658a06c2",
+        "queryName": "pTextColumns",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pNumberColumns": {
+        "queryId": "0be1e274-784f-4b8a-95b0-6228b8506cf3",
+        "queryName": "pNumberColumns",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pDateColumns": {
+        "queryId": "c34b9dae-2e82-4b86-a6a0-40e51b54f94f",
+        "queryName": "pDateColumns",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "pSchema": {
+        "queryId": "a10fb2b5-35a2-47b4-9b37-7882aff2c4af",
+        "queryName": "pSchema",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f"
+      },
+      "ListOfOrgs": {
+        "queryId": "f1f610fc-6348-47ae-86af-692f404cb1ce",
+        "queryName": "ListOfOrgs",
+        "queryGroupId": "5bac1fbe-fe1d-4da2-94f5-070ea55ef66f",
+        "loadEnabled": true
+      },
+      "DIM_Fiscal Calendar": {
+        "queryId": "3b0dccaa-1e63-446a-9aaf-f7bf41d391a7",
+        "queryName": "DIM_Fiscal Calendar",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_LT Grouping Summary": {
+        "queryId": "532a43a3-86df-4f7e-b426-bab237c7fd33",
+        "queryName": "DIM_LT Grouping Summary",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "FACT_Inventory Velocity Summary": {
+        "queryId": "65917f3b-8e5c-47d8-aea7-ee54873fe39b",
+        "queryName": "FACT_Inventory Velocity Summary",
+        "queryGroupId": "350542b3-0fe5-4a8f-9abf-594bb26638d7",
+        "loadEnabled": true
+      },
+      "FACT_Inventory Velocity Details": {
+        "queryId": "97eba921-cd37-4d0a-9b64-94cc6a1a86e1",
+        "queryName": "FACT_Inventory Velocity Details",
+        "queryGroupId": "350542b3-0fe5-4a8f-9abf-594bb26638d7",
+        "loadEnabled": true
+      },
+      "DIM_Sort Values": {
+        "queryId": "994c12fc-6182-4b55-840d-677feb4c9fda",
+        "queryName": "DIM_Sort Values",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "Version History Dataflow": {
+        "queryId": "16844e25-79c0-48e1-a234-7adb2c775418",
+        "queryName": "Version History Dataflow",
+        "queryGroupId": "a91191ed-8efb-400b-bad7-2b8a42e2d413",
+        "loadEnabled": true
+      },
+      "INFO_DataUpdateInfoInventoryVelocity": {
+        "queryId": "3200c79b-04dc-4d96-bb86-666dad853946",
+        "queryName": "INFO_DataUpdateInfoInventoryVelocity",
+        "queryGroupId": "d535d7f0-f50c-47a1-a1c5-b52444b9ad0e",
+        "loadEnabled": true
+      },
+      "GetColumnNames": {
+        "queryId": "f124556a-ff71-4757-89d1-938d689b772a",
+        "queryName": "GetColumnNames",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "SetColumnType": {
+        "queryId": "ef8083ec-f84e-4d39-8c4b-38e7454a9282",
+        "queryName": "SetColumnType",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "RenameColumn": {
+        "queryId": "4b94a022-6b82-46d8-8318-785ebc38e154",
+        "queryName": "RenameColumn",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "FilterRowsbyDate": {
+        "queryId": "763819b7-1ac3-4543-9744-52e363b881dc",
+        "queryName": "FilterRowsbyDate",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "SplitDateTimeColumn": {
+        "queryId": "a55a0d1e-4523-4716-9caf-8086c5484b47",
+        "queryName": "SplitDateTimeColumn",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "CreateKeyField": {
+        "queryId": "7e7c5585-89dd-4ce2-94ec-171691908b06",
+        "queryName": "CreateKeyField",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      },
+      "DIM_InventoryOrgSecurity": {
+        "queryId": "a2edd82c-66ba-4b24-b686-524ffa9a2757",
+        "queryName": "DIM_InventoryOrgSecurity",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_ORA_PRODUCT_DIM": {
+        "queryId": "4015c6ab-3bb6-4d90-a551-f0f099ed0bf0",
+        "queryName": "DIM_ORA_PRODUCT_DIM",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_SecReporting(MFG)": {
+        "queryId": "9d86876f-3ce6-48a1-9bfd-1f82420f25b8",
+        "queryName": "DIM_SecReporting(MFG)",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe"
+      },
+      "DIM_SecReporting": {
+        "queryId": "bc2b810d-e571-46fc-90df-a98cdd9baf78",
+        "queryName": "DIM_SecReporting",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_WarehouseType": {
+        "queryId": "669a3ac8-e0ca-46b2-a160-8486eca7eb21",
+        "queryName": "DIM_WarehouseType",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "DIM_SourcingCommodity": {
+        "queryId": "6924232a-86e5-4596-b2e7-1c23a3aa605d",
+        "queryName": "DIM_SourcingCommodity",
+        "queryGroupId": "a0966e5b-d860-4160-b742-7c26403daafe",
+        "loadEnabled": true
+      },
+      "SortColumnNames": {
+        "queryId": "589f3ae2-e9ea-4240-800d-b73722a028dc",
+        "queryName": "SortColumnNames",
+        "queryGroupId": "7363d107-1f3d-48de-be9c-f033354d282e"
+      }
+    },
+    "document": "section Section1;\r\n[Description = \"PROD_DB.APPS.XXCOH_MS_SHIPMENT_VIEW\"]\r\nshared FACT_Shipments = let\n    Source = GetEntityFromWorkspace(\"BPD_Dev\", \"df_global_inventory_shipments_staging\", \"FACT_Shipments\"),\n    FilterRows = FilterNRows(Source, pSetMaxRows),\n    FilterTBUs = FilterRowsbyColumn(FilterRows, pTBU, \"M20_TBU\"),\n    ColumnText = SetColumnType(FilterTBUs, pTextColumns, \"text\"),\n    ColumnInt = SetColumnType(ColumnText, pNumberColumns, \"number\"),\n    ColumnDate = SetColumnType(ColumnInt, pDateColumns, \"date\"),\n\tTimeCreation = SplitDateTimeColumn(ColumnDate, \"CREATION_DATE\"),\n\tTimeRevTrans = SplitDateTimeColumn(TimeCreation, \"REV_TRANS_DATE\")\nin\n    TimeRevTrans;\r\nshared pM20Detail = \"C:\\Users\\PeacocCo\\Coherent, Inc\\Power BI Community - Projects\\Inventory\\2. Measure\\DataModels\\test\\data\\XXREP_M20_DETAIL_V.csv\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\n[Description = \"PROD_DB.APPS.XXREP_M20_DETAIL_V\"]\r\nshared FACT_M20Detail = let\n  Source = GetEntityFromWorkspace(\"BPD_Dev\", \"df_global_inventory_m20detail_staging\", \"FACT_M20Detail\")\nin \n  Source;\r\n[Description = \"PROD_DB.APPS.XXREP_INVVALUE_V\"]\r\nshared FACT_InventoryValue = let\r\n  Source = GetEntityFromWorkspace(\"BPD_Dev\", \"df_global_inventory_value_staging\", \"FACT_InventoryValue\"),\r\n  RemoveInvValueKey = RemoveColumn(Source, \"INVVALUE_KEY\"),\r\n  MergeWarehouseType = Table.NestedJoin(RemoveInvValueKey, {\"ORGANIZATION_CODE\"}, DIM_WarehouseType, {\"ORGANIZATION_CODE\"}, \"DIM_WarehouseType\", JoinKind.LeftOuter),\r\n  ShowWarehouseType = Table.ExpandTableColumn(MergeWarehouseType, \"DIM_WarehouseType\", {\"WAREHOUSE_TYPE\"}, {\"WAREHOUSE_TYPE\"}),\r\n  SortColumns = SortColumnNames(ShowWarehouseType),\r\n  SEC_REPORTING_KEY = Table.AddColumn(SortColumns, \"SEC_REPORTING_KEY\", each if [WAREHOUSE_TYPE] = \"MANUFACTURING\" then\r\n            [ITEM_NUMBER]\r\n            & \"_\"\r\n            & [FISCAL_WEEK]\r\n            & \"_\"\r\n            & [ORGANIZATION_CODE]\r\n            & \"_\"\r\n            & [WAREHOUSE_TYPE]\r\n        else\r\n            [ORGANIZATION_CODE]\r\n            & \"_\"\r\n            & [SUBINVENTORY_CODE]\r\n            & \"_\"\r\n            & [WAREHOUSE_TYPE]),\r\n  #\"Transform columns\" = Table.TransformColumnTypes(SEC_REPORTING_KEY, {{\"SEC_REPORTING_KEY\", type text}}),\r\n  #\"Replace errors\" = Table.ReplaceErrorValues(#\"Transform columns\", {{\"SEC_REPORTING_KEY\", null}})\r\nin\r\n  #\"Replace errors\";\r\nshared pM20DetailAll = \"C:\\Users\\PeacocCo\\Coherent, Inc\\Power BI Community - Projects\\Inventory\\2. Measure\\DataModels\\test\\data\\XXREP_M20_DETAIL_V_ALL_ACCOUNTS.csv\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pInventoryValue = \"C:\\Users\\PeacocCo\\Coherent, Inc\\Power BI Community - Projects\\Inventory\\2. Measure\\DataModels\\test\\data\\XXREP_INVVALUE_V.csv\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared #\"DIM_Time Balance Week\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Time Balance Week\")\nin\n  Entity;\r\nshared #\"DIM_Financial Product Mapping\" = let\n    Source = GetEntity(\"Financial Product Mapping\")\nin  \n    Source;\r\nshared #\"DIM_GL Account Segment\" = let\r\n  Source = GetEntity(\"GL Account Segment\"),\r\n  AddAccountClassification = let\n            fxAccountClass =\n                Table.AddColumn(\n                    Source,\n                    \"Account Classification\",\n                    each\n                        if\n                            List.Contains(\n                                {\n                                    \"50000\",\n                                    \"50013\"\n                                },\n                                [Account Code]\n                            )\n                        then\n                            \"Direct Labour\"\n                        else if\n                            List.Contains(\n                                {\n                                    \"05500\",\n                                    \"05505\",\n                                    \"05510\",\n                                    \"05540\",\n                                    \"05530\",\n                                    \"05550\"\n                                },\n                                [Account Code]\n                            )\n                        then\n                            \"Reserve\"\n                        else if [Account Code] = \"05010\" then\n                            \"WIP\"\n                        else if\n                            List.AllTrue(\n                                {\n                                    [Account Code] >= \"40000\",\n                                    [Account Code] <= \"43000\"\n                                }\n                            )\n                        then\n                            \"SPC\"\n                        else if [Account Code] = \"32000\" then\n                            \"Intragroup Sales\"\n                        else if\n                            List.Contains(\n                                {\n                                    \"47000\",\n                                    \"47005\"\n                                },\n                                [Account Code]\n                            )\n                        then\n                            \"Warranty\"\n                        else if\n                            List.Contains(\n                                {\n                                    \"47100\",\n                                    \"47105\"\n                                },\n                                [Account Code]\n                            )\n                        then\n                            \"Installation\"\n                        else if\n                            List.Contains(\n                                {\n                                    \"46300\",\n                                    \"46350\"\n                                },\n                                [Account Code]\n                            )\n                        then\n                            \"Service Absorption\"\n                        else if Text.StartsWith([Account Code], \"45\") then\n                            \"Variance\"\n                        else if Text.StartsWith([Account Code], \"46\") then\n                            \"Absorption\"\n                        else if Text.StartsWith([Account Code], \"48\") then\n                            \"Other Direct Cost\"\n                        else if Text.StartsWith([Account Code], \"3\") then\n                            \"Revenue\"\n                        else if\n                            List.AnyTrue(\n                                {\n                                    Text.StartsWith([Account Code], \"5\"),\n                                    Text.StartsWith([Account Code], \"6\"),\n                                    Text.StartsWith([Account Code], \"7\"),\n                                    Text.StartsWith([Account Code], \"8\")\n                                }\n                            )\n                        then\n                            \"Manufacturing Overhead\"\n                        else\n                            [Account Name]\n                )\n        in\n            fxAccountClass,\r\n  #\"Transform columns\" = Table.TransformColumnTypes(AddAccountClassification, {{\"Account Classification\", type text}}),\r\n  #\"Replace errors\" = Table.ReplaceErrorValues(#\"Transform columns\", {{\"Account Classification\", null}})\r\nin\r\n  #\"Replace errors\";\r\nshared #\"DIM_GL Code Combinations\" = let\n    Source = GetEntity(\"GL Code Combinations\")\nin\n    Source;\r\nshared #\"DIM_GL Code Combinations Desc\" = let\n    Source = GetEntity(\"GL Code Combinations Desc\")\nin\n    Source;\r\nshared #\"DIM_GL Project Segment\" = let\n    Source = GetEntity(\"GL Project Segment\")\nin\n    Source;\r\n[Description = \"TABLENAME: Fiscal Calendar Days\"]\r\nshared DIM_Calendar = let\n  Source = GetEntity(\"Fiscal Calendar Days\")\nin\n  Source;\r\nshared #\"DIM_Fiscal Context\" = let\n    Source = GetEntity(\"Fiscal Context\")\nin\n    Source;\r\n[Description = \"TABLENAME: GL Department Segment\"]\r\nshared DIM_GLDepartment = let\n    Source = GetEntity(\"GL Department Segment\")\nin\n    Source;\r\nshared #\"DIM_Inventory Organizations\" = let\n    Source = GetEntity(\"Inventory Organizations\")\nin\n    Source;\r\nshared #\"DIM_Operating Units\" = let\n    Source = GetEntity(\"Operating Units\")\nin\n    Source;\r\nshared #\"DIM_Operating Unit Data Security\" = let\n    Source = GetEntity(\"Operating Unit Data Security\")\nin\n    Source;\r\nshared #\"Version History Model\" = let\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"FcyxCoMwFEbhV/nJXOUa7NJVKThEBUeRcmtuaDAa0ICvXx3PGb5xVEVOOamH0qR1Rs+MShTli+5VxeA39MJznJerm80nzwFJjoQ1WgmYd+EkFqdPPxhNcHFH3Q8DeLNgODlR+xWJv0EOuD2ueDftp+qM6VpYTuxCPC/c3J6apj8=\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Version Number\" = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes\" = _t, #\"Revision Type\" = _t]),\n    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Version Number\", type text}, {\"Revision Date/Time\", type datetime}, {\"Developer Name\", type text}, {\"Revision Notes\", type text}, {\"Revision Type\", type text}})\nin\n    #\"Changed Type\";\r\nshared #\"Version History Report\" = let\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"FcqxCoAgEIDhVzmcMy6xpbWpLVrDQeKoI1HJs16/Gv+Pf11V12KLqlEGjdHYa7TQ2QF/GlPgCDP5LW3n11MUFvYBst8JComuGR6WA4SKwM2l+lC+caGcLlHOvQ==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Version Number\" = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes\" = _t, #\"Revision Type\" = _t]),\n    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Version Number\", type text}, {\"Revision Date/Time\", type datetime}, {\"Developer Name\", type text}, {\"Revision Notes\", type text}, {\"Revision Type\", type text}})\nin\n    #\"Changed Type\";\r\nshared #\"Version History\" = let\n    Source = Table.Combine({#\"Version History Model\", #\"Version History Report\"})\nin\n    Source;\r\n[Description = \"TABLENAME: GL Entity Segment\"]\r\nshared DIM_GLEntity = let\n    Source = GetEntity(\"GL Entity Segment\"),\n    FixSpellingMistake = RenameColumn(Source, \"Entrity Code\", \"Entity Code\")\nin\n    FixSpellingMistake;\r\nshared KeepColumn = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    RemoveColumns =\n        (Entity as table, ColumnNames as text) =>\n            let\n                CleanList =\n                    List.Transform(\n                        List.Transform(\n                            Text.Split(ColumnNames, \",\"),\n                            Text.Trim\n                        ),\n                        Text.Upper\n                    ),\n                RemovedColumnList =\n                    List.Select(\n                        Table.ColumnNames(Entity),\n                        each not (List.Contains(CleanList, Text.Upper(_)))\n                    ),\n                ModifiedEntity =\n                    if ColumnNames = \"\" then\n                        Entity\n                    else\n                        Table.RemoveColumns(\n                            Entity,\n                            RemovedColumnList\n                        )\n            in\n                ModifiedEntity\nin\n    RemoveColumns;\r\nshared RemoveColumn = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    RemoveColumns =\n        (Entity as table, ColumnNames as text) =>\n            let\n                CleanList =\n                    List.Transform(\n                        List.Transform(\n                            Text.Split(ColumnNames, \",\"),\n                            Text.Trim\n                        ),\n                        Text.Upper\n                    ),\n                RemovedColumnList =\n                    List.Select(\n                        Table.ColumnNames(Entity),\n                        each List.Contains(CleanList, Text.Upper(_))\n                    ),\n                ModifiedEntity =\n                    Table.RemoveColumns(\n                        Entity,\n                        RemovedColumnList\n                    )\n            in\n                ModifiedEntity\nin\n    RemoveColumns;\r\nshared SnowflakeQuery = let\n    // This function runs a query on the Snowflake database\n    // pass a sql query as a string to get the results of the query  \n    // returned\n    // :returns: Table\n    SnowflakeQuery =\n        (SQLQuery as text) =>\n            let\n                ReturnedValue =\n                    Value.NativeQuery(\n                        Snowflake.Databases(\n                            pServerName,\n                            pWarehouse,\n                            [Role = pRole]\n                        ){[Name = pDatabase]}\n                            [Data],\n                        SQLQuery,\n                        null,\n                        [EnableFolding = true]\n                    )\n            in\n                ReturnedValue\nin\n    SnowflakeQuery;\r\nshared SnowflakeViewFromApps = let\n    fxGetSnowflakeView =\n        (ViewName as text) =>\n            let\n                Source =\n                    Snowflake.Databases(\n                        pServerName,\n                        pWarehouse,\n                        [\n                            CreateNavigationProperties = null,\n                            ConnectionTimeout = null,\n                            CommandTimeout = null\n                        ]\n                    ),\n                Database =\n                    Source{[\n                        Name = pDatabase,\n                        Kind = \"Database\"\n                    ]}\n                        [Data],\n                Schema =\n                    Database{[\n                        Name = pSchema,\n                        Kind = \"Schema\"\n                    ]}\n                        [Data],\n                Entity =\n                    Schema{[\n                        Name = ViewName,\n                        Kind = \"View\"\n                    ]}\n                        [Data]\n            in\n                Entity\nin\n    fxGetSnowflakeView;\r\nshared FilterRowsbyColumn = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    FilterColumn =\n        (Entity as table, FilterValue as text, ColumnName as text) =>\n            let\n                CleanFilterValue =\n                    List.Transform(\n                        List.Transform(\n                            Text.Split(FilterValue, \",\"),\n                            Text.Trim\n                        ),\n                        Text.Upper\n                    ),\n                Filter =\n                    if\n                        List.AnyTrue(\n                            {\n                                not List.Contains(\n                                    Table.ColumnNames(Entity),\n                                    ColumnName\n                                ),\n                                FilterValue = \"\"\n                            }\n                        )\n                    then\n                        Entity\n                    else\n                        try\n                            {\n                                Table.SelectRows(\n                                    Entity,\n                                    each\n                                        List.Contains(\n                                            List.Buffer(CleanFilterValue),\n                                            Text.Upper(Record.Field(_, ColumnName))\n                                        )\n                                )\n                            }\n                        otherwise\n                            {\n                                Entity\n                            },\n                Result =\n                    if Value.Is(Filter, List.Type) then\n                        Filter{0}\n                    else\n                        Filter\n            in\n                Result\nin\n    FilterColumn;\r\nshared FilterNRows = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    FilterMaxRows =\n        (Entity as table, FilterValue as number) =>\n            let\n                FilterMaxNoOfRows =\n                    if FilterValue > 0 then\n                        Table.FirstN(Entity, FilterValue)\n                    else\n                        Entity\n            in\n                FilterMaxNoOfRows\nin\n    FilterMaxRows;\r\nshared GetEntity = let\n    // This function retrieves a table (Entity) from the given\n    // workspaceName and dataflowName which are pre-defined\n    // parameters \n    // Set the pWorkSpace and pDataFlow parameters before\n    // invoking this function\n    // :returns: Table\n    ReturnEntity =\n        (pEntity as text) =>\n            let\n                Source = PowerBI.Dataflows(null),\n                UpperCaseWorkspace =\n                    Table.TransformColumns(\n                        Source,\n                        {\n                            {\n                                \"workspaceName\",\n                                each Text.Upper(Text.From(_)),\n                                type nullable text\n                            }\n                        }\n                    ),\n                Workspace = UpperCaseWorkspace{[workspaceName = Text.Upper(pWorkSpace)]}[Data],\n                UpperCaseDataflow =\n                    Table.TransformColumns(\n                        Workspace,\n                        {\n                            {\n                                \"dataflowName\",\n                                each Text.Upper(Text.From(_)),\n                                type nullable text\n                            }\n                        }\n                    ),\n                Dataflow = UpperCaseDataflow{[dataflowName = Text.Upper(pDataFlow)]}[Data],\n                UpperCaseEntity =\n                    Table.TransformColumns(\n                        Dataflow,\n                        {\n                            {\n                                \"entity\",\n                                each Text.Upper(Text.From(_)),\n                                type nullable text\n                            }\n                        }\n                    ),\n                Entity = UpperCaseEntity{[entity = Text.Upper(pEntity)]}[Data]\n            in\n                Entity\nin\n    ReturnEntity;\r\nshared GetEntityFromWorkspace = let\n    // This function retrieves a table (Entity) for the give\n    // workspaceName and dataflowName which are variables\n    // invoked in this function\n    // :returns: Table\n    ReturnEntity =\n        (pWorkSpace as text, pDataFlow as text, pEntity as text) =>\n            let\n                Source = PowerBI.Dataflows(null),\n                UpperCaseWorkspace =\n                    Table.TransformColumns(\n                        Source,\n                        {\n                            {\n                                \"workspaceName\",\n                                each Text.Upper(Text.From(_)),\n                                type nullable text\n                            }\n                        }\n                    ),\n                Workspace = UpperCaseWorkspace{[workspaceName = Text.Upper(pWorkSpace)]}[Data],\n                UpperCaseDataflow =\n                    Table.TransformColumns(\n                        Workspace,\n                        {\n                            {\n                                \"dataflowName\",\n                                each Text.Upper(Text.From(_)),\n                                type nullable text\n                            }\n                        }\n                    ),\n                Dataflow = UpperCaseDataflow{[dataflowName = Text.Upper(pDataFlow)]}[Data],\n                UpperCaseEntity =\n                    Table.TransformColumns(\n                        Dataflow,\n                        {\n                            {\n                                \"entity\",\n                                each Text.Upper(Text.From(_)),\n                                type nullable text\n                            }\n                        }\n                    ),\n                Entity = UpperCaseEntity{[entity = Text.Upper(pEntity)]}[Data]\n            in\n                Entity\nin\n    ReturnEntity;\r\nshared pWorkSpace = \"COHR_DATAFLOWS\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pDataFlow = \"FIN_COMMON\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pFiscalCalendarDateFilter = 3 meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type number];\r\n[Description = \"Use this parameter to set values to Return Max No. of Rows#(lf)Set this value to 0 to disable\"]\r\nshared pSetMaxRows = 0 meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type number];\r\nshared pOrganizationOrgs = \"BCO\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pTBU = \"DPSS_Germany\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pServerName = \"mma12090.snowflakecomputing.com\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pWarehouse = \"COMPUTE_REPORTING\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pRole = \"GLBMFGOPERATIONSROLE\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pDatabase = \"PROD_DB\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pTextColumns = \"ENTITY,DEPT,ACCT,PROJ,HFM_PRODUCT,ALT_HFM_PRODUCT,M20_TBU,M20_PFC,INTERCO,ACCOUNT_DESC,GL_PERIOD,ITEM_ORG_ID_KEY,ITEM_ORG_CODE_KEY,ITEM_NUMBER,ITEM_TBU,ITEM_PRODUCT_FAMILY,SOURCE_TYPE,SUBINVENTORY_CODE,SUBINVENTORY_TYPE,ORGANIZATION_CODE,CURRENCY_CODE,VALID_FLAG,COMMENTS,FISCAL_WEEK,JE_SOURCE_CATEGORY,OPERATIONS_REPORTING,CS_DEMAND_SOURCE,CS_SUPPLY_SOURCE,ITEM_TYPE_CODE,EXCLUDE_FLAG,EXCLUDE_COMMENT,WIP_CLASS,ITEM_TYPE,PLANNER_CODE,MAKE_BUY,ITEM_STATUS,ABC_CLASS,INV_STATUS,ITEM_PRODUCT_LINE,ITEM_FORECAST_FIELD,ITEM_DESC,WIP_JOB_NO,ORA_PRODUCT_LINE,FIN_PRODUCT_LINE,ORA_FORECAST_FIELD,ORG_TBU,ORG_PRODUCT_FAMILY,ORG_PRODUCT_LINE,ORG_FORECAST_FIELD,PRODUCT_MAP_KEY,FIN_TBU,FIN_PFC,FISCAL_QUARTER,FISCAL_YEAR,MGT_PRODUCT_GROUP,MGT_SUB_PRODUCT_GROUP,BUSINESS_SEGMENT,ACCOUNT_NAME,ACCOUNT_DESC,ACCOUNT_TYPE,ACCOUNT_SUB_GROUP,ACCOUNT_GROUP,SUMMARY_ACCOUNT,INVVALUE_KEY#(cr)#(lf)\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pNumberColumns = \"TRAN_QTY,ACCOUNTED_DR,ACCOUNTED_CR,NET_ACCOUNTED_AMT,ACCOUNTED_NET_USD,INV_VALUE,INV_VALUE_USD,CURRENCY_RATE,ITEM_COST,MATERIAL_COST,MATERIAL_OVERHEAD_COST,OUTSIDE_PROCESSING_COST,OVERHEAD_COST,RESOURCE_COST,TOTAL_COST\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pDateColumns = \"TRANS_DATE,WEEK_START_DATE,WEEK_END_DATE,PERIOD_START_DATE,PERIOD_END_DATE,QUARTER_START_DATE,QUARTER_END_DATE\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared pSchema = \"APPS\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text];\r\nshared ListOfOrgs = let\r\n  Source = pOrganizationOrgs,\r\n  GetListOfValues = Text.Split(Source, \",\"),\r\n  #\"Convert to table\" = Table.FromValue(GetListOfValues),\r\n  #\"Transform columns\" = Table.TransformColumnTypes(#\"Convert to table\", {{\"Value\", type text}}),\r\n  #\"Replace errors\" = Table.ReplaceErrorValues(#\"Transform columns\", {{\"Value\", null}})\r\nin\r\n  #\"Replace errors\";\r\n[Description = \"Coherent Fiscal Calendar.#(lf)Currently filtered to > 29th Sept. 2019\"]\r\nshared #\"DIM_Fiscal Calendar\" = let\n/*\nDIM_Fiscal Calendar is a modified view of the Fiscal Calendar where\n\nA date filter has been applied so that only dates after pFiscalCalendarDateFilter are included\nAdditional columns have been added Cal_Year_ofCW, Cal_Year_ofCW_Short\n*/\n    FiscalCalendarData = GetEntity(\"Fiscal Calendar Days\"),\n    TransformColumnTypes = Table.TransformColumnTypes(FiscalCalendarData,{{\"Calendar Day\", type date}, {\"Week Start Date\", type date}, {\"Week End Date\", type date}, {\"Period Start Date\", type date}, {\"Period End Date\", type date}, {\"Quarter Start Date\", type date}, {\"Quarter End Date\", type date}, {\"Year Start Date\", type date}, {\"Year End Date\", type date}, {\"Fiscal Week No\", Int64.Type}, {\"Fiscal Month Week No\", Int64.Type}, {\"Fiscal Qtr Week No\", Int64.Type}, {\"Period Year\", Int64.Type}, {\"Quarter No\", Int64.Type}, {\"Period No\", Int64.Type}, {\"Fiscal Day\", Int64.Type}, {\"FC_PERIOD_ID\", Int64.Type}, {\"FC_QUARTER_ID\", Int64.Type}, {\"FC_WEEK_ID\", Int64.Type}, {\"FC_YEAR_OFFSET\", Int64.Type}, {\"FC_QUARTER_OFFSET\", Int64.Type}, {\"FC_PERIOD_OFFSET\", Int64.Type}, {\"FC_WEEK_OFFSET\", Int64.Type}, {\"FC_DAYS_OFFSET\", Int64.Type}, {\"CALENDAR_YEAR\", Int64.Type}, {\"CALENDAR_MONTH\", Int64.Type}, {\"CALENDAR_ISO_WEEK\", Int64.Type}, {\"CALENDAR_US_WEEK\", Int64.Type}, {\"DAY_OF_WEEK\", Int64.Type}, {\"WORKING_DAY_FLAG\", Int64.Type}, {\"FISCAL_WEEK_INDICATOR_SORT\", Int64.Type}, {\"FISCAL_MONTH_INDICATOR_SORT\", Int64.Type}, {\"FISCAL_QUARTER_INDICATOR_SORT\", Int64.Type}, {\"FISCAL_YEAR_INDICATOR_SORT\", Int64.Type}}),\n    //Gets all dates from the year offset given by pFiscalCalendarDateFilter (default is set as 3 years)\n    SelectAllRowsAfterThisDate = \n    let\n        GetLastNYearsOfData = Table.AddColumn(TransformColumnTypes, \"PreviousNYears\", each Date.IsInPreviousNYears([Calendar Day], pFiscalCalendarDateFilter)),\n        GetCurrentYearsData = Table.AddColumn(GetLastNYearsOfData, \"CurrentFutureYears\", each [Calendar Day] >= Date.From(Date.StartOfYear(DateTime.FixedLocalNow()))),\n        SelectTheFilteredRows = Table.SelectRows(GetCurrentYearsData, each List.AnyTrue({[PreviousNYears], [CurrentFutureYears]})),\n        ReturnFinalValue = Table.RemoveColumns(SelectTheFilteredRows,{\"PreviousNYears\", \"CurrentFutureYears\"})\n    in\n        ReturnFinalValue,\n    RenameFiscalWeekColumns = Table.RenameColumns(SelectAllRowsAfterThisDate,{{\"Fiscal Week\", \"Fiscal Year Week\"}, {\"Fiscal Year Week\", \"Fiscal Week\"}}),\n    AddStartOfWeekCOlumn = Table.AddColumn(RenameFiscalWeekColumns, \"Start of Week\", each Date.StartOfWeek([Calendar Day]), type date),\n    #\"Inserted Year\" = Table.AddColumn(AddStartOfWeekCOlumn, \"Cal_Year_ofCW\", each Date.Year([Start of Week]), Int64.Type),\n    GetThe2DigitValueOfYear = Table.AddColumn(#\"Inserted Year\", \"Cal_Year_ofCW_Short\", each Text.End(Text.From([Cal_Year_ofCW]), 2), type number),\n    /*\n    Returns a column with the Year and CW combined and prefixes included\n    eg. Year = 2022 and CW = 26 then value returned is \"Y22_CW26\"\n    */\n    SetYearAndCWColumn = let \n        TextCalendarYear = Table.AddColumn(GetThe2DigitValueOfYear, \"TextCalendarYear\", each \"Y\" & Text.End(Text.From([Cal_Year_ofCW]), 2), type number),\n        TextCalendarISOWeek = Table.AddColumn(TextCalendarYear, \"TextCalendarISOWeek\", each \"_CW\" & Text.End(Text.From([CALENDAR_ISO_WEEK]), 2), type number),\n        CombineYearAndISOWeek = Table.AddColumn(TextCalendarISOWeek, \"CALENDAR_Year_CWiso\", each Text.Combine({[TextCalendarYear], Text.From([TextCalendarISOWeek])}), type text),\n        ReturnCalendarYearCWIso = Table.RemoveColumns(CombineYearAndISOWeek,{\"TextCalendarYear\", \"TextCalendarISOWeek\"})\n        in ReturnCalendarYearCWIso,\n    /*\n    Returns a column with the Year x 100 and CW added together\n    eg. Year = 2024 and CW = 26 then value returned is 202426\n    */\n    SetCalYearAndCWIDColumn = let\n    MultiplyCalYearCWBy100 = Table.AddColumn(SetYearAndCWColumn, \"Cal_Year_ofCWx100\", each [Cal_Year_ofCW] * 100, type number),\n    AddtheWeekToTheMultipliedValue = Table.AddColumn(MultiplyCalYearCWBy100, \"Cal_Year_CWiso_ID\", each [Cal_Year_ofCWx100] + [CALENDAR_ISO_WEEK], type number),\n    TransformTheColumnTypes = Table.TransformColumnTypes(AddtheWeekToTheMultipliedValue,{{\"Cal_Year_CWiso_ID\", Int64.Type}, {\"Cal_Year_ofCWx100\", Int64.Type}, {\"Cal_Year_ofCW_Short\", Int64.Type}}),\n    ReturnCalYearId = Table.RemoveColumns(TransformTheColumnTypes,{\"Cal_Year_ofCWx100\"})\n    in \n        ReturnCalYearId,\n    AddPrefixToCalendarISOWeek = Table.AddColumn(SetCalYearAndCWIDColumn, \"Cal_CW\", each \"CW\" & Text.From([CALENDAR_ISO_WEEK]), type text),\n    KeepColumns = Table.SelectColumns(AddPrefixToCalendarISOWeek,{\"Period Set Name\", \"Calendar Day\", \"Fiscal Year Week\", \"Fiscal Week\", \"FISCAL_WEEK_DISP\", \"FISCAL_MONTH_SORT_VALUE\", \"FISCAL_QUARTER_DISP\", \"Fiscal Week No\", \"Fiscal Month Week No\", \"FISCAL_QTR_WEEK\", \"Fiscal Qtr Week No\", \"GL Period\", \"PQ_LAST_GL_PERIOD\", \"Period Year\", \"Fiscal Year\", \"Quarter No\", \"Fiscal Quarter\", \"Fiscal Year Quarter\", \"PRIOR_FYFQ\", \"PERIOD_NAME\", \"Period No\", \"Fiscal Day\", \"Week Start Date\", \"Week End Date\", \"Period Start Date\", \"Period End Date\", \"Quarter Start Date\", \"Quarter End Date\", \"Year Start Date\", \"Year End Date\", \"Fiscal Period Month\", \"FC_PERIOD_ID\", \"FC_QUARTER_ID\", \"FC_WEEK_ID\", \"FC_YEAR_OFFSET\", \"FC_QUARTER_OFFSET\", \"FC_PERIOD_OFFSET\", \"FC_WEEK_OFFSET\", \"FC_DAYS_OFFSET\", \"FC_HALF\", \"Next Quarter First Fiscal Week\", \"Prior Qtr Last Fiscal Week\", \"CALENDAR_YEAR\", \"CALENDAR_MONTH\", \"CALENDAR_YEARMONTHID\", \"CALENDAR_MONTHNAME\", \"CALENDAR_MONTHNAMESHORT\", \"CALENDAR_ISO_WEEK\", \"CALENDAR_US_WEEK\", \"CALENDAR_YEAR_SHORT\", \"CALENDAR_MTH_YEAR\", \"DAY_NAME\", \"DAY_OF_WEEK\", \"WORKING_DAY_FLAG\", \"CQ_LAST_FISCAL_WEEK\", \"Row Creation Date\", \"Week End Flag\", \"Month End Flag\", \"Quarter End Flag\", \"Year End Flag\", \"FISCAL_WEEK_INDICATOR\", \"FISCAL_WEEK_INDICATOR_SORT\", \"FISCAL_MONTH_INDICATOR\", \"FISCAL_MONTH_INDICATOR_SORT\", \"FISCAL_QUARTER_INDICATOR\", \"FISCAL_QUARTER_INDICATOR_SORT\", \"FISCAL_YEAR_INDICATOR\", \"FISCAL_YEAR_INDICATOR_SORT\", \"Refresh Date\", \"Start of Week\", \"Cal_Year_ofCW\", \"Cal_Year_ofCW_Short\", \"CALENDAR_Year_CWiso\", \"Cal_Year_CWiso_ID\", \"Cal_CW\"})\nin\n    KeepColumns;\r\nshared #\"DIM_LT Grouping Summary\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"LT Grouping Summary\"),\n  FilterRows = FilterNRows(Entity, pSetMaxRows),\n  FilterOrgs = FilterRowsbyColumn(FilterRows, pOrganizationOrgs, \"ORGANIZATION_CODE\")\nin\n  FilterOrgs;\r\nshared #\"FACT_Inventory Velocity Summary\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Inventory Velocity Summary\"),\n  FilterRows = FilterNRows(Entity, pSetMaxRows),\n  FilterOrgs = FilterRowsbyColumn(FilterRows, pOrganizationOrgs, \"ORGANIZATION_CODE\"),\n  KeepListOfColumns = KeepColumn(FilterOrgs, \"ACTIVE_OR_INACTIVE,CURRENT_MRP_ABC_CLASS,DEMAND_SOURCE,ENTITY,FISCAL_WEEK_ID,FISCAL_WEEK_KEY,ITEM_PRODUCT_FAMILY,ITEM_STATUS,ITEM_TBU,ITEM_TYPE,ON_ORDER_DAYS_OF_SUPPLY,ON_ORDER_DAYS_OF_SUPPLY_COUNT,ON_ORDER_VALUE,ON_ORDER_VALUE_USD,ONHAND_DAYS_OF_SUPPLY,ONHAND_VALUE,ONHAND_VALUE_USD,OPERATIONS_REPORTING,ORGANIZATION_CODE,PERIOD_END_DATE,PERIOD_NAME,PERIOD_YEAR,PRODUCT_LINE,PRODUCT_MAP_KEY,RECORD_COUNT,SAFETY_STOCK_VALUE,SAFETY_STOCK_VALUE_USD,SEC_REPORTING,SUPPLY_SOURCE,WEEK_END_DATE,WEEK_START_DATE,WIP_DAYS_OF_SUPPLY,WIP_DAYS_OF_SUPPLY_COUNT,WIP_VALUE,WIP_VALUE_USD\")\nin\n  KeepListOfColumns;\r\nshared #\"FACT_Inventory Velocity Details\" = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Inventory Velocity\"),\n  FilterRows = FilterNRows(Entity, pSetMaxRows),\n  FilterOrgs = FilterRowsbyColumn(FilterRows, pOrganizationOrgs, \"ORGANIZATION_CODE\"),\n  KeepColumns = KeepColumn(FilterOrgs, \"ACTIVE_OR_INACTIVE,ACTIVE_SUPPLIER_LT,AVG_DAILY_DEMAND_ELSE_USAGE,BLANKET_DAYS_SUPPLY_REMAINING,CURRENT_ABC_CLASS,DATE_RUN,FISCAL_WEEK_KEY,INTRANSIT_VALUE,INVENTORY_VALUE,INVENTORY_VALUE_USD,ITEM_COST,ITEM_COST_USD,ITEM_DESCRIPTION,ITEM_NUMBER,ITEM_TYPE,KANBAN_ITEM,MIN_MAX_ITEM,ON_HAND_DAYS_OF_SUPPLY,ON_ORDER_DAYS_OF_SUPPLY,ON_ORDER_VALUE_USD,ONORDER_PO_QTY,ONORDER_PO_VALUE,ONORDER_PO_VALUE_USD,OPEN_BLANKETS,ORGANIZATION_CODE,PLANNING_METHOD,PROJ_SPEND_NEXT_26_WEEKS_USD,SAFETY_STOCK_QTY,SAFETY_STOCK_VALUE,SAFETY_STOCK_VALUE_USD,SEC_REPORTING,SR_VNDR_SRC_ORG,SUM_USD_REMAINING_AMOUNT,TARGET_DAYS_OF_SUPPLY,TARGET_DAYS_OF_SUPPLY_SAVINGS,TARGET_DAYS_OF_SUPPLY_VALUE,TOTAL_GR_26_WEEKS,TOTAL_ONHAND_QTY,WIP_DAYS_OF_SUPPLY,WIP_IN_PROCESS_QTY,WIP_IN_PROCESS_VALUE,WIP_IN_PROCESS_VALUE_USD\"),\n  FillEmptyCellValuesWithZero = Table.ReplaceValue(KeepColumns,\"\",\"0\",Replacer.ReplaceValue,{\"OPEN_BLANKETS\"}),\n  //ConvertColumnsToInt = Table.TransformColumnTypes(FillEmptyCellValuesWithZero,{{\"KANBAN_ITEM\", Int64.Type}, {\"MIN_MAX_ITEM\", Int64.Type}, {\"OPEN_BLANKETS\", Int64.Type}})\n  ColumnInt = SetColumnType(FillEmptyCellValuesWithZero, \"KANBAN_ITEM,MIN_MAX_ITEM,OPEN_BLANKETS\", \"number\")\nin\n  ColumnInt;\r\nshared #\"DIM_Sort Values\" = let\r\n  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"jZPbToQwEIZfZcKVJuvFuuvh1oAHorAI62pC9mKErhLJlJR2lbcXt6HRWA6XdL5/Ot80pKlzj/SK5MycqESigt4gYPKd5+3J3NnOUico6CTALytxqok4gq5mxRYHLORSYyy3UkvTDCkHb6zpmcGvMlnsWXvk056R5KKBRKJUtXFYv4SDlPbwww34hAOcFlkRrETOBHjY1MB3kKiqKpu2HjCslWDwqJBkIRtj1RMBlyuS9qD2e/ajSdec99BDN1x0o90dFj7hlss/iQ2WisHRU+Id/8JdJQSjrDHLN+6jvH6GBHdM/iydZx/jmYURH0WXtukfeIalofpE7CbTsv1W0/L/DKfFtO3Nrd9+JNcuxKziQuq/ad61tNT0uDF+WmrtKNtv\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Value = _t, Type = _t, #\"Sort Order\" = _t]),\r\n  #\"Changed column type\" = Table.TransformColumnTypes(Source, {{\"Value\", type text}, {\"Type\", type text}, {\"Sort Order\", Int64.Type}})\r\nin\r\n  #\"Changed column type\";\r\nshared #\"Version History Dataflow\" = let\n    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"NY0xD4IwFAb/ypfOQApRB1eNiZs7YXiWh75Y2qZ9hL8vGh3vhru+N21jG2sq09muq+2+bg9od0f7UafoJeDG5KJ7bXwNokIeykVxJqXJxxUuMymPWEWfuJBTKN09lwqjzByKxPAzoDAiUaaZlXNBYa2XhCnmb1LCA2nJKRYu2+0/MMPwBg==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Version Number\" = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes\" = _t, #\"Revision Type\" = _t]),\n    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Version Number\", type text}, {\"Revision Date/Time\", type datetime}, {\"Developer Name\", type text}, {\"Revision Notes\", type text}, {\"Revision Type\", type text}})\nin\n    #\"Changed Type\";\r\nshared INFO_DataUpdateInfoInventoryVelocity = let\n  Entity = GetEntityFromWorkspace(\"COHR_Dataflows\", \"INV_VELOCITY\", \"Data Update Info\")\nin\n  Entity;\r\nshared GetColumnNames = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    ColumnNames =\n        (Entity as table) =>\n            let\n                GetColumnNames = Table.ColumnNames(Entity),\n                ConvertToTable =\n                    Table.FromList(\n                        GetColumnNames,\n                        Splitter.SplitByNothing(),\n                        null,\n                        null,\n                        ExtraValues.Error\n                    ),\n                SetColumnName =\n                    Table.RenameColumns(\n                        ConvertToTable,\n                        {\n                            {\n                                \"Column1\",\n                                \"ColumnNames\"\n                            }\n                        }\n                    ),\n                String =\n                    List.Accumulate(\n                        Table.ToList(SetColumnName),\n                        \"\",\n                        (state, current) =>\n                            if state = \"\" then\n                                current\n                            else\n                                state & \",\" & current\n                    )\n            in\n                String\nin\n    ColumnNames;\r\nshared SetColumnType = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    TransformDTypes =\n        (Entity as table, ColumnNames as text, dtype as text) =>\n            let\n                CleanList =\n                    List.Transform(\n                        List.Transform(\n                            Text.Split(ColumnNames, \",\"),\n                            Text.Trim\n                        ),\n                        Text.Upper\n                    ),\n                ColumnList =\n                    List.Select(\n                        Table.ColumnNames(Entity),\n                        each List.Contains(CleanList, Text.Upper(_))\n                    ),\n                // TransformDType = FilterMaxNoOfRows, each {{\"KANBAN_ITEM\", Int64.Type}, {\"MIN_MAX_ITEM\", Int64.Type}, {\"OPEN_BLANKETS\", Int64.Type}}),\n                TransformTypes =\n                    if List.IsEmpty(CleanList) then\n                        Entity\n                    else\n                        Table.TransformColumnTypes(\n                            Entity,\n                            List.Transform(\n                                List.Intersect(\n                                    {\n                                        Table.ColumnNames(Entity),\n                                        ColumnList\n                                    }\n                                ),\n                                if dtype = \"text\" then\n                                    each\n                                        {\n                                            _,\n                                            type text\n                                        }\n                                else if dtype = \"number\" then\n                                    each\n                                        {\n                                            _,\n                                            type number\n                                        }\n                                else if dtype = \"date\" then\n                                    each\n                                        {\n                                            _,\n                                            type date\n                                        }\n                                else if dtype = \"time\" then\n                                    each\n                                        {\n                                            _,\n                                            type time\n                                        }\n                                else if dtype = \"datetime\" then\n                                    each\n                                        {\n                                            _,\n                                            type datetime\n                                        }\n                                else if dtype = \"whole\" then\n                                    each\n                                        {\n                                            _,\n                                            Int64.Type\n                                        }\n                                else\n                                    each\n                                        {\n                                            _,\n                                            type text\n                                        }\n                            // default\n                            )\n                        )\n            //TransformTypes = Entity\n            in\n                TransformTypes\nin\n    TransformDTypes;\r\nshared RenameColumn = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to\n    // return\n    // :returns: Table\n    RenameType = type function (Entity as\n        (\n            type table\n            meta\n            [\n                Documentation.FieldCaption = \"Choose a table\",\n                Documentation.FieldDescription = \"Select a table to filter from the list\",\n                // Documentation.AllowedValues = Table.Schema,\n                Formatting.IsMultiLine = false,\n                Formatting.IsCode = false\n            ]\n        ), OldColumnName as\n        (\n            type text\n            meta\n            [\n                Documentation.FieldCaption = \"Enter the name of the existing column name\",\n                Documentation.FieldDescription = \"This column name will be changed to `NewColumnName`\",\n                // Documentation.AllowedValues = Table.ColumnNames(Entity),\n                Formatting.IsMultiLine = false,\n                Formatting.IsCode = false\n            ]\n        ), NewColumnName as\n        (\n            type text\n            meta\n            [\n                Documentation.FieldCaption = \"Enter the name of the new column name\",\n                Documentation.FieldDescription = \"This column name will be used to change `OldColumName`\",\n                Formatting.IsMultiLine = false,\n                Formatting.IsCode = false\n            ]\n        )) as table,\n    fxRenameColumns =\n        (Entity as table, OldColumnName as text, NewColumnName as text) =>\n            let\n                ModifiedEntity =\n                    if\n                        List.Contains(\n                            Table.ColumnNames(Entity),\n                            OldColumnName\n                        )\n                    then\n                        Table.RenameColumns(\n                            Entity,\n                            {\n                                {\n                                    OldColumnName,\n                                    NewColumnName\n                                }\n                            }\n                        )\n                    else\n                        Entity\n            in\n                ModifiedEntity,\n    ReplaceTypes =\n        Value.ReplaceType(\n            fxRenameColumns,\n            RenameType\n        )\nin\n    ReplaceTypes;\r\nshared FilterRowsbyDate = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    FilterColumn =\n        (Entity as table, ColumnName as text, MinDate as date, optional MaxDate as date) =>\n            let\n                Filter =\n                    if ColumnName = \"\" then\n                        Entity\n                    else\n                        Table.SelectRows(\n                            Entity,\n                            if MaxDate is null then\n                                each Record.Field(_, ColumnName) >= MinDate\n                            else\n                                each\n                                    Record.Field(_, ColumnName)\n                                    >= MinDate and Record.Field(_, ColumnName)\n                                    <= MaxDate\n                        )\n            in\n                Filter\nin\n    FilterColumn;\r\nshared SplitDateTimeColumn = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    DataTimeColumns =\n        (Entity as table, ColumnNameDate as text) =>\n            let\n                ModifyColumns =\n                    (Entity as table, ColumnNameDate as text) =>\n                        let\n                            ColumnNameTime =\n                                Text.Replace(\n                                    ColumnNameDate,\n                                    \"DATE\",\n                                    \"TIME\"\n                                ),\n                            TimeColumn =\n                                Table.DuplicateColumn(\n                                    Entity,\n                                    ColumnNameDate,\n                                    ColumnNameTime\n                                ),\n                            SetFmtToTime =\n                                Table.TransformColumns(\n                                    TimeColumn,\n                                    {\n                                        {\n                                            ColumnNameTime,\n                                            DateTime.Time,\n                                            type time\n                                        }\n                                    }\n                                ),\n                            SetFmtToDate =\n                                Table.TransformColumns(\n                                    SetFmtToTime,\n                                    {\n                                        {\n                                            ColumnNameDate,\n                                            DateTime.Date,\n                                            type date\n                                        }\n                                    }\n                                )\n                        in\n                            SetFmtToDate,\n                SetFmtToDate =\n                    if not List.Contains(\n                        Table.ColumnNames(Entity),\n                        ColumnNameDate\n                    ) then\n                        Entity\n                    else\n                        ModifyColumns(Entity, ColumnNameDate)\n            in\n                SetFmtToDate\nin\n    DataTimeColumns;\r\nshared CreateKeyField = let\n    /*\n    Creates a Key Field by passing in a list of column names\n    KeyFieldName is the name of the field generated by combining the list\n    Separator is the separator to use to combine the key field values\n\n    Still to do - add some error trapping\n    */\n    fxKeyFields =\n        (Entity as table, ColumnNames as text, KeyFieldName as text, optional Separator as text) =>\n            let\n                CleanList =\n                    List.Transform(\n                        List.Transform(\n                            Text.Split(ColumnNames, \",\"),\n                            Text.Trim\n                        ),\n                        Text.Upper\n                    ),\n                ColumnList =\n                    List.Select(\n                        Table.ColumnNames(Entity),\n                        each List.Contains(CleanList, Text.Upper(_))\n                    ),\n                CreateKeyField =\n                    Table.AddColumn(\n                        Entity,\n                        KeyFieldName,\n                        each\n                            List.Select(\n                                Record.ToList(Record.SelectFields(_, ColumnList)),\n                                each _ <> null\n                            )\n                    ),\n                Result =\n                    Table.TransformColumns(\n                        CreateKeyField,\n                        {\n                            KeyFieldName,\n                            each\n                                Text.Combine(\n                                    List.Transform(_, Text.From),\n                                    if Separator is null then\n                                        \"_\"\n                                    else\n                                        Separator\n                                ),\n                            type text\n                        }\n                    )\n            in\n                Result\nin\n    fxKeyFields;\r\nshared DIM_InventoryOrgSecurity = let\r\n  Source = GetEntityFromWorkspace(\"COHR_DATAFLOWS\", \"Data_Security\", \"Inventoy ORg Data SECURITY\")\r\nin\r\n  Source;\r\nshared DIM_ORA_PRODUCT_DIM = let\r\n  Source = SnowflakeQuery(\"SELECT * FROM PROD_DB.XXDIMS.XX_ORA_PRODUCT_DIM\")\r\nin\r\n  Source;\r\nshared #\"DIM_SecReporting(MFG)\" = let\r\n  Source = #\"FACT_Inventory Velocity Details\",\r\n  #\"Removed other columns\" = Table.SelectColumns(Source, {\"ITEM_NUMBER\", \"ORGANIZATION_CODE\", \"SEC_REPORTING\"}),\r\n  #\"Added custom\" = Table.AddColumn(#\"Removed other columns\", \"WAREHOUSE_TYPE\", each \"MANUFACTURING\")\r\nin\r\n  #\"Added custom\";\r\nshared DIM_SecReporting = let\n  Source = SnowflakeQuery(\"WITH q1 AS (\n    SELECT\n        inv.ITEM_NUMBER,\n        inv.ORGANIZATION_CODE,\n        null as SUBINVENTORY,\n        null AS SUBINV_CLASSIFICATION,\n        null AS ENABLED_SUBINVENTORY,\n        'MANUFACTURING' AS WAREHOUSE_TYPE,\n        inv.SEC_REPORTING,\n        inv.FISCAL_WEEK_KEY\n    FROM PROD_DB.APPS.XXREP_INVASCP_V as inv\n), q2 AS (\n\nSELECT \n    -- inv.extract_date,\n    null as ITEM_NUMBER,\n    inv.ORGANIZATION_CODE,\n    inv.SUBINVENTORY,\n    inv.SUBINV_CLASSIFICATION,\n    inv.ENABLED_SUBINVENTORY,\n    mtl.WAREHOUSE_TYPE,\n    CASE \n        WHEN mtl.WAREHOUSE_TYPE <> 'MANUFACTURING' THEN\n            CASE \n                WHEN startswith(inv.SUBINV_CLASSIFICATION, 'MFG') OR startswith(inv.SUBINV_CLASSIFICATION, 'DST') THEN 'FGI'\n                WHEN startswith(inv.SUBINV_CLASSIFICATION, 'SVC') OR startswith(inv.SUBINV_CLASSIFICATION, 'GLS') OR startswith(inv.SUBINV_CLASSIFICATION, 'MKTG') THEN 'SVC'\n                --WIP FROM DETAILS WITHIN INVENTORY VALUE\n                ELSE null \n            END \n        ELSE null\n    END as SEC_REPORTING,    \n    null AS FISCAL_WEEK_KEY\nFROM PROD_DB.APPS.XX_SUBINVENTORY_VIEW AS inv\nLEFT JOIN \n(\nSELECT \n    mp.ORGANIZATION_CODE,\n    mp.ATTRIBUTE13 AS WAREHOUSE_TYPE\nFROM PROD_DB.INV.MTL_PARAMETERS as mp\n-- WHERE \n--     mp.ATTRIBUTE13 = 'MANUFACTURING'\n) AS mtl ON mtl.ORGANIZATION_CODE = inv.ORGANIZATION_CODE\nWHERE UPPER(inv.ENABLED_SUBINVENTORY) = 'YES'\nUNION \nSELECT\n    ITEM_NUMBER,\n    ORGANIZATION_CODE,\n    SUBINVENTORY,\n    SUBINV_CLASSIFICATION,\n    ENABLED_SUBINVENTORY,\n    WAREHOUSE_TYPE,\n    SEC_REPORTING,\n    FISCAL_WEEK_KEY\nFROM q1\nORDER BY ORGANIZATION_CODE, SUBINVENTORY\n\n)\n\n\nSELECT\n    CASE \n        WHEN ITEM_NUMBER IS NULL THEN NVL(ORGANIZATION_CODE, 'UNK') || '_' || NVL(SUBINVENTORY, 'UNK') || '_' || NVL(WAREHOUSE_TYPE, 'UNK')\n        WHEN ITEM_NUMBER IS NOT NULL THEN ITEM_NUMBER || '_' || FISCAL_WEEK_KEY || '_' || ORGANIZATION_CODE || '_' || WAREHOUSE_TYPE\n    END AS SEC_REPORTING_KEY,\n    ITEM_NUMBER,\n    ORGANIZATION_CODE,\n    SUBINVENTORY,\n    SUBINV_CLASSIFICATION,\n    ENABLED_SUBINVENTORY,\n    WAREHOUSE_TYPE,\n    SEC_REPORTING,\n    FISCAL_WEEK_KEY\nFROM q2\")\nin\n  Source;\r\nshared DIM_WarehouseType = let\n  Source = SnowflakeQuery(\"SELECT \n    mp.ORGANIZATION_CODE,\n    mp.ATTRIBUTE13 AS WAREHOUSE_TYPE\nFROM PROD_DB.INV.MTL_PARAMETERS as mp\nORDER BY mp.ORGANIZATION_CODE\")\nin\n  Source;\r\nshared DIM_SourcingCommodity = let\r\n  Source = SnowflakeViewFromApps(\"XX_SOURCING_COMMODITY_VIEW\")\r\nin\r\n  Source;\r\nshared SortColumnNames = let\n    // This function filters a table (Entity) by the first\n    // N rows pass FilterValue to set number of rows to \n    // return\n    // :returns: Table\n    ColumnNames = (Entity as table) => let\n        GetColumnNames = Table.ColumnNames(Entity),\n        ConvertToTable = Table.FromList(GetColumnNames, Splitter.SplitByNothing(), null, null, ExtraValues.Error),\n        SetColumnName = Table.RenameColumns(ConvertToTable,{{\"Column1\", \"ColumnNames\"}}),\n        SortedColumns = List.Sort(Table.ToList(SetColumnName)),\n        SortedTableColumns = Table.ReorderColumns(Entity, SortedColumns)\n    in\n        SortedTableColumns\nin\n    ColumnNames;\r\n"
+  },
+  "annotations": [
+    {
+      "name": "pbi:QueryGroups",
+      "value": "[{\"id\":\"7363d107-1f3d-48de-be9c-f033354d282e\",\"name\":\"Functions\",\"description\":null,\"parentId\":null,\"order\":0},{\"id\":\"5bac1fbe-fe1d-4da2-94f5-070ea55ef66f\",\"name\":\"Parameters\",\"description\":\"\",\"parentId\":null,\"order\":1},{\"id\":\"bbd6ee21-6a56-4a8c-b80f-2aad18bde5a6\",\"name\":\"Facts - Inventory Turns\",\"description\":\"\",\"parentId\":null,\"order\":2},{\"id\":\"a0966e5b-d860-4160-b742-7c26403daafe\",\"name\":\"Dimensions\",\"description\":\"\",\"parentId\":null,\"order\":4},{\"id\":\"a91191ed-8efb-400b-bad7-2b8a42e2d413\",\"name\":\"Versioning\",\"description\":\"\",\"parentId\":null,\"order\":5},{\"id\":\"350542b3-0fe5-4a8f-9abf-594bb26638d7\",\"name\":\"Facts - Inventory Velocity\",\"description\":\"\",\"parentId\":null,\"order\":3},{\"id\":\"d535d7f0-f50c-47a1-a1c5-b52444b9ad0e\",\"name\":\"Information\",\"description\":\"Data Update Information for the Inventory Velocity Tables\",\"parentId\":null,\"order\":0}]"
+    }
+  ],
+  "entities": [
+    {
+      "$type": "LocalEntity",
+      "name": "FACT_Shipments",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "FACT_Shipments.csv"
+      },
+      "attributes": [
+        { "name": "WAREHOUSE", "dataType": "string" },
+        { "name": "BOOKED_DATE", "dataType": "dateTime" },
+        { "name": "ORDER_NUMBER", "dataType": "double" },
+        { "name": "ORDER_LINE", "dataType": "string" },
+        { "name": "ORDER_TYPE", "dataType": "string" },
+        { "name": "SO_LINE_TYPE", "dataType": "string" },
+        { "name": "LINE_STATUS", "dataType": "string" },
+        { "name": "BILLABLE_FLAG", "dataType": "string" },
+        { "name": "ACTUAL_SHIPMENT_DATE", "dataType": "dateTime" },
+        { "name": "REGIONAL_LOCATION", "dataType": "string" },
+        { "name": "REPORTING_ENTITY", "dataType": "string" },
+        { "name": "LINE_SOURCE_TYPE_CODE", "dataType": "string" },
+        { "name": "CUSTOMER_PO", "dataType": "string" },
+        { "name": "ITEM_NUMBER", "dataType": "string" },
+        { "name": "ITEM_DESCRIPTION", "dataType": "string" },
+        { "name": "REV_ENTITY", "dataType": "string" },
+        { "name": "REVENUE_ACCOUNT", "dataType": "string" },
+        { "name": "FORECAST_FIELD", "dataType": "string" },
+        { "name": "COMMODITY", "dataType": "string" },
+        { "name": "ORG_PRODUCT_LINE", "dataType": "string" },
+        { "name": "ORG_PRODUCT_FAMILY", "dataType": "string" },
+        { "name": "ORG_TECHNICAL_BUSINESS_UNIT", "dataType": "string" },
+        { "name": "ORG_FORECAST_FIELD", "dataType": "string" },
+        { "name": "PRIMARY_ORG", "dataType": "string" },
+        { "name": "ITEM_MATERIAL_COST", "dataType": "double" },
+        { "name": "ITEM_LABOR_COST", "dataType": "double" },
+        { "name": "ITEM_MATERIAL_OVERHEAD", "dataType": "double" },
+        { "name": "ITEM_LABOR_OVERHEAD", "dataType": "double" },
+        { "name": "CUSTOMER_NAME_REPORTING", "dataType": "string" },
+        { "name": "BILL_TO_COUNTRY", "dataType": "string" },
+        { "name": "SHIP_TO_COUNTRY", "dataType": "string" },
+        { "name": "FISCAL_WEEK_SHIPPED", "dataType": "double" },
+        { "name": "FISCAL_PERIOD_SHIPPED", "dataType": "double" },
+        { "name": "FISCAL_QUARTER_SHIPPED", "dataType": "double" },
+        { "name": "FISCAL_YEAR_SHIPPED", "dataType": "double" },
+        { "name": "LEGAL_ENTITY", "dataType": "string" },
+        { "name": "OPERATING_UNIT_ID", "dataType": "double" },
+        { "name": "OPERATING_UNIT", "dataType": "string" },
+        { "name": "TRANSACTION_CURRENCY", "dataType": "string" },
+        { "name": "FUNCTIONAL_CURRENCY", "dataType": "string" },
+        { "name": "TRX_TO_USD_RATE", "dataType": "double" },
+        { "name": "TRX_TO_FUNC_RATE", "dataType": "double" },
+        { "name": "ITEM_MATERIAL_COST_USD", "dataType": "double" },
+        { "name": "ITEM_LABOR_COST_USD", "dataType": "double" },
+        { "name": "ITEM_MATERIAL_OVERHEAD_USD", "dataType": "double" },
+        { "name": "ITEM_LABOR_OVERHEAD_USD", "dataType": "double" },
+        { "name": "ITEM_OUT_PROC_COST_USD", "dataType": "double" },
+        { "name": "SHIP_FROM_ORG_CODE", "dataType": "string" },
+        { "name": "SUBINVENTORY", "dataType": "string" },
+        { "name": "PICK_RELEASE_STATUS", "dataType": "string" },
+        { "name": "ITEM_UNIT_COST_USD", "dataType": "double" },
+        { "name": "ITEM_UNIT_COST", "dataType": "double" },
+        { "name": "EXTENDED_AMOUNT", "dataType": "double" },
+        { "name": "EXTENDED_COST", "dataType": "double" },
+        { "name": "EXTENDED_AMOUNT_USD", "dataType": "double" },
+        { "name": "EXTENDED_COST_USD", "dataType": "double" },
+        { "name": "SHIPPED_QUANTITY", "dataType": "double" },
+        { "name": "WAREHOUSE_TYPE", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.246407+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/FACT_Shipments.csv?snapshot=2022-06-09T11%3A54%3A53.2222924Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "FACT_M20Detail",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "FACT_M20Detail.csv"
+      },
+      "attributes": [
+        { "name": "ENTITY", "dataType": "string" },
+        { "name": "DEPT", "dataType": "string" },
+        { "name": "ACCT", "dataType": "string" },
+        { "name": "PROJ", "dataType": "string" },
+        { "name": "INTERCO", "dataType": "string" },
+        { "name": "ACCOUNT_DESC", "dataType": "string" },
+        { "name": "GL_PERIOD", "dataType": "string" },
+        { "name": "PERIOD_START_DATE", "dataType": "date" },
+        { "name": "PERIOD_END_DATE", "dataType": "date" },
+        { "name": "ITEM_NUMBER", "dataType": "string" },
+        { "name": "ITEM_DESCRIPTION", "dataType": "string" },
+        { "name": "TRANSACTION_SOURCE", "dataType": "string" },
+        { "name": "TRANS_DATE", "dataType": "date" },
+        { "name": "ACCOUNTED_DR", "dataType": "double" },
+        { "name": "ACCOUNTED_CR", "dataType": "double" },
+        { "name": "NET_ACCOUNTED_AMT", "dataType": "double" },
+        { "name": "ACCOUNTED_NET_USD", "dataType": "double" },
+        { "name": "CURRENCY_CODE", "dataType": "string" },
+        { "name": "VENDOR_NAME", "dataType": "string" },
+        { "name": "VENDOR_NUMBER", "dataType": "string" },
+        { "name": "ORDER_LINE_TYPE", "dataType": "string" },
+        { "name": "ORDER_NUMBER", "dataType": "double" },
+        { "name": "TRX_TYPE_NAME", "dataType": "string" },
+        { "name": "ORDER_TYPE", "dataType": "string" },
+        { "name": "SALES_SERVICE_CODE", "dataType": "string" },
+        { "name": "TRAN_QTY", "dataType": "double" },
+        { "name": "TRX_NUMBER", "dataType": "string" },
+        { "name": "EXTERNAL_SO_NUMBER", "dataType": "double" },
+        { "name": "EXTERNAL_CUSTOMER", "dataType": "string" },
+        { "name": "WIP_JOB_NO", "dataType": "string" },
+        { "name": "PERIOD_YEAR", "dataType": "double" },
+        { "name": "PO_NUMBER", "dataType": "string" },
+        { "name": "JE_NAME", "dataType": "string" },
+        { "name": "JE_LINE_NUM", "dataType": "double" },
+        { "name": "INTERNAL_PO_NUMBER", "dataType": "double" },
+        { "name": "COMMODITY_CATEGORY", "dataType": "string" },
+        { "name": "FORECAST_CATEGORY", "dataType": "string" },
+        { "name": "SUBINVENTORY_CODE", "dataType": "string" },
+        { "name": "ACCOUNT_ALIAS_NAME", "dataType": "string" },
+        { "name": "PLANNER_CODE", "dataType": "string" },
+        { "name": "BUYER_ID", "dataType": "double" },
+        { "name": "ACCOUNTING_LINE_TYPE", "dataType": "string" },
+        { "name": "TRAN_SOURCE_NAME", "dataType": "string" },
+        { "name": "MATERAIL_TRAN_REFERENCE", "dataType": "string" },
+        { "name": "JE_LINE_DESCRIPTION", "dataType": "string" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "WIP_ACCOUNTING_CLASS", "dataType": "string" },
+        { "name": "ALLOCATION_PERCENT", "dataType": "double" },
+        { "name": "MARKET_CODE", "dataType": "string" },
+        { "name": "ITEM_TBU", "dataType": "string" },
+        { "name": "ITEM_PFC", "dataType": "string" },
+        { "name": "ITEM_PRODUCT_LINE", "dataType": "string" },
+        { "name": "ITEM_ORG_TBU", "dataType": "string" },
+        { "name": "ITEM_ORG_PFC", "dataType": "string" },
+        { "name": "M20_TBU", "dataType": "string" },
+        { "name": "M20_PFC", "dataType": "string" },
+        { "name": "HFM_PRODUCT", "dataType": "string" },
+        { "name": "ALT_HFM_PRODUCT", "dataType": "string" },
+        { "name": "TRANS_DIFF_START", "dataType": "double" },
+        { "name": "MONTH_DAYS", "dataType": "double" },
+        { "name": "REV_TRANS_DATE", "dataType": "dateTime" },
+        { "name": "M2_DETAIL_KEY", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T12:22:07.3391195+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/FACT_M20Detail.csv?snapshot=2022-06-09T12%3A22%3A07.3036963Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "FACT_InventoryValue",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "FACT_InventoryValue.csv"
+      },
+      "annotations": [
+        { "name": "pbi:EntityTypeDisplayHint", "value": "CalculatedEntity" }
+      ],
+      "attributes": [
+        { "name": "ABC_CLASS", "dataType": "string" },
+        { "name": "ACCOUNT", "dataType": "string" },
+        { "name": "ACCOUNT_DESC", "dataType": "string" },
+        { "name": "ACCOUNT_GROUP", "dataType": "string" },
+        { "name": "ACCOUNT_NAME", "dataType": "string" },
+        { "name": "ACCOUNT_SUB_GROUP", "dataType": "string" },
+        { "name": "ACCOUNT_TYPE", "dataType": "string" },
+        { "name": "BUSINESS_SEGMENT", "dataType": "string" },
+        { "name": "COMMENTS", "dataType": "string" },
+        { "name": "CONC_REQ_ID", "dataType": "double" },
+        { "name": "CREATED_BY", "dataType": "double" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "CS_DEMAND_SOURCE", "dataType": "string" },
+        { "name": "CS_SUPPLY_SOURCE", "dataType": "string" },
+        { "name": "CURRENCY_CODE", "dataType": "string" },
+        { "name": "CURRENCY_RATE", "dataType": "double" },
+        { "name": "ENTITY", "dataType": "string" },
+        { "name": "EXCLUDE_COMMENT", "dataType": "string" },
+        { "name": "EXCLUDE_FLAG", "dataType": "string" },
+        { "name": "FIN_ENTITY", "dataType": "string" },
+        { "name": "FIN_PFC", "dataType": "string" },
+        { "name": "FIN_PRODUCT_LINE", "dataType": "string" },
+        { "name": "FIN_TBU", "dataType": "string" },
+        { "name": "FISCAL_QUARTER", "dataType": "string" },
+        { "name": "FISCAL_WEEK", "dataType": "string" },
+        { "name": "FISCAL_WEEK_ID", "dataType": "double" },
+        { "name": "FISCAL_YEAR", "dataType": "string" },
+        { "name": "FISCAL_YEAR_ID", "dataType": "double" },
+        { "name": "INVENTORY_ITEM_ID", "dataType": "double" },
+        { "name": "INV_BALANCE", "dataType": "double" },
+        { "name": "INV_ORG_ID", "dataType": "double" },
+        { "name": "INV_QUANTITY", "dataType": "double" },
+        { "name": "INV_STATUS", "dataType": "string" },
+        { "name": "INV_VALUE", "dataType": "double" },
+        { "name": "INV_VALUE_USD", "dataType": "double" },
+        { "name": "ITEM_COST", "dataType": "double" },
+        { "name": "ITEM_COST_USD", "dataType": "double" },
+        { "name": "ITEM_DESC", "dataType": "string" },
+        { "name": "ITEM_FORECAST_FIELD", "dataType": "string" },
+        { "name": "ITEM_NUMBER", "dataType": "string" },
+        { "name": "ITEM_ORG_CODE_KEY", "dataType": "string" },
+        { "name": "ITEM_ORG_ID_KEY", "dataType": "string" },
+        { "name": "ITEM_PRODUCT_FAMILY", "dataType": "string" },
+        { "name": "ITEM_PRODUCT_LINE", "dataType": "string" },
+        { "name": "ITEM_STATUS", "dataType": "string" },
+        { "name": "ITEM_TBU", "dataType": "string" },
+        { "name": "ITEM_TYPE", "dataType": "string" },
+        { "name": "ITEM_TYPE_CODE", "dataType": "string" },
+        { "name": "JE_SOURCE_CATEGORY", "dataType": "string" },
+        { "name": "MAKE_BUY", "dataType": "string" },
+        { "name": "MATERIAL_COST", "dataType": "double" },
+        { "name": "MATERIAL_OVERHEAD_COST", "dataType": "double" },
+        { "name": "MGT_PRODUCT_GROUP", "dataType": "string" },
+        { "name": "MGT_SUB_PRODUCT_GROUP", "dataType": "string" },
+        { "name": "MTH_END_FLAG", "dataType": "boolean" },
+        { "name": "OPERATING_UNIT_ID", "dataType": "double" },
+        { "name": "OPERATIONS_REPORTING", "dataType": "string" },
+        { "name": "ORA_FORECAST_FIELD", "dataType": "string" },
+        { "name": "ORA_PRODUCT_LINE", "dataType": "string" },
+        { "name": "ORGANIZATION_CODE", "dataType": "string" },
+        { "name": "ORG_CATEGORY_ID", "dataType": "double" },
+        { "name": "ORG_FORECAST_FIELD", "dataType": "string" },
+        { "name": "ORG_PRODUCT_FAMILY", "dataType": "string" },
+        { "name": "ORG_PRODUCT_LINE", "dataType": "string" },
+        { "name": "ORG_TBU", "dataType": "string" },
+        { "name": "OUTSIDE_PROCESSING_COST", "dataType": "double" },
+        { "name": "OVERHEAD_COST", "dataType": "double" },
+        { "name": "PERIOD_END_DATE", "dataType": "date" },
+        { "name": "PERIOD_START_DATE", "dataType": "date" },
+        { "name": "PLANNER_CODE", "dataType": "string" },
+        { "name": "PRODUCT_MAP_KEY", "dataType": "string" },
+        { "name": "QTR_END_FLAG", "dataType": "boolean" },
+        { "name": "QUARTER_END_DATE", "dataType": "date" },
+        { "name": "QUARTER_START_DATE", "dataType": "date" },
+        { "name": "RESOURCE_COST", "dataType": "double" },
+        { "name": "SOURCE_TYPE", "dataType": "string" },
+        { "name": "SUBINVENTORY_CODE", "dataType": "string" },
+        { "name": "SUBINVENTORY_TYPE", "dataType": "string" },
+        { "name": "SUMMARY_ACCOUNT", "dataType": "string" },
+        { "name": "TOTAL_COST", "dataType": "double" },
+        { "name": "VALID_FLAG", "dataType": "string" },
+        { "name": "WAREHOUSE_TYPE", "dataType": "string" },
+        { "name": "WEEK_END_DATE", "dataType": "date" },
+        { "name": "WEEK_START_DATE", "dataType": "date" },
+        { "name": "WIP_CLASS", "dataType": "string" },
+        { "name": "WIP_CLASS_CODE", "dataType": "string" },
+        { "name": "WIP_JOB_ID", "dataType": "double" },
+        { "name": "WIP_JOB_NO", "dataType": "string" },
+        { "name": "SEC_REPORTING_KEY", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T12:20:23.7622754+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/FACT_InventoryValue.csv?snapshot=2022-06-09T12%3A20%3A23.7329543Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_Time Balance Week",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_Time%20Balance%20Week.csv"
+      },
+      "attributes": [
+        { "name": "FISCAL_PERIOD_KEY", "dataType": "string" },
+        { "name": "FISCAL_DIM_ID", "dataType": "double" },
+        { "name": "FISCAL_DIM", "dataType": "string" },
+        { "name": "FISCAL_DIM_VALUE", "dataType": "string" },
+        { "name": "FISCAL_DIM_SORT_VALUE", "dataType": "string" },
+        { "name": "FC_YEAR_OFFSET", "dataType": "double" },
+        { "name": "FC_QUARTER_OFFSET", "dataType": "double" },
+        { "name": "FISCAL_YEAR", "dataType": "string" },
+        { "name": "FYFQ", "dataType": "string" },
+        { "name": "PERIOD_YEAR", "dataType": "double" },
+        { "name": "GL_PERIOD", "dataType": "string" },
+        { "name": "FISCAL_WEEK_ID", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.3089285+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_Time%20Balance%20Week.csv?snapshot=2022-06-09T11%3A54%3A53.2772795Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_Financial Product Mapping",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_Financial%20Product%20Mapping.csv"
+      },
+      "attributes": [
+        { "name": "Record Id", "dataType": "double" },
+        { "name": "ENTITY", "dataType": "string" },
+        { "name": "TBU", "dataType": "string" },
+        { "name": "PFC", "dataType": "string" },
+        { "name": "FIN_TBU", "dataType": "string" },
+        { "name": "FIN_PFC", "dataType": "string" },
+        { "name": "PRODUCT_SEGMENT", "dataType": "string" },
+        { "name": "HFM_PRODUCT_SEQ", "dataType": "double" },
+        { "name": "PRODUCT_MAP_ID", "dataType": "double" },
+        { "name": "COMMENTS", "dataType": "string" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "ROW_CREATION_DATE", "dataType": "dateTime" },
+        { "name": "FIN_DEFAULT_FORECAST_FIELD", "dataType": "string" },
+        { "name": "PRODUCT_MAP_KEY", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:51.4339001+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_Financial%20Product%20Mapping.csv?snapshot=2022-06-09T11%3A54%3A51.4153043Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_GL Account Segment",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_GL%20Account%20Segment.csv"
+      },
+      "attributes": [
+        { "name": "Account Code", "dataType": "string" },
+        { "name": "Account Name", "dataType": "string" },
+        { "name": "Account Description", "dataType": "string" },
+        { "name": "Enabled Flag", "dataType": "string" },
+        { "name": "Account Type", "dataType": "string" },
+        { "name": "Active Start Date", "dataType": "dateTime" },
+        { "name": "Active End Date", "dataType": "dateTime" },
+        { "name": "Creation Date", "dataType": "dateTime" },
+        { "name": "Last Update Date", "dataType": "dateTime" },
+        { "name": "Created By Login", "dataType": "string" },
+        { "name": "Last Update By Login", "dataType": "string" },
+        { "name": "Account Sub Group", "dataType": "string" },
+        { "name": "Account Group", "dataType": "string" },
+        { "name": "Summary Account", "dataType": "string" },
+        { "name": "Summary Multiplier", "dataType": "double" },
+        { "name": "Account Classification", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.355787+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_GL%20Account%20Segment.csv?snapshot=2022-06-09T11%3A54%3A53.3142843Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_GL Code Combinations",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_GL%20Code%20Combinations.csv"
+      },
+      "attributes": [
+        { "name": "CODE_COMBINATION_ID", "dataType": "string" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATED_BY", "dataType": "string" },
+        { "name": "CHART_OF_ACCOUNTS_ID", "dataType": "double" },
+        { "name": "DETAIL_POSTING_ALLOWED_FLAG", "dataType": "string" },
+        { "name": "DETAIL_BUDGETING_ALLOWED_FLAG", "dataType": "string" },
+        { "name": "ACCOUNT_TYPE", "dataType": "string" },
+        { "name": "ENABLED_FLAG", "dataType": "string" },
+        { "name": "SUMMARY_FLAG", "dataType": "string" },
+        { "name": "SEGMENT1", "dataType": "string" },
+        { "name": "SEGMENT2", "dataType": "string" },
+        { "name": "SEGMENT3", "dataType": "string" },
+        { "name": "SEGMENT4", "dataType": "string" },
+        { "name": "SEGMENT5", "dataType": "string" },
+        { "name": "SEGMENT6", "dataType": "string" },
+        { "name": "SEGMENT7", "dataType": "string" },
+        { "name": "SEGMENT8", "dataType": "string" },
+        { "name": "SEGMENT9", "dataType": "string" },
+        { "name": "SEGMENT10", "dataType": "string" },
+        { "name": "SEGMENT11", "dataType": "string" },
+        { "name": "SEGMENT12", "dataType": "string" },
+        { "name": "SEGMENT13", "dataType": "string" },
+        { "name": "SEGMENT14", "dataType": "string" },
+        { "name": "SEGMENT15", "dataType": "string" },
+        { "name": "SEGMENT16", "dataType": "string" },
+        { "name": "SEGMENT17", "dataType": "string" },
+        { "name": "SEGMENT18", "dataType": "string" },
+        { "name": "SEGMENT19", "dataType": "string" },
+        { "name": "SEGMENT20", "dataType": "string" },
+        { "name": "SEGMENT21", "dataType": "string" },
+        { "name": "SEGMENT22", "dataType": "string" },
+        { "name": "SEGMENT23", "dataType": "string" },
+        { "name": "SEGMENT24", "dataType": "string" },
+        { "name": "SEGMENT25", "dataType": "string" },
+        { "name": "SEGMENT26", "dataType": "string" },
+        { "name": "SEGMENT27", "dataType": "string" },
+        { "name": "SEGMENT28", "dataType": "string" },
+        { "name": "SEGMENT29", "dataType": "string" },
+        { "name": "SEGMENT30", "dataType": "string" },
+        { "name": "DESCRIPTION", "dataType": "string" },
+        { "name": "TEMPLATE_ID", "dataType": "double" },
+        { "name": "ALLOCATION_CREATE_FLAG", "dataType": "string" },
+        { "name": "START_DATE_ACTIVE", "dataType": "dateTime" },
+        { "name": "END_DATE_ACTIVE", "dataType": "dateTime" },
+        { "name": "ATTRIBUTE1", "dataType": "string" },
+        { "name": "ATTRIBUTE2", "dataType": "string" },
+        { "name": "ATTRIBUTE3", "dataType": "string" },
+        { "name": "ATTRIBUTE4", "dataType": "string" },
+        { "name": "ATTRIBUTE5", "dataType": "string" },
+        { "name": "ATTRIBUTE6", "dataType": "string" },
+        { "name": "ATTRIBUTE7", "dataType": "string" },
+        { "name": "ATTRIBUTE8", "dataType": "string" },
+        { "name": "ATTRIBUTE9", "dataType": "string" },
+        { "name": "ATTRIBUTE10", "dataType": "string" },
+        { "name": "CONTEXT", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE1", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE2", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE3", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE4", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE5", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE6", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE7", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE8", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE9", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE10", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE11", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE12", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE13", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE14", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE15", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE16", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE17", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE18", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE19", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE20", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE21", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE22", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE23", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE24", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE25", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE26", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE27", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE28", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE29", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE30", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE31", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE32", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE33", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE34", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE35", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE36", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE37", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE38", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE39", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE40", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE41", "dataType": "string" },
+        { "name": "SEGMENT_ATTRIBUTE42", "dataType": "string" },
+        { "name": "REFERENCE1", "dataType": "string" },
+        { "name": "REFERENCE2", "dataType": "string" },
+        { "name": "REFERENCE3", "dataType": "string" },
+        { "name": "REFERENCE4", "dataType": "string" },
+        { "name": "REFERENCE5", "dataType": "string" },
+        { "name": "JGZZ_RECON_FLAG", "dataType": "string" },
+        { "name": "JGZZ_RECON_CONTEXT", "dataType": "string" },
+        { "name": "PRESERVE_FLAG", "dataType": "string" },
+        { "name": "REFRESH_FLAG", "dataType": "string" },
+        { "name": "IGI_BALANCED_BUDGET_FLAG", "dataType": "string" },
+        { "name": "COMPANY_COST_CENTER_ORG_ID", "dataType": "double" },
+        { "name": "REVALUATION_ID", "dataType": "double" },
+        { "name": "LEDGER_SEGMENT", "dataType": "string" },
+        { "name": "LEDGER_TYPE_CODE", "dataType": "string" },
+        { "name": "ALTERNATE_CODE_COMBINATION_ID", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:55:14.1903905+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_GL%20Code%20Combinations.csv?snapshot=2022-06-09T11%3A55%3A14.1750057Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_GL Code Combinations Desc",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_GL%20Code%20Combinations%20Desc.csv"
+      },
+      "attributes": [
+        { "name": "CODE_COMBINATION_ID", "dataType": "double" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "DETAIL_POSTING_ALLOWED_FLAG", "dataType": "string" },
+        { "name": "DETAIL_BUDGETING_ALLOWED_FLAG", "dataType": "string" },
+        { "name": "ACCOUNT_TYPE", "dataType": "string" },
+        { "name": "ENABLED_FLAG", "dataType": "string" },
+        { "name": "SUMMARY_FLAG", "dataType": "string" },
+        { "name": "START_DATE_ACTIVE", "dataType": "dateTime" },
+        { "name": "END_DATE_ACTIVE", "dataType": "dateTime" },
+        { "name": "SEGMENT1", "dataType": "string" },
+        { "name": "SEGMENT2", "dataType": "string" },
+        { "name": "SEGMENT3", "dataType": "string" },
+        { "name": "SEGMENT4", "dataType": "string" },
+        { "name": "SEGMENT5", "dataType": "string" },
+        { "name": "SEGMENT6", "dataType": "string" },
+        { "name": "CONCATENATED_SEGMENTS", "dataType": "string" },
+        { "name": "ENTITY_NAME", "dataType": "string" },
+        { "name": "ENTITY_DESC", "dataType": "string" },
+        { "name": "DEPARTMENT_NAME", "dataType": "string" },
+        { "name": "DEPARTMENT_DESC", "dataType": "string" },
+        { "name": "ACCOUNT_NAME", "dataType": "string" },
+        { "name": "ACCOUNT_DESC", "dataType": "string" },
+        { "name": "PROJECT_NAME", "dataType": "string" },
+        { "name": "PROJECT_DESC", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:55.5754961+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_GL%20Code%20Combinations%20Desc.csv?snapshot=2022-06-09T11%3A54%3A55.5562495Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_GL Project Segment",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_GL%20Project%20Segment.csv"
+      },
+      "attributes": [
+        { "name": "Project Code", "dataType": "string" },
+        { "name": "Project Name", "dataType": "string" },
+        { "name": "Project Description", "dataType": "string" },
+        { "name": "Enabled Flag", "dataType": "string" },
+        { "name": "Active Start Date", "dataType": "dateTime" },
+        { "name": "Active End Date", "dataType": "dateTime" },
+        { "name": "Creation Date", "dataType": "dateTime" },
+        { "name": "Last Update Date", "dataType": "dateTime" },
+        { "name": "Created By Login", "dataType": "string" },
+        { "name": "Last Update By Login", "dataType": "string" },
+        { "name": "Project Sub Group", "dataType": "string" },
+        { "name": "Project Group", "dataType": "string" },
+        { "name": "Summary Project", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:52.9026573+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_GL%20Project%20Segment.csv?snapshot=2022-06-09T11%3A54%3A52.8782878Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_Calendar",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_Calendar.csv"
+      },
+      "attributes": [
+        { "name": "Period Set Name", "dataType": "string" },
+        { "name": "Calendar Day", "dataType": "dateTime" },
+        { "name": "Fiscal Week", "dataType": "string" },
+        { "name": "Fiscal Year Week", "dataType": "string" },
+        { "name": "FISCAL_WEEK_DISP", "dataType": "string" },
+        { "name": "FISCAL_MONTH_SORT_VALUE", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_DISP", "dataType": "string" },
+        { "name": "Fiscal Week No", "dataType": "double" },
+        { "name": "Fiscal Month Week No", "dataType": "double" },
+        { "name": "FISCAL_QTR_WEEK", "dataType": "string" },
+        { "name": "Fiscal Qtr Week No", "dataType": "double" },
+        { "name": "GL Period", "dataType": "string" },
+        { "name": "PQ_LAST_GL_PERIOD", "dataType": "string" },
+        { "name": "Period Year", "dataType": "double" },
+        { "name": "Fiscal Year", "dataType": "string" },
+        { "name": "Quarter No", "dataType": "double" },
+        { "name": "Fiscal Quarter", "dataType": "string" },
+        { "name": "Fiscal Year Quarter", "dataType": "string" },
+        { "name": "PRIOR_FYFQ", "dataType": "string" },
+        { "name": "PERIOD_NAME", "dataType": "string" },
+        { "name": "Period No", "dataType": "double" },
+        { "name": "Fiscal Day", "dataType": "double" },
+        { "name": "Week Start Date", "dataType": "dateTime" },
+        { "name": "Week End Date", "dataType": "dateTime" },
+        { "name": "Period Start Date", "dataType": "dateTime" },
+        { "name": "Period End Date", "dataType": "dateTime" },
+        { "name": "Quarter Start Date", "dataType": "dateTime" },
+        { "name": "Quarter End Date", "dataType": "dateTime" },
+        { "name": "Year Start Date", "dataType": "dateTime" },
+        { "name": "Year End Date", "dataType": "dateTime" },
+        { "name": "Fiscal Period Month", "dataType": "string" },
+        { "name": "FC_PERIOD_ID", "dataType": "double" },
+        { "name": "FC_QUARTER_ID", "dataType": "double" },
+        { "name": "FC_WEEK_ID", "dataType": "double" },
+        { "name": "FC_YEAR_OFFSET", "dataType": "double" },
+        { "name": "FC_QUARTER_OFFSET", "dataType": "double" },
+        { "name": "FC_PERIOD_OFFSET", "dataType": "double" },
+        { "name": "FC_WEEK_OFFSET", "dataType": "double" },
+        { "name": "FC_DAYS_OFFSET", "dataType": "double" },
+        { "name": "FC_HALF", "dataType": "string" },
+        { "name": "Next Quarter First Fiscal Week", "dataType": "string" },
+        { "name": "Prior Qtr Last Fiscal Week", "dataType": "string" },
+        { "name": "CALENDAR_YEAR", "dataType": "double" },
+        { "name": "CALENDAR_MONTH", "dataType": "double" },
+        { "name": "CALENDAR_YEARMONTHID", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAME", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAMESHORT", "dataType": "string" },
+        { "name": "CALENDAR_ISO_WEEK", "dataType": "double" },
+        { "name": "CALENDAR_US_WEEK", "dataType": "double" },
+        { "name": "CALENDAR_YEAR_SHORT", "dataType": "string" },
+        { "name": "CALENDAR_MTH_YEAR", "dataType": "string" },
+        { "name": "DAY_NAME", "dataType": "string" },
+        { "name": "DAY_OF_WEEK", "dataType": "double" },
+        { "name": "WORKING_DAY_FLAG", "dataType": "double" },
+        { "name": "CQ_LAST_FISCAL_WEEK", "dataType": "string" },
+        { "name": "Row Creation Date", "dataType": "date" },
+        { "name": "Week End Flag", "dataType": "string" },
+        { "name": "Month End Flag", "dataType": "string" },
+        { "name": "Quarter End Flag", "dataType": "string" },
+        { "name": "Year End Flag", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_MONTH_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_MONTH_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_QUARTER_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_YEAR_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_YEAR_INDICATOR_SORT", "dataType": "double" },
+        { "name": "Refresh Date", "dataType": "dateTime" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:52.9651599+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_Calendar.csv?snapshot=2022-06-09T11%3A54%3A52.9312831Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_Fiscal Context",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_Fiscal%20Context.csv"
+      },
+      "attributes": [
+        { "name": "PERIOD_SET_NAME", "dataType": "string" },
+        { "name": "CAL_DAY", "dataType": "dateTime" },
+        { "name": "FISCAL_WEEK", "dataType": "string" },
+        { "name": "FISCAL_YEAR_WEEK", "dataType": "string" },
+        { "name": "FISCAL_WEEK_DISP", "dataType": "string" },
+        { "name": "FISCAL_MONTH_SORT_VALUE", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_DISP", "dataType": "string" },
+        { "name": "FISCAL_WEEK_NO", "dataType": "double" },
+        { "name": "FISCAL_MONTH_WEEK_NO", "dataType": "double" },
+        { "name": "FISCAL_QTR_WEEK", "dataType": "string" },
+        { "name": "FISCAL_QTR_WEEK_NO", "dataType": "double" },
+        { "name": "GL_PERIOD", "dataType": "string" },
+        { "name": "PQ_LAST_GL_PERIOD", "dataType": "string" },
+        { "name": "PERIOD_YEAR", "dataType": "double" },
+        { "name": "FISCAL_YEAR", "dataType": "string" },
+        { "name": "QUARTER_NUM", "dataType": "double" },
+        { "name": "FISCAL_QUARTER", "dataType": "string" },
+        { "name": "FYFQ", "dataType": "string" },
+        { "name": "PRIOR_FYFQ", "dataType": "string" },
+        { "name": "PERIOD_NAME", "dataType": "string" },
+        { "name": "PERIOD_NUM", "dataType": "double" },
+        { "name": "FISCAL_DAY", "dataType": "double" },
+        { "name": "WEEK_START_DATE", "dataType": "dateTime" },
+        { "name": "WEEK_END_DATE", "dataType": "dateTime" },
+        { "name": "PERIOD_START_DATE", "dataType": "dateTime" },
+        { "name": "PERIOD_END_DATE", "dataType": "dateTime" },
+        { "name": "QUARTER_START_DATE", "dataType": "dateTime" },
+        { "name": "QUARTER_END_DATE", "dataType": "dateTime" },
+        { "name": "YEAR_START_DATE", "dataType": "dateTime" },
+        { "name": "YEAR_END_DATE", "dataType": "dateTime" },
+        { "name": "PERIOD_MONTH", "dataType": "string" },
+        { "name": "FC_PERIOD_ID", "dataType": "double" },
+        { "name": "FC_QUARTER_ID", "dataType": "double" },
+        { "name": "FC_WEEK_ID", "dataType": "double" },
+        { "name": "FC_YEAR_OFFSET", "dataType": "double" },
+        { "name": "FC_QUARTER_OFFSET", "dataType": "double" },
+        { "name": "FC_PERIOD_OFFSET", "dataType": "double" },
+        { "name": "FC_WEEK_OFFSET", "dataType": "double" },
+        { "name": "FC_DAYS_OFFSET", "dataType": "double" },
+        { "name": "FC_HALF", "dataType": "string" },
+        { "name": "NQ_FIRST_FISCAL_WEEK", "dataType": "string" },
+        { "name": "PQ_LAST_FISCAL_WEEK", "dataType": "string" },
+        { "name": "CALENDAR_YEAR", "dataType": "double" },
+        { "name": "CALENDAR_MONTH", "dataType": "double" },
+        { "name": "CALENDAR_YEARMONTHID", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAME", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAMESHORT", "dataType": "string" },
+        { "name": "CALENDAR_ISO_WEEK", "dataType": "double" },
+        { "name": "CALENDAR_US_WEEK", "dataType": "double" },
+        { "name": "CALENDAR_YEAR_SHORT", "dataType": "string" },
+        { "name": "CALENDAR_MTH_YEAR", "dataType": "string" },
+        { "name": "DAY_NAME", "dataType": "string" },
+        { "name": "DAY_OF_WEEK", "dataType": "double" },
+        { "name": "WORKING_DAY_FLAG", "dataType": "double" },
+        { "name": "CQ_LAST_FISCAL_WEEK", "dataType": "string" },
+        { "name": "ROW_CREATION_DATE", "dataType": "date" },
+        { "name": "WEEK_END_FLAG", "dataType": "string" },
+        { "name": "MONTH_END_FLAG", "dataType": "string" },
+        { "name": "QUARTER_END_FLAG", "dataType": "string" },
+        { "name": "YEAR_END_FLAG", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_MONTH_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_MONTH_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_QUARTER_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_INDICATOR_SORT", "dataType": "double" },
+        { "name": "FISCAL_YEAR_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_YEAR_INDICATOR_SORT", "dataType": "double" },
+        { "name": "EXTRACT_DATE", "dataType": "dateTime" },
+        { "name": "CONTEXT", "dataType": "string" },
+        { "name": "DATA_UPDATE_DESC", "dataType": "string" },
+        { "name": "CONTEXT_FYWK", "dataType": "string" },
+        { "name": "CONTEXT_PERIOD", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.1057835+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_Fiscal%20Context.csv?snapshot=2022-06-09T11%3A54%3A53.0822817Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_GLDepartment",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_GLDepartment.csv"
+      },
+      "attributes": [
+        { "name": "Department Code", "dataType": "string" },
+        { "name": "Department Name", "dataType": "string" },
+        { "name": "Department Description", "dataType": "string" },
+        { "name": "Enabled Flag", "dataType": "string" },
+        { "name": "Active Start Date", "dataType": "dateTime" },
+        { "name": "Active End Date", "dataType": "dateTime" },
+        { "name": "Creation Date", "dataType": "dateTime" },
+        { "name": "Last Update Date", "dataType": "dateTime" },
+        { "name": "Created By Login", "dataType": "string" },
+        { "name": "Last Update By Login", "dataType": "string" },
+        { "name": "Department Sub Group", "dataType": "string" },
+        { "name": "Department Group", "dataType": "string" },
+        { "name": "Summary Department", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:52.0432781+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_GLDepartment.csv?snapshot=2022-06-09T11%3A54%3A52.0142967Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_Inventory Organizations",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_Inventory%20Organizations.csv"
+      },
+      "attributes": [
+        { "name": "INVORG_ID", "dataType": "double" },
+        { "name": "OPERATING_UNIT_ID", "dataType": "double" },
+        { "name": "LEDGER_ID", "dataType": "double" },
+        { "name": "GL_ENTITY", "dataType": "string" },
+        { "name": "Operating Unit", "dataType": "string" },
+        { "name": "LEDGER", "dataType": "string" },
+        { "name": "INVORG_CODE", "dataType": "string" },
+        { "name": "CURRENCY_CODE", "dataType": "string" },
+        { "name": "Inventory Org Category", "dataType": "string" },
+        { "name": "INV_ORG_CODE_CUSTOWNED", "dataType": "string" },
+        { "name": "TIMEZONE", "dataType": "string" },
+        { "name": "DISABLE_DATE", "dataType": "date" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY_LOGIN", "dataType": "string" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATE_LOGIN", "dataType": "string" },
+        { "name": "INVORG_GROUP", "dataType": "string" },
+        { "name": "LABOR_TARGET_PCT", "dataType": "double" },
+        { "name": "BASELINE_FYFQ", "dataType": "string" },
+        { "name": "COUNTRY_CODE", "dataType": "string" },
+        { "name": "INVORG_TYPE", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.0589239+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_Inventory%20Organizations.csv?snapshot=2022-06-09T11%3A54%3A53.0242838Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_Operating Units",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_Operating%20Units.csv"
+      },
+      "attributes": [
+        { "name": "OPERATING_UNIT_ID", "dataType": "double" },
+        { "name": "OPERATING_UNIT", "dataType": "string" },
+        { "name": "DISABLE_DATE", "dataType": "date" },
+        { "name": "OU_REGION", "dataType": "string" },
+        { "name": "TIMEZONE", "dataType": "string" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY_LOGIN", "dataType": "string" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATE_LOGIN", "dataType": "string" },
+        { "name": "INV_ORG_CODE_CUSTOWNED", "dataType": "string" },
+        { "name": "LEDGER_ID", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.4182954+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_Operating%20Units.csv?snapshot=2022-06-09T11%3A54%3A53.3683167Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_Operating Unit Data Security",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_Operating%20Unit%20Data%20Security.csv"
+      },
+      "attributes": [
+        { "name": "OPERATING_UNIT_ID", "dataType": "double" },
+        { "name": "OPERATING_UNIT_NAME", "dataType": "string" },
+        { "name": "USER_EMAIL", "dataType": "string" },
+        { "name": "RECORD_ID", "dataType": "double" },
+        { "name": "GROUP_NAME", "dataType": "string" },
+        { "name": "USER_ROLE", "dataType": "string" },
+        { "name": "OPERATING_UNIT_IDS", "dataType": "string" },
+        { "name": "COMMENTS", "dataType": "string" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY_LOGIN", "dataType": "string" },
+        { "name": "LAST_UPDATE_LOGIN", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.4651669+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_Operating%20Unit%20Data%20Security.csv?snapshot=2022-06-09T11%3A54%3A53.3683167Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Version History Model",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Version%20History%20Model.csv"
+      },
+      "attributes": [
+        { "name": "Version Number", "dataType": "string" },
+        { "name": "Revision Date/Time", "dataType": "dateTime" },
+        { "name": "Developer Name", "dataType": "string" },
+        { "name": "Revision Notes", "dataType": "string" },
+        { "name": "Revision Type", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:38.0211531+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/Version%20History%20Model.csv?snapshot=2022-06-09T11%3A54%3A36.9494984Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Version History Report",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Version%20History%20Report.csv"
+      },
+      "attributes": [
+        { "name": "Version Number", "dataType": "string" },
+        { "name": "Revision Date/Time", "dataType": "dateTime" },
+        { "name": "Developer Name", "dataType": "string" },
+        { "name": "Revision Notes", "dataType": "string" },
+        { "name": "Revision Type", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:38.0836625+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/Version%20History%20Report.csv?snapshot=2022-06-09T11%3A54%3A36.3595077Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Version History",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Version%20History.csv"
+      },
+      "annotations": [
+        { "name": "pbi:EntityTypeDisplayHint", "value": "CalculatedEntity" }
+      ],
+      "attributes": [
+        { "name": "Version Number", "dataType": "string" },
+        { "name": "Revision Date/Time", "dataType": "dateTime" },
+        { "name": "Developer Name", "dataType": "string" },
+        { "name": "Revision Notes", "dataType": "string" },
+        { "name": "Revision Type", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.4964097+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/Version%20History.csv?snapshot=2022-06-09T11%3A54%3A53.4702800Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_GLEntity",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_GLEntity.csv"
+      },
+      "attributes": [
+        { "name": "Entity Code", "dataType": "string" },
+        { "name": "Entity Name", "dataType": "string" },
+        { "name": "Entity Description", "dataType": "string" },
+        { "name": "Enabled Flag", "dataType": "string" },
+        { "name": "Active Start Date", "dataType": "dateTime" },
+        { "name": "Active End Date", "dataType": "dateTime" },
+        { "name": "Creation Date", "dataType": "dateTime" },
+        { "name": "Last Update Date", "dataType": "dateTime" },
+        { "name": "Created By Login", "dataType": "string" },
+        { "name": "Last Update By Login", "dataType": "string" },
+        { "name": "Entity Sub Group", "dataType": "string" },
+        { "name": "Entity Group", "dataType": "string" },
+        { "name": "Summary Entity", "dataType": "string" },
+        { "name": "Local GAAP Entity", "dataType": "string" },
+        { "name": "US-GAAP Entity Flag", "dataType": "string" },
+        { "name": "Currency Code", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.5432905+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_GLEntity.csv?snapshot=2022-06-09T11%3A54%3A53.5232760Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "ListOfOrgs",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "ListOfOrgs.csv"
+      },
+      "attributes": [{ "name": "Value", "dataType": "string" }],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:52.6060857+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/ListOfOrgs.csv?snapshot=2022-06-09T11%3A54%3A52.5802907Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_Fiscal Calendar",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_Fiscal%20Calendar.csv"
+      },
+      "attributes": [
+        { "name": "Period Set Name", "dataType": "string" },
+        { "name": "Calendar Day", "dataType": "date" },
+        { "name": "Fiscal Year Week", "dataType": "string" },
+        { "name": "Fiscal Week", "dataType": "string" },
+        { "name": "FISCAL_WEEK_DISP", "dataType": "string" },
+        { "name": "FISCAL_MONTH_SORT_VALUE", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_DISP", "dataType": "string" },
+        { "name": "Fiscal Week No", "dataType": "int64" },
+        { "name": "Fiscal Month Week No", "dataType": "int64" },
+        { "name": "FISCAL_QTR_WEEK", "dataType": "string" },
+        { "name": "Fiscal Qtr Week No", "dataType": "int64" },
+        { "name": "GL Period", "dataType": "string" },
+        { "name": "PQ_LAST_GL_PERIOD", "dataType": "string" },
+        { "name": "Period Year", "dataType": "int64" },
+        { "name": "Fiscal Year", "dataType": "string" },
+        { "name": "Quarter No", "dataType": "int64" },
+        { "name": "Fiscal Quarter", "dataType": "string" },
+        { "name": "Fiscal Year Quarter", "dataType": "string" },
+        { "name": "PRIOR_FYFQ", "dataType": "string" },
+        { "name": "PERIOD_NAME", "dataType": "string" },
+        { "name": "Period No", "dataType": "int64" },
+        { "name": "Fiscal Day", "dataType": "int64" },
+        { "name": "Week Start Date", "dataType": "date" },
+        { "name": "Week End Date", "dataType": "date" },
+        { "name": "Period Start Date", "dataType": "date" },
+        { "name": "Period End Date", "dataType": "date" },
+        { "name": "Quarter Start Date", "dataType": "date" },
+        { "name": "Quarter End Date", "dataType": "date" },
+        { "name": "Year Start Date", "dataType": "date" },
+        { "name": "Year End Date", "dataType": "date" },
+        { "name": "Fiscal Period Month", "dataType": "string" },
+        { "name": "FC_PERIOD_ID", "dataType": "int64" },
+        { "name": "FC_QUARTER_ID", "dataType": "int64" },
+        { "name": "FC_WEEK_ID", "dataType": "int64" },
+        { "name": "FC_YEAR_OFFSET", "dataType": "int64" },
+        { "name": "FC_QUARTER_OFFSET", "dataType": "int64" },
+        { "name": "FC_PERIOD_OFFSET", "dataType": "int64" },
+        { "name": "FC_WEEK_OFFSET", "dataType": "int64" },
+        { "name": "FC_DAYS_OFFSET", "dataType": "int64" },
+        { "name": "FC_HALF", "dataType": "string" },
+        { "name": "Next Quarter First Fiscal Week", "dataType": "string" },
+        { "name": "Prior Qtr Last Fiscal Week", "dataType": "string" },
+        { "name": "CALENDAR_YEAR", "dataType": "int64" },
+        { "name": "CALENDAR_MONTH", "dataType": "int64" },
+        { "name": "CALENDAR_YEARMONTHID", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAME", "dataType": "string" },
+        { "name": "CALENDAR_MONTHNAMESHORT", "dataType": "string" },
+        { "name": "CALENDAR_ISO_WEEK", "dataType": "int64" },
+        { "name": "CALENDAR_US_WEEK", "dataType": "int64" },
+        { "name": "CALENDAR_YEAR_SHORT", "dataType": "string" },
+        { "name": "CALENDAR_MTH_YEAR", "dataType": "string" },
+        { "name": "DAY_NAME", "dataType": "string" },
+        { "name": "DAY_OF_WEEK", "dataType": "int64" },
+        { "name": "WORKING_DAY_FLAG", "dataType": "int64" },
+        { "name": "CQ_LAST_FISCAL_WEEK", "dataType": "string" },
+        { "name": "Row Creation Date", "dataType": "date" },
+        { "name": "Week End Flag", "dataType": "string" },
+        { "name": "Month End Flag", "dataType": "string" },
+        { "name": "Quarter End Flag", "dataType": "string" },
+        { "name": "Year End Flag", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_WEEK_INDICATOR_SORT", "dataType": "int64" },
+        { "name": "FISCAL_MONTH_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_MONTH_INDICATOR_SORT", "dataType": "int64" },
+        { "name": "FISCAL_QUARTER_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_QUARTER_INDICATOR_SORT", "dataType": "int64" },
+        { "name": "FISCAL_YEAR_INDICATOR", "dataType": "string" },
+        { "name": "FISCAL_YEAR_INDICATOR_SORT", "dataType": "int64" },
+        { "name": "Refresh Date", "dataType": "dateTime" },
+        { "name": "Start of Week", "dataType": "date" },
+        { "name": "Cal_Year_ofCW", "dataType": "int64" },
+        { "name": "Cal_Year_ofCW_Short", "dataType": "int64" },
+        { "name": "CALENDAR_Year_CWiso", "dataType": "string" },
+        { "name": "Cal_Year_CWiso_ID", "dataType": "int64" },
+        { "name": "Cal_CW", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.1682918+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_Fiscal%20Calendar.csv?snapshot=2022-06-09T11%3A54%3A53.1182806Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_LT Grouping Summary",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_LT%20Grouping%20Summary.csv"
+      },
+      "attributes": [
+        { "name": "FISCAL_DIM_VALUE", "dataType": "string" },
+        { "name": "FISCAL_DIM_SORT_VALUE", "dataType": "string" },
+        { "name": "PERIOD_YEAR", "dataType": "double" },
+        { "name": "FISCAL_WEEK_ID", "dataType": "double" },
+        { "name": "LT_GROUPING_ID", "dataType": "double" },
+        { "name": "LT_GROUPING", "dataType": "string" },
+        { "name": "LT_GROUPING_DESC", "dataType": "string" },
+        { "name": "ORGANIZATION_CODE", "dataType": "string" },
+        { "name": "PLANNING_METHOD", "dataType": "string" },
+        { "name": "CURRENT_MRP_ABC_CLASS", "dataType": "string" },
+        { "name": "SR_VNDR_SRC_ORG", "dataType": "string" },
+        { "name": "ITEM_TYPE", "dataType": "string" },
+        { "name": "ACTIVE_OR_INACTIVE", "dataType": "string" },
+        { "name": "INV_VALUE", "dataType": "double" },
+        { "name": "ITEM_COUNT", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:52.2151439+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_LT%20Grouping%20Summary.csv?snapshot=2022-06-09T11%3A54%3A52.1982945Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "FACT_Inventory Velocity Summary",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "FACT_Inventory%20Velocity%20Summary.csv"
+      },
+      "attributes": [
+        { "name": "ENTITY", "dataType": "string" },
+        { "name": "ORGANIZATION_CODE", "dataType": "string" },
+        { "name": "SUPPLY_SOURCE", "dataType": "string" },
+        { "name": "DEMAND_SOURCE", "dataType": "string" },
+        { "name": "SEC_REPORTING", "dataType": "string" },
+        { "name": "ITEM_TBU", "dataType": "string" },
+        { "name": "ITEM_PRODUCT_FAMILY", "dataType": "string" },
+        { "name": "PRODUCT_MAP_KEY", "dataType": "string" },
+        { "name": "OPERATIONS_REPORTING", "dataType": "string" },
+        { "name": "ITEM_TYPE", "dataType": "string" },
+        { "name": "ITEM_STATUS", "dataType": "string" },
+        { "name": "ACTIVE_OR_INACTIVE", "dataType": "string" },
+        { "name": "CURRENT_MRP_ABC_CLASS", "dataType": "string" },
+        { "name": "PRODUCT_LINE", "dataType": "string" },
+        { "name": "FISCAL_WEEK_KEY", "dataType": "string" },
+        { "name": "PERIOD_YEAR", "dataType": "double" },
+        { "name": "PERIOD_NAME", "dataType": "string" },
+        { "name": "PERIOD_END_DATE", "dataType": "dateTime" },
+        { "name": "FISCAL_WEEK_ID", "dataType": "double" },
+        { "name": "WEEK_START_DATE", "dataType": "dateTime" },
+        { "name": "WEEK_END_DATE", "dataType": "dateTime" },
+        { "name": "ONHAND_VALUE", "dataType": "double" },
+        { "name": "ONHAND_VALUE_USD", "dataType": "double" },
+        { "name": "WIP_DAYS_OF_SUPPLY_COUNT", "dataType": "double" },
+        { "name": "ON_ORDER_DAYS_OF_SUPPLY_COUNT", "dataType": "double" },
+        { "name": "ON_ORDER_VALUE", "dataType": "double" },
+        { "name": "ON_ORDER_VALUE_USD", "dataType": "double" },
+        { "name": "WIP_VALUE", "dataType": "double" },
+        { "name": "WIP_VALUE_USD", "dataType": "double" },
+        { "name": "ONHAND_DAYS_OF_SUPPLY", "dataType": "double" },
+        { "name": "SAFETY_STOCK_VALUE", "dataType": "double" },
+        { "name": "SAFETY_STOCK_VALUE_USD", "dataType": "double" },
+        { "name": "ON_ORDER_DAYS_OF_SUPPLY", "dataType": "double" },
+        { "name": "WIP_DAYS_OF_SUPPLY", "dataType": "double" },
+        { "name": "RECORD_COUNT", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:55:38.8495192+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/FACT_Inventory%20Velocity%20Summary.csv?snapshot=2022-06-09T11%3A55%3A38.8366858Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "FACT_Inventory Velocity Details",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "FACT_Inventory%20Velocity%20Details.csv"
+      },
+      "attributes": [
+        { "name": "ACTIVE_OR_INACTIVE", "dataType": "string" },
+        { "name": "ACTIVE_SUPPLIER_LT", "dataType": "double" },
+        { "name": "AVG_DAILY_DEMAND_ELSE_USAGE", "dataType": "double" },
+        { "name": "BLANKET_DAYS_SUPPLY_REMAINING", "dataType": "double" },
+        { "name": "CURRENT_ABC_CLASS", "dataType": "string" },
+        { "name": "DATE_RUN", "dataType": "dateTime" },
+        { "name": "INTRANSIT_VALUE", "dataType": "double" },
+        { "name": "INVENTORY_VALUE", "dataType": "double" },
+        { "name": "INVENTORY_VALUE_USD", "dataType": "double" },
+        { "name": "ITEM_COST", "dataType": "double" },
+        { "name": "ITEM_COST_USD", "dataType": "double" },
+        { "name": "ITEM_DESCRIPTION", "dataType": "string" },
+        { "name": "ITEM_NUMBER", "dataType": "string" },
+        { "name": "ITEM_TYPE", "dataType": "string" },
+        { "name": "KANBAN_ITEM", "dataType": "double" },
+        { "name": "MIN_MAX_ITEM", "dataType": "double" },
+        { "name": "ON_HAND_DAYS_OF_SUPPLY", "dataType": "double" },
+        { "name": "ON_ORDER_DAYS_OF_SUPPLY", "dataType": "double" },
+        { "name": "ONORDER_PO_QTY", "dataType": "double" },
+        { "name": "ONORDER_PO_VALUE", "dataType": "double" },
+        { "name": "ONORDER_PO_VALUE_USD", "dataType": "double" },
+        { "name": "OPEN_BLANKETS", "dataType": "double" },
+        { "name": "ORGANIZATION_CODE", "dataType": "string" },
+        { "name": "PLANNING_METHOD", "dataType": "string" },
+        { "name": "PROJ_SPEND_NEXT_26_WEEKS_USD", "dataType": "double" },
+        { "name": "SAFETY_STOCK_QTY", "dataType": "double" },
+        { "name": "SAFETY_STOCK_VALUE", "dataType": "double" },
+        { "name": "SAFETY_STOCK_VALUE_USD", "dataType": "double" },
+        { "name": "SEC_REPORTING", "dataType": "string" },
+        { "name": "SR_VNDR_SRC_ORG", "dataType": "string" },
+        { "name": "SUM_USD_REMAINING_AMOUNT", "dataType": "double" },
+        { "name": "TARGET_DAYS_OF_SUPPLY", "dataType": "double" },
+        { "name": "TARGET_DAYS_OF_SUPPLY_SAVINGS", "dataType": "double" },
+        { "name": "TARGET_DAYS_OF_SUPPLY_VALUE", "dataType": "double" },
+        { "name": "TOTAL_GR_26_WEEKS", "dataType": "double" },
+        { "name": "TOTAL_ONHAND_QTY", "dataType": "double" },
+        { "name": "WIP_DAYS_OF_SUPPLY", "dataType": "double" },
+        { "name": "WIP_IN_PROCESS_QTY", "dataType": "double" },
+        { "name": "WIP_IN_PROCESS_VALUE", "dataType": "double" },
+        { "name": "WIP_IN_PROCESS_VALUE_USD", "dataType": "double" },
+        { "name": "FISCAL_WEEK_KEY", "dataType": "string" },
+        { "name": "ON_ORDER_VALUE_USD", "dataType": "double" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:59:03.5396712+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/FACT_Inventory%20Velocity%20Details.csv?snapshot=2022-06-09T11%3A59%3A03.5150017Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_Sort Values",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_Sort%20Values.csv"
+      },
+      "attributes": [
+        { "name": "Value", "dataType": "string" },
+        { "name": "Type", "dataType": "string" },
+        { "name": "Sort Order", "dataType": "int64" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:39.989927+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_Sort%20Values.csv?snapshot=2022-06-09T11%3A54%3A39.7434585Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "Version History Dataflow",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "Version%20History%20Dataflow.csv"
+      },
+      "attributes": [
+        { "name": "Version Number", "dataType": "string" },
+        { "name": "Revision Date/Time", "dataType": "dateTime" },
+        { "name": "Developer Name", "dataType": "string" },
+        { "name": "Revision Notes", "dataType": "string" },
+        { "name": "Revision Type", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:40.5993103+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/Version%20History%20Dataflow.csv?snapshot=2022-06-09T11%3A54%3A40.5514463Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "INFO_DataUpdateInfoInventoryVelocity",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "INFO_DataUpdateInfoInventoryVelocity.csv"
+      },
+      "attributes": [
+        { "name": "TABLE_NAME", "dataType": "string" },
+        { "name": "DATA_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "DATA_UPDATE_DESC", "dataType": "string" },
+        { "name": "DATA_FLOW_REFRESH_DATE", "dataType": "dateTime" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:52.3558642+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/INFO_DataUpdateInfoInventoryVelocity.csv?snapshot=2022-06-09T11%3A54%3A52.3142939Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_InventoryOrgSecurity",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_InventoryOrgSecurity.csv"
+      },
+      "attributes": [
+        { "name": "INVORG_CODE", "dataType": "string" },
+        { "name": "USER_EMAIL", "dataType": "string" },
+        { "name": "RECORD_ID", "dataType": "double" },
+        { "name": "GROUP_NAME", "dataType": "string" },
+        { "name": "USER_ROLE", "dataType": "string" },
+        { "name": "INVORG_CODES", "dataType": "string" },
+        { "name": "COMMENTS", "dataType": "string" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY_LOGIN", "dataType": "string" },
+        { "name": "LAST_UPDATE_LOGIN", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:53.6370412+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_InventoryOrgSecurity.csv?snapshot=2022-06-09T11%3A54%3A53.5822763Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_ORA_PRODUCT_DIM",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_ORA_PRODUCT_DIM.csv"
+      },
+      "attributes": [
+        { "name": "ORA_PRODUCT_ID", "dataType": "double" },
+        { "name": "ORA_PRODUCT_FAMILY", "dataType": "string" },
+        { "name": "ORA_PRODUCT_GROUP", "dataType": "string" },
+        { "name": "ORA_PRODUCT_SEGMENT", "dataType": "string" },
+        { "name": "ITEM_PRODUCT_FAMILY", "dataType": "string" },
+        { "name": "PFC", "dataType": "string" },
+        { "name": "TBU", "dataType": "string" },
+        { "name": "SEGMENT", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:47.1128842+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_ORA_PRODUCT_DIM.csv?snapshot=2022-06-09T11%3A54%3A47.0723618Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_SecReporting",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_SecReporting.csv"
+      },
+      "attributes": [
+        { "name": "SEC_REPORTING_KEY", "dataType": "string" },
+        { "name": "ITEM_NUMBER", "dataType": "string" },
+        { "name": "ORGANIZATION_CODE", "dataType": "string" },
+        { "name": "SUBINVENTORY", "dataType": "string" },
+        { "name": "SUBINV_CLASSIFICATION", "dataType": "string" },
+        { "name": "ENABLED_SUBINVENTORY", "dataType": "string" },
+        { "name": "WAREHOUSE_TYPE", "dataType": "string" },
+        { "name": "SEC_REPORTING", "dataType": "string" },
+        { "name": "FISCAL_WEEK_KEY", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:56:30.9716439+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_SecReporting.csv?snapshot=2022-06-09T11%3A56%3A30.9459990Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_WarehouseType",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_WarehouseType.csv"
+      },
+      "attributes": [
+        { "name": "ORGANIZATION_CODE", "dataType": "string" },
+        { "name": "WAREHOUSE_TYPE", "dataType": "string" }
+      ],
+      "partitions": [
+        {
+          "name": "FullRefreshPolicyPartition",
+          "refreshTime": "2022-06-09T11:54:46.5659861+00:00",
+          "location": "https://wabiwuscpcdsap1.blob.core.windows.net:443/f9be2265-41f9-4c3f-a5d1-3e7f10ecf358/DIM_WarehouseType.csv?snapshot=2022-06-09T11%3A54%3A46.2623799Z"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DIM_SourcingCommodity",
+      "description": "",
+      "pbi:refreshPolicy": {
+        "$type": "FullRefreshPolicy",
+        "location": "DIM_SourcingCommodity.csv"
+      },
+      "attributes": [
+        { "name": "CATEGORY_STRUCTURE", "dataType": "string" },
+        { "name": "STRUCTURE_NAME", "dataType": "string" },
+        { "name": "ENABLED_FLG", "dataType": "string" },
+        { "name": "DISABLE_DATE", "dataType": "dateTime" },
+        { "name": "COMMODITY_SEQUENCE", "dataType": "string" },
+        { "name": "SOURCING_COMMDITY", "dataType": "string" },
+        { "name": "SCC_UNSPSC", "dataType": "string" },
+        { "name": "CONCATENATED_SEGMENTS", "dataType": "string" },
+        { "name": "STRUCTURE_ID", "dataType": "double" },
+        { "name": "CATEGORY_ID", "dataType": "double" },
+        { "name": "LAST_UPDATE_DATE", "dataType": "dateTime" },
+        { "name": "CREATION_DATE", "dataType": "dateTime" },
+        { "name": "CREATED_BY", "dataType": "string" },
+        { "name": "LAST_UPDATED_BY", "dataType": "string" }
+      ]
+    }
+  ]
+}
