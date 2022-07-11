@@ -55,17 +55,24 @@ class Replacement {
     }
 }
 
+# [DataFlow]::new(From Workspace, To Workspace, Dataflow Name)
+
 $dataFlowItems = @(
-    [DataFlow]::new("BPD_Dev", "Global_Operation", "InventoryTurnsModel_Flow"),              # From Workspace, To Workspace, Dataflow Name
-    [DataFlow]::new("BPD_Dev", "Global_Operation", "InventoryTurnsModel_2_Flow")
+    [DataFlow]::new("BPD_Dev", "Corporate Inventory Dev", "df_global_inventory_dims_and_facts"),              
+    [DataFlow]::new("BPD_Dev", "Corporate Inventory Dev", "df_global_inventory_item_attributes_staging")    
+    [DataFlow]::new("BPD_Dev", "Corporate Inventory Dev", "df_global_inventory_m20detail_staging"),
+    [DataFlow]::new("BPD_Dev", "Corporate Inventory Dev", "df_global_inventory_shipments_staging")
+    [DataFlow]::new("BPD_Dev", "Corporate Inventory Dev", "df_global_inventory_value_staging")    
+    [DataFlow]::new("BPD_Dev", "Corporate Inventory Dev", "df_global_report_kpi_information"),
+    [DataFlow]::new("BPD_Dev", "Corporate Inventory Dev", "df_global_inventory_dims_and_facts")
 )
 
+<#
 $replaceItems = @(
-   [Replacement]::new('pTBU = \"DPSS_Germany\"', 'pTBU = \"DPSS_Glasgow\"'),                # Parameter value to be replaced TBU
-   [Replacement]::new('pOrganizationOrgs = \"BCO\"', 'pOrganizationOrgs = \"GDP\"')         # Parameter value to be replaced Org
+    [Replacement]::new('pTBU = \"DPSS_Germany\"', 'pTBU = \"DPSS_Glasgow\"'),                # Parameter value to be replaced TBU
+    [Replacement]::new('pOrganizationOrgs = \"BCO\"', 'pOrganizationOrgs = \"GDP\"')         # Parameter value to be replaced Org
 )
-
-
+#>
 
 #
 # Script functions

@@ -11,8 +11,8 @@ https://data-marc.com/2021/10/13/insights-in-power-bi-dataset-parameters-and-ref
 # General parameters
 # =================================================================================================================================================
 # Specify Power BI parameters for workspace and dataset where the current dataset is stored
-$WorkspaceID = ""
-$DatasetID = ""
+$WorkspaceID = "b459d9cd-174c-4f68-a807-7d9e129df8aa"
+$DatasetID = "c6661900-d2f2-4756-b81c-abae9d9cb5aa"
 
 # =================================================================================================================================================
 # Task execution
